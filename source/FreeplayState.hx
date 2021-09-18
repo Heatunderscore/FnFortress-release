@@ -24,7 +24,7 @@ class FreeplayState extends MusicBeatState
 
 	var selector:FlxText;
 	var curSelected:Int = 0;
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
 	var scoreText:FlxText;
 	var comboText:FlxText;
@@ -98,7 +98,7 @@ class FreeplayState extends MusicBeatState
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
 		// scoreText.autoSize = false;
-		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
+		scoreText.setFormat(Paths.font("tf2build.ttf"), 32, FlxColor.WHITE, RIGHT);
 		// scoreText.alignment = RIGHT;
 
 		var scoreBG:FlxSprite = new FlxSprite(scoreText.x - 6, 0).makeGraphic(Std.int(FlxG.width * 0.35), 66, 0xFF000000);
@@ -220,10 +220,10 @@ class FreeplayState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		if (FlxG.keys.justPressed.LEFT)
+		/*if (FlxG.keys.justPressed.LEFT)
 			changeDiff(-1);
 		if (FlxG.keys.justPressed.RIGHT)
-			changeDiff(1);
+			changeDiff(1);*/
 
 		if (controls.BACK)
 		{

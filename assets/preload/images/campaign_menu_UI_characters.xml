@@ -43,19 +43,6 @@
 	<SubTexture name="BF idle dance white0012" x="2921" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
 	<SubTexture name="BF idle dance white0013" x="2921" y="0" width="408" height="412" frameX="-2" frameY="0" frameWidth="411" frameHeight="412"/>
 	<SubTexture name="Dad idle dance BLACK LINE0000" x="3339" y="0" width="429" height="759" frameX="0" frameY="-8" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0001" x="3339" y="0" width="429" height="759" frameX="0" frameY="-8" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0002" x="3778" y="0" width="424" height="757" frameX="-2" frameY="-10" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0003" x="3778" y="0" width="424" height="757" frameX="-2" frameY="-10" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0004" x="4212" y="0" width="423" height="759" frameX="-3" frameY="-8" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0005" x="4212" y="0" width="423" height="759" frameX="-3" frameY="-8" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0006" x="4645" y="0" width="419" height="766" frameX="-5" frameY="-1" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0007" x="4645" y="0" width="419" height="766" frameX="-5" frameY="-1" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0008" x="5074" y="0" width="419" height="767" frameX="-6" frameY="0" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0009" x="5074" y="0" width="419" height="767" frameX="-6" frameY="0" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0010" x="5503" y="0" width="419" height="767" frameX="-6" frameY="0" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0011" x="5503" y="0" width="419" height="767" frameX="-6" frameY="0" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0012" x="5503" y="0" width="419" height="767" frameX="-6" frameY="0" frameWidth="429" frameHeight="767"/>
-	<SubTexture name="Dad idle dance BLACK LINE0013" x="5503" y="0" width="419" height="767" frameX="-6" frameY="0" frameWidth="429" frameHeight="767"/>
 	<SubTexture name="GF Dancing Beat WHITE0000" x="5932" y="0" width="699" height="634" frameX="-2" frameY="-14" frameWidth="703" frameHeight="648"/>
 	<SubTexture name="GF Dancing Beat WHITE0001" x="6641" y="0" width="703" height="634" frameX="0" frameY="-14" frameWidth="703" frameHeight="648"/>
 	<SubTexture name="GF Dancing Beat WHITE0002" x="7354" y="0" width="703" height="632" frameX="0" frameY="-16" frameWidth="703" frameHeight="648"/>

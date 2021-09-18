@@ -25,20 +25,18 @@ class StoryMenuState extends MusicBeatState
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		['Atomicpunch', 'Ironbomber', 'Infiltrator'],
+		['Atomicpunch', 'Ironbomber', 'Infiltrator']
 	];
-	var curDifficulty:Int = 1;
+	var curDifficulty:Int = 2;
 
-	public static var weekUnlocked:Array<Bool> = [true, true, true, true, true, true, true, true, true, true];
+	public static var weekUnlocked:Array<Bool> = [true];
 
 	var weekCharacters:Array<Dynamic> = [
 		['dad', 'bf', 'gf'],
-		['dad', 'bf', 'gf'],
-		['dad', 'bf', 'gf']
 	];
 
 	var weekNames:Array<String> = [
-		"Demo",
+		"DEMO"
 	];
 
 	var txtWeekTitle:FlxText;
@@ -76,15 +74,15 @@ class StoryMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		scoreText = new FlxText(10, 10, 0, "SCORE: 49324858", 36);
-		scoreText.setFormat("VCR OSD Mono", 32);
+		scoreText.setFormat("TF2 Build", 32);
 
 		txtWeekTitle = new FlxText(FlxG.width * 0.7, 10, 0, "", 32);
-		txtWeekTitle.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, RIGHT);
+		txtWeekTitle.setFormat("TF2 Build", 32, FlxColor.WHITE, RIGHT);
 		txtWeekTitle.alpha = 0.7;
 
 		var rankText:FlxText = new FlxText(0, 10);
 		rankText.text = 'RANK: GREAT';
-		rankText.setFormat(Paths.font("vcr.ttf"), 32);
+		rankText.setFormat(Paths.font("tf2build.ttf"), 32);
 		rankText.size = scoreText.size;
 		rankText.screenCenter(X);
 
@@ -211,7 +209,7 @@ class StoryMenuState extends MusicBeatState
 
 				if (gamepad != null)
 				{
-					if (gamepad.justPressed.DPAD_UP)
+					/*if (gamepad.justPressed.DPAD_UP)
 					{
 						changeWeek(-1);
 					}
@@ -236,10 +234,10 @@ class StoryMenuState extends MusicBeatState
 					if (gamepad.justPressed.DPAD_LEFT)
 					{
 						changeDifficulty(-1);
-					}
+					}*/
 				}
 
-				if (FlxG.keys.justPressed.UP)
+				/*if (FlxG.keys.justPressed.UP)
 				{
 					changeWeek(-1);
 				}
@@ -257,12 +255,12 @@ class StoryMenuState extends MusicBeatState
 				if (controls.LEFT)
 					leftArrow.animation.play('press');
 				else
-					leftArrow.animation.play('idle');
+					leftArrow.animation.play('idle');*/
 
-				if (controls.RIGHT_P)
+				/*if (controls.RIGHT_P)
 					changeDifficulty(1);
 				if (controls.LEFT_P)
-					changeDifficulty(-1);
+					changeDifficulty(-1);*/
 			}
 
 			if (controls.ACCEPT)
