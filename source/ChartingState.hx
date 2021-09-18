@@ -66,6 +66,8 @@ class ChartingState extends MusicBeatState
 	var writingNotesText:FlxText;
 	var highlight:FlxSprite;
 
+	var noteType = 1;
+
 	var GRID_SIZE:Int = 40;
 
 	var dummyArrow:FlxSprite;
@@ -76,6 +78,9 @@ class ChartingState extends MusicBeatState
 	var gridBG:FlxSprite;
 
 	var _song:SwagSong;
+
+	var typeNameTxt:FlxText;
+	var typeNames:Array<String> = ['Normal', 'Disguise'];
 
 	var typingShit:FlxInputText;
 	/*
@@ -478,6 +483,18 @@ class ChartingState extends MusicBeatState
 	{
 		tab_group_note = new FlxUI(null, UI_box);
 		tab_group_note.name = 'Note';
+
+		var tx = 0;
+		var ty = 400;
+		var stepperType:FlxUINumericStepper = new FlxUINumericStepper(tx, ty, 1, noteType, 0, typeNames.length - 1, 0);
+		stepperType.value = noteType;
+		stepperType.name = 'note_type';
+		stepperType.scrollFactor.set();
+
+		typeNameTxt = new FlxText(650, ty + 20, 0, 'Normal notes', 12);
+		typeNameTxt.scrollFactor.set();
+		typeNameTxt.color = 0xFFFFFFFF;
+		add(typeNameTxt);
 
 		writingNotesText = new FlxUIText(20,100, 0, "");
 		writingNotesText.setFormat("Arial",20,FlxColor.WHITE,FlxTextAlign.LEFT,FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);

@@ -119,7 +119,7 @@ class Note extends FlxSprite
 				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 				antialiasing = true;
-			if (noteType == 2)
+			if (noteType == 3)
 			{
 				frames = Paths.getSparrowAtlas('Drunk_ARROWS');
 
@@ -143,7 +143,7 @@ class Note extends FlxSprite
 				updateHitbox();
 				antialiasing = true;
 			}
-			else if (noteType == 3)
+			else if (noteType == 2)
 			{
 				frames = Paths.getSparrowAtlas('NOTE_spy');
 

@@ -2925,7 +2925,7 @@ class PlayState extends MusicBeatState
 			{
 				case 'shit':
 					switch (daNote.noteType){
-						case 3 | 4:
+						case 2 | 4:
 							health -= 3;}					
 					score = -300;
 					combo = 0;
@@ -2937,7 +2937,7 @@ class PlayState extends MusicBeatState
 						totalNotesHit -= 1;
 				case 'bad':
 					switch (daNote.noteType){
-						case 3 | 4:
+						case 2 | 4:
 							health -= 3;}							
 					daRating = 'bad';
 					score = 0;
@@ -2948,7 +2948,7 @@ class PlayState extends MusicBeatState
 						totalNotesHit += 0.50;
 				case 'good':
 					switch (daNote.noteType){
-						case 3 | 4:
+						case 2 | 4:
 							health -= 3;}							
 					daRating = 'good';
 					score = 200;
@@ -2960,7 +2960,7 @@ class PlayState extends MusicBeatState
 						totalNotesHit += 0.75;
 				case 'sick':
 					switch (daNote.noteType){
-						case 3 | 4:
+						case 2 | 4:
 							health -= 3;}						
 					if (health < 2)
 						health += 0.1;
