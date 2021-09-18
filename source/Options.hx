@@ -1,5 +1,6 @@
 package;
 
+import flixel.util.FlxTimer;
 import lime.app.Application;
 import lime.system.DisplayMode;
 import flixel.util.FlxColor;
@@ -696,5 +697,50 @@ class CamZoomOption extends Option
 	private override function updateDisplay():String
 	{
 		return "Camera Zoom " + (!FlxG.save.data.camzoom ? "off" : "on");
+	}
+}
+
+class VoiceOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.oldVoices = !FlxG.save.data.oldVoices;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Old Tracks " + (!FlxG.save.data.oldVoices ? "not used" : "used");
+	}
+}
+
+class EasyMode extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		new FlxTimer().start(1, function(tmr:FlxTimer)
+			{
+				FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
+				#if windows
+				Sys.exit(0);
+				#end
+			},100);
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Easy Mode Off";
 	}
 }

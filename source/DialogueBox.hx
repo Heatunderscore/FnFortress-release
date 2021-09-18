@@ -313,6 +313,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitLeft.animation.play('enter');
 				}
 			case 'bf':
+				box.flipX = false;
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
 				portraitRight.frames = Paths.getSparrowAtlas('weeb/bf');
@@ -325,6 +326,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.animation.play('enter');
 				}
 			case 'gf':
+				box.flipX = false;
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
 				portraitRight.frames = Paths.getSparrowAtlas('weeb/gf');

@@ -62,6 +62,11 @@ class OptionsMenu extends MusicBeatState
 			new ShowInput("Display every single input in the score screen."),
 			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
 			new BotPlay("Showcase your charts and mods with autoplay."),
+		]),
+
+		new OptionCategory("VS MANNCO STUFF", [
+			new VoiceOption("toggle between old and new Voices."),
+			new EasyMode("Easy mode. Makes everything easy"),
 		])
 		
 	];

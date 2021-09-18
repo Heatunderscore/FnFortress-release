@@ -365,11 +365,11 @@ class PlayState extends MusicBeatState
 			case 'thorns':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
 			case 'atomicpunch':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('atomicpunch/Dialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('atomicpunch/pee'));
 			case 'ironbomber':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('ironbomber/Dialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('ironbomber/poo'));
 			case 'infiltrator':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('infiltrator/Dialogue'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('infiltrator/furry'));
 		}
 
 		//defaults if no stage was found in chart
@@ -741,7 +741,7 @@ class PlayState extends MusicBeatState
 					{
 							defaultCamZoom = 0.9;
 							curStage = 'twofort';
-							var bg:FlxSprite = new FlxSprite(-600, -350).loadGraphic(Paths.image('fortress/bg/twofort'));
+							var bg:FlxSprite = new FlxSprite(-375, -150).loadGraphic(Paths.image('fortress/bg/twofort'));
 							bg.antialiasing = true;
 							bg.scrollFactor.set(0.9, 0.9);
 							bg.active = false;
@@ -854,10 +854,11 @@ class PlayState extends MusicBeatState
 				dad.x -= 150;
 				dad.y += 100;
 				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'scunt':
+				dad.y += 70;
 			case 'demo':
-				dad.y += 150;
-				dad.x -= 40;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+				dad.y += 45;
+				dad.x += -200;
 		}
 
 
@@ -895,42 +896,6 @@ class PlayState extends MusicBeatState
 				add(evilTrail);
 				// evilTrail.scrollFactor.set(1.1, 1.1);
 				}
-
-			// heat what are u on these arent even needed
-			/*case '2fort':
-			
-				dad.x -= 300;
-				
-
-
-				boyfriend.x -= 200;
-				boyfriend.y -= 40;
-				gf.x -= 300;
-				gf.y -= 100;
-			case 'suijin':
-
-				boyfriend.y += 150;
-				boyfriend.x += 40;
-				dad.y += 100;
-				dad.x -= 200;
-				gf.scale.set(0.75, 0.75);
-				gf.x -= 120;
-				gf.y += 110;
-			case 'intel':
-
-				boyfriend.x -= 300;
-				boyfriend.y -= 40;
-				dad.x -= 400;
-				dad.y -= 20;
-				gf.x -= 300;
-				gf.y -= 50;
-			case 'entry':
-				dad.x -= 500;
-				dad.y -= 50;
-				boyfriend.x -= 250;
-				boyfriend.y -= 40;
-				gf.x -= 355;
-				gf.y -= 40;*/
 		}
 
 		if (!PlayStateChangeables.Optimize)
