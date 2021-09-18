@@ -727,10 +727,10 @@ class PlayState extends MusicBeatState
 						add(stageCurtains);
 
 				}
-			case '2fort':
+			case 'twofort':
 				{
 						defaultCamZoom = 0.9;
-						curStage = '2fort';
+						curStage = 'twofort';
 						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tf/elbg/twofort'));
 						bg.antialiasing = true;
 						bg.scrollFactor.set(0.9, 0.9);
