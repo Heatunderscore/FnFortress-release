@@ -2423,6 +2423,128 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (curSong == 'Atomicpunch')
+			{
+				switch (curStep)
+				{
+					case 448:
+						PlayStateChangeables.scrollSpeed = 3;
+					case 704:
+						PlayStateChangeables.scrollSpeed = 2.5;
+					case 832:
+						PlayStateChangeables.scrollSpeed = 3.1;
+					case 864:
+						PlayStateChangeables.scrollSpeed = 2.6;
+					case 880:
+						PlayStateChangeables.scrollSpeed = 3.2;
+					case 896:
+						PlayStateChangeables.scrollSpeed = 3.1;
+					case 928:
+						PlayStateChangeables.scrollSpeed = 2.6;
+					case 944:
+						PlayStateChangeables.scrollSpeed = 3.2;
+					case 992:
+						PlayStateChangeables.scrollSpeed = 2.5;
+					case 1072:
+						PlayStateChangeables.scrollSpeed = 3;
+				}
+			}
+			if (curSong == 'Infiltrator') 
+				{
+					// spy invis note code
+					switch (curStep)
+					{
+						case 512:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 539:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 565:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 592:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 618:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 644:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 671:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 697:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 704:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 731:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 757:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 784:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 810:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 837:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 863:
+							//FlxG.sound.play(Paths.sound('cloak'), 1);
+							FlxTween.tween(camHUD, {alpha: 0},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+						case 890:
+							FlxTween.tween(camHUD, {alpha: 100},2, 
+								{
+									ease: FlxEase.cubeInOut,
+								});
+		
+					}
+				}
 		if (curSong == 'Bopeebo')
 		{
 			switch (curBeat)
