@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spyportrait.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="spy talk0000" x="0" y="0" width="436" height="325"/>
+	<SubTexture name="spy talk0001" x="436" y="0" width="436" height="325"/>
+	<SubTexture name="spy talk0002" x="0" y="325" width="436" height="325"/>
+	<SubTexture name="spy talk0003" x="436" y="325" width="436" height="325"/>
+	<SubTexture name="spy talk0004" x="436" y="0" width="436" height="325"/>
+</TextureAtlas>

@@ -29,8 +29,7 @@ class DialogueBox extends FlxSpriteGroup
 	public var finishThing:Void->Void;
 
 	var portraitLeft:FlxSprite;
-	var portraitBF:FlxSprite;
-	var portraitGF:FlxSprite;
+	var portraitRight:FlxSprite;
 
 	var handSelect:FlxSprite;
 	var bgFade:FlxSprite;
@@ -90,91 +89,59 @@ class DialogueBox extends FlxSpriteGroup
 				add(face);
 			case 'atomicpunch':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
+				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'Speech Bubble Normal Open', [4], "", 24);
-				portraitLeft = new FlxSprite(-20, 40);
-				portraitLeft.frames = Paths.getSparrowAtlas('scoutportrait');
-				portraitLeft.animation.addByPrefix('enter', 'scout talk', 24, false);
-				//portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
-				portraitLeft.updateHitbox();
-				portraitLeft.scrollFactor.set();
-				add(portraitLeft);
-				portraitLeft.visible = false;
+				box.animation.addByIndices('normal', 'speech bubble normal', [11], "", 24);
+				box.y += 300;
 			case 'ironbomber':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
+				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'Speech Bubble Normal Open', [4], "", 24);
-				portraitLeft = new FlxSprite(-20, 40);
-				portraitLeft.frames = Paths.getSparrowAtlas('demomanportrait');
-				portraitLeft.animation.addByPrefix('enter', 'demoman talk', 24, false);
-				//portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
-				portraitLeft.updateHitbox();
-				portraitLeft.scrollFactor.set();
-				add(portraitLeft);
-				portraitLeft.visible = false;
+				box.animation.addByIndices('normal', 'speech bubble normal', [11], "", 24);
+				box.y += 300;
 			case 'infiltrator':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
+				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
-				box.animation.addByIndices('normal', 'Speech Bubble Normal Open', [4], "", 24);
-				portraitLeft = new FlxSprite(-20, 40);
-				portraitLeft.frames = Paths.getSparrowAtlas('spyportrait');
-				portraitLeft.animation.addByPrefix('enter', 'spy talk', 24, false);
-				//portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
-				portraitLeft.updateHitbox();
-				portraitLeft.scrollFactor.set();
-				add(portraitLeft);
-				portraitLeft.visible = false;
+				box.animation.addByIndices('normal', 'speech bubble normal', [11], "", 24);
+				box.y += 300;
 		}
 
 		this.dialogueList = dialogueList;
 		
 		if (!hasDialog)
 			return;
-
-		if (PlayState.SONG.song.toLowerCase() == 'atomicpunch' || PlayState.SONG.song.toLowerCase() == 'ironbomber' || PlayState.SONG.song.toLowerCase() == 'infiltrator')
-		{	
-			portraitGF = new FlxSprite(0, 40);
-			portraitGF.frames = Paths.getSparrowAtlas('GFportrait');
-			portraitGF.animation.addByPrefix('enter', 'GFportrait', 24, false);
-			portraitGF.updateHitbox();
-			portraitGF.scrollFactor.set();
-			add(portraitGF);
-			portraitGF.visible = false;
-
-			portraitBF = new FlxSprite(0, 40);
-			portraitBF.frames = Paths.getSparrowAtlas('BFportrait');
-			portraitBF.animation.addByPrefix('enter', 'BFportrait', 24, false);
-			portraitBF.updateHitbox();
-			portraitBF.scrollFactor.set();
-			add(portraitBF);
-			portraitBF.visible = false;
-		}
 		
+		portraitLeft = new FlxSprite(-20, 40);
+		portraitLeft.frames = Paths.getSparrowAtlas('weeb/scunt');
+		portraitLeft.animation.addByPrefix('enter', 'scout talk', 24, false);
+		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.175));
+		portraitLeft.updateHitbox();
+		portraitLeft.scrollFactor.set();
+		add(portraitLeft);
+		portraitLeft.visible = false;
+
+		portraitRight = new FlxSprite(0, 40);
+		portraitRight.frames = Paths.getSparrowAtlas('weeb/bf');
+		portraitRight.animation.addByPrefix('enter', 'BFportrait', 24, false);
+		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.175));
+		portraitRight.updateHitbox();
+		portraitRight.scrollFactor.set();
+		portraitRight.x += 750;
+		portraitRight.y += 55;
+		add(portraitRight);
+		portraitRight.visible = false;
 		
-		var fm = 850;
-		var lm = 100;
 		box.animation.play('normalOpen');
+		box.setGraphicSize(Std.int(box.width * PlayState.daPixelZoom * 0.175));
 		box.updateHitbox();
 		add(box);
-		box.y += 330;
-		portraitBF.y += lm;
-		portraitLeft.y += lm;
-		portraitLeft.x += 50;
-		portraitGF.y += lm;
-		portraitGF.x = fm;
-		portraitBF.x = fm;
-
-
-
 
 		box.screenCenter(X);
-		//portraitLeft.screenCenter(X);
+		portraitLeft.screenCenter(Y);
 
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
-		//add(handSelect);
+		add(handSelect);
 
 
 		if (!talkingRight)
@@ -183,12 +150,12 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
-		dropText.font = 'Pixel Arial 11 Bold';
+		dropText.font = 'TF2 Build';
 		dropText.color = 0xFFD89494;
-		//add(dropText);
+		add(dropText);
 
 		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
-		swagDialogue.font = 'Pixel Arial 11 Bold';
+		swagDialogue.font = 'TF2 Build';
 		swagDialogue.color = 0xFF3F2021;
 		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 		add(swagDialogue);
@@ -242,7 +209,7 @@ class DialogueBox extends FlxSpriteGroup
 				{
 					isEnding = true;
 
-					if (PlayState.SONG.song.toLowerCase() == 'atomicpunch' || PlayState.SONG.song.toLowerCase() == 'ironbomber' || PlayState.SONG.song.toLowerCase() == 'infiltrator')
+					if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
 						FlxG.sound.music.fadeOut(2.2, 0);
 
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
@@ -250,8 +217,7 @@ class DialogueBox extends FlxSpriteGroup
 						box.alpha -= 1 / 5;
 						bgFade.alpha -= 1 / 5 * 0.7;
 						portraitLeft.visible = false;
-						portraitGF.visible = false;
-						portraitBF.visible = false;
+						portraitRight.visible = false;
 						swagDialogue.alpha -= 1 / 5;
 						dropText.alpha = swagDialogue.alpha;
 					}, 5);
@@ -288,32 +254,84 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (curCharacter)
 		{
-			case 'dad':
-				portraitGF.visible = false;
-				portraitBF.visible = false;
-				box.flipX = true;
+			case 'scunt':
+				if (PlayState.dad.curCharacter == 'scunt')
+				{
+					portraitLeft.visible = false;
+					portraitRight.visible = false;
+					portraitLeft.frames = Paths.getSparrowAtlas('weeb/scunt');
+					portraitLeft.animation.addByPrefix('enter', 'scout talk', 24, false);
+					swagDialogue.color = 0xFF000000;
+					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('scout'), 0.6)];
+					if (!portraitLeft.visible)
+					{
+						portraitLeft.visible = true;
+						portraitLeft.animation.play('enter');
+					}
+				}
+				else if (PlayState.dad.curCharacter == 'scunt-old')
+				{
+					portraitLeft.visible = false;
+					portraitRight.visible = false;
+					portraitLeft.frames = Paths.getSparrowAtlas('weeb/old');
+					portraitLeft.animation.addByPrefix('enter', 'scout talk', 24, false);
+					swagDialogue.color = 0xFF000000;
+					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('scout'), 0.6)];
+					if (!portraitLeft.visible)
+					{
+						portraitLeft.visible = true;
+						portraitLeft.animation.play('enter');
+					}
+				}
+					
+
+			case 'demo':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitLeft.frames = Paths.getSparrowAtlas('weeb/demo');
+				portraitLeft.animation.addByPrefix('enter', 'demoman talk', 24, false);
+				swagDialogue.color = 0xFF8B4513;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('demo'), 0.6)];
+				if (!portraitLeft.visible)
+				{
+					portraitLeft.visible = true;
+					portraitLeft.animation.play('enter');
+				}
+			case 'spy':
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitLeft.frames = Paths.getSparrowAtlas('weeb/spy');
+				portraitLeft.animation.addByPrefix('enter', 'spy talk', 24, false);
+				swagDialogue.color = 0xFF000000;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('spy'), 0.6)];
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
 					portraitLeft.animation.play('enter');
 				}
 			case 'bf':
-				portraitGF.visible = false;
+				portraitRight.visible = false;
 				portraitLeft.visible = false;
-				box.flipX = false;
-				if (!portraitBF.visible)
+				portraitRight.frames = Paths.getSparrowAtlas('weeb/bf');
+				portraitRight.animation.addByPrefix('enter', 'BFportrait', 24, false);
+				swagDialogue.color = 0xFF00FFFF;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('bf'), 0.6)];
+				if (!portraitRight.visible)
 				{
-					portraitBF.visible = true;
-					portraitBF.animation.play('enter');
+					portraitRight.visible = true;
+					portraitRight.animation.play('enter');
 				}
 			case 'gf':
+				portraitRight.visible = false;
 				portraitLeft.visible = false;
-				portraitBF.visible = false;
-				box.flipX = false;
-				if (!portraitGF.visible)
+				portraitRight.frames = Paths.getSparrowAtlas('weeb/gf');
+				portraitRight.animation.addByPrefix('enter', 'GFportrait', 24, false);
+				swagDialogue.color = 0xFFFF0000;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('gf'), 0.6)];
+				if (!portraitRight.visible)
 				{
-					portraitGF.visible = true;
-					portraitGF.animation.play('enter');
+					portraitRight.visible = true;
+					portraitRight.animation.play('enter');
 				}
 		}
 	}

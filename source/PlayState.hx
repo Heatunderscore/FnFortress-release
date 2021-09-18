@@ -727,48 +727,36 @@ class PlayState extends MusicBeatState
 						add(stageCurtains);
 
 				}
-			case 'twofort':
-				{
-						defaultCamZoom = 0.9;
-						curStage = 'twofort';
-						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tf/elbg/twofort'));
-						bg.antialiasing = true;
-						bg.scrollFactor.set(0.9, 0.9);
-						bg.active = false;
-						add(bg);
-	
-						
-				}
-			case 'suijin':
-				{
-						defaultCamZoom = 0.9;
-						curStage = 'suijin';
-						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tf/elbg/suijin_bg'));
-						bg.antialiasing = true;
-						bg.scrollFactor.set(0.9, 0.9);
-						bg.active = false;
-						add(bg);
-	
-						
-				}
-			case 'intel': {
-				defaultCamZoom = 0.9;
-				curStage = 'intel';
-				var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tf/elbg/intel'));
-				bg.antialiasing = true;
-				bg.scrollFactor.set(0.9, 0.9);
-				bg.active = false;
-				add(bg);
-			}
-			case 'entry': {
-				defaultCamZoom = 0.9;
-				curStage = 'entry';
-				var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tf/elbg/entry'));
-				bg.antialiasing = true;
-				bg.scrollFactor.set(0.9, 0.9);
-				bg.active = false;
-				add(bg);
-			}
+				case 'intel':
+					{
+							defaultCamZoom = 0.9;
+							curStage = 'intel';
+							var bg:FlxSprite = new FlxSprite(-300, -200).loadGraphic(Paths.image('fortress/bg/intel'));
+							bg.antialiasing = true;
+							bg.scrollFactor.set(0.9, 0.9);
+							bg.active = false;
+							add(bg);
+					}
+				case 'twofort':
+					{
+							defaultCamZoom = 0.9;
+							curStage = 'twofort';
+							var bg:FlxSprite = new FlxSprite(-600, -350).loadGraphic(Paths.image('fortress/bg/twofort'));
+							bg.antialiasing = true;
+							bg.scrollFactor.set(0.9, 0.9);
+							bg.active = false;
+							add(bg);
+					}
+				case 'entry':
+					{
+							defaultCamZoom = 0.9;
+							curStage = 'entry';
+							var bg:FlxSprite = new FlxSprite(-300, -130).loadGraphic(Paths.image('fortress/bg/entry'));
+							bg.antialiasing = true;
+							bg.scrollFactor.set(0.9, 0.9);
+							bg.active = false;
+							add(bg);
+					}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -907,7 +895,9 @@ class PlayState extends MusicBeatState
 				add(evilTrail);
 				// evilTrail.scrollFactor.set(1.1, 1.1);
 				}
-			case '2fort':
+
+			// heat what are u on these arent even needed
+			/*case '2fort':
 			
 				dad.x -= 300;
 				
@@ -940,7 +930,7 @@ class PlayState extends MusicBeatState
 				boyfriend.x -= 250;
 				boyfriend.y -= 40;
 				gf.x -= 355;
-				gf.y -= 40;
+				gf.y -= 40;*/
 		}
 
 		if (!PlayStateChangeables.Optimize)
@@ -2391,6 +2381,11 @@ class PlayState extends MusicBeatState
 					case 'schoolEvil':
 						camFollow.x = boyfriend.getMidpoint().x - 200;
 						camFollow.y = boyfriend.getMidpoint().y - 200;
+					// camFollow for bf in our stages
+					case 'intel':
+						camFollow.y = boyfriend.getMidpoint().y - 200;
+					case 'entry':
+						camFollow.y = boyfriend.getMidpoint().y - 200;
 				}
 			}
 		}
@@ -2449,11 +2444,11 @@ class PlayState extends MusicBeatState
 						PlayStateChangeables.scrollSpeed = 3;
 				}
 			}
-			if (curSong == 'Infiltrator') 
-				{
-					// spy invis note code
-					switch (curStep)
-					{
+	if (curSong == 'Infiltrator') 
+		{
+			// spy invis note code
+			switch (curStep)
+			{
 						case 512:
 							//FlxG.sound.play(Paths.sound('cloak'), 1);
 							FlxTween.tween(camHUD, {alpha: 0},2, 
@@ -2543,8 +2538,8 @@ class PlayState extends MusicBeatState
 									ease: FlxEase.cubeInOut,
 								});
 		
-					}
-				}
+			}
+		}
 		if (curSong == 'Bopeebo')
 		{
 			switch (curBeat)
