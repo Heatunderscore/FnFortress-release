@@ -255,6 +255,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (curCharacter)
 		{
 			case 'scunt':
+				box.flipX = true;
 				if (PlayState.dad.curCharacter == 'scunt')
 				{
 					portraitLeft.visible = false;
@@ -286,6 +287,7 @@ class DialogueBox extends FlxSpriteGroup
 					
 
 			case 'demo':
+				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
 				portraitLeft.frames = Paths.getSparrowAtlas('weeb/demo');
@@ -298,6 +300,7 @@ class DialogueBox extends FlxSpriteGroup
 					portraitLeft.animation.play('enter');
 				}
 			case 'spy':
+				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
 				portraitLeft.frames = Paths.getSparrowAtlas('weeb/spy');

@@ -12,6 +12,8 @@ class GameOverSubstate extends MusicBeatSubstate
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
 
+	var finished:Bool = false;
+
 	var stageSuffix:String = "";
 
 	public function new(x:Float, y:Float)
@@ -39,6 +41,22 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
 		Conductor.changeBPM(100);
+
+
+		new FlxTimer().start(0.5, function(tmr:FlxTimer)
+			{
+
+				switch (daStage)
+				{
+					case 'twofort':
+						FlxG.sound.play(Paths.soundRandom('scuntDeath_', 1, 3));
+					case 'entry':
+						FlxG.sound.play(Paths.soundRandom('demoDeath_', 1, 3));
+					case 'intel':
+						FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
+
+				}
+			});
 
 		// FlxG.camera.followLerp = 1;
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
