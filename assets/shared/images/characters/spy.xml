@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="SpyPoses.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Spy Down0000" x="0" y="0" width="392" height="717" frameX="0" frameY="-14" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0001" x="0" y="0" width="392" height="717" frameX="0" frameY="-14" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0002" x="392" y="0" width="384" height="713" frameX="-3" frameY="-18" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0003" x="392" y="0" width="384" height="713" frameX="-3" frameY="-18" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0004" x="776" y="0" width="380" height="726" frameX="-5" frameY="-5" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0005" x="1156" y="0" width="380" height="726" frameX="-5" frameY="-5" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0006" x="1536" y="0" width="379" height="730" frameX="-5" frameY="-1" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0007" x="1915" y="0" width="379" height="730" frameX="-5" frameY="-1" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0008" x="2294" y="0" width="378" height="731" frameX="-6" frameY="0" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0009" x="2672" y="0" width="378" height="731" frameX="-6" frameY="0" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Down0010" x="3050" y="0" width="378" height="731" frameX="-6" frameY="0" frameWidth="392" frameHeight="731"/>
+	<SubTexture name="Spy Idle0000" x="3428" y="0" width="430" height="719" frameX="0" frameY="-18" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0001" x="3428" y="0" width="430" height="719" frameX="0" frameY="-18" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0002" x="0" y="731" width="421" height="728" frameX="-1" frameY="-9" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0003" x="0" y="731" width="421" height="728" frameX="-1" frameY="-9" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0004" x="421" y="731" width="416" height="734" frameX="-2" frameY="-3" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0005" x="421" y="731" width="416" height="734" frameX="-2" frameY="-3" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0006" x="837" y="731" width="414" height="736" frameX="-2" frameY="-1" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0007" x="837" y="731" width="414" height="736" frameX="-2" frameY="-1" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0008" x="1251" y="731" width="414" height="737" frameX="-2" frameY="0" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0009" x="1251" y="731" width="414" height="737" frameX="-2" frameY="0" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0010" x="1665" y="731" width="414" height="737" frameX="-2" frameY="0" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0011" x="1665" y="731" width="414" height="737" frameX="-2" frameY="0" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0012" x="2079" y="731" width="414" height="737" frameX="-2" frameY="0" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Idle0013" x="2079" y="731" width="414" height="737" frameX="-2" frameY="0" frameWidth="430" frameHeight="737"/>
+	<SubTexture name="Spy Left0000" x="2493" y="731" width="354" height="709" frameX="0" frameY="-2" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0001" x="2493" y="731" width="354" height="709" frameX="0" frameY="-2" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0002" x="2847" y="731" width="378" height="710" frameX="-12" frameY="-1" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0003" x="2847" y="731" width="378" height="710" frameX="-12" frameY="-1" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0004" x="3225" y="731" width="384" height="711" frameX="-16" frameY="0" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0005" x="3225" y="731" width="384" height="711" frameX="-16" frameY="0" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0006" x="3609" y="731" width="385" height="711" frameX="-17" frameY="0" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0007" x="3609" y="731" width="385" height="711" frameX="-17" frameY="0" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0008" x="0" y="1468" width="384" height="711" frameX="-18" frameY="0" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0009" x="0" y="1468" width="384" height="711" frameX="-18" frameY="0" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Left0010" x="384" y="1468" width="384" height="711" frameX="-18" frameY="0" frameWidth="402" frameHeight="711"/>
+	<SubTexture name="Spy Right0000" x="768" y="1468" width="600" height="756" frameX="-31" frameY="0" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0001" x="768" y="1468" width="600" height="756" frameX="-31" frameY="0" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0002" x="1368" y="1468" width="527" height="743" frameX="-27" frameY="-13" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0003" x="1368" y="1468" width="527" height="743" frameX="-27" frameY="-13" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0004" x="1895" y="1468" width="506" height="737" frameX="-8" frameY="-19" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0005" x="2401" y="1468" width="506" height="737" frameX="-8" frameY="-19" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0006" x="2907" y="1468" width="499" height="735" frameX="-2" frameY="-21" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0007" x="3406" y="1468" width="499" height="735" frameX="-2" frameY="-21" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0008" x="0" y="2224" width="498" height="735" frameX="0" frameY="-21" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0009" x="498" y="2224" width="498" height="735" frameX="0" frameY="-21" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Right0010" x="996" y="2224" width="498" height="735" frameX="0" frameY="-21" frameWidth="631" frameHeight="756"/>
+	<SubTexture name="Spy Up0000" x="1494" y="2224" width="444" height="748" frameX="-3" frameY="0" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0001" x="1494" y="2224" width="444" height="748" frameX="-3" frameY="0" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0002" x="1938" y="2224" width="426" height="741" frameX="-1" frameY="-7" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0003" x="1938" y="2224" width="426" height="741" frameX="-1" frameY="-7" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0004" x="2364" y="2224" width="427" height="738" frameX="0" frameY="-10" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0005" x="2791" y="2224" width="427" height="738" frameX="0" frameY="-10" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0006" x="3218" y="2224" width="428" height="737" frameX="0" frameY="-11" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0007" x="3646" y="2224" width="428" height="737" frameX="0" frameY="-11" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0008" x="0" y="2972" width="428" height="737" frameX="0" frameY="-11" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0009" x="428" y="2972" width="428" height="737" frameX="0" frameY="-11" frameWidth="447" frameHeight="748"/>
+	<SubTexture name="Spy Up0010" x="856" y="2972" width="429" height="737" frameX="0" frameY="-11" frameWidth="447" frameHeight="748"/>
+</TextureAtlas>

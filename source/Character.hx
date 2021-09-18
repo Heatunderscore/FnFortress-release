@@ -118,7 +118,7 @@ class Character extends FlxSprite
 
 				playAnim('danceRight');
 
-				//setGraphicSize(Std.int(width * PlayState.daPixelZoom));
+				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 				updateHitbox();
 				antialiasing = false;
 
@@ -139,60 +139,75 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
-
-			case 'scout':
-				// SCOUT ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('characters/ScoutPoses', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'Scout_Idle', 24);
-				animation.addByPrefix('singUP', 'Scout_Up', 24);
-				animation.addByPrefix('singRIGHT', 'Scout_Right', 24);
-				animation.addByPrefix('singDOWN', 'Scout_Down', 24);
-				animation.addByPrefix('singLEFT', 'Scout_Left', 24);
-
-				addOffset('idle', 0, 120);
-				addOffset("singUP", 245, 69);
-				addOffset("singRIGHT", 93, 59);
-				addOffset("singLEFT", -7, 53);
-				addOffset("singDOWN", 0, -51);
-
-				playAnim('idle');
-			case 'demo':
-				// demo ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('characters/DemomanPoses', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'Demo Idle', 24);
-				animation.addByPrefix('singUP', 'Demo Up', 24);
-				animation.addByPrefix('singRIGHT', 'Demo Right', 24);
-				animation.addByPrefix('singDOWN', 'Demo Down', 24);
-				animation.addByPrefix('singLEFT', 'Demo Left', 24);
-
-				addOffset('idle', -52, 79);
-				addOffset("singUP", -53, 206);
-				addOffset("singRIGHT", -46, 56);
-				addOffset("singLEFT", -10, 93);
-				addOffset("singDOWN", 0, -110);
-
-				playAnim('idle');
-
-			case 'spy':
-				// spie ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('characters/SpyPoses', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'Spy Idle', 24);
-				animation.addByPrefix('singUP', 'Spy Up', 24);
-				animation.addByPrefix('singRIGHT', 'Spy Right', 24);
-				animation.addByPrefix('singDOWN', 'Spy Down', 24);
-				animation.addByPrefix('singLEFT', 'Spy Left', 24);
-
-				addOffset('idle');
-				addOffset("singUP", -6, 50);
-				addOffset("singRIGHT", 0, 27);
-				addOffset("singLEFT", -10, 10);
-				addOffset("singDOWN", 0, -30);
-
-				playAnim('idle');
-
+				case 'scunt':
+					// new scunt
+					tex = Paths.getSparrowAtlas('characters/scunt', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'Scout_Idle', 24, true);
+					animation.addByPrefix('singUP', 'Scout_Up', 24, false);
+					animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
+					animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
+					animation.addByPrefix('singLEFT', 'Scout_Left', 24, false);
+	
+					addOffset('idle');
+					addOffset("singUP", 230, 30);
+					addOffset("singRIGHT", 150, 0);
+					addOffset("singLEFT", 20, 0);
+					addOffset("singDOWN", 39, -92);
+	
+					playAnim('idle');
+	
+				case 'scunt-old':
+					// old scunt
+					tex = Paths.getSparrowAtlas('characters/scoutOLD', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'Scout_Idle', 24, true);
+					animation.addByPrefix('singUP', 'Scout_Up', 24, false);
+					animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
+					animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
+					animation.addByPrefix('singLEFT', 'Scout_Left', 24, false);
+	
+					addOffset('idle');
+					addOffset("singUP", 340, 0);
+					addOffset("singRIGHT", 140, -30);
+					addOffset("singLEFT", 20, -30);
+					addOffset("singDOWN", 30, -150);
+	
+					playAnim('idle');
+	
+				case 'demo':
+					tex = Paths.getSparrowAtlas('characters/demo', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'Demo Idle', 24, true);
+					animation.addByPrefix('singUP', 'Demo Up', 24, false);
+					animation.addByPrefix('singRIGHT', 'Demo Right', 24, false);
+					animation.addByPrefix('singDOWN', 'Demo Down', 24, false);
+					animation.addByPrefix('singLEFT', 'Demo Left', 24, false);
+	
+					addOffset('idle');
+					addOffset("singUP", -115, 125);
+					addOffset("singRIGHT", -137, -28);
+					addOffset("singLEFT", -52, 10);
+					addOffset("singDOWN", -26, -192);
+	
+					playAnim('idle');
+	
+				case 'spy':
+					tex = Paths.getSparrowAtlas('characters/spy', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'Spy Idle', 24, true);
+					animation.addByPrefix('singUP', 'Spy Up', 24, false);
+					animation.addByPrefix('singRIGHT', 'Spy Right', 24, false);
+					animation.addByPrefix('singDOWN', 'Spy Down', 24, false);
+					animation.addByPrefix('singLEFT', 'Spy Left', 24, false);
+	
+					addOffset('idle');
+					addOffset("singUP", 0, 0);
+					addOffset("singRIGHT", 0, 0);
+					addOffset("singLEFT", 0, 0);
+					addOffset("singDOWN", 0, 0);
+	
+					playAnim('idle');
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
@@ -336,7 +351,6 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
 				animation.addByPrefix('hey', 'BF HEY', 24, false);
-				animation.addByPrefix('hit', 'BF hit', 24, false);
 
 				animation.addByPrefix('firstDeath', "BF dies", 24, false);
 				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
@@ -553,24 +567,6 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", -30, -27);
 
 				playAnim('idle');
-
-			case 'heavy':
-				tex = Paths.getSparrowAtlas('characters/FNF_HoovyTF2', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', "Heavy_Idle", 24, false);
-				animation.addByPrefix('singUP', "Heavy_Up", 24, false);
-				animation.addByPrefix('singRIGHT', "Heavy_Right", 24, false);
-				animation.addByPrefix('singLEFT', "Heavy_Left", 24, false);
-				animation.addByPrefix('singDOWN', "Heavy_Down", 24, false);
-
-				addOffset('idle', 0, 24);
-				addOffset("singUP", -44, 178);
-				addOffset("singRIGHT", 128, -65);
-				addOffset("singLEFT", -7, 51);
-				addOffset("singDOWN", -55, -12);
-	
-				playAnim('idle');
-	
 		}
 
 		dance();
