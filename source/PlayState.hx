@@ -1053,6 +1053,7 @@ class PlayState extends MusicBeatState
 		botPlayState = new FlxText(healthBarBG.x + healthBarBG.width / 2 - 75, healthBarBG.y + (PlayStateChangeables.useDownscroll ? 100 : -100), 0, "I AM BAD AT THIS GAME SO I NEED A BOT TO WIN", 20);
 		botPlayState.setFormat(Paths.font("tf2build.ttf"), 42, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		botPlayState.scrollFactor.set();
+		botPlayState.x += -400;
 		botPlayState.borderSize = 4;
 		botPlayState.borderQuality = 2;
 		if(PlayStateChangeables.botPlay && !loadRep) add(botPlayState);

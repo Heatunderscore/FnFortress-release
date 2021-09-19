@@ -45,16 +45,31 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		new FlxTimer().start(0.5, function(tmr:FlxTimer)
 			{
-
-				switch (daStage)
+				if(!PlayStateChangeables.botPlay)
 				{
-					case 'twofort':
-						FlxG.sound.play(Paths.soundRandom('scuntDeath_', 1, 3));
-					case 'entry':
-						FlxG.sound.play(Paths.soundRandom('demoDeath_', 1, 3));
-					case 'intel':
-						FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
+				    switch (daStage)
+				    {
+					    case 'twofort':
+					    	FlxG.sound.play(Paths.soundRandom('scuntDeath_', 1, 3));
+					    case 'entry':
+						    FlxG.sound.play(Paths.soundRandom('demoDeath_', 1, 3));
+					    case 'intel':
+					    	FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
 
+				    }
+			    }
+				else
+				{
+					switch (daStage)
+				    {
+					    case 'twofort':
+					    	FlxG.sound.play(Paths.sound('scuntDeath_1'));
+					    case 'entry':
+						    FlxG.sound.play(Paths.sound('demoDeath_1'));
+					    case 'intel':
+					    	FlxG.sound.play(Paths.sound('spyDeath_1'));
+
+				    }
 				}
 			});
 
