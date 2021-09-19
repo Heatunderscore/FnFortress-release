@@ -97,6 +97,8 @@ class PlayState extends MusicBeatState
 	public static var rep:Replay;
 	public static var loadRep:Bool = false;
 
+	
+
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
 	var halloweenLevel:Bool = false;
@@ -1807,9 +1809,29 @@ class PlayState extends MusicBeatState
 
 			if (!isStoryMode)
 			{
-				babyArrow.y -= 10;
-				babyArrow.alpha = 0;
-				FlxTween.tween(babyArrow, {y: babyArrow.y + 10, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: 0.5 + (0.2 * i)});
+				// no usual intro for infiltrator
+				// instead funni epic intro
+				if (curSong != 'Infiltrator')
+				{
+				    babyArrow.y -= 10;
+				    babyArrow.alpha = 0;
+				    FlxTween.tween(babyArrow, {y: babyArrow.y + 10, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: 0.5 + (0.2 * i)});
+				}
+				else
+				{
+					babyArrow.y -= 10;
+				    babyArrow.alpha = 0;
+					FlxTween.tween(babyArrow, {y: babyArrow.y + 10, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: 4 + (0.2 * i)});
+				}
+			}
+			else
+			{
+				if (curSong == 'Infiltrator')
+				{
+					babyArrow.y -= 10;
+				    babyArrow.alpha = 0;
+					FlxTween.tween(babyArrow, {y: babyArrow.y + 10, alpha: 1}, 1, {ease: FlxEase.circOut, startDelay: 4 + (0.2 * i)});
+				}
 			}
 
 			babyArrow.ID = i;
@@ -1828,7 +1850,7 @@ class PlayState extends MusicBeatState
 			
 			if (PlayStateChangeables.Optimize)
 				babyArrow.x -= 275;
-			
+
 			cpuStrums.forEach(function(spr:FlxSprite)
 			{					
 				spr.centerOffsets(); //CPU arrows start out slightly off-center
@@ -2398,6 +2420,7 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Atomicpunch')
 			{
+				// scout fast bonk notes code
 				switch (curStep)
 				{
 					case 448:
