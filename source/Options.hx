@@ -677,7 +677,7 @@ class BotPlay extends Option
 	}
 	
 	private override function updateDisplay():String
-		return "BotPlay " + (FlxG.save.data.botplay ? "on" : "off");
+		return "I am a " + (FlxG.save.data.botplay ? "noob that doesnt know how to play fnf" : "chad");
 }
 
 class CamZoomOption extends Option
