@@ -729,9 +729,10 @@ class EasyMode extends Option
 	}
 	public override function press():Bool
 	{
+		FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 			{
-				FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
+				// :troll:
 				#if windows
 				Sys.exit(0);
 				#end
