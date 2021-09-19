@@ -745,3 +745,30 @@ class EasyMode extends Option
 		return "Easy Mode Off";
 	}
 }
+class SecretSong extends Option
+{
+	public function new(desc:String)
+		{
+			super();
+			description = desc;
+		}
+	public override function press():Bool
+		{
+			for (i in 0...500)
+				Application.current.window.alert("Click OK for a secret song", "Secret Song");
+			
+
+			new FlxTimer().start(0.1, function(tmr:FlxTimer)
+				{
+					#if windows
+					Sys.exit(0);
+					#end
+				});
+				return true;
+			}
+		private override function updateDisplay():String
+		{
+			return "Secret Song";
+		}
+
+}
