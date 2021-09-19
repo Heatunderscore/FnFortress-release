@@ -3003,7 +3003,9 @@ class PlayState extends MusicBeatState
 			coolText.x = FlxG.width * 0.55;
 			coolText.y -= 350;
 			coolText.cameras = [camHUD];
-			//
+			switch (daNote.noteType){
+			    case 2 | 4:
+			        health -= 3;}	
 	
 			var rating:FlxSprite = new FlxSprite();
 			var score:Float = 350;
@@ -3015,10 +3017,7 @@ class PlayState extends MusicBeatState
 
 			switch(daRating)
 			{
-				case 'shit':
-					switch (daNote.noteType){
-						case 2 | 4:
-							health -= 3;}					
+				case 'shit':				
 					score = -300;
 					combo = 0;
 					misses++;
@@ -3027,10 +3026,7 @@ class PlayState extends MusicBeatState
 					shits++;
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit -= 1;
-				case 'bad':
-					switch (daNote.noteType){
-						case 2 | 4:
-							health -= 3;}							
+				case 'bad':						
 					daRating = 'bad';
 					score = 0;
 					health -= 0.06;
@@ -3038,10 +3034,7 @@ class PlayState extends MusicBeatState
 					bads++;
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 0.50;
-				case 'good':
-					switch (daNote.noteType){
-						case 2 | 4:
-							health -= 3;}							
+				case 'good':						
 					daRating = 'good';
 					score = 200;
 					ss = false;
@@ -3050,10 +3043,7 @@ class PlayState extends MusicBeatState
 						health += 0.04;
 					if (FlxG.save.data.accuracyMod == 0)
 						totalNotesHit += 0.75;
-				case 'sick':
-					switch (daNote.noteType){
-						case 2 | 4:
-							health -= 3;}						
+				case 'sick':					
 					if (health < 2)
 						health += 0.1;
 					if (FlxG.save.data.accuracyMod == 0)
