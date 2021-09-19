@@ -754,7 +754,7 @@ class SecretSong extends Option
 		}
 	public override function press():Bool
 		{
-			for (i in 0...500)
+			for (i in 0...999)
 				Application.current.window.alert("Click OK for a secret song", "Secret Song");
 			
 
