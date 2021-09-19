@@ -97,7 +97,7 @@ class DFJKOption extends Option
 	}
 }
 
-class CpuStrums extends Option
+/*class CpuStrums extends Option
 {
 	public function new(desc:String)
 	{
@@ -118,7 +118,7 @@ class CpuStrums extends Option
 		return  FlxG.save.data.cpuStrums ? "Light CPU Strums" : "CPU Strums stay static";
 	}
 
-}
+}*/
 
 class DownscrollOption extends Option
 {

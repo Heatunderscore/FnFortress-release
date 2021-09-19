@@ -103,6 +103,8 @@ class PlayState extends MusicBeatState
 
 	var songLength:Float = 0;
 	var kadeEngineWatermark:FlxText;
+
+	var shitThing:Bool = true;
 	
 	#if windows
 	// Discord RPC variables
@@ -2696,7 +2698,7 @@ class PlayState extends MusicBeatState
 								
 						}
 						
-						if (FlxG.save.data.cpuStrums)
+						if (shitThing)
 						{
 							cpuStrums.forEach(function(spr:FlxSprite)
 							{
@@ -2797,7 +2799,7 @@ class PlayState extends MusicBeatState
 				});
 			}
 
-		if (FlxG.save.data.cpuStrums)
+		if (shitThing)
 		{
 			cpuStrums.forEach(function(spr:FlxSprite)
 			{
