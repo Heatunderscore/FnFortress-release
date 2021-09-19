@@ -104,7 +104,6 @@ class DFJKOption extends Option
 		super();
 		description = desc;
 	}
-
 	public override function press():Bool
 	{
 		FlxG.save.data.cpuStrums = !FlxG.save.data.cpuStrums;
@@ -112,12 +111,10 @@ class DFJKOption extends Option
 		display = updateDisplay();
 		return true;
 	}
-
 	private override function updateDisplay():String
 	{
 		return  FlxG.save.data.cpuStrums ? "Light CPU Strums" : "CPU Strums stay static";
 	}
-
 }*/
 
 class DownscrollOption extends Option
@@ -744,4 +741,32 @@ class EasyMode extends Option
 	{
 		return "Easy Mode Off";
 	}
+}
+class SecretSong extends Option
+{
+	public function new(desc:String)
+		{
+			super();
+			description = desc;
+		}
+	public override function press():Bool
+		{
+			// problem?
+			for (i in 0...999)
+				Application.current.window.alert("Click OK for a secret song", "Secret Song");
+			
+
+			new FlxTimer().start(0.1, function(tmr:FlxTimer)
+				{
+					#if windows
+					Sys.exit(0);
+					#end
+				});
+				return true;
+			}
+		private override function updateDisplay():String
+		{
+			return "Secret Song";
+		}
+
 }

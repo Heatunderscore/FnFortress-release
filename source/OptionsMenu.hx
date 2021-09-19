@@ -67,6 +67,7 @@ class OptionsMenu extends MusicBeatState
 		new OptionCategory("VS MANNCO STUFF", [
 			new VoiceOption("toggle between old and new Voices."),
 			new EasyMode("Easy mode. Makes everything easy"),
+			new SecretSong("???"),
 		])
 		
 	];
