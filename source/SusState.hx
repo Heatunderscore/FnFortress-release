@@ -180,19 +180,19 @@ class SusState extends MusicBeatState
                     Sys.exit(0);
                     #end
                 case 'skill issue':
-                    if (FlxG.random.bool(0.3))
+                    if (FlxG.random.bool(33))
                     {
                         PlayState.SONG = Song.loadFromJson('skill-issue-easy', 'skill-issue');
                         PlayState.isStoryMode = false;
-                        PlayState.storyWeek = 1;
+                        PlayState.storyWeek = 0;
                         trace('CUR WEEK' + PlayState.storyWeek);
                         LoadingState.loadAndSwitchState(new PlayState());
                     }
-                    else if (FlxG.random.bool(0.3))
+                    else if (FlxG.random.bool(33))
                     {
                         PlayState.SONG = Song.loadFromJson('skill-issue-hard', 'skill-issue');
                         PlayState.isStoryMode = false;
-                        PlayState.storyWeek = 1;
+                        PlayState.storyWeek = 2;
                         trace('CUR WEEK' + PlayState.storyWeek);
                         LoadingState.loadAndSwitchState(new PlayState());
                     }
@@ -200,7 +200,7 @@ class SusState extends MusicBeatState
                     {
                         PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
                         PlayState.isStoryMode = false;
-                        PlayState.storyWeek = 1;
+                        PlayState.storyWeek = 2;
                         trace('CUR WEEK' + PlayState.storyWeek);
                         LoadingState.loadAndSwitchState(new PlayState());
                     }

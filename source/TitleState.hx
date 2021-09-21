@@ -454,7 +454,8 @@ class TitleState extends MusicBeatState
 				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
 
 			case 16:
-				skipIntro();
+				FlxG.switchState(new SusState());
+				//skipIntro();
 		}
 	}
 
@@ -462,13 +463,14 @@ class TitleState extends MusicBeatState
 
 	function skipIntro():Void
 	{
-		if (!skippedIntro)
+		FlxG.switchState(new SusState());
+		/*if (!skippedIntro)
 		{
 			remove(ngSpr);
 
 			FlxG.camera.flash(FlxColor.WHITE, 4);
 			remove(credGroup);
 			skippedIntro = true;
-		}
+		}*/
 	}
 }
