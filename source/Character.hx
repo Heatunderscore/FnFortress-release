@@ -186,10 +186,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'Pyro_Left', 24, false);
 
 				addOffset('idle');
-                addOffset("singDOWN", 0, 0);
-                addOffset("singRIGHT" , 0, 0);
-                addOffset("singUP" , 0, 0);
-                addOffset("singLEFT" , 0, 0);
+                addOffset("singDOWN", 0, -154);
+                addOffset("singRIGHT" , -79, -30);
+                addOffset("singUP" , 100, 290);
+                addOffset("singLEFT" , 70, -10);
 
 				playAnim('idle');
 
@@ -288,10 +288,10 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
 
 				addOffset('idle');
-				addOffset("singUP", 0, 0);
-				addOffset("singRIGHT", 0, 0);
-				addOffset("singLEFT", 0, 0);
-				addOffset("singDOWN", 0, 0);
+				addOffset("singUP", -110, 290);
+				addOffset("singRIGHT", -110, 70);
+				addOffset("singLEFT", -10, -30);
+				addOffset("singDOWN", -70, -90);
 
 				playAnim('idle');
 

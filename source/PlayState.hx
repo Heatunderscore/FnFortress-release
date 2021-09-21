@@ -105,6 +105,7 @@ class PlayState extends MusicBeatState
 
 	var heavyDad:Bool = false;
 	var stupid:Bool = false;
+	var stupidAHHHH:Bool = false;
 
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
@@ -804,7 +805,41 @@ class PlayState extends MusicBeatState
 				{
 						defaultCamZoom = 0.9;
 						curStage = 'issue';
-						var bg:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('fortress/bg/issue'));
+						var bg:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('fortress/bg/badwatur'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+
+						bottomBoppers = new FlxSprite(153, 186);
+						bottomBoppers.frames = Paths.getSparrowAtlas('lol');
+						bottomBoppers.animation.addByPrefix('lol', 'lol', 24, true);
+						bottomBoppers.antialiasing = FlxG.save.data.antialiasing;
+						bottomBoppers.scrollFactor.set(0.9, 0.9);
+						add(bottomBoppers);	
+				}
+			case 'issue-two':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'issue-two';
+						var bg:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('fortress/bg/upword'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+
+						bottomBoppers = new FlxSprite(153, 186);
+						bottomBoppers.frames = Paths.getSparrowAtlas('lol');
+						bottomBoppers.animation.addByPrefix('lol', 'lol', 24, true);
+						bottomBoppers.antialiasing = FlxG.save.data.antialiasing;
+						bottomBoppers.scrollFactor.set(0.9, 0.9);
+						add(bottomBoppers);	
+				}
+			case 'issue-three':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'issue-three';
+						var bg:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('fortress/bg/swifwatur'));
 						bg.antialiasing = true;
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
@@ -2464,6 +2499,15 @@ class PlayState extends MusicBeatState
 				}
 			}
 
+		if (health > 0.1)
+		{
+	        if (stupidAHHHH)
+			    {
+				    health -= 0.001;
+				    trace("AHHHHH");
+			    }
+		}
+
 		if (PlayStateChangeables.botPlay && FlxG.keys.justPressed.ONE)
 			camHUD.visible = !camHUD.visible;
 
@@ -2478,12 +2522,6 @@ class PlayState extends MusicBeatState
 					removedVideo = true;
 				}
 			}
-
-		if (stupid)
-		{
-			health -= 0.0001;
-		}
-
 		
 		#if windows
 		if (executeModchart && luaModchart != null && songStarted)
@@ -3127,6 +3165,7 @@ class PlayState extends MusicBeatState
 					add(dad);
 					add(dad2);
 				case 448:
+					stupidAHHHH = true;
 					remove(dad);
 					remove(dad2);
 					dad = new Character(-200, 100, "medic");
@@ -3143,6 +3182,7 @@ class PlayState extends MusicBeatState
 					add(dad2);
 				case 800:
 					stupid = false;
+					stupidAHHHH = false;
 					remove(dad);
 					remove(dad2);
 					dad = new Character(-200, 100, "medic");
@@ -5454,7 +5494,7 @@ class PlayState extends MusicBeatState
 		}
 
 		//9.6
-		if (stupid)
+		if (stupidAHHHH)
 		{
 			health += -0.01;
 		}
@@ -5640,6 +5680,10 @@ class PlayState extends MusicBeatState
 					santa.animation.play('idle', true);
 				}
 			case 'issue':
+				bottomBoppers.animation.play('lol', true);
+			case 'issue-two':
+				bottomBoppers.animation.play('lol', true);
+			case 'issue-three':
 				bottomBoppers.animation.play('lol', true);
 
 			case 'limo':

@@ -79,7 +79,7 @@ class SusState extends MusicBeatState
 				case 1:
 					testButton.setPosition(876, 0);
 				case 2:
-					testButton.setPosition(1212, -1);
+					testButton.setPosition(1211.35, -5.95);
 				case 3:
 					testButton.setPosition(27, 148);
                 case 4:
@@ -180,11 +180,30 @@ class SusState extends MusicBeatState
                     Sys.exit(0);
                     #end
                 case 'skill issue':
-                    PlayState.SONG = Song.loadFromJson('skill-issue-hard', 'skill-issue');
-                    PlayState.isStoryMode = false;
-                    PlayState.storyWeek = 1;
-                    trace('CUR WEEK' + PlayState.storyWeek);
-                    LoadingState.loadAndSwitchState(new PlayState());
+                    if (FlxG.random.bool(0.3))
+                    {
+                        PlayState.SONG = Song.loadFromJson('skill-issue-easy', 'skill-issue');
+                        PlayState.isStoryMode = false;
+                        PlayState.storyWeek = 1;
+                        trace('CUR WEEK' + PlayState.storyWeek);
+                        LoadingState.loadAndSwitchState(new PlayState());
+                    }
+                    else if (FlxG.random.bool(0.3))
+                    {
+                        PlayState.SONG = Song.loadFromJson('skill-issue-hard', 'skill-issue');
+                        PlayState.isStoryMode = false;
+                        PlayState.storyWeek = 1;
+                        trace('CUR WEEK' + PlayState.storyWeek);
+                        LoadingState.loadAndSwitchState(new PlayState());
+                    }
+                    else
+                    {
+                        PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
+                        PlayState.isStoryMode = false;
+                        PlayState.storyWeek = 1;
+                        trace('CUR WEEK' + PlayState.storyWeek);
+                        LoadingState.loadAndSwitchState(new PlayState());
+                    }
             }		
         }
     
