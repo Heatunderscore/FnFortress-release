@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="logo.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="logo normal0000" x="0" y="0" width="201" height="133"/>
+	<SubTexture name="logo press0000" x="201" y="0" width="194" height="130"/>
+</TextureAtlas>

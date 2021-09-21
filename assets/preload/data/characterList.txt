@@ -3,5 +3,11 @@ dad
 gf
 scunt
 scunt-old
+pyro
 demo
+heavy
+heavy-uber
+medic
+medic-uber
+snoiper
 spy

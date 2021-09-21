@@ -25,6 +25,23 @@ class KeyBinds
         FlxG.save.data.gpdownBind = "DPAD_DOWN";
         FlxG.save.data.gpleftBind = "DPAD_LEFT";
         FlxG.save.data.gprightBind = "DPAD_RIGHT";
+
+        FlxG.save.data.N0Bind = "A";
+        FlxG.save.data.N1Bind = "S";
+        FlxG.save.data.N2Bind = "D";
+        FlxG.save.data.N3Bind = "F";
+        FlxG.save.data.N4Bind = "SPACE";
+        FlxG.save.data.N5Bind = "H";
+        FlxG.save.data.N6Bind = "J";
+        FlxG.save.data.N7Bind = "K";
+        FlxG.save.data.N8Bind = "L";
+
+        FlxG.save.data.L1Bind = "S";
+        FlxG.save.data.U1Bind = "D";
+        FlxG.save.data.R1Bind = "F";
+        FlxG.save.data.L2Bind = "J";
+        FlxG.save.data.D1Bind = "K";
+        FlxG.save.data.R2Bind = "L";
         PlayerSettings.player1.controls.loadKeyBinds();
 
 	}
@@ -55,6 +72,7 @@ class KeyBinds
         }
         if (StringTools.contains(FlxG.save.data.rightBind,"NUMPAD"))
             FlxG.save.data.rightBind = "D";
+
         
         if(FlxG.save.data.gpupBind == null){
             FlxG.save.data.gpupBind = "DPAD_UP";
@@ -71,6 +89,67 @@ class KeyBinds
         if(FlxG.save.data.gprightBind == null){
             FlxG.save.data.gprightBind = "DPAD_RIGHT";
             trace("No GRIGHT");
+        }
+        if(FlxG.save.data.N0Bind == null){
+            FlxG.save.data.N0Bind = "A";
+            trace("No N0");
+        }
+        if(FlxG.save.data.N1Bind == null){
+            FlxG.save.data.N1Bind = "S";
+            trace("No N1");
+        }
+        if(FlxG.save.data.N2Bind == null){
+            FlxG.save.data.N2Bind = "D";
+            trace("No N2");
+        }
+        if(FlxG.save.data.N3Bind == null){
+            FlxG.save.data.N3Bind = "F";
+            trace("No N3");
+        }
+        if(FlxG.save.data.N4Bind == null){
+            FlxG.save.data.N4Bind = "SPACE";
+            trace("No N4");
+        }
+        if(FlxG.save.data.N5Bind == null){
+            FlxG.save.data.N5Bind = "H";
+            trace("No N5");
+        }
+        if(FlxG.save.data.N6Bind == null){
+            FlxG.save.data.N6Bind = "J";
+            trace("No N6");
+        }
+        if(FlxG.save.data.N7Bind == null){
+            FlxG.save.data.N7Bind = "K";
+            trace("No N7");
+        }
+        if(FlxG.save.data.N8Bind == null){
+            FlxG.save.data.N8Bind = "L";
+            trace("No N8");
+        }
+
+        if(FlxG.save.data.L1Bind == null){
+            FlxG.save.data.L1Bind = "S";
+            trace("No L1");
+        }
+        if(FlxG.save.data.U1Bind == null){
+            FlxG.save.data.U1Bind = "D";
+            trace("No U1");
+        }
+        if(FlxG.save.data.R1Bind == null){
+            FlxG.save.data.R1Bind = "F";
+            trace("No R1");
+        }
+        if(FlxG.save.data.L2Bind == null){
+            FlxG.save.data.L2Bind = "J";
+            trace("No L2");
+        }
+        if(FlxG.save.data.D1Bind == null){
+            FlxG.save.data.D1Bind = "K";
+            trace("No D1");
+        }
+        if(FlxG.save.data.R2Bind == null){
+            FlxG.save.data.R2Bind = "L";
+            trace("No R2");
         }
 
         trace('${FlxG.save.data.leftBind}-${FlxG.save.data.downBind}-${FlxG.save.data.upBind}-${FlxG.save.data.rightBind}');

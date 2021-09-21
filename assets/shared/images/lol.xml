@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="lol.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="lol0000" x="0" y="0" width="375" height="445"/>
+	<SubTexture name="lol0001" x="375" y="0" width="375" height="445"/>
+	<SubTexture name="lol0002" x="750" y="0" width="375" height="445"/>
+	<SubTexture name="lol0003" x="1125" y="0" width="375" height="445"/>
+	<SubTexture name="lol0004" x="1500" y="0" width="375" height="445"/>
+	<SubTexture name="lol0005" x="0" y="445" width="375" height="445"/>
+	<SubTexture name="lol0006" x="375" y="445" width="375" height="445"/>
+	<SubTexture name="lol0007" x="750" y="445" width="375" height="445"/>
+	<SubTexture name="lol0008" x="1125" y="445" width="375" height="445"/>
+	<SubTexture name="lol0009" x="1500" y="445" width="375" height="445"/>
+	<SubTexture name="lol0010" x="0" y="890" width="375" height="445"/>
+	<SubTexture name="lol0011" x="375" y="890" width="375" height="445"/>
+	<SubTexture name="lol0012" x="750" y="890" width="375" height="445"/>
+	<SubTexture name="lol0013" x="375" y="890" width="375" height="445"/>
+	<SubTexture name="lol0014" x="0" y="890" width="375" height="445"/>
+	<SubTexture name="lol0015" x="750" y="0" width="375" height="445"/>
+	<SubTexture name="lol0016" x="375" y="0" width="375" height="445"/>
+	<SubTexture name="lol0017" x="0" y="0" width="375" height="445"/>
+</TextureAtlas>

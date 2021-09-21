@@ -14,6 +14,8 @@ typedef SwagSong =
 	var bpm:Float;
 	var needsVoices:Bool;
 	var speed:Float;
+	var mania:Int;
+	//var noteValues:Array<Float>;
 
 	var player1:String;
 	var player2:String;
@@ -30,6 +32,14 @@ class Song
 	public var bpm:Float;
 	public var needsVoices:Bool = true;
 	public var speed:Float = 1;
+	public var mania:Int = 0;
+	//public var noteValues:Array<Float> = [0, 0.01, 0.45, 2.2, 1, 0.005]; //this never ended up working :(
+	//0 = global health drain
+	//1 = note specific health drain
+	//2 = fire note values
+	//3 = death note values
+	//4 = warning note values
+	//5 = glitch/bob arrow values
 
 	public var player1:String = 'bf';
 	public var player2:String = 'dad';

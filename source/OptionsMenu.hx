@@ -25,15 +25,26 @@ class OptionsMenu extends MusicBeatState
 	var curSelected:Int = 0;
 
 	var options:Array<OptionCategory> = [
+		new OptionCategory("Mod Specfic", [
+			new OldTimingsOption("Change between KE 1.5.4 and KE 1.4.2 Hit timings"),
+			new NoteSplashOption("Toggle if a Splash will appear when hitting sicks"),
+			new NoteColorOption("Change the color of the second up arrow for 8/9 key"),
+			new GTHColorsOption("Change the color of the notes for 5 key to match the colors from Guitar Hero"),
+			new GTHModeOption("Change the input system to act similar to Guitar Hero (actual controller recommended)")
+		]),
 		new OptionCategory("Gameplay", [
-			new DFJKOption(controls),
-			new DownscrollOption("Change the layout of the strumline."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
+			new GraceTmr("Turn off the Grace Timer for the real Chad Input"),
+			new DFJKOption(controls),
+			new SixKeyMenu(controls),
+			new NineKeyMenu(controls),
+			new DownscrollOption("Change the layout of the strumline."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
 			#if desktop
 			new FPSCapOption("Cap your FPS"),
 			#end
 			new ScrollSpeedOption("Change your scroll speed (1 = Chart dependent)"),
+			new InstantRespawn("Toggle if you instantly respawn after dying."),
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to gameover."),
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
@@ -47,27 +58,29 @@ class OptionsMenu extends MusicBeatState
 			new AccuracyOption("Display accuracy information."),
 			new NPSDisplayOption("Shows your current Notes Per Second."),
 			new SongPositionOption("Show the songs current position (as a bar)"),
-			//new CpuStrums("CPU's strumline lights up when a note hits it."),
+			new CpuStrums("CPU's strumline lights up when a note hits it.")
 			#end
 		]),
 		
 		new OptionCategory("Misc", [
 			#if desktop
 			new FPSOption("Toggle the FPS Counter"),
-			new ReplayOption("View replays"),
 			#end
 			new FlashingLightsOption("Toggle flashing lights that can cause epileptic seizures and strain."),
 			new WatermarkOption("Enable and disable all watermarks from the engine."),
+			new AntialiasingOption("Toggle antialiasing, improving graphics quality at a slight performance penalty."),
 			new ScoreScreen("Show the score screen after the end of a song"),
 			new ShowInput("Display every single input in the score screen."),
 			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
+			new GraphicLoading("On startup, cache every character. Significantly decrease load times. (HIGH MEMORY)"),
 			new BotPlay("Showcase your charts and mods with autoplay."),
 		]),
-
-		new OptionCategory("VS MANNCO STUFF", [
-			new VoiceOption("toggle between old and new Voices."),
-			new EasyMode("Easy mode. Makes everything easy"),
-			new SecretSong("???"),
+		new OptionCategory("Saves and Data", [
+			#if desktop
+			new ReplayOption("View saved song replays."),
+			#end
+			new ResetScoreOption("Reset your score on all songs and weeks. This is irreversible!"),
+			new ResetSettings("Reset ALL your settings. This is irreversible!")
 		])
 		
 	];

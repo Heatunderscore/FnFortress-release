@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="leave.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="leave normal0000" x="0" y="0" width="74" height="54"/>
+	<SubTexture name="leave press0000" x="0" y="54" width="72" height="49"/>
+</TextureAtlas>

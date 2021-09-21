@@ -12,8 +12,6 @@ class GameOverSubstate extends MusicBeatSubstate
 	var bf:Boyfriend;
 	var camFollow:FlxObject;
 
-	var finished:Bool = false;
-
 	var stageSuffix:String = "";
 
 	public function new(x:Float, y:Float)
@@ -42,37 +40,6 @@ class GameOverSubstate extends MusicBeatSubstate
 		FlxG.sound.play(Paths.sound('fnf_loss_sfx' + stageSuffix));
 		Conductor.changeBPM(100);
 
-
-		new FlxTimer().start(0.5, function(tmr:FlxTimer)
-			{
-				if(!PlayStateChangeables.botPlay)
-				{
-				    switch (daStage)
-				    {
-					    case 'twofort':
-					    	FlxG.sound.play(Paths.soundRandom('scuntDeath_', 1, 3));
-					    case 'entry':
-						    FlxG.sound.play(Paths.soundRandom('demoDeath_', 1, 3));
-					    case 'intel':
-					    	FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
-
-				    }
-			    }
-				else
-				{
-					switch (daStage)
-				    {
-					    case 'twofort':
-					    	FlxG.sound.play(Paths.sound('scuntDeath_1'));
-					    case 'entry':
-						    FlxG.sound.play(Paths.sound('demoDeath_1'));
-					    case 'intel':
-					    	FlxG.sound.play(Paths.sound('spyDeath_1'));
-
-				    }
-				}
-			});
-
 		// FlxG.camera.followLerp = 1;
 		// FlxG.camera.focusOn(FlxPoint.get(FlxG.width / 2, FlxG.height / 2));
 		FlxG.camera.scroll.set();
@@ -80,7 +47,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		bf.playAnim('firstDeath');
 	}
-
+	var startVibin:Bool = false;
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
@@ -89,6 +56,11 @@ class GameOverSubstate extends MusicBeatSubstate
 		{
 			endBullshit();
 		}
+
+		if(FlxG.save.data.InstantRespawn)
+			{
+				LoadingState.loadAndSwitchState(new PlayState());
+			}
 
 		if (controls.BACK)
 		{
@@ -109,6 +81,7 @@ class GameOverSubstate extends MusicBeatSubstate
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
 			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			startVibin = true;
 		}
 
 		if (FlxG.sound.music.playing)
@@ -120,6 +93,11 @@ class GameOverSubstate extends MusicBeatSubstate
 	override function beatHit()
 	{
 		super.beatHit();
+
+		if (startVibin && !isEnding)
+		{
+			bf.playAnim('deathLoop', true);
+		}
 
 		FlxG.log.add('beat');
 	}

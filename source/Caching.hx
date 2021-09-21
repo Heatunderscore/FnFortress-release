@@ -24,6 +24,7 @@ class Caching extends MusicBeatState
 {
     var toBeDone = 0;
     var done = 0;
+    var otext:FlxText;
 
     var text:FlxText;
     var kadeLogo:FlxSprite;
@@ -39,6 +40,11 @@ class Caching extends MusicBeatState
         text.size = 34;
         text.alignment = FlxTextAlign.CENTER;
         text.alpha = 0;
+
+        otext = new FlxText(FlxG.width / 2, FlxG.height / 2 + 400,0,"Please Wait...");
+        otext.setFormat(Paths.font("tf2build.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+        otext.size = 34;
+        otext.alignment = FlxTextAlign.CENTER;
 
         kadeLogo = new FlxSprite(FlxG.width / 2, FlxG.height / 2).loadGraphic(Paths.image('KadeEngineLogo'));
         kadeLogo.x -= kadeLogo.width / 2;

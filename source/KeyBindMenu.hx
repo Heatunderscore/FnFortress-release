@@ -36,7 +36,8 @@ class KeyBindMenu extends FlxSubState
     var keyWarning:FlxText;
     var warningTween:FlxTween;
     var keyText:Array<String> = ["LEFT", "DOWN", "UP", "RIGHT"];
-    var defaultKeys:Array<String> = ["A", "S", "W", "D", "R"];
+    var defaultKeys:Array<String> = ["A", "S", "W", "D"];
+
     var defaultGpKeys:Array<String> = ["DPAD_LEFT", "DPAD_DOWN", "DPAD_UP", "DPAD_RIGHT"];
     var curSelected:Int = 0;
 
@@ -79,7 +80,7 @@ class KeyBindMenu extends FlxSubState
 
         keyTextDisplay = new FlxText(-10, 0, 1280, "", 72);
 		keyTextDisplay.scrollFactor.set(0, 0);
-		keyTextDisplay.setFormat("VCR OSD Mono", 42, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		keyTextDisplay.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		keyTextDisplay.borderSize = 2;
 		keyTextDisplay.borderQuality = 3;
 
@@ -281,6 +282,7 @@ class KeyBindMenu extends FlxSubState
         FlxG.save.data.downBind = keys[1];
         FlxG.save.data.leftBind = keys[0];
         FlxG.save.data.rightBind = keys[3];
+
         
         FlxG.save.data.gpupBind = gpKeys[2];
         FlxG.save.data.gpdownBind = gpKeys[1];
@@ -295,7 +297,7 @@ class KeyBindMenu extends FlxSubState
 
     function reset(){
 
-        for(i in 0...5){
+        for(i in 0...4){
             keys[i] = defaultKeys[i];
         }
         quit();
@@ -326,7 +328,7 @@ class KeyBindMenu extends FlxSubState
             {
                 var oK = gpKeys[x];
                 if(oK == r)
-                    gpKeys[x] = null;
+                    //gpKeys[x] = null;
                 if (notAllowed.contains(oK))
                 {
                     gpKeys[x] = null;
@@ -362,7 +364,7 @@ class KeyBindMenu extends FlxSubState
             {
                 var oK = keys[x];
                 if(oK == r)
-                    keys[x] = null;
+                    //keys[x] = null;
                 if (notAllowed.contains(oK))
                 {
                     keys[x] = null;

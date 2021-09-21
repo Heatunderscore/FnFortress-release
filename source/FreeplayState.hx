@@ -201,14 +201,14 @@ class FreeplayState extends MusicBeatState
 			{
 				changeSelection(1);
 			}
-			if (gamepad.justPressed.DPAD_LEFT)
+			/*if (gamepad.justPressed.DPAD_LEFT)
 			{
 				changeDiff(-1);
 			}
 			if (gamepad.justPressed.DPAD_RIGHT)
 			{
 				changeDiff(1);
-			}
+			}*/
 		}
 
 		if (upP)

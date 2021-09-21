@@ -1,6 +1,5 @@
 package;
 
-import flixel.util.FlxTimer;
 import lime.app.Application;
 import lime.system.DisplayMode;
 import flixel.util.FlxColor;
@@ -93,17 +92,18 @@ class DFJKOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Key Bindings";
+		return "Key Bindings for Four Key";
 	}
 }
 
-/*class CpuStrums extends Option
+class CpuStrums extends Option
 {
 	public function new(desc:String)
 	{
 		super();
 		description = desc;
 	}
+
 	public override function press():Bool
 	{
 		FlxG.save.data.cpuStrums = !FlxG.save.data.cpuStrums;
@@ -111,11 +111,35 @@ class DFJKOption extends Option
 		display = updateDisplay();
 		return true;
 	}
+
 	private override function updateDisplay():String
 	{
 		return  FlxG.save.data.cpuStrums ? "Light CPU Strums" : "CPU Strums stay static";
 	}
-}*/
+
+}
+class GraphicLoading extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.cacheImages = !FlxG.save.data.cacheImages;
+		
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return  FlxG.save.data.cacheImages ? "Preload Characters" : "Do not Preload Characters";
+	}
+
+}
 
 class DownscrollOption extends Option
 {
@@ -155,7 +179,7 @@ class GhostTapOption extends Option
 
 	private override function updateDisplay():String
 	{
-		return FlxG.save.data.ghost ? "Ghost Tapping" : "No Ghost Tapping";
+		return FlxG.save.data.ghost ? "Virgin Input" : "Chad Input";
 	}
 }
 
@@ -239,6 +263,27 @@ class ResetButtonOption extends Option
 	}
 }
 
+class InstantRespawn extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.InstantRespawn = !FlxG.save.data.InstantRespawn;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Instant Respawn " + (!FlxG.save.data.InstantRespawn ? "off" : "on");
+	}
+}
+
 class FlashingLightsOption extends Option
 {
 	public function new(desc:String)
@@ -256,6 +301,46 @@ class FlashingLightsOption extends Option
 	private override function updateDisplay():String
 	{
 		return "Flashing Lights " + (!FlxG.save.data.flashing ? "off" : "on");
+	}
+}
+
+class AntialiasingOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.antialiasing = !FlxG.save.data.antialiasing;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Antialiasing " + (!FlxG.save.data.antialiasing ? "off" : "on");
+	}
+}
+
+class MissSoundsOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.missSounds = !FlxG.save.data.missSounds;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Miss Sounds " + (!FlxG.save.data.missSounds ? "off" : "on");
 	}
 }
 
@@ -674,7 +759,7 @@ class BotPlay extends Option
 	}
 	
 	private override function updateDisplay():String
-		return "I am a " + (FlxG.save.data.botplay ? "noob that doesnt know how to play fnf" : "chad");
+		return "BotPlay " + (FlxG.save.data.botplay ? "on" : "off");
 }
 
 class CamZoomOption extends Option
@@ -697,7 +782,7 @@ class CamZoomOption extends Option
 	}
 }
 
-class VoiceOption extends Option
+class OldTimingsOption extends Option
 {
 	public function new(desc:String)
 	{
@@ -706,18 +791,18 @@ class VoiceOption extends Option
 	}
 	public override function press():Bool
 	{
-		FlxG.save.data.oldVoices = !FlxG.save.data.oldVoices;
+		FlxG.save.data.oldtimings = !FlxG.save.data.oldtimings;
 		display = updateDisplay();
 		return true;
 	}
 
 	private override function updateDisplay():String
 	{
-		return "Old Tracks " + (!FlxG.save.data.oldVoices ? "not used" : "used");
+		return "Use Old Hit Timings " + (!FlxG.save.data.oldtimings ? "off" : "on");
 	}
 }
 
-class EasyMode extends Option
+class GraceTmr extends Option
 {
 	public function new(desc:String)
 	{
@@ -726,47 +811,249 @@ class EasyMode extends Option
 	}
 	public override function press():Bool
 	{
-		FlxG.sound.play(Paths.soundRandom('spyDeath_', 1, 3));
-		new FlxTimer().start(1, function(tmr:FlxTimer)
-			{
-				// :troll:
-				#if windows
-				Sys.exit(0);
-				#end
-			},100);
+		FlxG.save.data.gracetmr = !FlxG.save.data.gracetmr;
+		display = updateDisplay();
 		return true;
 	}
 
 	private override function updateDisplay():String
 	{
-		return "Easy Mode Off";
+		return "Use Grace Timer " + (!FlxG.save.data.gracetmr ? "off" : "on");
 	}
 }
-class SecretSong extends Option
+
+class SixKeyMenu extends Option
+{
+	private var controls:Controls;
+
+	public function new(controls:Controls)
+	{
+		super();
+		this.controls = controls;
+	}
+
+	public override function press():Bool
+	{
+		OptionsMenu.instance.openSubState(new SixKeyBindMenu());
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Key Bindings for Six Key";
+	}
+}
+
+class NineKeyMenu extends Option
+{
+	private var controls:Controls;
+
+	public function new(controls:Controls)
+	{
+		super();
+		this.controls = controls;
+	}
+
+	public override function press():Bool
+	{
+		OptionsMenu.instance.openSubState(new NineKeyBindMenu());
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Key Bindings for Nine Key";
+	}
+}
+
+class ResetScoreOption extends Option
+{
+	var confirm:Bool = false;
+
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		if(!confirm)
+		{
+			confirm = true;
+			display = updateDisplay();
+			return true;
+		}
+		FlxG.save.data.songScores = null;
+		for(key in Highscore.songScores.keys())
+		{
+			Highscore.songScores[key] = 0;
+		}
+		FlxG.save.data.songCombos = null;
+		for(key in Highscore.songCombos.keys())
+		{
+			Highscore.songCombos[key] = '';
+		}
+		confirm = false;
+		trace('Highscores Wiped');
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return confirm ? "Confirm Score Reset" : "Reset Score";
+	}
+}
+
+class ResetSettings extends Option
+{
+	var confirm:Bool = false;
+
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		if(!confirm)
+		{
+			confirm = true;
+			display = updateDisplay();
+			return true;
+		}
+		FlxG.save.data.weekUnlocked = null;
+		FlxG.save.data.newInput = null;
+		FlxG.save.data.downscroll = null;
+		FlxG.save.data.antialiasing = null;
+		FlxG.save.data.missSounds = null;
+		FlxG.save.data.dfjk = null;
+		FlxG.save.data.accuracyDisplay = null;
+		FlxG.save.data.offset = null;
+		FlxG.save.data.songPosition = null;
+		FlxG.save.data.fps = null;
+		FlxG.save.data.changedHit = null;
+		FlxG.save.data.fpsRain = null;
+		FlxG.save.data.fpsCap = null;
+		FlxG.save.data.scrollSpeed = null;
+		FlxG.save.data.npsDisplay = null;
+		FlxG.save.data.frames = null;
+		FlxG.save.data.accuracyMod = null;
+		FlxG.save.data.watermark = null;
+		FlxG.save.data.ghost = null;
+		FlxG.save.data.distractions = null;
+		FlxG.save.data.stepMania = null;
+		FlxG.save.data.flashing = null;
+		FlxG.save.data.resetButton = null;
+		FlxG.save.data.botplay = null;
+		FlxG.save.data.cpuStrums = null;
+		FlxG.save.data.strumline = null;
+		FlxG.save.data.customStrumLine = null;
+		FlxG.save.data.camzoom = null;
+		FlxG.save.data.scoreScreen = null;
+		FlxG.save.data.inputShow = null;
+		FlxG.save.data.optimize = null;
+		FlxG.save.data.cacheImages = null;
+		FlxG.save.data.editor = null;
+		FlxG.save.data.oldtimings = null;
+		FlxG.save.data.gracetmr = null;
+
+		KadeEngineData.initSave();
+		confirm = false;
+		trace('All settings have been reset');
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return confirm ? "Confirm Settings Reset" : "Reset Settings";
+	}
+}
+
+class NoteSplashOption extends Option
 {
 	public function new(desc:String)
-		{
-			super();
-			description = desc;
-		}
+	{
+		super();
+		description = desc;
+	}
 	public override function press():Bool
-		{
-			// problem?
-			for (i in 0...999)
-				Application.current.window.alert("Click OK for a secret song", "Secret Song");
-			
+	{
+		FlxG.save.data.noteSplash = !FlxG.save.data.noteSplash;
+		display = updateDisplay();
+		return true;
+	}
 
-			new FlxTimer().start(0.1, function(tmr:FlxTimer)
-				{
-					#if windows
-					Sys.exit(0);
-					#end
-				});
-				return true;
-			}
-		private override function updateDisplay():String
-		{
-			return "Secret Song";
-		}
+	private override function updateDisplay():String
+	{
+		return "Note Splash: " + (!FlxG.save.data.noteSplash ? "off" : "on");
+	}
+}
 
+
+class NoteColorOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		if (FlxG.save.data.noteColor == 'darkred')
+			FlxG.save.data.noteColor = 'orange';
+		else if (FlxG.save.data.noteColor == 'orange')
+			FlxG.save.data.noteColor = 'black';
+		else if (FlxG.save.data.noteColor == 'black')
+			FlxG.save.data.noteColor = 'darkred';
+		else 
+			FlxG.save.data.noteColor = 'darkred';
+
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Alt Note Color: " + FlxG.save.data.noteColor;
+	}
+}
+class GTHColorsOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.gthc = !FlxG.save.data.gthc;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Use Guitar Hero Colors: " + (!FlxG.save.data.gthc ? "off" : "on");
+	}
+}
+class GTHModeOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		FlxG.save.data.gthm = !FlxG.save.data.gthm;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Use Guitar Hero Input: " + (!FlxG.save.data.gthm ? "off" : "on");
+	}
 }

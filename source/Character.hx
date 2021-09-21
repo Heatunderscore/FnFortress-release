@@ -26,7 +26,7 @@ class Character extends FlxSprite
 		this.isPlayer = isPlayer;
 
 		var tex:FlxAtlasFrames;
-		antialiasing = true;
+		antialiasing = FlxG.save.data.antialiasing;
 
 		switch (curCharacter)
 		{
@@ -139,75 +139,178 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
-				case 'scunt':
-					// new scunt
-					tex = Paths.getSparrowAtlas('characters/scunt', 'shared');
-					frames = tex;
-					animation.addByPrefix('idle', 'Scout_Idle', 24, true);
-					animation.addByPrefix('singUP', 'Scout_Up', 24, false);
-					animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
-					animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
-					animation.addByPrefix('singLEFT', 'Scout_Left', 24, false);
-	
-					addOffset('idle');
-					addOffset("singUP", 230, 30);
-					addOffset("singRIGHT", 150, 0);
-					addOffset("singLEFT", 20, 0);
-					addOffset("singDOWN", 39, -92);
-	
-					playAnim('idle');
-	
-				case 'scunt-old':
-					// old scunt
-					tex = Paths.getSparrowAtlas('characters/scoutOLD', 'shared');
-					frames = tex;
-					animation.addByPrefix('idle', 'Scout_Idle', 24, true);
-					animation.addByPrefix('singUP', 'Scout_Up', 24, false);
-					animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
-					animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
-					animation.addByPrefix('singLEFT', 'Scout_Left', 24, false);
-	
-					addOffset('idle');
-					addOffset("singUP", 340, 0);
-					addOffset("singRIGHT", 140, -30);
-					addOffset("singLEFT", 20, -30);
-					addOffset("singDOWN", 30, -150);
-	
-					playAnim('idle');
-	
-				case 'demo':
-					tex = Paths.getSparrowAtlas('characters/demo', 'shared');
-					frames = tex;
-					animation.addByPrefix('idle', 'Demo Idle', 24, true);
-					animation.addByPrefix('singUP', 'Demo Up', 24, false);
-					animation.addByPrefix('singRIGHT', 'Demo Right', 24, false);
-					animation.addByPrefix('singDOWN', 'Demo Down', 24, false);
-					animation.addByPrefix('singLEFT', 'Demo Left', 24, false);
-	
-					addOffset('idle');
-					addOffset("singUP", -115, 125);
-					addOffset("singRIGHT", -137, -28);
-					addOffset("singLEFT", -52, 10);
-					addOffset("singDOWN", -26, -192);
-	
-					playAnim('idle');
-	
-				case 'spy':
-					tex = Paths.getSparrowAtlas('characters/spy', 'shared');
-					frames = tex;
-					animation.addByPrefix('idle', 'Spy Idle', 24, true);
-					animation.addByPrefix('singUP', 'Spy Up', 24, false);
-					animation.addByPrefix('singRIGHT', 'Spy Right', 24, false);
-					animation.addByPrefix('singDOWN', 'Spy Down', 24, false);
-					animation.addByPrefix('singLEFT', 'Spy Left', 24, false);
-	
-					addOffset('idle');
-					addOffset("singUP", 0, 0);
-					addOffset("singRIGHT", 0, 0);
-					addOffset("singLEFT", 0, 0);
-					addOffset("singDOWN", 0, 0);
-	
-					playAnim('idle');
+				
+			case 'scunt':
+				// new scunt
+				tex = Paths.getSparrowAtlas('characters/scunt', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Scout_Idle', 24, true);
+				animation.addByPrefix('singUP', 'Scout_Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Scout_Left', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 230, 30);
+				addOffset("singRIGHT", 150, 0);
+				addOffset("singLEFT", 20, 0);
+				addOffset("singDOWN", 39, -92);
+
+				playAnim('idle');
+
+			case 'scunt-old':
+				// old scunt
+				tex = Paths.getSparrowAtlas('characters/scoutOLD', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Scout_Idle', 24, true);
+				animation.addByPrefix('singUP', 'Scout_Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Scout_Left', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 340, 0);
+				addOffset("singRIGHT", 140, -30);
+				addOffset("singLEFT", 20, -30);
+				addOffset("singDOWN", 30, -150);
+
+				playAnim('idle');
+
+			case 'pyro':
+				tex = Paths.getSparrowAtlas('characters/Pyro', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Pyro_Idle', 24, true);
+				animation.addByPrefix('singUP', 'Pyro_Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Pyro_Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Pyro_Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Pyro_Left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", 0, 0);
+                addOffset("singRIGHT" , 0, 0);
+                addOffset("singUP" , 0, 0);
+                addOffset("singLEFT" , 0, 0);
+
+				playAnim('idle');
+
+			case 'demo':
+				tex = Paths.getSparrowAtlas('characters/demo', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Demo Idle', 24, true);
+				animation.addByPrefix('singUP', 'Demo Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Demo Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Demo Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Demo Left', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -115, 125);
+				addOffset("singRIGHT", -137, -28);
+				addOffset("singLEFT", -52, 10);
+				addOffset("singDOWN", -26, -192);
+
+				playAnim('idle');
+
+			case 'heavy':
+				tex = Paths.getSparrowAtlas('characters/heavy', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Heavy_Idle', 24, true);
+				animation.addByPrefix('singUP', 'Heavy_Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Heavy_Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Heavy_Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Heavy_Left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", -101, -35);
+                addOffset("singRIGHT" , 144, -91);
+                addOffset("singUP" , -6, 151);
+                addOffset("singLEFT" , -8, 25);
+
+				playAnim('idle');
+			
+			case 'heavy-uber':
+				tex = Paths.getSparrowAtlas('characters/heavyUber', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Heavy_Idle', 24, true);
+				animation.addByPrefix('singUP', 'Heavy_Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Heavy_Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Heavy_Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Heavy_Left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", -101, -35);
+                addOffset("singRIGHT" , 144, -91);
+                addOffset("singUP" , -6, 151);
+                addOffset("singLEFT" , -8, 25);
+
+				playAnim('idle');
+
+			case 'medic':
+				tex = Paths.getSparrowAtlas('characters/medic', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'medic_idle', 24, true);
+				animation.addByPrefix('singUP', 'medic_up', 24, false);
+				animation.addByPrefix('singRIGHT', 'medic_right', 24, false);
+				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
+				animation.addByPrefix('singLEFT', 'medic_left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", 0, 0);
+                addOffset("singRIGHT" , 0, 0);
+                addOffset("singUP" , 0, 0);
+                addOffset("singLEFT" , 0, 0);
+
+				playAnim('idle');
+
+			case 'medic-uber':
+				tex = Paths.getSparrowAtlas('characters/medicUber', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'medic_idle', 24, true);
+				animation.addByPrefix('singUP', 'medic_up', 24, false);
+				animation.addByPrefix('singRIGHT', 'medic_right', 24, false);
+				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
+				animation.addByPrefix('singLEFT', 'medic_left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", 0, 0);
+                addOffset("singRIGHT" , 0, 0);
+                addOffset("singUP" , 0, 0);
+                addOffset("singLEFT" , 0, 0);
+
+				playAnim('idle');
+
+			case 'snoiper':
+				tex = Paths.getSparrowAtlas('characters/snoiper');
+				frames = tex;
+				animation.addByPrefix('idle', "Pico Idle Dance", 24, true);
+				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
+				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
+				animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
+				animation.addByPrefix('singLEFT', 'Pico NOTE LEFT0', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 0);
+				addOffset("singRIGHT", 0, 0);
+				addOffset("singLEFT", 0, 0);
+				addOffset("singDOWN", 0, 0);
+
+				playAnim('idle');
+
+			case 'spy':
+				tex = Paths.getSparrowAtlas('characters/spy', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Spy Idle', 24, true);
+				animation.addByPrefix('singUP', 'Spy Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Spy Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Spy Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Spy Left', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 0, 0);
+				addOffset("singRIGHT", 0, 0);
+				addOffset("singLEFT", 0, 0);
+				addOffset("singDOWN", 0, 0);
+
+				playAnim('idle');
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
@@ -227,6 +330,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -50, -130);
 
 				playAnim('danceRight');
+
 			case 'mom':
 				tex = Paths.getSparrowAtlas('characters/Mom_Assets');
 				frames = tex;
@@ -351,6 +455,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
 				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				animation.addByPrefix('hit', 'BF hit', 24, false);
 
 				animation.addByPrefix('firstDeath', "BF dies", 24, false);
 				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);

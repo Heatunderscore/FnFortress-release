@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="lol.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="skill issue normal0000" x="0" y="0" width="244" height="44"/>
+	<SubTexture name="skill issue press0000" x="0" y="44" width="244" height="44"/>
+</TextureAtlas>
