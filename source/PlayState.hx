@@ -94,6 +94,9 @@ class PlayState extends MusicBeatState
 	public static var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3];
 	private var ctrTime:Float = 0;
 
+	var shitPoo:Bool = true;
+	var longSpin:Bool = false;
+
 	public static var songPosBG:FlxSprite;
 	public var visibleCombos:Array<FlxSprite> = [];
 	public static var songPosBar:FlxBar;
@@ -110,6 +113,8 @@ class PlayState extends MusicBeatState
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
 	var halloweenLevel:Bool = false;
+
+	var fidgetspinner:Array<Int>;
 
 	var songLength:Float = 0;
 	var kadeEngineWatermark:FlxText;
@@ -266,6 +271,9 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		FlxG.mouse.visible = false;
+
+		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
+
 		instance = this;
 		
 		if (FlxG.save.data.fpsCap > 290)
@@ -2499,14 +2507,14 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-		if (health > 0.1)
+		/*if (health > 0.1)
 		{
 	        if (stupidAHHHH)
 			    {
 				    health -= 0.001;
 				    trace("AHHHHH");
 			    }
-		}
+		}*/
 
 		if (PlayStateChangeables.botPlay && FlxG.keys.justPressed.ONE)
 			camHUD.visible = !camHUD.visible;
@@ -3192,12 +3200,15 @@ class PlayState extends MusicBeatState
 
 			}
 		}
+
 		if (curSong == 'Ironcurtain')
 		{
 			switch (curStep)
 			{
-				case 168:
-					trace("OLE!");
+				case 110:
+					longSpin = true;
+				case 140:
+					longSpin = true;
 				case 1248:
 					health = 0.01;
 			}
@@ -3467,7 +3478,7 @@ class PlayState extends MusicBeatState
 							health -= SONG.noteValues[0];
 						*/
 						
-						if (FlxG.save.data.cpuStrums)
+						if (shitPoo)
 						{
 							cpuStrums.forEach(function(spr:FlxSprite)
 							{
@@ -3749,7 +3760,7 @@ class PlayState extends MusicBeatState
 												{
 													goodNoteHit(daNote);
 													boyfriend.holdTimer = daNote.sustainLength;
-													if (FlxG.save.data.cpuStrums)
+													if (shitPoo)
 														{
 															playerStrums.forEach(function(spr:FlxSprite)
 															{
@@ -3806,7 +3817,7 @@ class PlayState extends MusicBeatState
 				
 			}
 
-		if (FlxG.save.data.cpuStrums)
+		if (shitPoo)
 		{
 			cpuStrums.forEach(function(spr:FlxSprite)
 			{
@@ -5492,6 +5503,33 @@ class PlayState extends MusicBeatState
 		{
 			resyncVocals();
 		}
+
+		if (curSong == 'Ironcurtain')
+		{
+			if (fidgetspinner.contains(curStep))
+				{
+					if (!longSpin)
+					{	
+						new FlxTimer().start(0.1, function(tmr:FlxTimer)
+						{
+							strumLineNotes.forEach(function(tospin:FlxSprite)
+								{
+										FlxTween.angle(tospin, 0, 360, 0.2, {ease: FlxEase.quintOut});
+								});
+						}, 2);
+					}
+					else
+					{
+						strumLineNotes.forEach(function(tospin:FlxSprite)
+							{
+									FlxTween.angle(tospin, 0, 360, 1, {ease: FlxEase.quintOut});
+							});
+					}
+
+				}		
+		}
+
+		
 
 		//9.6
 		if (stupidAHHHH)
