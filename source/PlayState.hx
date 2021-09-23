@@ -96,6 +96,7 @@ class PlayState extends MusicBeatState
 
 	var shitPoo:Bool = true;
 	var longSpin:Bool = false;
+	var burnShit:Bool = false;
 
 	public static var songPosBG:FlxSprite;
 	public var visibleCombos:Array<FlxSprite> = [];
@@ -1006,6 +1007,8 @@ class PlayState extends MusicBeatState
 			case 'demo':
 				dad.y += 45;
 				dad.x += -200;
+			case 'pyro':
+				dad.y += 75;
 			case 'snoiper':
 				dad.y += 200;
 				dad.x += -100;
@@ -1223,7 +1226,7 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+		healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
 		// healthBar
 		add(healthBar);
 
@@ -3208,12 +3211,75 @@ class PlayState extends MusicBeatState
 				case 110:
 					longSpin = true;
 				case 140:
-					longSpin = true;
+					longSpin = false;
 				case 1248:
 					health = 0.01;
 			}
 		}
 
+		if (curSong == 'Inferno')
+		{
+			switch (curStep)
+			{
+				case 256:
+					stupidAHHHH = true;
+					burnShit = true;
+				case 384:
+					burnShit = false;
+				case 511:
+					stupidAHHHH = false;
+					remove(dad);
+					dad = new Character(0, 0, "pyroland");
+					add(dad);
+				case 639:
+					stupidAHHHH = true;
+					burnShit = true;
+				case 703:
+					burnShit = false;
+				case 895:
+					remove(dad);
+					dad = new Character(100, 100, "pyro");
+					dad.y += 75;
+					add(dad);
+				case 1151:
+					remove(dad);
+					dad = new Character(-75, -100, "pyroland");
+					add(dad);
+				case 1279:
+					remove(dad);
+					dad = new Character(100, 100, "pyro");
+					dad.y += 75;
+					add(dad);
+				case 1311:
+					remove(dad);
+					dad = new Character(-75, -100, "pyroland");
+					add(dad);
+				case 1343:
+					remove(dad);
+					dad = new Character(100, 100, "pyro");
+					dad.y += 75;
+					add(dad);
+				case 1423:
+					remove(dad);
+					dad = new Character(-75, -100, "pyroland");
+					add(dad);
+				case 1439:
+					remove(dad);
+					dad = new Character(100, 100, "pyro");
+					dad.y += 75;
+					add(dad);
+				case 1455:
+					remove(dad);
+					dad = new Character(-75, -100, "pyroland");
+					add(dad);
+				case 1503:
+					stupidAHHHH = false;
+					remove(dad);
+					dad = new Character(100, 100, "pyro");
+					dad.y += 75;
+					add(dad);
+			}
+		}
 		if (curSong == 'Bopeebo')
 		{
 			switch (curBeat)
@@ -5514,7 +5580,7 @@ class PlayState extends MusicBeatState
 						{
 							strumLineNotes.forEach(function(tospin:FlxSprite)
 								{
-										FlxTween.angle(tospin, 0, 360, 0.2, {ease: FlxEase.quintOut});
+										FlxTween.angle(tospin, 0, 360, 1.6, {ease: FlxEase.quintOut});
 								});
 						}, 2);
 					}
@@ -5534,7 +5600,18 @@ class PlayState extends MusicBeatState
 		//9.6
 		if (stupidAHHHH)
 		{
-			health += -0.01;
+			switch (curSong)
+			{
+				case 'Clinicaltrial':
+					health += -0.01;
+				case 'Inferno':
+					if (burnShit)						
+					    health += -0.01;
+					else
+					    health += -0.02;
+				default:
+					trace("uhhh wrong song dummy");
+			}
 		}
 
 		#if windows

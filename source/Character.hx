@@ -193,6 +193,23 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'pyroland':
+				tex = Paths.getSparrowAtlas('characters/pyroland', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Pyro_Idle', 24, true);
+				animation.addByPrefix('singUP', 'Pyro_Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Pyro_Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Pyro_Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Pyro_Left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", -80, -14);
+                addOffset("singRIGHT" , -59, 0);
+                addOffset("singUP" , -69, 0);
+                addOffset("singLEFT" , -100, 0);
+
+				playAnim('idle');
+
 			case 'demo':
 				tex = Paths.getSparrowAtlas('characters/demo', 'shared');
 				frames = tex;

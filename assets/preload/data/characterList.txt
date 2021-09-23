@@ -4,6 +4,7 @@ gf
 scunt
 scunt-old
 pyro
+pyroland
 demo
 heavy
 heavy-uber
