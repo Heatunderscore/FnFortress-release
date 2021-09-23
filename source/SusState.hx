@@ -40,6 +40,8 @@ class SusState extends MusicBeatState
 
 	public static var nightly:String = "";
 
+    public static var curBg:Int = 1;
+
 	public static var kadeEngineVer:String = "1.5.4 EK" + nightly;
 	public static var gameVer:String = "0.2.7.1";
 
@@ -49,6 +51,23 @@ class SusState extends MusicBeatState
 
 	override function create()
 	{
+
+        if (FlxG.save.data.curBg = 4)
+            trace("no");
+        else
+            FlxG.save.data.curBg += 1;
+
+        curBg = FlxG.save.data.curBg;
+
+        trace(curBg);
+
+        var behinBg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('fortress/menu/$curBg', 'shared'));
+        behinBg.screenCenter();
+		behinBg.antialiasing = true;
+		add(behinBg);
+
+
+
         var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('fortress/menu/menuBG', 'shared'));
 		bg.screenCenter();
 		bg.antialiasing = true;

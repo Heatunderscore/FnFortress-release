@@ -2,6 +2,7 @@ stage
 twofort
 intel
 entry
+barnblitz-demo
 issue
 issue-two
 issue-three

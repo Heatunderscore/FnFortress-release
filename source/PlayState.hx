@@ -810,6 +810,16 @@ class PlayState extends MusicBeatState
 						bg.active = false;
 						add(bg);
 				}
+			case 'barnblitz-demo':
+				{
+						defaultCamZoom = 0.82;
+						curStage = 'barnblitz-demo';
+						var bg:FlxSprite = new FlxSprite(-373, -175).loadGraphic(Paths.image('fortress/bg/barnblitz1'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+				}
 			case 'issue':
 				{
 						defaultCamZoom = 0.9;
@@ -2984,6 +2994,8 @@ class PlayState extends MusicBeatState
 					case 'intel':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'entry':
+						camFollow.y = boyfriend.getMidpoint().y - 200;
+					case 'barnblitz-demo':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 				}
 			}
