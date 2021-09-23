@@ -3280,6 +3280,27 @@ class PlayState extends MusicBeatState
 					add(dad);
 			}
 		}
+		/*if (curSong == 'Skill Issue')
+			// bad code for skill issue because skill issue
+		{
+			switch (curStep)
+			{
+				case 0:
+					dad.playAnim('shot', true);
+				case 16:
+					dad.playAnim('shot', true);
+				case 32:
+					dad.playAnim('shot', true);
+				case 48:
+					dad.playAnim('shot', true);
+				case 56:
+					dad.playAnim('shot', true);
+				case 60:
+					dad.playAnim('shot', true);
+				case 63:
+					dad.playAnim('shot', true);
+			}
+		}*/
 		if (curSong == 'Bopeebo')
 		{
 			switch (curBeat)
@@ -3798,6 +3819,10 @@ class PlayState extends MusicBeatState
 									daNote.kill();
 									notes.remove(daNote, true);
 									daNote.destroy();
+								}
+								case 4:  //ovuedrvfikezrilgfilz
+								{
+									health += -8239689276348976;
 								}
 
 
@@ -5284,6 +5309,11 @@ class PlayState extends MusicBeatState
 					if (note.medic) //medic
 						{
 						    trace("success");
+						}
+					if (note.snoiper) //GOOD SHOT MATE!
+						{
+							dad.playAnim('shot', true);
+						    trace("GOOD SHOT MATE!");
 						}
 
 

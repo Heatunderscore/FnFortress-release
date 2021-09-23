@@ -43,6 +43,7 @@ class Note extends FlxSprite
 	public var disguise:Bool = false;// disguise shit
 	public var heavy:Bool = false;// heavy shit
 	public var medic:Bool = false;// medic shit
+	public var snoiper:Bool = false;//ewhiuicfvwuiogzuiergurueif8ez08rzg7z
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -164,6 +165,7 @@ class Note extends FlxSprite
 		disguise = noteType == 1;
 		heavy = noteType == 2;
 		medic = noteType == 3;
+		snoiper = noteType == 4;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -215,6 +217,18 @@ class Note extends FlxSprite
 							}
 					}
 				if (medic)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+				if (snoiper)
 					{
 						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
 						if (isSustainNote && glitch)
@@ -279,6 +293,23 @@ class Note extends FlxSprite
 									{
 										frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_assets');
 										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
+						}
+					}
+				if (snoiper)
+					{
+						switch(noteType)
+						{
+							case 1: 
+								for (i in 0...11)
+									{
+										frames = Paths.getSparrowAtlas('noteassets/notetypes/ass');
+										animation.addByPrefix('greenScroll', 'green0');
+										animation.addByPrefix('redScroll', 'red0');
+										animation.addByPrefix('blueScroll', 'blue0');
+										animation.addByPrefix('purpleScroll', 'purple0');
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
