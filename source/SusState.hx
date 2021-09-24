@@ -53,9 +53,13 @@ class SusState extends MusicBeatState
 	{
 
         if (FlxG.save.data.curBg = 4)
-            trace("no");
+        {
+            FlxG.save.data.curBg = 1;
+        }
         else
+        {
             FlxG.save.data.curBg += 1;
+        }
 
         curBg = FlxG.save.data.curBg;
 

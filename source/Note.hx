@@ -43,7 +43,7 @@ class Note extends FlxSprite
 	public var disguise:Bool = false;// disguise shit
 	public var heavy:Bool = false;// heavy shit
 	public var medic:Bool = false;// medic shit
-	public var snoiper:Bool = false;//ewhiuicfvwuiogzuiergurueif8ez08rzg7z
+	public var snoiper:Bool = false;//snoiper shit
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -305,7 +305,7 @@ class Note extends FlxSprite
 							case 1: 
 								for (i in 0...11)
 									{
-										frames = Paths.getSparrowAtlas('noteassets/notetypes/ass');
+										frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_snoiper');
 										animation.addByPrefix('greenScroll', 'green0');
 										animation.addByPrefix('redScroll', 'red0');
 										animation.addByPrefix('blueScroll', 'blue0');

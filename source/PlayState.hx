@@ -97,6 +97,7 @@ class PlayState extends MusicBeatState
 	var shitPoo:Bool = true;
 	var longSpin:Bool = false;
 	var burnShit:Bool = false;
+	var poopThing:Bool = false;
 
 	public static var songPosBG:FlxSprite;
 	public var visibleCombos:Array<FlxSprite> = [];
@@ -108,6 +109,7 @@ class PlayState extends MusicBeatState
 	public var elapsedtime:Float = 0;
 
 	var heavyDad:Bool = false;
+	var roboDad:Bool = false;
 	var stupid:Bool = false;
 	var stupidAHHHH:Bool = false;
 
@@ -426,6 +428,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('atomicpunch/pee'));
 			case 'ironbomber':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ironbomber/poo'));
+			case 'frontierjustice':
+				roboDad = true;
 			case 'clinicaltrial':
 				heavyDad = true;
 			case 'infiltrator':
@@ -961,6 +965,10 @@ class PlayState extends MusicBeatState
 		{
 			dad2 = new Character(280, 100, "heavy");
 		}
+		else if (roboDad)
+		{
+			dad2 = new Character(280, 100, "robo-engi");
+		}
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
@@ -1070,6 +1078,10 @@ class PlayState extends MusicBeatState
 			{
 				add(dad2);
 				trace("IT WORKS!! DAD2 INCOMING!!");
+			}
+			else if (roboDad)
+			{
+				add(dad2);
 			}
 			add(dad);
 			add(boyfriend);
@@ -1544,7 +1556,10 @@ class PlayState extends MusicBeatState
 			if (heavyDad) 
 			{
 				dad2.dance();
-				trace("my boy dancin");
+			}
+			else if (roboDad)
+			{
+				dad2.dance();
 			}
 			boyfriend.playAnim('idle');
 
@@ -3225,8 +3240,28 @@ class PlayState extends MusicBeatState
 					longSpin = true;
 				case 140:
 					longSpin = false;
+				case 512:
+					poopThing = true;
+				case 768:
+					poopThing = false;
+				case 832:
+					poopThing = true;
+				case 960:
+					poopThing = false;
 				case 1248:
 					health = 0.01;
+				case 1280:
+					poopThing = true;
+				case 1664:
+					poopThing = false;
+				case 1920:
+					poopThing = true;
+				case 2048:
+					poopThing = false;
+				case 2240:
+					poopThing = true;
+				case 2368:
+					poopThing = false;
 			}
 		}
 
@@ -3551,6 +3586,42 @@ class PlayState extends MusicBeatState
 						if (daNote.alt)
 							altAnim = '-alt';
 
+						if (mania == 5)
+						{
+							if (roboDad)
+								{
+									var targ:Character = dad2;
+									var both:Bool = false;
+									if (daNote.noteType == 0) targ = dad;
+									else if (daNote.noteType == 2)
+									{
+										if (daNote.noteData <= 3) targ = dad;
+										if (daNote.noteData == 4) both = true;
+									}
+									
+	
+									switch (Math.abs(daNote.noteData))
+									{
+										case 0:
+											targ.playAnim('singLEFT' + altAnim, true);
+										case 1:
+											targ.playAnim('singDOWN' + altAnim, true);
+										case 2:
+											targ.playAnim('singUP' + altAnim, true);
+										case 3:
+											targ.playAnim('singRIGHT' + altAnim, true);
+										case 4:
+											targ.playAnim('singLEFT-alt' + altAnim, true);
+										case 5:
+											targ.playAnim('singDOWN-alt' + altAnim, true);
+										case 6:
+											targ.playAnim('singUP-alt' + altAnim, true);
+										case 7:
+											targ.playAnim('singRIGHT-alt' + altAnim, true);
+									}
+							}
+						}
+
 						if (!heavyDad)
 						{
 						    dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
@@ -3635,6 +3706,10 @@ class PlayState extends MusicBeatState
 						if (heavyDad)
 						{
 						    dad2.holdTimer = 0;
+						}
+						else if (roboDad)
+						{
+							dad2.holdTimer = 0;
 						}
 
 						if (SONG.needsVoices)
@@ -5617,7 +5692,7 @@ class PlayState extends MusicBeatState
 		{
 			if (fidgetspinner.contains(curStep))
 				{
-					if (!longSpin)
+					if (longSpin)
 					{	
 						new FlxTimer().start(0.1, function(tmr:FlxTimer)
 						{
@@ -5775,6 +5850,10 @@ class PlayState extends MusicBeatState
 				{
 					dad2.dance();
 				}
+			else if (roboDad)
+				{
+					dad2.dance();
+				}
 		}
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);
@@ -5786,6 +5865,12 @@ class PlayState extends MusicBeatState
 			{
 				FlxG.camera.zoom += 0.015;
 				camHUD.zoom += 0.03;
+			}
+
+			if (curSong.toLowerCase() == 'ironcurtain' && poopThing)
+			{
+				FlxG.camera.zoom += 0.05;
+				camHUD.zoom += 0.065;
 			}
 	
 			if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)

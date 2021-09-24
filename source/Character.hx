@@ -261,6 +261,31 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'robo-engi':
+				tex = Paths.getSparrowAtlas('characters/roboengi', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'robo engi idle', 24, true);
+				animation.addByPrefix('singUP', 'robo engi up', 24, false);
+				animation.addByPrefix('singRIGHT', 'robo engi right', 24, false);
+				animation.addByPrefix('singDOWN', 'robo engi down', 24, false);
+				animation.addByPrefix('singLEFT', 'robo engi left', 24, false);
+				animation.addByPrefix('singUP-alt', 'robo engi up', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'robo engi right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'robo engi down', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'robo engi left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", 0, 0);
+                addOffset("singRIGHT" , 0, 0);
+                addOffset("singUP" , 0, 0);
+                addOffset("singLEFT" , 0, 0);
+				addOffset("singDOWN-alt", 0, 0);
+                addOffset("singRIGHT-alt" , 0, 0);
+                addOffset("singUP-alt" , 0, 0);
+                addOffset("singLEFT-alt" , 0, 0);
+
+				playAnim('idle');
+
 			case 'medic':
 				tex = Paths.getSparrowAtlas('characters/medic', 'shared');
 				frames = tex;

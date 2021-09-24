@@ -1,7 +1,9 @@
 Atomicpunch:scunt:1
+Maggots:soldier:1
 Inferno:pyro:1
 Ironbomber:demo:1
 Ironcurtain:heavy:1
+Frontierjustice:robo-engi:1
 Clinicaltrial:medic:1
+Wanker:snoiper:1
 Infiltrator:spy:1
-Skill Issue:snoiper:1
