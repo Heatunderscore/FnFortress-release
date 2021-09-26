@@ -3,6 +3,7 @@ twofort
 intel
 entry
 barnblitz-demo
+barnblitz-heavy
 issue
 issue-two
 issue-three
