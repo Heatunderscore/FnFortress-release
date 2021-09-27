@@ -33,6 +33,7 @@ class HealthIcon extends FlxSprite
 		animation.add('pyroland', [32, 33], 0, false, isPlayer);
 		animation.add('demo', [26, 27], 0, false, isPlayer);
 		animation.add('heavy', [30, 31], 0, false, isPlayer);
+		animation.add('engi', [34, 35], 0, false, isPlayer);
 		animation.add('robo-engi', [34, 35], 0, false, isPlayer);
 		animation.add('medic', [36, 37], 0, false, isPlayer);
 		animation.add('heavy-uber', [30, 31], 0, false, isPlayer);

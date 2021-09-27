@@ -407,6 +407,7 @@ class ChartingState extends MusicBeatState
 	var check_changeBPM:FlxUICheckBox;
 	var stepperSectionBPM:FlxUINumericStepper;
 	var check_altAnim:FlxUICheckBox;
+	var check_beamAnim:FlxUICheckBox;
 
 	function addSectionUI():Void
 	{
@@ -453,6 +454,9 @@ class ChartingState extends MusicBeatState
 		check_altAnim = new FlxUICheckBox(10, 400, null, null, "Alternate Animation", 100);
 		check_altAnim.name = 'check_altAnim';
 
+		check_beamAnim = new FlxUICheckBox(15, 300, null, null, "Beam Animation", 100);
+		check_beamAnim.name = 'check_beamAnim';
+
 		check_changeBPM = new FlxUICheckBox(10, 60, null, null, 'Change BPM', 100);
 		check_changeBPM.name = 'check_changeBPM';
 
@@ -463,6 +467,7 @@ class ChartingState extends MusicBeatState
 		tab_group_section.add(stepperCopyLabel);
 		tab_group_section.add(check_mustHitSection);
 		tab_group_section.add(check_altAnim);
+		tab_group_section.add(check_beamAnim);
 		tab_group_section.add(check_changeBPM);
 		tab_group_section.add(copyButton);
 		tab_group_section.add(clearSectionButton);
@@ -750,6 +755,8 @@ class ChartingState extends MusicBeatState
 					FlxG.log.add('changed bpm shit');
 				case "Alternate Animation":
 					_song.notes[curSection].altAnim = check.checked;
+				case "Beam Animation":
+					_song.notes[curSection].beamAnim = check.checked;
 			}
 		}
 		else if (id == FlxUINumericStepper.CHANGE_EVENT && (sender is FlxUINumericStepper))
@@ -1276,6 +1283,7 @@ class ChartingState extends MusicBeatState
 		stepperLength.value = sec.lengthInSteps;
 		check_mustHitSection.checked = sec.mustHitSection;
 		check_altAnim.checked = sec.altAnim;
+		check_beamAnim.checked = sec.beamAnim;
 		check_changeBPM.checked = sec.changeBPM;
 		stepperSectionBPM.value = sec.bpm;
 
@@ -1406,7 +1414,8 @@ class ChartingState extends MusicBeatState
 			mustHitSection: true,
 			sectionNotes: [],
 			typeOfSection: 0,
-			altAnim: false
+			altAnim: false,
+			beamAnim: false
 		};
 
 		_song.notes.push(sec);
@@ -1467,7 +1476,7 @@ class ChartingState extends MusicBeatState
 
 		updateGrid();
 	}
-	private function newSection(lengthInSteps:Int = 16,mustHitSection:Bool = false,altAnim:Bool = true):SwagSection
+	private function newSection(lengthInSteps:Int = 16,mustHitSection:Bool = false,altAnim:Bool = true,beamAnim:Bool = true):SwagSection
 		{
 			var sec:SwagSection = {
 				lengthInSteps: lengthInSteps,
@@ -1476,7 +1485,8 @@ class ChartingState extends MusicBeatState
 				mustHitSection: mustHitSection,
 				sectionNotes: [],
 				typeOfSection: 0,
-				altAnim: altAnim
+				altAnim: altAnim,
+				beamAnim: beamAnim
 			};
 
 			return sec;
@@ -1500,6 +1510,10 @@ class ChartingState extends MusicBeatState
 				{
 					newSong.push(newSection(16,_song.notes[daSection1].mustHitSection,_song.notes[daSection1].altAnim));
 				}
+			for (daSection1 in 0..._song.notes.length)
+				{
+					newSong.push(newSection(16,_song.notes[daSection1].mustHitSection,_song.notes[daSection1].beamAnim));
+				}
 	
 			for (daSection in 0...(_song.notes.length))
 			{
@@ -1507,6 +1521,7 @@ class ChartingState extends MusicBeatState
 				if(aimtosetsection<0) aimtosetsection = 0;
 				newSong[aimtosetsection].mustHitSection = _song.notes[daSection].mustHitSection;
 				newSong[aimtosetsection].altAnim = _song.notes[daSection].altAnim;
+				newSong[aimtosetsection].beamAnim = _song.notes[daSection].beamAnim;
 				//trace("section "+daSection);
 				for(daNote in 0...(_song.notes[daSection].sectionNotes.length))
 					{	

@@ -236,11 +236,35 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'Heavy_Down', 24, false);
 				animation.addByPrefix('singLEFT', 'Heavy_Left', 24, false);
 
+				animation.addByPrefix('idle-alt', 'Heavyu_Idle', 24, true);
+				animation.addByPrefix('singUP-alt', 'Heavyu_Up', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'Heavyu_Right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'Heavyu_Down', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'Heavyu_Left', 24, false);
+
+				animation.addByPrefix('idle-beam', 'Heavy_Idle', 24, true);
+				animation.addByPrefix('singUP-beam', 'Heavy_Up', 24, false);
+				animation.addByPrefix('singRIGHT-beam', 'Heavy_Right', 24, false);
+				animation.addByPrefix('singDOWN-beam', 'Heavy_Down', 24, false);
+				animation.addByPrefix('singLEFT-beam', 'Heavy_Left', 24, false);
+
 				addOffset('idle');
                 addOffset("singDOWN", -101, -35);
                 addOffset("singRIGHT" , 144, -91);
                 addOffset("singUP" , -6, 151);
                 addOffset("singLEFT" , -8, 25);
+
+				addOffset('idle-alt');
+                addOffset("singDOWN-alt", -101, -35);
+                addOffset("singRIGHT-alt" , 144, -91);
+                addOffset("singUP-alt" , -6, 151);
+                addOffset("singLEFT-alt" , -8, 25);
+
+				addOffset('idle-beam');
+                addOffset("singDOWN-beam", -101, -35);
+                addOffset("singRIGHT-beam" , 144, -91);
+                addOffset("singUP-beam" , -6, 151);
+                addOffset("singLEFT-beam" , -8, 25);
 
 				playAnim('idle');
 			
@@ -261,6 +285,23 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'engi':
+				tex = Paths.getSparrowAtlas('characters/engi', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'engi idle', 24, true);
+				animation.addByPrefix('singUP', 'engi up', 24, false);
+				animation.addByPrefix('singRIGHT', 'engi right', 24, false);
+				animation.addByPrefix('singDOWN', 'engi down', 24, false);
+				animation.addByPrefix('singLEFT', 'engi left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", 0, -67);
+                addOffset("singRIGHT" , -83, -3);
+                addOffset("singUP" , -28, 278);
+                addOffset("singLEFT" , -32, -7);
+
+				playAnim('idle');
+
 			case 'robo-engi':
 				tex = Paths.getSparrowAtlas('characters/roboengi', 'shared');
 				frames = tex;
@@ -269,20 +310,12 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'robo engi right', 24, false);
 				animation.addByPrefix('singDOWN', 'robo engi down', 24, false);
 				animation.addByPrefix('singLEFT', 'robo engi left', 24, false);
-				animation.addByPrefix('singUP-alt', 'robo engi up', 24, false);
-				animation.addByPrefix('singRIGHT-alt', 'robo engi right', 24, false);
-				animation.addByPrefix('singDOWN-alt', 'robo engi down', 24, false);
-				animation.addByPrefix('singLEFT-alt', 'robo engi left', 24, false);
 
 				addOffset('idle');
-                addOffset("singDOWN", 0, 0);
-                addOffset("singRIGHT" , 0, 0);
-                addOffset("singUP" , 0, 0);
-                addOffset("singLEFT" , 0, 0);
-				addOffset("singDOWN-alt", 0, 0);
-                addOffset("singRIGHT-alt" , 0, 0);
-                addOffset("singUP-alt" , 0, 0);
-                addOffset("singLEFT-alt" , 0, 0);
+                addOffset("singDOWN", 4, -38);
+                addOffset("singRIGHT" , -6, -2);
+                addOffset("singUP" , -6, 30);
+                addOffset("singLEFT" , -2, -2);
 
 				playAnim('idle');
 
@@ -295,11 +328,35 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
 				animation.addByPrefix('singLEFT', 'medic_left', 24, false);
 
+				animation.addByPrefix('idle-beam', 'medich_idle', 24, true);
+				animation.addByPrefix('singUP-beam', 'medich_up', 24, false);
+				animation.addByPrefix('singRIGHT-beam', 'medich_right', 24, false);
+				animation.addByPrefix('singDOWN-beam', 'medich_down', 24, false);
+				animation.addByPrefix('singLEFT-beam', 'medich_left', 24, false);
+
+				animation.addByPrefix('idle-alt', 'medicu_idle', 24, true);
+				animation.addByPrefix('singUP-alt', 'medicu_up', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'medicu_right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'medicu_down', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'medicu_left', 24, false);
+
 				addOffset('idle');
                 addOffset("singDOWN", 0, 0);
                 addOffset("singRIGHT" , 0, 0);
                 addOffset("singUP" , 0, 0);
                 addOffset("singLEFT" , 0, 0);
+
+				addOffset('idle-beam');		
+				addOffset("singDOWN-beam", 0, 0);
+                addOffset("singRIGHT-beam" , 0, 0);
+                addOffset("singUP-beam" , 0, 0);
+                addOffset("singLEFT-beam" , 0, 0);
+
+				addOffset('idle-alt');
+                addOffset("singDOWN-alt", 0, 0);
+                addOffset("singRIGHT-alt" , 0, 0);
+                addOffset("singUP-alt" , 0, 0);
+                addOffset("singLEFT-alt" , 0, 0);
 
 				playAnim('idle');
 
@@ -840,6 +897,20 @@ class Character extends FlxSprite
 			}
 		}
 	}
+
+	public function idleEnd(?ignoreDebug:Bool = false)
+		{
+			if (!debugMode || ignoreDebug)
+			{
+				switch (curCharacter)
+				{
+					case 'gf' | 'gf-car' | 'gf-christmas' | 'gf-pixel' | "spooky":
+						playAnim('danceRight', true, false, animation.getByName('danceRight').numFrames - 1);
+					default:
+						playAnim('idle', true, false, animation.getByName('idle').numFrames - 1);
+				}
+			}
+		}
 
 	public function playAnim(AnimName:String, Force:Bool = false, Reversed:Bool = false, Frame:Int = 0):Void
 	{

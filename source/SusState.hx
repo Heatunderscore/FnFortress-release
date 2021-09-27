@@ -52,11 +52,11 @@ class SusState extends MusicBeatState
 	override function create()
 	{
 
-        if (FlxG.save.data.curBg = 4)
+        if (FlxG.save.data.curBg >= 4)
         {
             FlxG.save.data.curBg = 1;
         }
-        else
+        else if (FlxG.save.data.curBg < 4)
         {
             FlxG.save.data.curBg += 1;
         }

@@ -98,6 +98,12 @@ class PlayState extends MusicBeatState
 	var longSpin:Bool = false;
 	var burnShit:Bool = false;
 	var poopThing:Bool = false;
+	var engiBOT:FlxTrail;
+	var bfBOT:FlxTrail;
+	var curTiming:Int = 0;
+
+
+	public static var isHeavy:Bool = false;
 
 	public static var songPosBG:FlxSprite;
 	public var visibleCombos:Array<FlxSprite> = [];
@@ -105,6 +111,9 @@ class PlayState extends MusicBeatState
 
 	public static var rep:Replay;
 	public static var loadRep:Bool = false;
+
+	var altAnim:String = "";
+	var beamAnim:String = "";
 
 	public var elapsedtime:Float = 0;
 
@@ -175,6 +184,10 @@ class PlayState extends MusicBeatState
 	private var totalPlayed:Int = 0;
 	private var ss:Bool = false;
 
+	public var funnyX:Float = 0;
+	public var funnyY:Float = 0;
+	public var what:Bool = false;
+
 
 	private var healthBarBG:FlxSprite;
 	private var healthBar:FlxBar;
@@ -192,6 +205,8 @@ class PlayState extends MusicBeatState
 	var cs_reset:Bool = false;
 	public var cannotDie = false;
 	private var camGame:FlxCamera;
+
+	private var funkyIcon:HealthIcon;
 
 	public static var offsetTesting:Bool = false;
 
@@ -824,6 +839,16 @@ class PlayState extends MusicBeatState
 						bg.active = false;
 						add(bg);
 				}
+			case 'barnblitz-heavy':
+				{
+						defaultCamZoom = 0.82;
+						curStage = 'barnblitz-heavy';
+						var bg:FlxSprite = new FlxSprite(-423, -175).loadGraphic(Paths.image('fortress/bg/barnblitz2'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+				}
 			case 'issue':
 				{
 						defaultCamZoom = 0.9;
@@ -1030,6 +1055,8 @@ class PlayState extends MusicBeatState
 			case 'snoiper':
 				dad.y += 200;
 				dad.x += -100;
+			case 'engi':
+				dad2.y += 175;
 		}
 
 
@@ -1065,6 +1092,17 @@ class PlayState extends MusicBeatState
 				gf.x += 180;
 				gf.y += 300;
 		}
+
+		if (roboDad)
+		{
+			bfBOT = new FlxTrail(boyfriend, null, 5, 30, 0.3, 0.001);
+			engiBOT = new FlxTrail(dad2, null, 5, 30, 0.3, 0.01);
+			add(engiBOT);
+			remove(engiBOT);
+			add(bfBOT);
+			remove(bfBOT);
+		}
+
 
 		if (!PlayStateChangeables.Optimize)
 		{
@@ -1551,17 +1589,35 @@ class PlayState extends MusicBeatState
 		
 		startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 		{
-			dad.dance();
-			gf.dance();
+
 			if (heavyDad) 
 			{
-				dad2.dance();
+				switch (curTiming)
+				{
+					case 0:
+						dad.playAnim('idle');
+						dad2.playAnim('idle');
+					case 1:
+						dad.playAnim('idle-beam');
+						dad2.playAnim('idle-beam');
+					case 2:
+						dad.playAnim('idle-alt');
+						dad2.playAnim('idle-alt');
+				}
+
 			}
 			else if (roboDad)
 			{
+				dad.dance();
 				dad2.dance();
 			}
-			boyfriend.playAnim('idle');
+			else
+			{
+				dad.dance();
+				gf.dance();
+				boyfriend.playAnim('idle');
+			}
+			
 
 			var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
 			introAssets.set('default', ['ready', "set", "go"]);
@@ -2953,7 +3009,10 @@ class PlayState extends MusicBeatState
 					offsetY = luaModchart.getVar("followYOffset", "float");
 				}
 				#end
-				camFollow.setPosition(dad.getMidpoint().x + 150 + offsetX, dad.getMidpoint().y - 100 + offsetY);
+				if (!isHeavy)
+				    camFollow.setPosition(dad.getMidpoint().x + 150 + offsetX, dad.getMidpoint().y - 100 + offsetY);
+				else
+					camFollow.setPosition(dad2.getMidpoint().x + 150 + offsetX, dad2.getMidpoint().y - 100 + offsetY);
 				#if windows
 				if (luaModchart != null)
 					luaModchart.executeState('playerTwoTurn', []);
@@ -3011,6 +3070,9 @@ class PlayState extends MusicBeatState
 					case 'entry':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'barnblitz-demo':
+						camFollow.y = boyfriend.getMidpoint().y - 200;
+						camFollow.x = boyfriend.getMidpoint().x - 250;
+					case 'barnblitz-heavy':
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 						camFollow.x = boyfriend.getMidpoint().x - 250;
 				}
@@ -3190,44 +3252,37 @@ class PlayState extends MusicBeatState
 		{
 			switch (curStep)
 			{
-				case 1:
-					remove(dad);
-					remove(dad2);
-					dad = new Character(-200, 100, "medic-uber");
-					dad2 = new Character(275, 100, "heavy-uber");
-					add(dad);
-					add(dad2);
-					remove(dad);
-					remove(dad2);
-					dad = new Character(275, 100, "medic");
-					dad2 = new Character(-200, 100, "heavy");
-					add(dad);
-					add(dad2);
 				case 448:
+					isHeavy = true;
+					curTiming = 1;
 					stupidAHHHH = true;
 					remove(dad);
 					remove(dad2);
-					dad = new Character(-200, 100, "medic");
+					dad = new Character(-310, 100, "medic");
 					dad2 = new Character(275, 100, "heavy");
 					add(dad);
 					add(dad2);
+					if (funkyIcon == null)
+						{
+							funkyIcon = new HealthIcon("heavy", false);
+							funkyIcon.y = healthBar.y - (funkyIcon.height / 2);
+							add(funkyIcon);
+							funkyIcon.cameras = [camHUD];
+							funkyIcon.x = -100;
+							FlxTween.linearMotion(funkyIcon, -100, funkyIcon.y, iconP2.x, funkyIcon.y, 0.3);
+							new FlxTimer().start(0.3, funnyJump);
+						}
+					//iconP2.animation.play("heavy", true);
 				case 704:
+					curTiming = 2;
 					stupid = true;
-					remove(dad);
-					remove(dad2);
-					dad = new Character(-200, 100, "medic-uber");
-					dad2 = new Character(275, 100, "heavy-uber");
-					add(dad);
-					add(dad2);
 				case 800:
+					curTiming = 1;
 					stupid = false;
 					stupidAHHHH = false;
-					remove(dad);
-					remove(dad2);
-					dad = new Character(-200, 100, "medic");
-					dad2 = new Character(275, 100, "heavy");
-					add(dad);
-					add(dad2);
+				case 896:
+					iconP2.animation.play("medic", true);
+					isHeavy = false;
 
 			}
 		}
@@ -3265,6 +3320,27 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (curSong == 'Frontierjustice')
+		{
+			switch (curStep)
+			{
+				case 480:
+					add(engiBOT);
+				case 512:
+					remove(engiBOT);
+				case 608:
+					add(bfBOT);
+				case 640:
+					remove(bfBOT);
+				case 896:
+					add(engiBOT);
+				case 1024:
+					remove(engiBOT);
+					add(bfBOT);
+				case 1152:
+					remove(bfBOT);
+			}
+		}
 		if (curSong == 'Inferno')
 		{
 			switch (curStep)
@@ -3575,8 +3651,6 @@ class PlayState extends MusicBeatState
 					{
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
-
-						var altAnim:String = "";
 	
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
@@ -3585,142 +3659,142 @@ class PlayState extends MusicBeatState
 						}	
 						if (daNote.alt)
 							altAnim = '-alt';
-
-						if (mania == 5)
+						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
-							if (roboDad)
+							if (SONG.notes[Math.floor(curStep / 16)].beamAnim)
+								beamAnim = '-beam';
+						}	
+
+						if (roboDad)
+						{
+							if (mania == 5)
 								{
-									var targ:Character = dad2;
-									var both:Bool = false;
-									if (daNote.noteType == 0) targ = dad;
+									var targ:Character = dad;
+									if (daNote.noteType == 3)
+									{
+										targ = dad;
+									}
 									else if (daNote.noteType == 2)
 									{
-										if (daNote.noteData <= 3) targ = dad;
-										if (daNote.noteData == 4) both = true;
+										targ = dad2;
 									}
 									
 	
-									switch (Math.abs(daNote.noteData))
-									{
-										case 0:
-											targ.playAnim('singLEFT' + altAnim, true);
-										case 1:
-											targ.playAnim('singDOWN' + altAnim, true);
-										case 2:
-											targ.playAnim('singUP' + altAnim, true);
-										case 3:
-											targ.playAnim('singRIGHT' + altAnim, true);
-										case 4:
-											targ.playAnim('singLEFT-alt' + altAnim, true);
-										case 5:
-											targ.playAnim('singDOWN-alt' + altAnim, true);
-										case 6:
-											targ.playAnim('singUP-alt' + altAnim, true);
-										case 7:
-											targ.playAnim('singRIGHT-alt' + altAnim, true);
-									}
+									targ.playAnim('sing' + sDir[daNote.noteData] + altAnim + beamAnim, true);
 							}
 						}
-
-						if (!heavyDad)
+						else if (heavyDad)
 						{
-						    dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+								var targ:Character = dad;
+								if (daNote.noteType == 2)
+								{
+									targ = dad2;
+								}
+								else if (daNote.noteType == 3)
+								{
+									targ = dad;
+								}
+	
+
+								switch (curTiming)
+								{
+									case 0:
+										targ.playAnim('sing' + sDir[daNote.noteData] , true);
+									case 1:
+										targ.playAnim('sing' + sDir[daNote.noteData] + '-beam', true);
+									case 2:
+										targ.playAnim('sing' + sDir[daNote.noteData] + '-alt', true);
+
+								}
 						}
 						else
 						{
-							var targ:Character = dad;
-							if (daNote.noteType == 2)
-							{
-								targ = dad2;
-							}
-							else if (daNote.noteType == 3)
-							{
-								targ = dad;
-							}
-
-							targ.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+							dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
 						}
 
-						/*if (daNote.isSustainNote)
-						{
-							health -= SONG.noteValues[0] / 3;
-						}
-						else
-							health -= SONG.noteValues[0];
-						*/
-						
-						if (shitPoo)
-						{
-							cpuStrums.forEach(function(spr:FlxSprite)
-							{
-								if (Math.abs(daNote.noteData) == spr.ID)
-								{
-									spr.animation.play('confirm', true);
-								}
-								if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
-								{
-									spr.centerOffsets();
 
-									switch(mania)
+	
+							/*if (daNote.isSustainNote)
+							{
+								health -= SONG.noteValues[0] / 3;
+							}
+							else
+								health -= SONG.noteValues[0];
+							*/
+							
+							if (shitPoo)
+							{
+								cpuStrums.forEach(function(spr:FlxSprite)
+								{
+									if (Math.abs(daNote.noteData) == spr.ID)
 									{
-										case 0: 
-											spr.offset.x -= 13;
-											spr.offset.y -= 13;
-										case 1: 
-											spr.offset.x -= 16;
-											spr.offset.y -= 16;
-										case 2: 
-											spr.offset.x -= 22;
-											spr.offset.y -= 22;
-										case 3: 
-											spr.offset.x -= 15;
-											spr.offset.y -= 15;
-										case 4: 
-											spr.offset.x -= 18;
-											spr.offset.y -= 18;
-										case 5: 
-											spr.offset.x -= 20;
-											spr.offset.y -= 20;
-										case 6: 
-											spr.offset.x -= 13;
-											spr.offset.y -= 13;
-										case 7: 
-											spr.offset.x -= 13;
-											spr.offset.y -= 13;
-										case 8:
-											spr.offset.x -= 13;
-											spr.offset.y -= 13;
+										spr.animation.play('confirm', true);
 									}
-								}
-								else
-									spr.centerOffsets();
-							});
-						}
+									if (spr.animation.curAnim.name == 'confirm' && !curStage.startsWith('school'))
+									{
+										spr.centerOffsets();
 	
-						#if windows
-						if (luaModchart != null)
-							luaModchart.executeState('playerTwoSing', [Math.abs(daNote.noteData), Conductor.songPosition]);
-						#end
-
-						dad.holdTimer = 0;
-						if (heavyDad)
-						{
-						    dad2.holdTimer = 0;
-						}
-						else if (roboDad)
-						{
-							dad2.holdTimer = 0;
-						}
-
-						if (SONG.needsVoices)
-							vocals.volume = 1;
+										switch(mania)
+										{
+											case 0: 
+												spr.offset.x -= 13;
+												spr.offset.y -= 13;
+											case 1: 
+												spr.offset.x -= 16;
+												spr.offset.y -= 16;
+											case 2: 
+												spr.offset.x -= 22;
+												spr.offset.y -= 22;
+											case 3: 
+												spr.offset.x -= 15;
+												spr.offset.y -= 15;
+											case 4: 
+												spr.offset.x -= 18;
+												spr.offset.y -= 18;
+											case 5: 
+												spr.offset.x -= 20;
+												spr.offset.y -= 20;
+											case 6: 
+												spr.offset.x -= 13;
+												spr.offset.y -= 13;
+											case 7: 
+												spr.offset.x -= 13;
+												spr.offset.y -= 13;
+											case 8:
+												spr.offset.x -= 13;
+												spr.offset.y -= 13;
+										}
+									}
+									else
+										spr.centerOffsets();
+								});
+							}
+		
+							#if windows
+							if (luaModchart != null)
+								luaModchart.executeState('playerTwoSing', [Math.abs(daNote.noteData), Conductor.songPosition]);
+							#end
 	
-						daNote.active = false;
-
-
-						daNote.kill();
-						notes.remove(daNote, true);
-						daNote.destroy();
+							dad.holdTimer = 0;
+							if (heavyDad)
+							{
+								dad2.holdTimer = 0;
+							}
+							else if (roboDad)
+							{
+								dad2.holdTimer = 0;
+							}
+	
+							if (SONG.needsVoices)
+								vocals.volume = 1;
+		
+							daNote.active = false;
+	
+	
+							daNote.kill();
+							notes.remove(daNote, true);
+							daNote.destroy();
+					
 					}
 
 					if (daNote.mustPress && !daNote.modifiedByLua)
@@ -4018,6 +4092,17 @@ class PlayState extends MusicBeatState
 						});
 				}
 		}
+
+		if (what)
+			{
+				funnyX *= 0.98;
+				funnyY += elapsed * 6;
+				if (funkyIcon != null)
+				{
+					funkyIcon.x += funnyX;
+					funkyIcon.y += funnyY;
+				}
+			}
 
 		if (!inCutscene && songStarted)
 			keyShit();
@@ -5372,7 +5457,6 @@ class PlayState extends MusicBeatState
 					else
 						totalNotesHit += 1;
 	
-					var altAnim:String = "";
 
 					if (note.alt)
 						altAnim = '-alt';
@@ -5808,6 +5892,15 @@ class PlayState extends MusicBeatState
 	var lightningStrikeBeat:Int = 0;
 	var lightningOffset:Int = 8;
 
+	function funnyJump(e:FlxTimer = null):Void
+		{
+			iconP2.animation.play("heavy", true);
+			funkyIcon.animation.play(SONG.player2, true, false, 1);
+			funnyX = -5;
+			funnyY = -5;
+			what = true;
+		}
+
 	override function beatHit()
 	{
 		super.beatHit();
@@ -5844,12 +5937,22 @@ class PlayState extends MusicBeatState
 
 			// Dad doesnt interupt his own notes
 			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && dad.curCharacter != 'gf')
-				dad.dance();
-
-			if (heavyDad)
-				{
-					dad2.dance();
-				}
+				if (heavyDad) 
+					{
+						switch (curTiming)
+						{
+							case 0:
+								dad.playAnim('idle');
+								dad2.playAnim('idle');
+							case 1:
+								dad.playAnim('idle-beam');
+								dad2.playAnim('idle-beam');
+							case 2:
+								dad.playAnim('idle-alt');
+								dad2.playAnim('idle-alt');
+						}
+		
+					}
 			else if (roboDad)
 				{
 					dad2.dance();
