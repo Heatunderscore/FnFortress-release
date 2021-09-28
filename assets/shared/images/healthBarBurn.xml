@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pyrohealthbar.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="healthbar0000" x="0" y="0" width="614" height="78"/>
+	<SubTexture name="healthbar0001" x="0" y="0" width="614" height="78"/>
+	<SubTexture name="healthbar0002" x="0" y="78" width="614" height="78"/>
+	<SubTexture name="healthbar0003" x="0" y="78" width="614" height="78"/>
+	<SubTexture name="healthbar0004" x="0" y="156" width="614" height="78"/>
+	<SubTexture name="healthbar0005" x="0" y="156" width="614" height="78"/>
+	<SubTexture name="healthbar0006" x="0" y="234" width="614" height="78"/>
+	<SubTexture name="healthbar0007" x="0" y="234" width="614" height="78"/>
+	<SubTexture name="healthbar0008" x="0" y="312" width="614" height="78"/>
+	<SubTexture name="healthbar0009" x="0" y="312" width="614" height="78"/>
+	<SubTexture name="healthbar0010" x="0" y="390" width="614" height="78"/>
+	<SubTexture name="healthbar0011" x="0" y="390" width="614" height="78"/>
+</TextureAtlas>

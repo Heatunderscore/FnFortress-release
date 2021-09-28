@@ -206,6 +206,8 @@ class PlayState extends MusicBeatState
 	public var cannotDie = false;
 	private var camGame:FlxCamera;
 
+	var burnThing:Bool = false;
+
 	private var funkyIcon:HealthIcon;
 
 	public static var offsetTesting:Bool = false;
@@ -443,6 +445,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('atomicpunch/pee'));
 			case 'ironbomber':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ironbomber/poo'));
+			case 'inferno':
+				burnThing = true;
 			case 'frontierjustice':
 				roboDad = true;
 			case 'clinicaltrial':
@@ -1276,21 +1280,35 @@ class PlayState extends MusicBeatState
 				songName.cameras = [camHUD];
 			}
 
-		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
-		if (PlayStateChangeables.useDownscroll)
-			healthBarBG.y = 50;
-		healthBarBG.screenCenter(X);
-		healthBarBG.scrollFactor.set();
-		add(healthBarBG);
+		if (!burnThing)
+		{		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
+		    if (PlayStateChangeables.useDownscroll)
+			    healthBarBG.y = 50;
+		    healthBarBG.screenCenter(X);
+		    healthBarBG.scrollFactor.set();
+		    add(healthBarBG);
+	    }
+		else
+		{
+			healthBarBG = new FlxSprite();
+			healthBarBG.frames = Paths.getSparrowAtlas('healthBarBurn');
+			healthBarBG.animation.addByPrefix('idle', 'healthbar', 24, true);
+		    if (PlayStateChangeables.useDownscroll)
+			    healthBarBG.y = 50;
+		    healthBarBG.screenCenter(X);
+		    healthBarBG.scrollFactor.set();
+		    add(healthBarBG);
+		}
 
-		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
+
+		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 56), Std.int(healthBarBG.height - 56), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
 		healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
 		// healthBar
 		add(healthBar);
 
-		overhealthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
+		overhealthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 56), Std.int(healthBarBG.height - 56), this,
 		'health', 2.2, 4);
 		overhealthBar.scrollFactor.set();
 		overhealthBar.createFilledBar(0x00000000, 0xFFFFFF00);
@@ -3258,7 +3276,7 @@ class PlayState extends MusicBeatState
 					stupidAHHHH = true;
 					remove(dad);
 					remove(dad2);
-					dad = new Character(-310, 100, "medic");
+					dad = new Character(-375, 100, "medic");
 					dad2 = new Character(275, 100, "heavy");
 					add(dad);
 					add(dad2);
@@ -3272,7 +3290,6 @@ class PlayState extends MusicBeatState
 							FlxTween.linearMotion(funkyIcon, -100, funkyIcon.y, iconP2.x, funkyIcon.y, 0.3);
 							new FlxTimer().start(0.3, funnyJump);
 						}
-					//iconP2.animation.play("heavy", true);
 				case 704:
 					curTiming = 2;
 					stupid = true;
@@ -6031,6 +6048,9 @@ class PlayState extends MusicBeatState
 				bottomBoppers.animation.play('lol', true);
 			case 'issue-three':
 				bottomBoppers.animation.play('lol', true);
+
+			case 'intel':
+				healthBarBG.animation.play('idle', true);
 
 			case 'limo':
 				if(FlxG.save.data.distractions){
