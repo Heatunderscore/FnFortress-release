@@ -44,6 +44,7 @@ class Note extends FlxSprite
 	public var heavy:Bool = false;// heavy shit
 	public var medic:Bool = false;// medic shit
 	public var snoiper:Bool = false;//snoiper shit
+	public var rocket:Bool = false; //for soldier
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -166,6 +167,7 @@ class Note extends FlxSprite
 		heavy = noteType == 2;
 		medic = noteType == 3;
 		snoiper = noteType == 4;
+		rocket = noteType == 5;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -233,6 +235,17 @@ class Note extends FlxSprite
 						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
 						if (isSustainNote && glitch)
 							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+				if (rocket)
+					{
+
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
 						for (i in 0...9)
 							{
 								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
@@ -315,6 +328,19 @@ class Note extends FlxSprite
 									}
 						}
 					}
+				if (rocket)
+				{
+					for (i in 0...11)
+						{
+							frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
+							animation.addByPrefix('greenScroll', 'green0');
+							animation.addByPrefix('redScroll', 'red0');
+							animation.addByPrefix('blueScroll', 'blue0');
+							animation.addByPrefix('purpleScroll', 'purple0');
+							animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+							animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+						}
+				} //lazy
 				setGraphicSize(Std.int(width * noteScale));
 				updateHitbox();
 				antialiasing = true;
