@@ -1322,8 +1322,12 @@ class PlayState extends MusicBeatState
 			}
 
 		if (!burnThing)
+<<<<<<< HEAD
 		{	
 			healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
+=======
+		{	healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar'));
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 		    if (PlayStateChangeables.useDownscroll)
 			    healthBarBG.y = 50;
 		    healthBarBG.screenCenter(X);
@@ -1342,6 +1346,7 @@ class PlayState extends MusicBeatState
 
 		add(healthBarBG);
 
+<<<<<<< HEAD
 
 		if (!burnThing)
 			{
@@ -1353,6 +1358,16 @@ class PlayState extends MusicBeatState
 				healthBar = new FlxBar(healthBarBG.x + 8, healthBarBG.y + 57, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 19), Std.int(healthBarBG.height - 62), this,
 				'health', 0, 2);
 			}
+=======
+		if (!burnThing)
+		{
+		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
+		'health', 0, 2);
+		}else{
+			healthBar = new FlxBar(healthBarBG.x + 8, healthBarBG.y + 57, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 19), Std.int(healthBarBG.height - 62), this,
+			'health', 0, 2);
+		}
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 		healthBar.scrollFactor.set();
 		healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
 		add(healthBar);
@@ -1361,9 +1376,8 @@ class PlayState extends MusicBeatState
 		'health', 2.2, 4);
 		overhealthBar.scrollFactor.set();
 		overhealthBar.createFilledBar(0x00000000, 0xFFFFFF00);
-		// healthBar
-		add(overhealthBar);
 
+<<<<<<< HEAD
 		if (!burnThing)
 			{
 				kadeEngineWatermark = new FlxText(4,healthBarBG.y - 50,0,SONG.song + " - " + CoolUtil.difficultyFromInt(storyDifficulty) + (Main.watermarks ? " | KE " + MainMenuState.kadeEngineVer : ""), 16);
@@ -1372,20 +1386,40 @@ class PlayState extends MusicBeatState
 			{
 				kadeEngineWatermark = new FlxText(4,healthBarBG.y + 40,0,SONG.song + " - " + CoolUtil.difficultyFromInt(storyDifficulty) + (Main.watermarks ? " | KE " + MainMenuState.kadeEngineVer : ""), 16);
 			}	
+=======
+		// Add Kade Engine watermark
+		if (!burnThing)
+		{
+			kadeEngineWatermark = new FlxText(4,healthBarBG.y - 50,0,SONG.song + " - " + CoolUtil.difficultyFromInt(storyDifficulty) + (Main.watermarks ? " | KE " + MainMenuState.kadeEngineVer : ""), 16);
+		}
+		else 
+		{
+			kadeEngineWatermark = new FlxText(4,healthBarBG.y + 40,0,SONG.song + " - " + CoolUtil.difficultyFromInt(storyDifficulty) + (Main.watermarks ? " | KE " + MainMenuState.kadeEngineVer : ""), 16);
+		}
+
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 		kadeEngineWatermark.setFormat(Paths.font("tf2build.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		kadeEngineWatermark.scrollFactor.set();
 		add(kadeEngineWatermark);
 
 		//if (PlayStateChangeables.useDownscroll)
 		kadeEngineWatermark.y = FlxG.height * 0.9 + 45;
+<<<<<<< HEAD
 		if (!burnThing)
 		{
+=======
+		if (!burnThing){
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 			scoreTxt = new FlxText(FlxG.width / 2 - 235, healthBarBG.y + 50, 0, "", 20);
 		}
 		else
 		{
 			scoreTxt = new FlxText(FlxG.width / 2 - 235, healthBarBG.y + 84, 0, "", 20);
 		}
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 		scoreTxt.screenCenter(X);
 
 		originalX = scoreTxt.x;
@@ -3659,14 +3693,20 @@ class PlayState extends MusicBeatState
 						{
 							if (PlayStateChangeables.useDownscroll)
 							{
+<<<<<<< HEAD
 								if (daNote.mustPress)
 								{
 									if (daNote.noteType == 8)
 									{
+=======
+								if (daNote.mustPress){
+									if (daNote.noteType == 5){
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 											+ 0.90 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 												2)) - daNote.noteYOff; // makes rocket arrows go twice as fast as normal arrows cuz they spawn farther away
 									}
+<<<<<<< HEAD
 									else 
 									{
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
@@ -3678,12 +3718,27 @@ class PlayState extends MusicBeatState
 								{
 									if (daNote.noteType == 8)
 									{
+=======
+									else {
+										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
+										+ 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
+											2)) - daNote.noteYOff;
+										}	
+								}
+								else
+								{
+									if (daNote.noteType == 5){
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 											+ 0.90 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 												2)) - daNote.noteYOff; // makes rocket arrows go twice as fast as normal arrows cuz they spawn farther away
 									}
+<<<<<<< HEAD
 									else 
 									{
+=======
+									else {
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 										+ 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 											2)) - daNote.noteYOff;
@@ -3729,14 +3784,22 @@ class PlayState extends MusicBeatState
 							{
 								if (daNote.mustPress)
 								{
+<<<<<<< HEAD
 									if (daNote.noteType == 8)
 									{
+=======
+									if (daNote.noteType == 5){
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 											- 0.90 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 												2)) + daNote.noteYOff; // makes rocket arrows go twice as fast as normal arrows cuz they spawn farther away
 									}
+<<<<<<< HEAD
 									else 
 									{
+=======
+									else {
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 										- 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 											2)) + daNote.noteYOff;
@@ -3744,14 +3807,22 @@ class PlayState extends MusicBeatState
 								}
 								else
 								{
+<<<<<<< HEAD
 									if (daNote.noteType == 8)
 									{
+=======
+									if (daNote.noteType == 5){
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 											- 0.90 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 												2)) + daNote.noteYOff; // makes rocket arrows go twice as fast as normal arrows cuz they spawn farther away
 									}
+<<<<<<< HEAD
 									else 
 									{
+=======
+									else {
+>>>>>>> e3e50a037d5d411078a8493ccb8b2fcc7643b5de
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 										- 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 											2)) + daNote.noteYOff;
