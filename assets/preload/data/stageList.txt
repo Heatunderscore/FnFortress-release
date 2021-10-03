@@ -4,6 +4,9 @@ intel
 entry
 barnblitz-demo
 barnblitz-heavy
+snake-medic
+snake-sniper
 issue
 issue-two
 issue-three
+void

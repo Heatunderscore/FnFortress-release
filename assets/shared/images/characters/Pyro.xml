@@ -1,7 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="Pyro.png">
-	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+<TextureAtlas imagePath="FNF_PyroTF2 (1).png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
 	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="PyroP_Down0000" x="0" y="660" width="680" height="489" frameX="-14" frameY="-6" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0001" x="0" y="660" width="680" height="489" frameX="-14" frameY="-6" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0002" x="680" y="660" width="675" height="494" frameX="-5" frameY="-1" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0003" x="680" y="660" width="675" height="494" frameX="-5" frameY="-1" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0004" x="1355" y="660" width="672" height="495" frameX="-1" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0005" x="1355" y="660" width="672" height="495" frameX="-1" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0006" x="2027" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0007" x="2027" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0008" x="2699" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0009" x="2699" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0010" x="2699" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0011" x="2699" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0012" x="2699" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0013" x="2699" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Down0014" x="2699" y="660" width="672" height="495" frameX="0" frameY="0" frameWidth="694" frameHeight="495"/>
+	<SubTexture name="PyroP_Idle0000" x="3371" y="660" width="470" height="644" frameX="-3" frameY="-16" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0001" x="3371" y="660" width="470" height="644" frameX="-3" frameY="-16" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0002" x="3841" y="660" width="465" height="657" frameX="-1" frameY="-3" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0003" x="3841" y="660" width="465" height="657" frameX="-1" frameY="-3" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0004" x="4306" y="660" width="464" height="659" frameX="-1" frameY="-1" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0005" x="4306" y="660" width="464" height="659" frameX="-1" frameY="-1" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0006" x="4770" y="660" width="463" height="660" frameX="-1" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0007" x="4770" y="660" width="463" height="660" frameX="-1" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0008" x="5233" y="660" width="464" height="660" frameX="0" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0009" x="5233" y="660" width="464" height="660" frameX="0" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0010" x="5233" y="660" width="464" height="660" frameX="0" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0011" x="5233" y="660" width="464" height="660" frameX="0" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0012" x="5233" y="660" width="464" height="660" frameX="0" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Idle0013" x="5233" y="660" width="464" height="660" frameX="0" frameY="0" frameWidth="473" frameHeight="660"/>
+	<SubTexture name="PyroP_Left0000" x="5697" y="660" width="531" height="642" frameX="0" frameY="-3" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0001" x="5697" y="660" width="531" height="642" frameX="0" frameY="-3" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0002" x="6228" y="660" width="531" height="644" frameX="-2" frameY="-1" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0003" x="6228" y="660" width="531" height="644" frameX="-2" frameY="-1" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0004" x="6759" y="660" width="530" height="645" frameX="-3" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0005" x="6759" y="660" width="530" height="645" frameX="-3" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0006" x="7289" y="660" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0007" x="7289" y="660" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0008" x="0" y="1320" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0009" x="529" y="1320" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0010" x="529" y="1320" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0011" x="529" y="1320" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0012" x="529" y="1320" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0013" x="529" y="1320" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Left0014" x="529" y="1320" width="529" height="645" frameX="-4" frameY="0" frameWidth="533" frameHeight="645"/>
+	<SubTexture name="PyroP_Right0000" x="1058" y="1320" width="463" height="613" frameX="-1" frameY="-48" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0001" x="1521" y="1320" width="483" height="613" frameX="-1" frameY="-48" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0002" x="2004" y="1320" width="525" height="620" frameX="0" frameY="-41" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0003" x="2529" y="1320" width="547" height="620" frameX="0" frameY="-41" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0004" x="3076" y="1320" width="533" height="621" frameX="0" frameY="-40" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0005" x="3609" y="1320" width="559" height="621" frameX="0" frameY="-40" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0006" x="4168" y="1320" width="569" height="622" frameX="0" frameY="-39" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0007" x="4737" y="1320" width="586" height="623" frameX="0" frameY="-38" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0008" x="5323" y="1320" width="595" height="634" frameX="0" frameY="-27" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0009" x="5918" y="1320" width="600" height="640" frameX="0" frameY="-21" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0010" x="6518" y="1320" width="600" height="639" frameX="0" frameY="-22" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0011" x="7118" y="1320" width="619" height="654" frameX="0" frameY="-7" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0012" x="0" y="1974" width="622" height="654" frameX="0" frameY="-7" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Right0013" x="622" y="1974" width="627" height="661"/>
+	<SubTexture name="PyroP_Right0014" x="1249" y="1974" width="428" height="622" frameX="0" frameY="-39" frameWidth="627" frameHeight="661"/>
+	<SubTexture name="PyroP_Up0000" x="1677" y="1974" width="667" height="914" frameX="-20" frameY="0" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0001" x="1677" y="1974" width="667" height="914" frameX="-20" frameY="0" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0002" x="2344" y="1974" width="679" height="884" frameX="-6" frameY="-29" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0003" x="2344" y="1974" width="679" height="884" frameX="-6" frameY="-29" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0004" x="3023" y="1974" width="683" height="876" frameX="-1" frameY="-37" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0005" x="3023" y="1974" width="683" height="876" frameX="-1" frameY="-37" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0006" x="3706" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0007" x="3706" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0008" x="4389" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0009" x="5072" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0010" x="5072" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0011" x="5072" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0012" x="5072" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0013" x="5072" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
+	<SubTexture name="PyroP_Up0014" x="5072" y="1974" width="683" height="874" frameX="0" frameY="-39" frameWidth="687" frameHeight="914"/>
 	<SubTexture name="Pyro_Down0000" x="0" y="0" width="666" height="489" frameX="-1" frameY="-6" frameWidth="667" frameHeight="495"/>
 	<SubTexture name="Pyro_Down0001" x="0" y="0" width="666" height="489" frameX="-1" frameY="-6" frameWidth="667" frameHeight="495"/>
 	<SubTexture name="Pyro_Down0002" x="666" y="0" width="658" height="494" frameX="-3" frameY="-1" frameWidth="667" frameHeight="495"/>
@@ -21,59 +95,59 @@
 	<SubTexture name="Pyro_Idle0001" x="3290" y="0" width="381" height="644" frameX="-3" frameY="-16" frameWidth="384" frameHeight="660"/>
 	<SubTexture name="Pyro_Idle0002" x="3671" y="0" width="378" height="657" frameX="-1" frameY="-3" frameWidth="384" frameHeight="660"/>
 	<SubTexture name="Pyro_Idle0003" x="3671" y="0" width="378" height="657" frameX="-1" frameY="-3" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0004" x="0" y="657" width="376" height="659" frameX="-1" frameY="-1" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0005" x="0" y="657" width="376" height="659" frameX="-1" frameY="-1" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0006" x="376" y="657" width="376" height="660" frameX="-1" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0007" x="376" y="657" width="376" height="660" frameX="-1" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0008" x="752" y="657" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0009" x="752" y="657" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0010" x="752" y="657" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0011" x="752" y="657" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0012" x="752" y="657" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Idle0013" x="752" y="657" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
-	<SubTexture name="Pyro_Left0000" x="1129" y="657" width="496" height="642" frameX="0" frameY="-3" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0001" x="1129" y="657" width="496" height="642" frameX="0" frameY="-3" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0002" x="1625" y="657" width="497" height="644" frameX="-1" frameY="-1" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0003" x="1625" y="657" width="497" height="644" frameX="-1" frameY="-1" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0004" x="2122" y="657" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0005" x="2122" y="657" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0006" x="2618" y="657" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0007" x="2618" y="657" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0008" x="3114" y="657" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0009" x="0" y="1317" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0010" x="0" y="1317" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0011" x="0" y="1317" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0012" x="0" y="1317" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0013" x="0" y="1317" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Left0014" x="0" y="1317" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
-	<SubTexture name="Pyro_Right0000" x="496" y="1317" width="562" height="613" frameX="-1" frameY="-9" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0001" x="1058" y="1317" width="661" height="613" frameX="-1" frameY="-9" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0002" x="1719" y="1317" width="713" height="620" frameX="0" frameY="-2" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0003" x="2432" y="1317" width="736" height="620" frameX="0" frameY="-2" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0004" x="3168" y="1317" width="742" height="621" frameX="0" frameY="-1" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0005" x="0" y="1962" width="744" height="621" frameX="0" frameY="-1" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0006" x="744" y="1962" width="744" height="622"/>
-	<SubTexture name="Pyro_Right0007" x="1488" y="1962" width="744" height="622"/>
-	<SubTexture name="Pyro_Right0008" x="2232" y="1962" width="744" height="622"/>
-	<SubTexture name="Pyro_Right0009" x="2976" y="1962" width="744" height="622"/>
-	<SubTexture name="Pyro_Right0010" x="0" y="2584" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0011" x="0" y="2584" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0012" x="0" y="2584" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0013" x="0" y="2584" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Right0014" x="0" y="2584" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
-	<SubTexture name="Pyro_Up0000" x="428" y="2584" width="596" height="949" frameX="-20" frameY="0" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0001" x="428" y="2584" width="596" height="949" frameX="-20" frameY="0" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0002" x="1024" y="2584" width="604" height="908" frameX="-6" frameY="-40" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0003" x="1024" y="2584" width="604" height="908" frameX="-6" frameY="-40" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0004" x="1628" y="2584" width="607" height="895" frameX="-1" frameY="-53" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0005" x="1628" y="2584" width="607" height="895" frameX="-1" frameY="-53" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0006" x="2235" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0007" x="2235" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0008" x="2842" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0009" x="3449" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0010" x="3449" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0011" x="3449" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0012" x="3449" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0013" x="3449" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
-	<SubTexture name="Pyro_Up0014" x="3449" y="2584" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Idle0004" x="4049" y="0" width="376" height="659" frameX="-1" frameY="-1" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0005" x="4049" y="0" width="376" height="659" frameX="-1" frameY="-1" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0006" x="4425" y="0" width="376" height="660" frameX="-1" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0007" x="4425" y="0" width="376" height="660" frameX="-1" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0008" x="4801" y="0" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0009" x="4801" y="0" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0010" x="4801" y="0" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0011" x="4801" y="0" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0012" x="4801" y="0" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Idle0013" x="4801" y="0" width="377" height="660" frameX="0" frameY="0" frameWidth="384" frameHeight="660"/>
+	<SubTexture name="Pyro_Left0000" x="5178" y="0" width="496" height="642" frameX="0" frameY="-3" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0001" x="5178" y="0" width="496" height="642" frameX="0" frameY="-3" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0002" x="5674" y="0" width="497" height="644" frameX="-1" frameY="-1" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0003" x="5674" y="0" width="497" height="644" frameX="-1" frameY="-1" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0004" x="6171" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0005" x="6171" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0006" x="6667" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0007" x="6667" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0008" x="7163" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0009" x="7659" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0010" x="7659" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0011" x="7659" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0012" x="7659" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0013" x="7659" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Left0014" x="7659" y="0" width="496" height="645" frameX="-2" frameY="0" frameWidth="498" frameHeight="645"/>
+	<SubTexture name="Pyro_Right0000" x="5755" y="1974" width="562" height="613" frameX="-1" frameY="-9" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0001" x="6317" y="1974" width="661" height="613" frameX="-1" frameY="-9" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0002" x="6978" y="1974" width="713" height="620" frameX="0" frameY="-2" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0003" x="0" y="2888" width="736" height="620" frameX="0" frameY="-2" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0004" x="736" y="2888" width="742" height="621" frameX="0" frameY="-1" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0005" x="1478" y="2888" width="744" height="621" frameX="0" frameY="-1" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0006" x="2222" y="2888" width="744" height="622"/>
+	<SubTexture name="Pyro_Right0007" x="2966" y="2888" width="744" height="622"/>
+	<SubTexture name="Pyro_Right0008" x="3710" y="2888" width="744" height="622"/>
+	<SubTexture name="Pyro_Right0009" x="4454" y="2888" width="744" height="622"/>
+	<SubTexture name="Pyro_Right0010" x="5198" y="2888" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0011" x="5198" y="2888" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0012" x="5198" y="2888" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0013" x="5198" y="2888" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Right0014" x="5198" y="2888" width="428" height="622" frameX="0" frameY="0" frameWidth="744" frameHeight="622"/>
+	<SubTexture name="Pyro_Up0000" x="5626" y="2888" width="596" height="949" frameX="-20" frameY="0" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0001" x="5626" y="2888" width="596" height="949" frameX="-20" frameY="0" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0002" x="6222" y="2888" width="604" height="908" frameX="-6" frameY="-40" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0003" x="6222" y="2888" width="604" height="908" frameX="-6" frameY="-40" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0004" x="6826" y="2888" width="607" height="895" frameX="-1" frameY="-53" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0005" x="6826" y="2888" width="607" height="895" frameX="-1" frameY="-53" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0006" x="7433" y="2888" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0007" x="7433" y="2888" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0008" x="0" y="3837" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0009" x="607" y="3837" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0010" x="607" y="3837" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0011" x="607" y="3837" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0012" x="607" y="3837" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0013" x="607" y="3837" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
+	<SubTexture name="Pyro_Up0014" x="607" y="3837" width="607" height="892" frameX="0" frameY="-56" frameWidth="616" frameHeight="949"/>
 </TextureAtlas>

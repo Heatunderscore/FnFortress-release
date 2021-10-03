@@ -40,10 +40,15 @@ class Note extends FlxSprite
 	public var alt:Bool = false; //alt animation note
 	public var bob:Bool = false; //bob arrow
 	public var glitch:Bool = false; //glitch
+
 	public var disguise:Bool = false;// disguise shit
-	public var heavy:Bool = false;// heavy shit
-	public var medic:Bool = false;// medic shit
+	public var dad2:Bool = false;// heavy shit
+	public var dad1:Bool = false;// medic shit
+	public var bonk:Bool = false;//bonk shit
+	public var fist:Bool = false;//fisting
+	public var drunk:Bool = false;//drunndnknknrknknkrn
 	public var snoiper:Bool = false;//snoiper shit
+	public var rocket:Bool = false; //for soldier
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -163,9 +168,13 @@ class Note extends FlxSprite
 
 		this.noteData = noteData % 9;
 		disguise = noteType == 1;
-		heavy = noteType == 2;
-		medic = noteType == 3;
+		dad2 = noteType == 2;
+		dad1 = noteType == 3;
 		snoiper = noteType == 4;
+		bonk = noteType == 5;
+		fist = noteType == 6;
+		drunk = noteType == 7;
+		rocket = noteType == 8;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -204,7 +213,7 @@ class Note extends FlxSprite
 								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
 							}
 					}
-				if (heavy)
+				if (dad2)
 					{
 						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
 						if (isSustainNote && glitch)
@@ -216,7 +225,7 @@ class Note extends FlxSprite
 								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
 							}
 					}
-				if (medic)
+				if (dad1)
 					{
 						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
 						if (isSustainNote && glitch)
@@ -229,6 +238,54 @@ class Note extends FlxSprite
 							}
 					}
 				if (snoiper)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+				if (bonk)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+				if (fist)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+				if (drunk)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+				if (rocket)
 					{
 						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
 						if (isSustainNote && glitch)
@@ -253,14 +310,24 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (disguise)
+				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket)
 					{
+						frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_Types');
 						switch(noteType)
 						{
 							case 1: 
 								for (i in 0...11)
 									{
-										frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_spy');
+										animation.addByPrefix('greenScroll', 'spyU');
+										animation.addByPrefix('redScroll', 'spyR');
+										animation.addByPrefix('blueScroll', 'spyD');
+										animation.addByPrefix('purpleScroll', 'spyL');
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
+							case 4: 
+								for (i in 0...11)
+									{
 										animation.addByPrefix('greenScroll', 'green0');
 										animation.addByPrefix('redScroll', 'red0');
 										animation.addByPrefix('blueScroll', 'blue0');
@@ -268,51 +335,55 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
-						}
-					}
-				if (heavy)
-					{
-						switch(noteType)
-						{
-							case 1: 
+							case 5: 
 								for (i in 0...11)
 									{
-										frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_assets');
+										animation.addByPrefix('greenScroll', 'bonkU');
+										animation.addByPrefix('redScroll', 'bonkR');
+										animation.addByPrefix('blueScroll', 'bonkD');
+										animation.addByPrefix('purpleScroll', 'bonkL');
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
+							case 6: 
+								for (i in 0...11)
+									{
+										animation.addByPrefix('greenScroll', 'fistU');
+										animation.addByPrefix('redScroll', 'fistR');
+										animation.addByPrefix('blueScroll', 'fistD');
+										animation.addByPrefix('purpleScroll', 'fistL');
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
+							case 7: 
+								for (i in 0...11)
+									{
+										animation.addByPrefix('greenScroll', 'drunkU');
+										animation.addByPrefix('redScroll', 'drunkR');
+										animation.addByPrefix('blueScroll', 'drunkD');
+										animation.addByPrefix('purpleScroll', 'drunkL');
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
+						    case 8: 
+								for (i in 0...11)
+									{
+										animation.addByPrefix('greenScroll', 'drunkU');
+										animation.addByPrefix('redScroll', 'drunkR');
+										animation.addByPrefix('blueScroll', 'drunkD');
+										animation.addByPrefix('purpleScroll', 'drunkL');
 										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
-						}
-					}
-				if (medic)
-					{
-						switch(noteType)
-						{
-							case 1: 
+							default:
+								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
 								for (i in 0...11)
 									{
-										frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_assets');
 										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
-									}
-						}
-					}
-				if (snoiper)
-					{
-						switch(noteType)
-						{
-							case 1: 
-								for (i in 0...11)
-									{
-										frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_snoiper');
-										animation.addByPrefix('greenScroll', 'green0');
-										animation.addByPrefix('redScroll', 'red0');
-										animation.addByPrefix('blueScroll', 'blue0');
-										animation.addByPrefix('purpleScroll', 'purple0');
-										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
-										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
-									}
+									}	
 						}
 					}
 				setGraphicSize(Std.int(width * noteScale));

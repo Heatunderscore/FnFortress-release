@@ -17,6 +17,7 @@ class HealthIcon extends FlxSprite
 
 		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
+		animation.add('bf-pyro', [46, 44, 45], 0, false, isPlayer);
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);
 		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 		animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
@@ -29,6 +30,7 @@ class HealthIcon extends FlxSprite
 		animation.add('dad', [12, 13], 0, false, isPlayer);
 		animation.add('scunt', [24, 25], 0, false, isPlayer);
 		animation.add('scunt-old', [24, 25], 0, false, isPlayer);
+		animation.add('sodier', [40, 41], 0, false, isPlayer);
 		animation.add('pyro', [32, 33], 0, false, isPlayer);
 		animation.add('pyroland', [32, 33], 0, false, isPlayer);
 		animation.add('demo', [26, 27], 0, false, isPlayer);
@@ -38,6 +40,7 @@ class HealthIcon extends FlxSprite
 		animation.add('medic', [36, 37], 0, false, isPlayer);
 		animation.add('heavy-uber', [30, 31], 0, false, isPlayer);
 		animation.add('medic-uber', [36, 37], 0, false, isPlayer);
+		animation.add('sniper', [38, 39], 0, false, isPlayer);
 		animation.add('snoiper', [42, 43], 0, false, isPlayer);
 		animation.add('spy', [28, 29], 0, false, isPlayer);
 		animation.add('senpai', [22, 22], 0, false, isPlayer);
@@ -52,11 +55,12 @@ class HealthIcon extends FlxSprite
 		animation.add('monster-christmas', [19, 20], 0, false, isPlayer);
 		animation.play(char);
 
-		switch(char)
+		/*switch(char)
 		{
 			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
 				antialiasing = false;
-		}
+		}*/ 
+		//:trol:
 
 		scrollFactor.set();
 	}

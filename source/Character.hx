@@ -26,7 +26,7 @@ class Character extends FlxSprite
 		this.isPlayer = isPlayer;
 
 		var tex:FlxAtlasFrames;
-		antialiasing = FlxG.save.data.antialiasing;
+		antialiasing = true;
 
 		switch (curCharacter)
 		{
@@ -176,8 +176,30 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'sodier':
+				// sod
+				//
+				//
+				//
+				// bottom text
+				tex = Paths.getSparrowAtlas('characters/sodier', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle s', 24, true);
+				animation.addByPrefix('singUP', 'up s', 24, false);
+				animation.addByPrefix('singRIGHT', 'right s', 24, false);
+				animation.addByPrefix('singDOWN', 'down s', 24, false);
+				animation.addByPrefix('singLEFT', 'left s', 24, false);
+
+				addOffset('idle');
+				//420 lololololololo funny number omg omg omg
+				addOffset("singUP", -420, 160);
+				addOffset("singRIGHT", -350, -50);
+				addOffset("singLEFT", -40, -50);
+				addOffset("singDOWN", -40, -40);
+
+				playAnim('idle');
 			case 'pyro':
-				tex = Paths.getSparrowAtlas('characters/Pyro', 'shared');
+				tex = Paths.getSparrowAtlas('characters/pyro', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Pyro_Idle', 24, true);
 				animation.addByPrefix('singUP', 'Pyro_Up', 24, false);
@@ -185,11 +207,23 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'Pyro_Down', 24, false);
 				animation.addByPrefix('singLEFT', 'Pyro_Left', 24, false);
 
+				animation.addByPrefix('idle-alt', 'PyroP_Idle', 24, true);
+				animation.addByPrefix('singUP-alt', 'PyroP_Up', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'PyroP_Right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'PyroP_Down', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'PyroP_Left', 24, false);
+
 				addOffset('idle');
-                addOffset("singDOWN", 0, -154);
-                addOffset("singRIGHT" , -79, -30);
-                addOffset("singUP" , 100, 290);
-                addOffset("singLEFT" , 70, -10);
+                addOffset("singDOWN", 90, -154);
+                addOffset("singRIGHT" , -80, -40);
+                addOffset("singUP" , 99, 289);
+                addOffset("singLEFT" , 61, -17);
+
+				addOffset('idle-alt');
+                addOffset("singDOWN-alt", 100, -154);
+                addOffset("singRIGHT-alt" , -79, 0);
+                addOffset("singUP-alt" , 62, 251);
+                addOffset("singLEFT-alt" , 90, -16);
 
 				playAnim('idle');
 
@@ -242,12 +276,6 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN-alt', 'Heavyu_Down', 24, false);
 				animation.addByPrefix('singLEFT-alt', 'Heavyu_Left', 24, false);
 
-				animation.addByPrefix('idle-beam', 'Heavy_Idle', 24, true);
-				animation.addByPrefix('singUP-beam', 'Heavy_Up', 24, false);
-				animation.addByPrefix('singRIGHT-beam', 'Heavy_Right', 24, false);
-				animation.addByPrefix('singDOWN-beam', 'Heavy_Down', 24, false);
-				animation.addByPrefix('singLEFT-beam', 'Heavy_Left', 24, false);
-
 				addOffset('idle');
                 addOffset("singDOWN", -101, -35);
                 addOffset("singRIGHT" , 144, -91);
@@ -259,29 +287,6 @@ class Character extends FlxSprite
                 addOffset("singRIGHT-alt" , 144, -91);
                 addOffset("singUP-alt" , -6, 151);
                 addOffset("singLEFT-alt" , -8, 25);
-
-				addOffset('idle-beam');
-                addOffset("singDOWN-beam", -101, -35);
-                addOffset("singRIGHT-beam" , 144, -91);
-                addOffset("singUP-beam" , -6, 151);
-                addOffset("singLEFT-beam" , -8, 25);
-
-				playAnim('idle');
-			
-			case 'heavy-uber':
-				tex = Paths.getSparrowAtlas('characters/heavyUber', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'Heavy_Idle', 24, true);
-				animation.addByPrefix('singUP', 'Heavy_Up', 24, false);
-				animation.addByPrefix('singRIGHT', 'Heavy_Right', 24, false);
-				animation.addByPrefix('singDOWN', 'Heavy_Down', 24, false);
-				animation.addByPrefix('singLEFT', 'Heavy_Left', 24, false);
-
-				addOffset('idle');
-                addOffset("singDOWN", -101, -35);
-                addOffset("singRIGHT" , 144, -91);
-                addOffset("singUP" , -6, 151);
-                addOffset("singLEFT" , -8, 25);
 
 				playAnim('idle');
 
@@ -329,10 +334,6 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'medic_left', 24, false);
 
 				animation.addByPrefix('idle-beam', 'medich_idle', 24, true);
-				animation.addByPrefix('singUP-beam', 'medich_up', 24, false);
-				animation.addByPrefix('singRIGHT-beam', 'medich_right', 24, false);
-				animation.addByPrefix('singDOWN-beam', 'medich_down', 24, false);
-				animation.addByPrefix('singLEFT-beam', 'medich_left', 24, false);
 
 				animation.addByPrefix('idle-alt', 'medicu_idle', 24, true);
 				animation.addByPrefix('singUP-alt', 'medicu_up', 24, false);
@@ -347,10 +348,6 @@ class Character extends FlxSprite
                 addOffset("singLEFT" , 0, 0);
 
 				addOffset('idle-beam');		
-				addOffset("singDOWN-beam", 0, 0);
-                addOffset("singRIGHT-beam" , 0, 0);
-                addOffset("singUP-beam" , 0, 0);
-                addOffset("singLEFT-beam" , 0, 0);
 
 				addOffset('idle-alt');
                 addOffset("singDOWN-alt", 0, 0);
@@ -360,22 +357,24 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
-			case 'medic-uber':
-				tex = Paths.getSparrowAtlas('characters/medicUber', 'shared');
+			case 'sniper':
+				tex = Paths.getSparrowAtlas('characters/sniper');
 				frames = tex;
-				animation.addByPrefix('idle', 'medic_idle', 24, true);
-				animation.addByPrefix('singUP', 'medic_up', 24, false);
-				animation.addByPrefix('singRIGHT', 'medic_right', 24, false);
-				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
-				animation.addByPrefix('singLEFT', 'medic_left', 24, false);
+				animation.addByPrefix('idle', "sniper idle", 24, true);
+				animation.addByPrefix('singUP', 'sniper up', 24, false);
+				animation.addByPrefix('singDOWN', 'sniper down', 24, false);
+				animation.addByPrefix('singRIGHT', 'sniper right', 24, false);
+				animation.addByPrefix('singLEFT', 'sniper left', 24, false);
 
 				addOffset('idle');
-                addOffset("singDOWN", 0, 0);
-                addOffset("singRIGHT" , 0, 0);
-                addOffset("singUP" , 0, 0);
-                addOffset("singLEFT" , 0, 0);
+				addOffset("singUP", 50, 168);
+				addOffset("singRIGHT", 0, 35);
+				addOffset("singLEFT", 20, 10);
+				addOffset("singDOWN", 0, 20);
 
 				playAnim('idle');
+
+				antialiasing = true;
 
 			case 'snoiper':
 				tex = Paths.getSparrowAtlas('characters/snoiper gaming');
@@ -557,6 +556,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
 				animation.addByPrefix('hey', 'BF HEY', 24, false);
 				animation.addByPrefix('hit', 'BF hit', 24, false);
+				animation.addByPrefix('dodge', 'boyfriend dodge', 24, false);
+
 
 				animation.addByPrefix('firstDeath', "BF dies", 24, false);
 				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
@@ -574,6 +575,55 @@ class Character extends FlxSprite
 				addOffset("singLEFTmiss", 12, 24);
 				addOffset("singDOWNmiss", -11, -19);
 				addOffset("hey", 7, 4);
+				addOffset("hit", 7, 4);
+				addOffset("dodge", 7, 4);
+				addOffset('firstDeath', 37, 11);
+				addOffset('deathLoop', 37, 5);
+				addOffset('deathConfirm', 37, 69);
+				addOffset('scared', -4);
+
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'bf-pyro':
+				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
+				frames = tex;
+
+				trace(tex.frames.length);
+
+				animation.addByPrefix('idle', 'BF idle dance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
+				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				animation.addByPrefix('hit', 'BF hit', 24, false);
+				animation.addByPrefix('dodge', 'boyfriend dodge', 24, false);
+
+
+				animation.addByPrefix('firstDeath', "BF dies", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking', 24);
+
+				addOffset('idle', -5);
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -38, -7);
+				addOffset("singLEFT", 12, -6);
+				addOffset("singDOWN", -10, -50);
+				addOffset("singUPmiss", -29, 27);
+				addOffset("singRIGHTmiss", -30, 21);
+				addOffset("singLEFTmiss", 12, 24);
+				addOffset("singDOWNmiss", -11, -19);
+				addOffset("hey", 7, 4);
+				addOffset("hit", 7, 4);
+				addOffset("dodge", 7, 4);
 				addOffset('firstDeath', 37, 11);
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
