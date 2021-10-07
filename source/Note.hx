@@ -368,11 +368,11 @@ class Note extends FlxSprite
 						    case 8: 
 								for (i in 0...11)
 									{
-										animation.addByPrefix('greenScroll', 'drunkU');
-										animation.addByPrefix('redScroll', 'drunkR');
-										animation.addByPrefix('blueScroll', 'drunkD');
-										animation.addByPrefix('purpleScroll', 'drunkL');
-										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
+										frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_Soldier');
+										animation.addByPrefix('greenScroll', 'cockU');
+										animation.addByPrefix('redScroll', 'cockR');
+										animation.addByPrefix('blueScroll', 'cockD');
+										animation.addByPrefix('purpleScroll', 'cockL');
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
@@ -386,19 +386,6 @@ class Note extends FlxSprite
 									}	
 						}
 					}
-				if (rocket)
-				{
-					for (i in 0...11)
-						{
-							frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
-							animation.addByPrefix('greenScroll', 'green0');
-							animation.addByPrefix('redScroll', 'red0');
-							animation.addByPrefix('blueScroll', 'blue0');
-							animation.addByPrefix('purpleScroll', 'purple0');
-							animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
-							animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
-						}
-				} //lazy
 				setGraphicSize(Std.int(width * noteScale));
 				updateHitbox();
 				antialiasing = true;

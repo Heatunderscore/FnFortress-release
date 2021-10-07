@@ -176,6 +176,27 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'soldier':
+				// soldier shitting on you
+				tex = Paths.getSparrowAtlas('characters/soldier', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'soldier idle', 24, false);
+				animation.addByPrefix('singUP', 'soldier up', 24, false);
+				animation.addByPrefix('singRIGHT', 'soldier right', 24, false);
+				animation.addByPrefix('singDOWN', 'soldier down', 24, false);
+				animation.addByPrefix('singLEFT', 'soldier left', 24, false);
+				// shit anim
+				animation.addByPrefix('shit', 'soldier shoot', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 70, 100);
+				addOffset("singRIGHT", 20, -40);
+				addOffset("singLEFT", 370, -80);
+				addOffset("singDOWN", 70, -200);
+				// shit offsets
+				addOffset("shit", 41, 33);
+
+				playAnim('idle');
 			case 'sodier':
 				// sod
 				//

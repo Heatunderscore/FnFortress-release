@@ -104,6 +104,8 @@ class PlayState extends MusicBeatState
 	var bonkBOT:FlxTrail;
 	var curTiming:Int = 0;
 
+	var warning:FlxSprite;
+
 	var dodge:Bool = false;
 
 
@@ -132,6 +134,8 @@ class PlayState extends MusicBeatState
 
 	var fidgetspinner:Array<Int>;
 	var clok:Array<Int>;
+	var soldierShits:Array<Int>;
+	var warnings:Array<Int>;
 
 	var cum:Bool = false;
 
@@ -251,6 +255,7 @@ class PlayState extends MusicBeatState
 	var santa:FlxSprite;
 
 	var fc:Bool = true;
+	var maggots:Bool = false;
 
 	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
@@ -311,6 +316,10 @@ class PlayState extends MusicBeatState
 		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
 
 		clok = [512, 539, 565, 592, 618, 644, 671, 697, 704, 731, 757, 784, 810, 837, 863, 890];
+
+		soldierShits = [384, 416, 440, 512, 568, 672, 768, 800, 896, 960, 1080, 1152, 1176, 1184, 1208, 1312, 1336, 1408, 1440, 1536, 1568, 1632, 1640, 1656, 1720, 1912];
+
+		warnings = [376, 408, 432, 504, 560, 664, 760, 792, 888, 952, 1072, 1144, 1168, 1176, 1200, 1304, 1328, 1400, 1432, 1528, 1560, 1624, 1632, 1648, 1712, 1904];
 
 		instance = this;
 		
@@ -438,6 +447,9 @@ class PlayState extends MusicBeatState
 		{
 			case 'atomicpunch':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('atomicpunch/pee'));
+				camHUD.alpha = 0;
+			case 'maggots':
+				maggots = true;
 				camHUD.alpha = 0;
 			case 'inferno':
 				burnThing = true;
@@ -829,6 +841,13 @@ class PlayState extends MusicBeatState
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
 						add(bg);
+
+						warning = new FlxSprite(0, 0).loadGraphic(Paths.image('fortress/bg/entryWarning'));
+						warning.antialiasing = true;
+						warning.active = false;
+						warning.visible = false;
+						warning.screenCenter();
+
 				}
 			case 'barnblitz-demo':
 				{
@@ -1148,6 +1167,7 @@ class PlayState extends MusicBeatState
 			}
 			add(dad);
 			add(boyfriend);
+
 		}
 
 		/* unused trails for frontier justice because jeremy (genji) didnt want them ingame :( /tob
@@ -1416,6 +1436,12 @@ class PlayState extends MusicBeatState
 		iconP2.y = healthBar.y - (iconP2.height / 2);
 		add(iconP2);
 
+		if (maggots)
+		{
+			add(warning);
+		}
+
+
 		noteSplashes.cameras = [camHUD];
 		strumLineNotes.cameras = [camHUD];
 		notes.cameras = [camHUD];
@@ -1434,6 +1460,9 @@ class PlayState extends MusicBeatState
 		kadeEngineWatermark.cameras = [camHUD];
 		if (loadRep)
 			replayTxt.cameras = [camHUD];
+		if (maggots)
+		    warning.cameras = [camHUD];
+
 
 		// if (SONG.song == 'South')
 		// FlxG.camera.alpha = 0.7;
@@ -1697,7 +1726,7 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				dad.dance();
+				dad.playAnim('idle');
 				gf.dance();
 				boyfriend.playAnim('idle');
 			}
@@ -3261,6 +3290,22 @@ class PlayState extends MusicBeatState
 					case 1072:
 						PlayStateChangeables.scrollSpeed = 3;
 						curScroll = PlayStateChangeables.scrollSpeed;
+				}
+			}
+
+			if (curSong == 'Maggots')
+			{
+				switch (curStep)
+				{
+					case 320:
+						camHUD.alpha = 100;
+					case 376, 408, 432, 504, 560, 664, 760, 792, 888, 952, 1072, 1144, 1168, 1176, 1200, 1304, 1328, 1400, 1432, 1528, 1560, 1624, 1632, 1648, 1712, 1904:
+						warning.visible = true;
+						new FlxTimer().start(0.4, function(deadTime:FlxTimer)
+							{
+								warning.visible = false;
+							});
+
 				}
 			}
 
@@ -4833,7 +4878,6 @@ class PlayState extends MusicBeatState
 				{
 					if(FlxG.keys.justPressed.SPACE && !bfDodging && bfCanDodge)
 					{
-						trace('dodging');
 						bfDodging = true;
 						bfCanDodge = false;
 		
@@ -4842,12 +4886,10 @@ class PlayState extends MusicBeatState
 						new FlxTimer().start(bfDodgeTiming, function(tmr:FlxTimer)
 						{
 							bfDodging=false;
-							boyfriend.dance(); 
-							trace('noooomoooooreeee dodging');
+							//boyfriend.dance(); 
 							new FlxTimer().start(bfDodgeCooldown, function(tmr:FlxTimer)
 							{
 								bfCanDodge=true;
-								trace('oh hel na dodging allow');
 							});
 						});
 					}
@@ -5520,7 +5562,7 @@ class PlayState extends MusicBeatState
 			}
 			else if (daNote.noteType == 8)
 			{
-				health += -1.5;
+				health += -0.85;
 				if (combo > 5 && gf.animOffsets.exists('sad'))
 					{
 						gf.playAnim('sad');
@@ -5937,17 +5979,16 @@ class PlayState extends MusicBeatState
 			health -= 100;
 		}
 
-	function dodgeThing():Void
+	function soldierShittingOnYou():Void
 		{
-			if (!dodge)
-			{
-				dodge = true;
-				boyfriend.playAnim('dodge', true);
+			//again from the VS QT MOD
 
-				new FlxTimer().start(0.5, function(tmr:FlxTimer)
-					{
-						dodge = false;
-					});
+			dad.animation.play('shit');
+			FlxG.sound.play(Paths.sound('shotgun', 'shared'));
+			
+			if(!bfDodging)
+			{
+				health -= 1;
 			}
 		}
 
@@ -6139,6 +6180,14 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 
+		if (curSong == 'Maggots')
+		{
+			if (soldierShits.contains(curStep))
+				{
+					soldierShittingOnYou();
+				}
+		}
+
 		if (curSong == 'Ironcurtain')
 		{
 			if (fidgetspinner.contains(curStep))
@@ -6151,7 +6200,7 @@ class PlayState extends MusicBeatState
 								{
 										FlxTween.angle(tospin, 0, 360, 1.6, {ease: FlxEase.quintOut});
 								});
-						}, 2);
+						});
 					}
 					else
 					{
@@ -6365,7 +6414,7 @@ class PlayState extends MusicBeatState
 			        }
 			        else
 			        {
-				        dad.dance();
+						dad.playAnim('idle');
 			        }
 		    }
 	    }

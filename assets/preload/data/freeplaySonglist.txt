@@ -8,3 +8,4 @@ Clinicaltrial:medic:1
 Wanker:sniper:1
 Infiltrator:spy:1
 Five Minutes:snoiper:1
+Property Damage:snoiper:1
