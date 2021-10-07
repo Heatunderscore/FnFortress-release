@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="contracterButtons.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="complete idle0000" x="0" y="0" width="66" height="67"/>
+	<SubTexture name="complete idle0001" x="0" y="0" width="66" height="67"/>
+	<SubTexture name="complete idle0002" x="0" y="0" width="66" height="67"/>
+	<SubTexture name="complete press0000" x="66" y="0" width="65" height="65"/>
+	<SubTexture name="complete press0001" x="66" y="0" width="65" height="65"/>
+	<SubTexture name="complete press0002" x="66" y="0" width="65" height="65"/>
+	<SubTexture name="freeplay idle0000" x="131" y="0" width="66" height="68"/>
+	<SubTexture name="freeplay idle0001" x="131" y="0" width="66" height="68"/>
+	<SubTexture name="freeplay idle0002" x="131" y="0" width="66" height="68"/>
+	<SubTexture name="freeplay press0000" x="197" y="0" width="68" height="67"/>
+	<SubTexture name="freeplay press0001" x="197" y="0" width="68" height="67"/>
+	<SubTexture name="freeplay press0002" x="197" y="0" width="68" height="67"/>
+	<SubTexture name="hale idle0000" x="265" y="0" width="67" height="67"/>
+	<SubTexture name="hale idle0001" x="265" y="0" width="67" height="67"/>
+	<SubTexture name="hale idle0002" x="265" y="0" width="67" height="67"/>
+	<SubTexture name="hale press0000" x="332" y="0" width="68" height="68"/>
+	<SubTexture name="hale press0001" x="332" y="0" width="68" height="68"/>
+	<SubTexture name="hale press0002" x="332" y="0" width="68" height="68"/>
+	<SubTexture name="one idle0000" x="400" y="0" width="67" height="67"/>
+	<SubTexture name="one idle0001" x="400" y="0" width="67" height="67"/>
+	<SubTexture name="one idle0002" x="400" y="0" width="67" height="67"/>
+	<SubTexture name="one press0000" x="0" y="68" width="65" height="66"/>
+	<SubTexture name="one press0001" x="0" y="68" width="65" height="66"/>
+	<SubTexture name="one press0002" x="0" y="68" width="65" height="66"/>
+	<SubTexture name="two idle0000" x="65" y="68" width="64" height="66"/>
+	<SubTexture name="two idle0001" x="65" y="68" width="64" height="66"/>
+	<SubTexture name="two idle0002" x="65" y="68" width="64" height="66"/>
+	<SubTexture name="two press0000" x="129" y="68" width="66" height="66"/>
+	<SubTexture name="two press0001" x="129" y="68" width="66" height="66"/>
+	<SubTexture name="two press0002" x="129" y="68" width="66" height="66"/>
+</TextureAtlas>

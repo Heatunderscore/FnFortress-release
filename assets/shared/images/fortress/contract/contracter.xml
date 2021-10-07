@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="contracter.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="contract bronze0000" x="0" y="0" width="1255" height="708"/>
+	<SubTexture name="contract gold0000" x="1255" y="0" width="1255" height="708"/>
+	<SubTexture name="contract normal0000" x="2510" y="0" width="1255" height="708"/>
+	<SubTexture name="contract silver0000" x="0" y="708" width="1255" height="708"/>
+</TextureAtlas>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="contracterSHIT.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="0 unlocked0000" x="0" y="0" width="1255" height="708"/>
+	<SubTexture name="0 unlocked0001" x="0" y="0" width="1255" height="708"/>
+	<SubTexture name="0 unlocked0002" x="0" y="0" width="1255" height="708"/>
+	<SubTexture name="1 unlocked0000" x="1255" y="0" width="1255" height="708"/>
+	<SubTexture name="1 unlocked0001" x="1255" y="0" width="1255" height="708"/>
+	<SubTexture name="1 unlocked0002" x="1255" y="0" width="1255" height="708"/>
+	<SubTexture name="2 unlocked0000" x="2510" y="0" width="1255" height="708"/>
+	<SubTexture name="2 unlocked0001" x="2510" y="0" width="1255" height="708"/>
+	<SubTexture name="2 unlocked0002" x="2510" y="0" width="1255" height="708"/>
+	<SubTexture name="3 unlocked0000" x="0" y="708" width="1255" height="708"/>
+	<SubTexture name="3 unlocked0001" x="0" y="708" width="1255" height="708"/>
+	<SubTexture name="3 unlocked0002" x="0" y="708" width="1255" height="708"/>
+	<SubTexture name="complete idle0000" x="1255" y="708" width="66" height="67"/>
+	<SubTexture name="complete idle0001" x="1255" y="708" width="66" height="67"/>
+	<SubTexture name="complete idle0002" x="1255" y="708" width="66" height="67"/>
+	<SubTexture name="complete press0000" x="1321" y="708" width="65" height="65"/>
+	<SubTexture name="complete press0001" x="1321" y="708" width="65" height="65"/>
+	<SubTexture name="complete press0002" x="1321" y="708" width="65" height="65"/>
+	<SubTexture name="empty locked0000" x="1386" y="708" width="67" height="70"/>
+	<SubTexture name="empty locked0001" x="1386" y="708" width="67" height="70"/>
+	<SubTexture name="empty locked0002" x="1386" y="708" width="67" height="70"/>
+	<SubTexture name="fnf text0000" x="1453" y="708" width="211" height="31"/>
+	<SubTexture name="fnf text0001" x="1453" y="708" width="211" height="31"/>
+	<SubTexture name="fnf text0002" x="1453" y="708" width="211" height="31"/>
+	<SubTexture name="freeplay idle0000" x="1664" y="708" width="66" height="68"/>
+	<SubTexture name="freeplay idle0001" x="1664" y="708" width="66" height="68"/>
+	<SubTexture name="freeplay idle0002" x="1664" y="708" width="66" height="68"/>
+	<SubTexture name="freeplay press0000" x="1730" y="708" width="68" height="67"/>
+	<SubTexture name="freeplay press0001" x="1730" y="708" width="68" height="67"/>
+	<SubTexture name="freeplay press0002" x="1730" y="708" width="68" height="67"/>
+	<SubTexture name="freeplay text0000" x="1798" y="708" width="167" height="19"/>
+	<SubTexture name="freeplay text0001" x="1798" y="708" width="167" height="19"/>
+	<SubTexture name="freeplay text0002" x="1798" y="708" width="167" height="19"/>
+	<SubTexture name="freeplay title0000" x="1965" y="708" width="91" height="22"/>
+	<SubTexture name="freeplay title0001" x="1965" y="708" width="91" height="22"/>
+	<SubTexture name="freeplay title0002" x="1965" y="708" width="91" height="22"/>
+	<SubTexture name="hale empty idle0000" x="2056" y="708" width="70" height="64"/>
+	<SubTexture name="hale empty idle0001" x="2056" y="708" width="70" height="64"/>
+	<SubTexture name="hale empty idle0002" x="2056" y="708" width="70" height="64"/>
+	<SubTexture name="hale empty press0000" x="2126" y="708" width="69" height="73"/>
+	<SubTexture name="hale empty press0001" x="2126" y="708" width="69" height="73"/>
+	<SubTexture name="hale empty press0002" x="2126" y="708" width="69" height="73"/>
+	<SubTexture name="hale idle0000" x="2195" y="708" width="67" height="67"/>
+	<SubTexture name="hale idle0001" x="2195" y="708" width="67" height="67"/>
+	<SubTexture name="hale idle0002" x="2195" y="708" width="67" height="67"/>
+	<SubTexture name="hale locked0000" x="2262" y="708" width="67" height="67"/>
+	<SubTexture name="hale locked0001" x="2262" y="708" width="67" height="67"/>
+	<SubTexture name="hale locked0002" x="2262" y="708" width="67" height="67"/>
+	<SubTexture name="hale press0000" x="2329" y="708" width="68" height="68"/>
+	<SubTexture name="hale press0001" x="2329" y="708" width="68" height="68"/>
+	<SubTexture name="hale press0002" x="2329" y="708" width="68" height="68"/>
+	<SubTexture name="hale text0000" x="2397" y="708" width="122" height="21"/>
+	<SubTexture name="hale text0001" x="2397" y="708" width="122" height="21"/>
+	<SubTexture name="hale text0002" x="2397" y="708" width="122" height="21"/>
+	<SubTexture name="hale title0000" x="2519" y="708" width="46" height="22"/>
+	<SubTexture name="hale title0001" x="2519" y="708" width="46" height="22"/>
+	<SubTexture name="hale title0002" x="2519" y="708" width="46" height="22"/>
+	<SubTexture name="one idle0000" x="2565" y="708" width="67" height="67"/>
+	<SubTexture name="one idle0001" x="2565" y="708" width="67" height="67"/>
+	<SubTexture name="one idle0002" x="2565" y="708" width="67" height="67"/>
+	<SubTexture name="one press0000" x="2632" y="708" width="65" height="66"/>
+	<SubTexture name="one press0001" x="2632" y="708" width="65" height="66"/>
+	<SubTexture name="one press0002" x="2632" y="708" width="65" height="66"/>
+	<SubTexture name="two idle0000" x="2697" y="708" width="64" height="66"/>
+	<SubTexture name="two idle0001" x="2697" y="708" width="64" height="66"/>
+	<SubTexture name="two idle0002" x="2697" y="708" width="64" height="66"/>
+	<SubTexture name="two press0000" x="2761" y="708" width="66" height="66"/>
+	<SubTexture name="two press0001" x="2761" y="708" width="66" height="66"/>
+	<SubTexture name="two press0002" x="2761" y="708" width="66" height="66"/>
+	<SubTexture name="week10000" x="2827" y="708" width="235" height="222"/>
+	<SubTexture name="week10001" x="3062" y="708" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week10002" x="3296" y="708" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week1 text0000" x="3531" y="708" width="156" height="23"/>
+	<SubTexture name="week1 text0001" x="3531" y="708" width="156" height="23"/>
+	<SubTexture name="week1 text0002" x="3531" y="708" width="156" height="23"/>
+	<SubTexture name="week1 title0000" x="3687" y="708" width="78" height="18"/>
+	<SubTexture name="week1 title0001" x="3687" y="708" width="78" height="18"/>
+	<SubTexture name="week1 title0002" x="3687" y="708" width="78" height="18"/>
+	<SubTexture name="week20000" x="3765" y="708" width="235" height="222"/>
+	<SubTexture name="week20001" x="0" y="1416" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week20002" x="234" y="1416" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week2 text0000" x="469" y="1416" width="158" height="23"/>
+	<SubTexture name="week2 text0001" x="469" y="1416" width="158" height="23"/>
+	<SubTexture name="week2 text0002" x="469" y="1416" width="158" height="23"/>
+	<SubTexture name="week2 title0000" x="627" y="1416" width="77" height="17"/>
+	<SubTexture name="week2 title0001" x="627" y="1416" width="77" height="17"/>
+	<SubTexture name="week2 title0002" x="627" y="1416" width="77" height="17"/>
+	<SubTexture name="week30000" x="704" y="1416" width="235" height="222"/>
+	<SubTexture name="week30001" x="939" y="1416" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week30002" x="1173" y="1416" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week3 text0000" x="1408" y="1416" width="150" height="22"/>
+	<SubTexture name="week3 text0001" x="1408" y="1416" width="150" height="22"/>
+	<SubTexture name="week3 text0002" x="1408" y="1416" width="150" height="22"/>
+	<SubTexture name="week3 title0000" x="1558" y="1416" width="76" height="17"/>
+	<SubTexture name="week3 title0001" x="1558" y="1416" width="76" height="17"/>
+	<SubTexture name="week3 title0002" x="1558" y="1416" width="76" height="17"/>
+	<SubTexture name="week40000" x="1634" y="1416" width="235" height="222"/>
+	<SubTexture name="week40001" x="1869" y="1416" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week40002" x="2103" y="1416" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+</TextureAtlas>

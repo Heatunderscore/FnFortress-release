@@ -336,45 +336,43 @@ class Character extends FlxSprite
 				animation.addByPrefix('idle-beam', 'medich_idle', 24, true);
 
 				animation.addByPrefix('idle-alt', 'medicu_idle', 24, true);
-				animation.addByPrefix('singUP-alt', 'medicu_up', 24, false);
 				animation.addByPrefix('singRIGHT-alt', 'medicu_right', 24, false);
-				animation.addByPrefix('singDOWN-alt', 'medicu_down', 24, false);
 				animation.addByPrefix('singLEFT-alt', 'medicu_left', 24, false);
 
 				addOffset('idle');
-                addOffset("singDOWN", 0, 0);
-                addOffset("singRIGHT" , 0, 0);
-                addOffset("singUP" , 0, 0);
-                addOffset("singLEFT" , 0, 0);
+                addOffset("singDOWN", 52, -122);
+                addOffset("singRIGHT" , -38, 51);
+                addOffset("singUP" , -12, 20);
+                addOffset("singLEFT" , 188, 51);
 
 				addOffset('idle-beam');		
 
 				addOffset('idle-alt');
-                addOffset("singDOWN-alt", 0, 0);
-                addOffset("singRIGHT-alt" , 0, 0);
-                addOffset("singUP-alt" , 0, 0);
-                addOffset("singLEFT-alt" , 0, 0);
+                addOffset("singRIGHT-alt" , -40, 52);
+                addOffset("singLEFT-alt" , 188, 51);
 
 				playAnim('idle');
 
 			case 'sniper':
 				tex = Paths.getSparrowAtlas('characters/sniper');
 				frames = tex;
-				animation.addByPrefix('idle', "sniper idle", 24, true);
-				animation.addByPrefix('singUP', 'sniper up', 24, false);
-				animation.addByPrefix('singDOWN', 'sniper down', 24, false);
-				animation.addByPrefix('singRIGHT', 'sniper right', 24, false);
-				animation.addByPrefix('singLEFT', 'sniper left', 24, false);
+				animation.addByPrefix('idle', "idle", 24, true);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				// animator is a dum dum and swapped left and right 
+				animation.addByPrefix('singRIGHT', 'left', 24, false);
+				animation.addByPrefix('singLEFT', 'right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'laugh', 24, false);
+
 
 				addOffset('idle');
-				addOffset("singUP", 50, 168);
-				addOffset("singRIGHT", 0, 35);
-				addOffset("singLEFT", 20, 10);
-				addOffset("singDOWN", 0, 20);
+				addOffset("singUP", 76, 168);
+				addOffset("singRIGHT", 7, 14);
+				addOffset("singLEFT", 102, -15);
+				addOffset("singDOWN", -54, -4);
+				addOffset("singDOWN-alt", -54, -4);
 
 				playAnim('idle');
-
-				antialiasing = true;
 
 			case 'snoiper':
 				tex = Paths.getSparrowAtlas('characters/snoiper gaming');

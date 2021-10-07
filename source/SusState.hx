@@ -42,7 +42,7 @@ class SusState extends MusicBeatState
 
     public static var curBg:Int = 1;
 
-	public static var kadeEngineVer:String = "1.5.4 EK" + nightly;
+	public static var kadeEngineVer:String = "FNF VS MANNCO (1.5.4 EK)" + nightly;
 	public static var gameVer:String = "0.2.7.1";
 
 	var magenta:FlxSprite;
@@ -197,7 +197,7 @@ class SusState extends MusicBeatState
             switch (daChoice)
             {
                 case 'contracter':
-                    FlxG.switchState(new MainMenuState());
+                    FlxG.switchState(new Contract());
                 case 'leave':
                     #if windows
                     Sys.exit(0);

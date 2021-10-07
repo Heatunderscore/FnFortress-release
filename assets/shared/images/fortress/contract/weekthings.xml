@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="weekthings.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="week10000" x="0" y="0" width="235" height="222"/>
+	<SubTexture name="week10001" x="235" y="0" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week10002" x="469" y="0" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week20000" x="704" y="0" width="235" height="222"/>
+	<SubTexture name="week20001" x="0" y="222" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week20002" x="234" y="222" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week30000" x="469" y="222" width="235" height="222"/>
+	<SubTexture name="week30001" x="704" y="222" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week30002" x="0" y="444" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week40000" x="235" y="444" width="235" height="222"/>
+	<SubTexture name="week40001" x="470" y="444" width="234" height="220" frameX="-1" frameY="0" frameWidth="235" frameHeight="222"/>
+	<SubTexture name="week40002" x="704" y="444" width="235" height="220" frameX="0" frameY="0" frameWidth="235" frameHeight="222"/>
+</TextureAtlas>

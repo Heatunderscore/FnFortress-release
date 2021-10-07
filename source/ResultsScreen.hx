@@ -193,7 +193,7 @@ class ResultsScreen extends FlxSubState
             if (PlayState.isStoryMode)
             {
                 FlxG.sound.playMusic(Paths.music('freakyMenu'));
-                FlxG.switchState(new MainMenuState());
+                FlxG.switchState(new Contract());
             }
             else
                 FlxG.switchState(new FreeplayState());
