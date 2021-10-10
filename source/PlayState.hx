@@ -5995,7 +5995,7 @@ class PlayState extends MusicBeatState
 
 			}
 
-			dad.animation.play('shit');
+			dad.playAnim('shit');
 			FlxG.sound.play(Paths.sound('shotgun', 'shared'));
 			
 			if(!bfDodging && !PlayStateChangeables.botPlay)

@@ -27,6 +27,7 @@ class Contract extends MusicBeatState
 	var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
+    var menuItemText:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
 	var optionShit:Array<String> = ['one', 'two', 'complete', 'hale', 'freeplay'];
@@ -100,8 +101,36 @@ class Contract extends MusicBeatState
                 }
                 menuItems.add(buttonThing);
             }
-
             add(menuItems);
+
+        for (i in 0...optionShit.length)
+            {
+                var textShit:FlxSprite = new FlxSprite(0, 0);
+                textShit.ID = i;
+                textShit.frames = Paths.getSparrowAtlas('fortress/contract/contracterText', 'shared');
+                textShit.animation.addByPrefix('title', optionShit[i] + ' title', 24, true);
+                textShit.animation.play('title');
+                textShit.antialiasing = true;
+                textShit.updateHitbox();
+                textShit.screenCenter(X);
+                textShit.scrollFactor.set();
+                switch(i) 
+                {
+                    case 0:
+                        textShit.setPosition(230, 302);
+                    case 1:
+                        textShit.setPosition(480, 243);
+                    case 2:
+                        textShit.setPosition(790, 325);
+                    case 3:
+                        textShit.setPosition(221, 491);
+                    case 4:
+                        textShit.setPosition(607, 432);
+                }
+                add(textShit);
+                
+
+            }
 
 
         weekThing = new FlxSprite(914, 288);

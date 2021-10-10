@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="contracterText.png">
+	<!-- Created with Adobe Animate version 21.0.9.42677 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="hale title0000" x="0" y="0" width="91" height="22"/>
+	<SubTexture name="one title0000" x="46" y="22" width="78" height="18"/>
+	<SubTexture name="two title0000" x="0" y="61" width="77" height="17"/>
+	<SubTexture name="complete title0000" x="0" y="44" width="76" height="17"/>
+	<SubTexture name="freeplay title0000" x="0" y="22" width="46" height="22"/>
+</TextureAtlas>
