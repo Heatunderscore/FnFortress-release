@@ -103,6 +103,7 @@ class PlayState extends MusicBeatState
 	var cumBOT:FlxTrail;
 	var bonkBOT:FlxTrail;
 	var curTiming:Int = 0;
+	var swagSpeed:Float = 4.5;
 
 	var warning:FlxSprite;
 
@@ -4881,7 +4882,7 @@ class PlayState extends MusicBeatState
 						bfDodging = true;
 						bfCanDodge = false;
 		
-						boyfriend.playAnim('dodge');
+						boyfriend.playAnim('dodge', false);
 
 						new FlxTimer().start(bfDodgeTiming, function(tmr:FlxTimer)
 						{
@@ -5327,7 +5328,7 @@ class PlayState extends MusicBeatState
 						};
 						if (boyfriend.holdTimer > Conductor.stepCrochet * 4 * 0.001 && (!holdArray.contains(true) || PlayStateChangeables.botPlay))
 							{
-								if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss') && (boyfriend.animation.curAnim.curFrame >= 10 || boyfriend.animation.curAnim.finished))
+								if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss') && (boyfriend.animation.curAnim.curFrame >= 10 || boyfriend.animation.curAnim.finished) && !bfDodging)
 									boyfriend.playAnim('idle');
 							}
 						else if (!FlxG.save.data.ghost)
@@ -5347,7 +5348,7 @@ class PlayState extends MusicBeatState
 				
 				if (boyfriend.holdTimer > Conductor.stepCrochet * 4 * 0.001 && (!holdArray.contains(true) || PlayStateChangeables.botPlay))
 				{
-					if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss'))
+					if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss') && !bfDodging)
 						boyfriend.playAnim('idle');
 				}
 		 
@@ -5638,7 +5639,8 @@ class PlayState extends MusicBeatState
 					FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
 					// FlxG.sound.play(Paths.sound('missnote1'), 1, false);
 					// FlxG.log.add('played imss note');
-					boyfriend.playAnim('sing' + sDir[direction] + 'miss', true);
+					if (!bfDodging)
+						boyfriend.playAnim('sing' + sDir[direction] + 'miss', true);
 					
 		
 					#if windows
@@ -5799,7 +5801,7 @@ class PlayState extends MusicBeatState
 					{
 						boyfriend.playAnim('dodge', true);
 					}
-					else
+					else if (!bfDodging)
 					{
 						boyfriend.playAnim('sing' + sDir[note.noteData] + altAnim, true);
 					}
@@ -5982,14 +5984,24 @@ class PlayState extends MusicBeatState
 	function soldierShittingOnYou():Void
 		{
 			//again from the VS QT MOD
+			if (PlayStateChangeables.botPlay)
+			{
+				boyfriend.playAnim('dodge', false);
+				bfDodging = true;
+				new FlxTimer().start(0.21, function(tmr:FlxTimer)
+					{
+						bfDodging=false;
+					});
+
+			}
 
 			dad.animation.play('shit');
 			FlxG.sound.play(Paths.sound('shotgun', 'shared'));
 			
-			if(!bfDodging)
+			if(!bfDodging && !PlayStateChangeables.botPlay)
 			{
 				health -= 1;
-			}
+			} 
 		}
 
 	function badNoteHit():Void
@@ -6455,7 +6467,7 @@ class PlayState extends MusicBeatState
 			gf.dance();
 		}
 
-		if (!boyfriend.animation.curAnim.name.startsWith("sing"))
+		if (!boyfriend.animation.curAnim.name.startsWith("sing") && !bfDodging)
 		{
 			boyfriend.playAnim('idle');
 		}
