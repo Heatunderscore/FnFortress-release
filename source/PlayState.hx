@@ -1950,17 +1950,29 @@ class PlayState extends MusicBeatState
 						data = 2;
 				}
 			case 9: 
-				binds = [FlxG.save.data.N0Bind, FlxG.save.data.N1Bind, FlxG.save.data.N2Bind, FlxG.save.data.N3Bind, FlxG.save.data.N4Bind, FlxG.save.data.N5Bind, FlxG.save.data.N6Bind, FlxG.save.data.N7Bind, FlxG.save.data.N8Bind];
+				binds = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9'];
 				switch(evt.keyCode) // eh ill add 10k controls later - heat
 				{
-					case 37:
+					case 81:
+						data = 0;
+					case 87:
+						data = 1;
+					case 69:
+						data = 2;
+					case 82:
+						data = 3;
+					case 86:
+						data = 4;
+					case 78:
 						data = 5;
-					case 40:
+					case 85:
 						data = 6;
-					case 38:
+					case 73:
 						data = 7;
-					case 39:
+					case 79:
 						data = 8;
+					case 80:
+						data = 9;
 				}
 
 		}
@@ -2093,17 +2105,29 @@ class PlayState extends MusicBeatState
 						data = 2;
 				}
 			case 9: 
-				binds = [FlxG.save.data.N0Bind, FlxG.save.data.N1Bind, FlxG.save.data.N2Bind, FlxG.save.data.N3Bind, FlxG.save.data.N4Bind, FlxG.save.data.N5Bind, FlxG.save.data.N6Bind, FlxG.save.data.N7Bind, FlxG.save.data.N8Bind];
-				switch(evt.keyCode) // once again ill add 10k keys later
+				binds = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9'];
+				switch(evt.keyCode) // 10K funny controls
 				{
-					case 37:
+					case 81:
+						data = 0;
+					case 87:
+						data = 1;
+					case 69:
+						data = 2;
+					case 82:
+						data = 3;
+					case 86:
+						data = 4;
+					case 78:
 						data = 5;
-					case 40:
+					case 85:
 						data = 6;
-					case 38:
+					case 73:
 						data = 7;
-					case 39:
+					case 79:
 						data = 8;
+					case 80:
+						data = 9;
 				}
 
 		}
@@ -3646,7 +3670,7 @@ class PlayState extends MusicBeatState
 		}
  		if (!inCutscene && FlxG.save.data.resetButton)
 		{
-			if(FlxG.keys.justPressed.R)
+			if(FlxG.keys.justPressed.R && mania != 9)
 				{
 					boyfriend.stunned = true;
 
@@ -3729,7 +3753,7 @@ class PlayState extends MusicBeatState
 					case 8: 
 						holdArray = [controls.LEFT, controls.N4, controls.RIGHT];
 					case 9: 
-						holdArray = [controls.N0, controls.N1, controls.N2, controls.N3, controls.N4, controls.N5, controls.N6, controls.N7, controls.N8];
+						holdArray = [controls.T0, controls.T1, controls.T2, controls.T3, controls.T4, controls.T5, controls.T6, controls.T7, controls.T8, controls.T9];
 				}
 				notes.forEachAlive(function(daNote:Note)
 				{	
@@ -4914,6 +4938,17 @@ class PlayState extends MusicBeatState
 		var n6Hold:Bool = false;
 		var n7Hold:Bool = false;
 		var n8Hold:Bool = false;
+
+		var t0Hold:Bool = false;
+		var t1Hold:Bool = false;
+		var t2Hold:Bool = false;
+		var t3Hold:Bool = false;
+		var t4Hold:Bool = false;
+		var t5Hold:Bool = false;
+		var t6Hold:Bool = false;
+		var t7Hold:Bool = false;
+		var t8Hold:Bool = false;
+		var t9Hold:Bool = false;
 		// THIS FUNCTION JUST FUCKS WIT HELD NOTES AND BOTPLAY/REPLAY (also gamepad shit)
 
 		private function keyShit():Void // I've invested in emma stocks
@@ -5102,28 +5137,30 @@ class PlayState extends MusicBeatState
 							controls.RIGHT_R
 						];
 					case 9: 
-						holdArray = [controls.N0, controls.N1, controls.N2, controls.N3, controls.N4, controls.N5, controls.N6, controls.N7, controls.N8];
+						holdArray = [controls.T0, controls.T1, controls.T2, controls.T3, controls.T4, controls.T5, controls.T6, controls.T7, controls.T8, controls.T9];
 						pressArray = [
-							controls.N0_P,
-							controls.N1_P,
-							controls.N2_P,
-							controls.N3_P,
-							controls.N4_P,
-							controls.N5_P,
-							controls.N6_P,
-							controls.N7_P,
-							controls.N8_P
+							controls.T0_P,
+							controls.T1_P,
+							controls.T2_P,
+							controls.T3_P,
+							controls.T4_P,
+							controls.T5_P,
+							controls.T6_P,
+							controls.T7_P,
+							controls.T8_P,
+							controls.T9_P
 						];
 						releaseArray = [
-							controls.N0_R,
-							controls.N1_R,
-							controls.N2_R,
-							controls.N3_R,
-							controls.N4_R,
-							controls.N5_R,
-							controls.N6_R,
-							controls.N7_R,
-							controls.N8_R
+							controls.T0_R,
+							controls.T1_R,
+							controls.T2_R,
+							controls.T3_R,
+							controls.T4_R,
+							controls.T5_R,
+							controls.T6_R,
+							controls.T7_R,
+							controls.T8_R,
+							controls.T9_R
 						];
 				}
 				#if windows

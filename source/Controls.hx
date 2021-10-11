@@ -92,6 +92,39 @@ enum abstract Action(String) to String from String
 	var N6_R = "n6-release";
 	var N7_R = "n7-release";
 	var N8_R = "n8-release";
+
+	var T0 = "t0";
+	var T1 = "t1";
+	var T2 = "t2";
+	var T3 = "t3";
+	var T4 = "t4";
+	var T5 = "t5";
+	var T6 = "t6";
+	var T7 = "t7";
+	var T8 = "t8";
+	var T9 = "t9";
+
+	var T0_P = "t0-press";
+	var T1_P = "t1-press";
+	var T2_P = "t2-press";
+	var T3_P = "t3-press";
+	var T4_P = "t4-press";
+	var T5_P = "t5-press";
+	var T6_P = "t6-press";
+	var T7_P = "t7-press";
+	var T8_P = "t8-press";
+	var T9_P = "t9-press";
+
+	var T0_R = "t0-release";
+	var T1_R = "t1-release";
+	var T2_R = "t2-release";
+	var T3_R = "t3-release";
+	var T4_R = "t4-release";
+	var T5_R = "t5-release";
+	var T6_R = "t6-release";
+	var T7_R = "t7-release";
+	var T8_R = "t8-release";
+	var T9_R = "t9-release";
 }
 #else
 @:enum
@@ -169,6 +202,39 @@ abstract Action(String) to String from String
 	var N6_R = "n6-release";
 	var N7_R = "n7-release";
 	var N8_R = "n8-release";
+
+	var T0 = "t0";
+	var T1 = "t1";
+	var T2 = "t2";
+	var T3 = "t3";
+	var T4 = "t4";
+	var T5 = "t5";
+	var T6 = "t6";
+	var T7 = "t7";
+	var T8 = "t8";
+	var T9 = "t9";
+
+	var T0_P = "t0-press";
+	var T1_P = "t1-press";
+	var T2_P = "t2-press";
+	var T3_P = "t3-press";
+	var T4_P = "t4-press";
+	var T5_P = "t5-press";
+	var T6_P = "t6-press";
+	var T7_P = "t7-press";
+	var T8_P = "t8-press";
+	var T9_P = "t9-press";
+
+	var T0_R = "t0-release";
+	var T1_R = "t1-release";
+	var T2_R = "t2-release";
+	var T3_R = "t3-release";
+	var T4_R = "t4-release";
+	var T5_R = "t5-release";
+	var T6_R = "t6-release";
+	var T7_R = "t7-release";
+	var T8_R = "t8-release";
+	var T9_R = "t9-release";
 }
 #end
 
@@ -211,6 +277,17 @@ enum Control
 	N6;
 	N7;
 	N8;
+
+	T0;
+	T1;
+	T2;
+	T3;
+	T4;
+	T5;
+	T6;
+	T7;
+	T8;
+	T9;
 }
 
 enum KeyboardScheme
@@ -303,6 +380,39 @@ class Controls extends FlxActionSet
 	var _n6R = new FlxActionDigital(Action.N6_R);
 	var _n7R = new FlxActionDigital(Action.N7_R);
 	var _n8R = new FlxActionDigital(Action.N8_R);
+
+	var _t0 = new FlxActionDigital(Action.T0);
+	var _t1 = new FlxActionDigital(Action.T1);
+	var _t2 = new FlxActionDigital(Action.T2);
+	var _t3 = new FlxActionDigital(Action.T3);
+	var _t4 = new FlxActionDigital(Action.T4);
+	var _t5 = new FlxActionDigital(Action.T5);
+	var _t6 = new FlxActionDigital(Action.T6);
+	var _t7 = new FlxActionDigital(Action.T7);
+	var _t8 = new FlxActionDigital(Action.T8);
+	var _t9 = new FlxActionDigital(Action.T9);
+
+	var _t0P = new FlxActionDigital(Action.T0_P);
+	var _t1P = new FlxActionDigital(Action.T1_P);
+	var _t2P = new FlxActionDigital(Action.T2_P);
+	var _t3P = new FlxActionDigital(Action.T3_P);
+	var _t4P = new FlxActionDigital(Action.T4_P);
+	var _t5P = new FlxActionDigital(Action.T5_P);
+	var _t6P = new FlxActionDigital(Action.T6_P);
+	var _t7P = new FlxActionDigital(Action.T7_P);
+	var _t8P = new FlxActionDigital(Action.T8_P);
+	var _t9P = new FlxActionDigital(Action.T9_P);
+
+	var _t0R = new FlxActionDigital(Action.T0_R);
+	var _t1R = new FlxActionDigital(Action.T1_R);
+	var _t2R = new FlxActionDigital(Action.T2_R);
+	var _t3R = new FlxActionDigital(Action.T3_R);
+	var _t4R = new FlxActionDigital(Action.T4_R);
+	var _t5R = new FlxActionDigital(Action.T5_R);
+	var _t6R = new FlxActionDigital(Action.T6_R);
+	var _t7R = new FlxActionDigital(Action.T7_R);
+	var _t8R = new FlxActionDigital(Action.T8_R);
+	var _t9R = new FlxActionDigital(Action.T9_R);
 
 	#if (haxe >= "4.0.0")
 	var byName:Map<String, FlxActionDigital> = [];
@@ -522,6 +632,39 @@ class Controls extends FlxActionSet
 	public var N7_R(get, never):Bool;
 	public var N8_R(get, never):Bool;
 
+	public var T0(get, never):Bool;
+	public var T1(get, never):Bool;
+	public var T2(get, never):Bool;
+	public var T3(get, never):Bool;
+	public var T4(get, never):Bool;
+	public var T5(get, never):Bool;
+	public var T6(get, never):Bool;
+	public var T7(get, never):Bool;
+	public var T8(get, never):Bool;
+	public var T9(get, never):Bool;
+
+	public var T0_P(get, never):Bool;
+	public var T1_P(get, never):Bool;
+	public var T2_P(get, never):Bool;
+	public var T3_P(get, never):Bool;
+	public var T4_P(get, never):Bool;
+	public var T5_P(get, never):Bool;
+	public var T6_P(get, never):Bool;
+	public var T7_P(get, never):Bool;
+	public var T8_P(get, never):Bool;
+	public var T9_P(get, never):Bool;
+
+	public var T0_R(get, never):Bool;
+	public var T1_R(get, never):Bool;
+	public var T2_R(get, never):Bool;
+	public var T3_R(get, never):Bool;
+	public var T4_R(get, never):Bool;
+	public var T5_R(get, never):Bool;
+	public var T6_R(get, never):Bool;
+	public var T7_R(get, never):Bool;
+	public var T8_R(get, never):Bool;
+	public var T9_R(get, never):Bool;
+
 	inline function get_GTSTRUM() return _gtstrum.check();
 
 	inline function get_N0() return _n0.check();
@@ -553,6 +696,39 @@ class Controls extends FlxActionSet
 	inline function get_N6_R() return _n6R.check();
 	inline function get_N7_R() return _n7R.check();
 	inline function get_N8_R() return _n8R.check();
+
+	inline function get_T0() return _t0.check();
+	inline function get_T1() return _t1.check();
+	inline function get_T2() return _t2.check();
+	inline function get_T3() return _t3.check();
+	inline function get_T4() return _t4.check();
+	inline function get_T5() return _t5.check();
+	inline function get_T6() return _t6.check();
+	inline function get_T7() return _t7.check();
+	inline function get_T8() return _t8.check();
+	inline function get_T9() return _t9.check();
+
+	inline function get_T0_P() return _t0P.check();
+	inline function get_T1_P() return _t1P.check();
+	inline function get_T2_P() return _t2P.check();
+	inline function get_T3_P() return _t3P.check();
+	inline function get_T4_P() return _t4P.check();
+	inline function get_T5_P() return _t5P.check();
+	inline function get_T6_P() return _t6P.check();
+	inline function get_T7_P() return _t7P.check();
+	inline function get_T8_P() return _t8P.check();	
+	inline function get_T9_P() return _t9P.check();
+
+	inline function get_T0_R() return _t0R.check();
+	inline function get_T1_R() return _t1R.check();
+	inline function get_T2_R() return _t2R.check();
+	inline function get_T3_R() return _t3R.check();
+	inline function get_T4_R() return _t4R.check();
+	inline function get_T5_R() return _t5R.check();
+	inline function get_T6_R() return _t6R.check();
+	inline function get_T7_R() return _t7R.check();
+	inline function get_T8_R() return _t8R.check();
+	inline function get_T9_R() return _t9R.check();
 
 	#if (haxe >= "4.0.0")
 	public function new(name, scheme = None)
@@ -630,6 +806,39 @@ class Controls extends FlxActionSet
 		add(_n6R);
 		add(_n7R);
 		add(_n8R);
+
+		add(_t0);
+		add(_t1);
+		add(_t2);
+		add(_t3);
+		add(_t4);
+		add(_t5);
+		add(_t6);
+		add(_t7);
+		add(_t8);
+		add(_t9);
+
+		add(_t0P);
+		add(_t1P);
+		add(_t2P);
+		add(_t3P);
+		add(_t4P);
+		add(_t5P);
+		add(_t6P);
+		add(_t7P);
+		add(_t8P);
+		add(_t9P);
+
+		add(_t0R);
+		add(_t1R);
+		add(_t2R);
+		add(_t3R);
+		add(_t4R);
+		add(_t5R);
+		add(_t6R);
+		add(_t7R);
+		add(_t8R);
+		add(_t9R);
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -713,6 +922,39 @@ class Controls extends FlxActionSet
 		add(_n7R);
 		add(_n8R);
 
+		add(_t0);
+		add(_t1);
+		add(_t2);
+		add(_t3);
+		add(_t4);
+		add(_t5);
+		add(_t6);
+		add(_t7);
+		add(_t8);
+		add(_t9);
+
+		add(_t0P);
+		add(_t1P);
+		add(_t2P);
+		add(_t3P);
+		add(_t4P);
+		add(_t5P);
+		add(_t6P);
+		add(_t7P);
+		add(_t8P);
+		add(_t9P);
+
+		add(_t0R);
+		add(_t1R);
+		add(_t2R);
+		add(_t3R);
+		add(_t4R);
+		add(_t5R);
+		add(_t6R);
+		add(_t7R);
+		add(_t8R);
+		add(_t9R);
+
 
 		for (action in digitalActions)
 			byName[action.name] = action;
@@ -788,6 +1030,17 @@ class Controls extends FlxActionSet
 			case N6: _n6;
 			case N7: _n7;
 			case N8: _n8;
+
+			case T0: _t0;
+			case T1: _t1;
+			case T2: _t2;
+			case T3: _t3;
+			case T4: _t4;
+			case T5: _t5;
+			case T6: _t6;
+			case T7: _t7;
+			case T8: _t8;
+			case T9: _t9;
 		}
 	}
 
@@ -899,6 +1152,46 @@ class Controls extends FlxActionSet
 				func(_n8, PRESSED);
 				func(_n8P, JUST_PRESSED);
 				func(_n8R, JUST_RELEASED);
+			case T0:
+				func(_t0, PRESSED);
+				func(_t0P, JUST_PRESSED);
+				func(_t0R, JUST_RELEASED);
+			case T1:
+				func(_t1, PRESSED);
+				func(_t1P, JUST_PRESSED);
+				func(_t1R, JUST_RELEASED);
+			case T2:
+				func(_t2, PRESSED);
+				func(_t2P, JUST_PRESSED);
+				func(_t2R, JUST_RELEASED);
+			case T3:
+				func(_t3, PRESSED);
+				func(_t3P, JUST_PRESSED);
+				func(_t3R, JUST_RELEASED);
+			case T4:
+				func(_t4, PRESSED);
+				func(_t4P, JUST_PRESSED);
+				func(_t4R, JUST_RELEASED);
+			case T5:
+				func(_t5, PRESSED);
+				func(_t5P, JUST_PRESSED);
+				func(_t5R, JUST_RELEASED);
+			case T6:
+				func(_t6, PRESSED);
+				func(_t6P, JUST_PRESSED);
+				func(_t6R, JUST_RELEASED);
+			case T7:
+				func(_t7, PRESSED);
+				func(_t7P, JUST_PRESSED);
+				func(_t7R, JUST_RELEASED);
+			case T8:
+				func(_t8, PRESSED);
+				func(_t8P, JUST_PRESSED);
+				func(_t8R, JUST_RELEASED);
+			case T9:
+				func(_t9, PRESSED);
+				func(_t9P, JUST_PRESSED);
+				func(_t9R, JUST_RELEASED);
 		}
 	}
 
@@ -1153,6 +1446,17 @@ class Controls extends FlxActionSet
 		inline bindKeys(Control.N6, [FlxKey.fromString(FlxG.save.data.N6Bind)]);
 		inline bindKeys(Control.N7, [FlxKey.fromString(FlxG.save.data.N7Bind)]);
 		inline bindKeys(Control.N8, [FlxKey.fromString(FlxG.save.data.N8Bind)]);
+
+		bindKeys(Control.T0, [Q]);
+		bindKeys(Control.T1, [W]);
+		bindKeys(Control.T2, [E]);
+		bindKeys(Control.T3, [R]);
+		bindKeys(Control.T4, [V]);
+		bindKeys(Control.T5, [N]);
+		bindKeys(Control.T6, [U]);
+		bindKeys(Control.T7, [I]);
+		bindKeys(Control.T8, [O]);
+		bindKeys(Control.T8, [P]);
 
 		inline bindKeys(Control.L1, [FlxKey.fromString(FlxG.save.data.L1Bind)]);
 		inline bindKeys(Control.U1, [FlxKey.fromString(FlxG.save.data.U1Bind)]);

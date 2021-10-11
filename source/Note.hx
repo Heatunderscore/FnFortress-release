@@ -319,7 +319,7 @@ class Note extends FlxSprite
 					}	
 				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket)
 					{
-						frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_Types');
+						frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_types');
 						switch(noteType)
 						{
 							case 1: 
@@ -572,7 +572,7 @@ class Note extends FlxSprite
 					frameN = ['purple', 'red'];
 				case 8: 
 					frameN = ['purple', 'white', 'red'];
-				case 2: 
+				case 9: 
 					frameN = ['purple', 'blue', 'green', 'red', 'orange', 'black', 'yellow', 'violet', 'black', 'dark'];
 			}
 	

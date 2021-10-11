@@ -228,11 +228,11 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'Pyro_Down', 24, false);
 				animation.addByPrefix('singLEFT', 'Pyro_Left', 24, false);
 
-				animation.addByPrefix('idle-alt', 'PyroP_Idle', 24, true);
-				animation.addByPrefix('singUP-alt', 'PyroP_Up', 24, false);
-				animation.addByPrefix('singRIGHT-alt', 'PyroP_Right', 24, false);
-				animation.addByPrefix('singDOWN-alt', 'PyroP_Down', 24, false);
-				animation.addByPrefix('singLEFT-alt', 'PyroP_Left', 24, false);
+				animation.addByPrefix('idle-alt', 'Pyro_Idle', 24, true);
+				animation.addByPrefix('singUP-alt', 'Pyro_Up', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'Pyro_Right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'Pyro_Down', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'Pyro_Left', 24, false);
 
 				addOffset('idle');
                 addOffset("singDOWN", 90, -154);
@@ -842,9 +842,26 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", -30, -27);
 
 				playAnim('idle');
-		}
+		
+		case 'saxton':
+			tex = Paths.getSparrowAtlas('characters/saxtonhal', 'shared');
+			frames = tex;
+			animation.addByPrefix('idle', 'idle', 24);
+			animation.addByPrefix('singUP', 'up', 24);
+			animation.addByPrefix('singRIGHT', 'right', 24);
+			animation.addByPrefix('singDOWN', 'down', 24);
+			animation.addByPrefix('singLEFT', 'left', 24);
+
+			addOffset('idle');
+			addOffset("singUP", -6, 50);
+			addOffset("singRIGHT", 0, 27);
+			addOffset("singLEFT", -10, 10);
+			addOffset("singDOWN", 0, -30);
+
+			playAnim('idle');
 
 		dance();
+		}
 
 		if (isPlayer)
 		{
