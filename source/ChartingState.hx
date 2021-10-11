@@ -88,7 +88,7 @@ class ChartingState extends MusicBeatState
 	var player1:Boyfriend = new Boyfriend(0,0, "bf");
 	var leftIcon:HealthIcon;
 	var rightIcon:HealthIcon;
-	var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3];
+	var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3, 10];
 	private var lastNote:Note;
 	var claps:Array<Note> = [];
 
@@ -636,7 +636,7 @@ class ChartingState extends MusicBeatState
 			trace('2 keys pog');
 		};
 		var m_check8 = new FlxUICheckBox(10, 105, null, null, "3", 100);
-		m_check8.checked = (_song.mania == 5);
+		m_check8.checked = (_song.mania == 8);
 		m_check8.callback = function()
 		{
 			_song.mania = 0;
@@ -646,7 +646,17 @@ class ChartingState extends MusicBeatState
 			}
 			trace('3 keys pog');
 		};
-
+		var m_check9 = new FlxUICheckBox(10, 245, null, null, "10", 100);
+		m_check9.checked = (_song.mania == 9);
+		m_check9.callback = function()
+		{
+			_song.mania = 0;
+			if (m_check9.checked)
+			{
+				_song.mania = 9;
+			}
+			trace('10 key'); // have fun tob 
+		};
 		var m_check0 = new FlxUICheckBox(10, 125, null, null, "4", 100);
 		m_check0.checked = (_song.mania == 0);
 		m_check0.callback = function()
@@ -688,6 +698,7 @@ class ChartingState extends MusicBeatState
 		tab_group_note.add(m_check6);
 		tab_group_note.add(m_check7);
 		tab_group_note.add(m_check8);
+		tab_group_note.add(m_check9);
 
 		UI_box.addGroup(tab_group_note);
 	}
@@ -934,6 +945,12 @@ class ChartingState extends MusicBeatState
 				gridBG = FlxGridOverlay.create(GRID_SIZE, GRID_SIZE, GRID_SIZE * 6, GRID_SIZE * 16);
 				add(gridBG);
 			}
+		if (_song.mania == 9 && gridBG.width != S_GRID_SIZE * 20)
+			{
+				remove(gridBG);
+				gridBG = FlxGridOverlay.create(S_GRID_SIZE, GRID_SIZE, S_GRID_SIZE * 20, GRID_SIZE * 16);
+				add(gridBG);
+			}
 		gridBlackLine.x = gridBG.x + gridBG.width / 2;
 		leftIcon.setPosition(0, -100);
 		rightIcon.setPosition(gridBG.width / 2, -100);
@@ -941,7 +958,7 @@ class ChartingState extends MusicBeatState
 		UI_box.y = 20;
 		if (_song.mania != 0)
 		{
-			UI_box.x = FlxG.width / 2 + 160;// + 160 * _song.mania;
+			UI_box.x = FlxG.width / 2 + 240; //10k grid keeps overlapping the UI_box so this is how a have to move it -heat
 			UI_box.y = 100;
 		}
  
@@ -950,7 +967,7 @@ class ChartingState extends MusicBeatState
 		_song.song = typingShit.text;
 
 		strumLine.y = getYfromStrum((Conductor.songPosition - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps));
-		if (_song.mania == 2 || _song.mania == 5) strumLine.x = -70;
+		if (_song.mania == 2 || _song.mania == 5 || _song.mania == 9) strumLine.x = -70;
 		else strumLine.x = -300;
 
 		if (playClaps)
@@ -1027,7 +1044,7 @@ class ChartingState extends MusicBeatState
 			&& FlxG.mouse.y < gridBG.y + (GRID_SIZE * _song.notes[curSection].lengthInSteps))
 		{
 			var arX = Math.floor(FlxG.mouse.x / GRID_SIZE) * GRID_SIZE;
-			if (_song.mania == 2 || _song.mania == 5) arX = Math.floor(FlxG.mouse.x / S_GRID_SIZE) * S_GRID_SIZE;
+			if (_song.mania == 2 || _song.mania == 5 || _song.mania == 9) arX = Math.floor(FlxG.mouse.x / S_GRID_SIZE) * S_GRID_SIZE;
 			dummyArrow.x = arX;
 			if (FlxG.keys.pressed.SHIFT)
 				dummyArrow.y = FlxG.mouse.y;
@@ -1376,7 +1393,7 @@ class ChartingState extends MusicBeatState
 			note.x = Math.floor(daNoteInfo * GRID_SIZE);
 			note.y = Math.floor(getYfromStrum((daStrumTime - sectionStartTime()) % (Conductor.stepCrochet * _song.notes[curSection].lengthInSteps)));
 
-			if (_song.mania == 2 || _song.mania == 5)
+			if (_song.mania == 2 || _song.mania == 5 || _song.mania == 9)
 			{
 				note.setGraphicSize(S_GRID_SIZE, GRID_SIZE);
 				note.x = Math.floor(daNoteInfo * S_GRID_SIZE);
@@ -1556,7 +1573,7 @@ class ChartingState extends MusicBeatState
 
 
 
-		if (_song.mania == 2 || _song.mania == 5)
+		if (_song.mania == 2 || _song.mania == 5 || _song.mania == 9)
 		{
 			var noteData = Math.floor(FlxG.mouse.x / S_GRID_SIZE);
 		}

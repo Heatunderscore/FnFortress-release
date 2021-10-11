@@ -91,7 +91,7 @@ class PlayState extends MusicBeatState
 	public static var goods:Int = 0;
 	public static var sicks:Int = 0;
 	public static var mania:Int = 0;
-	public static var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3];
+	public static var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3, 10];
 	private var ctrTime:Float = 0;
 
 	var shitPoo:Bool = true;
@@ -1664,6 +1664,8 @@ class PlayState extends MusicBeatState
 				keys = [false, false];
 			case 8: 
 				keys = [false, false, false];
+			case 9: 
+				keys = [false, false, false, false, false, false, false, false, false, false];
 		}
 	
 		
@@ -1947,6 +1949,19 @@ class PlayState extends MusicBeatState
 					case 39:
 						data = 2;
 				}
+			case 9: 
+				binds = [FlxG.save.data.N0Bind, FlxG.save.data.N1Bind, FlxG.save.data.N2Bind, FlxG.save.data.N3Bind, FlxG.save.data.N4Bind, FlxG.save.data.N5Bind, FlxG.save.data.N6Bind, FlxG.save.data.N7Bind, FlxG.save.data.N8Bind];
+				switch(evt.keyCode) // eh ill add 10k controls later - heat
+				{
+					case 37:
+						data = 5;
+					case 40:
+						data = 6;
+					case 38:
+						data = 7;
+					case 39:
+						data = 8;
+				}
 
 		}
 
@@ -2077,6 +2092,19 @@ class PlayState extends MusicBeatState
 					case 39:
 						data = 2;
 				}
+			case 9: 
+				binds = [FlxG.save.data.N0Bind, FlxG.save.data.N1Bind, FlxG.save.data.N2Bind, FlxG.save.data.N3Bind, FlxG.save.data.N4Bind, FlxG.save.data.N5Bind, FlxG.save.data.N6Bind, FlxG.save.data.N7Bind, FlxG.save.data.N8Bind];
+				switch(evt.keyCode) // once again ill add 10k keys later
+				{
+					case 37:
+						data = 5;
+					case 40:
+						data = 6;
+					case 38:
+						data = 7;
+					case 39:
+						data = 8;
+				}
 
 		}
 
@@ -2203,6 +2231,8 @@ class PlayState extends MusicBeatState
 						NoteSplash.colors = ['purple', 'red'];
 					case 8: 
 						NoteSplash.colors = ['purple', 'white', 'red'];
+					case 9: 
+						NoteSplash.colors = ['purple', 'blue', 'green', 'red', 'orange', 'black', 'yellow', 'violet', 'darkred', 'darkblue'];
 				}
 			}
 
@@ -2557,6 +2587,10 @@ class PlayState extends MusicBeatState
 									case 8: 
 										nSuf = ['LEFT', 'SPACE', 'RIGHT'];
 										pPre = ['purple', 'white', 'red'];
+									case 9:
+										nSuf = ['LEFT', 'DOWN', 'UP', 'RIGHT', 'UP', 'UP', 'LEFT', 'DOWN', 'UP', 'RIGHT'];
+										pPre = ['purple', 'blue', 'green', 'red', 'orange', 'black', 'yellow', 'violet', 'darkred', 'dark'];
+										babyArrow.x -= Note.tooMuch;
 	
 								}
 						
@@ -3666,6 +3700,8 @@ class PlayState extends MusicBeatState
 				sDir = ['LEFT', 'RIGHT'];
 			case 8:
 				sDir = ['LEFT', 'UP', 'RIGHT'];
+			case 9: 
+				sDir = ['LEFT', 'DOWN', 'UP', 'RIGHT', 'UP', 'UP', 'LEFT', 'DOWN', 'UP', 'RIGHT'];
 		}
 
 		if (generatedMusic)
@@ -3692,6 +3728,8 @@ class PlayState extends MusicBeatState
 						holdArray = [controls.LEFT, controls.RIGHT];
 					case 8: 
 						holdArray = [controls.LEFT, controls.N4, controls.RIGHT];
+					case 9: 
+						holdArray = [controls.N0, controls.N1, controls.N2, controls.N3, controls.N4, controls.N5, controls.N6, controls.N7, controls.N8];
 				}
 				notes.forEachAlive(function(daNote:Note)
 				{	
@@ -3865,7 +3903,7 @@ class PlayState extends MusicBeatState
 
 						if (roboDad)
 						{
-							if (mania == 5)
+							if (mania == 5 || mania == 9)
 								{
 									var targ:Character = dad;
 									if (daNote.noteType == 3)
@@ -3972,6 +4010,9 @@ class PlayState extends MusicBeatState
 											case 8:
 												spr.offset.x -= 13;
 												spr.offset.y -= 13;
+											case 9: 
+												spr.offset.x -= 24;
+												spr.offset.y -= 24;
 										}
 									}
 									else
@@ -4271,6 +4312,9 @@ class PlayState extends MusicBeatState
 																		case 8:
 																			spr.offset.x -= 13;
 																			spr.offset.y -= 13;
+																		case 9: 
+																			spr.offset.x -= 24;
+																			spr.offset.y -= 24;
 																	}
 																}
 																else
@@ -5057,6 +5101,30 @@ class PlayState extends MusicBeatState
 							controls.N4_R,
 							controls.RIGHT_R
 						];
+					case 9: 
+						holdArray = [controls.N0, controls.N1, controls.N2, controls.N3, controls.N4, controls.N5, controls.N6, controls.N7, controls.N8];
+						pressArray = [
+							controls.N0_P,
+							controls.N1_P,
+							controls.N2_P,
+							controls.N3_P,
+							controls.N4_P,
+							controls.N5_P,
+							controls.N6_P,
+							controls.N7_P,
+							controls.N8_P
+						];
+						releaseArray = [
+							controls.N0_R,
+							controls.N1_R,
+							controls.N2_R,
+							controls.N3_R,
+							controls.N4_R,
+							controls.N5_R,
+							controls.N6_R,
+							controls.N7_R,
+							controls.N8_R
+						];
 				}
 				#if windows
 				if (luaModchart != null)
@@ -5107,6 +5175,8 @@ class PlayState extends MusicBeatState
 						anas = [null,null];
 					case 8: 
 						anas = [null,null,null];
+					case 9: 
+						anas = [null,null,null,null,null,null,null,null,null,null];
 				}
 
 				for (i in 0...pressArray.length)
@@ -5224,6 +5294,8 @@ class PlayState extends MusicBeatState
 								directionsAccounted = [false, false];
 							case 8: 
 								directionsAccounted = [false, false, false];
+							case 9: 
+								directionsAccounted = [false, false, false, false, false, false, false, false, false, false];
 						}
 						
 
@@ -5289,6 +5361,8 @@ class PlayState extends MusicBeatState
 								hit = [false, false];
 							case 8: 
 								hit = [false, false, false];
+							case 9: 
+								hit = [false, false, false, false, false, false, false, false, false, false];
 						}
 						if (perfectMode)
 							goodNoteHit(possibleNotes[0]);
@@ -5393,6 +5467,9 @@ class PlayState extends MusicBeatState
 								case 8:
 									spr.offset.x -= 13;
 									spr.offset.y -= 13;
+								case 9: 
+									spr.offset.x -= 24;
+									spr.offset.y -= 24;
 							}
 						}
 						else
@@ -6089,6 +6166,12 @@ class PlayState extends MusicBeatState
 				Note.noteScale = 0.7;
 				Note.pixelnoteScale = 1;
 				Note.mania = 8;
+			case 9: 
+				keys = [false, false, false, false, false, false, false, false, false, false];
+				Note.swagWidth = 85 * 0.7;
+				Note.noteScale = 0.5;
+				Note.pixelnoteScale = 0.7;
+				Note.mania = 9;
 		}
 
 		generateStaticArrows(0);
@@ -6300,6 +6383,8 @@ class PlayState extends MusicBeatState
 					frameN = ['purple', 'red'];
 				case 8: 
 					frameN = ['purple', 'white', 'red'];
+				case 9: 
+					frameN = ['purple', 'blue', 'green', 'red', 'orange', 'black', 'yellow', 'violet', 'black', 'dark'];
 	
 			}
 			notes.forEachAlive(function(daNote:Note) //so the animation changes but then it doesnt work lol

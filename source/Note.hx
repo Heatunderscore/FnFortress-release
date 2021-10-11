@@ -143,6 +143,13 @@ class Note extends FlxSprite
 				pixelnoteScale = 1;
 				mania = 8;
 			}
+		else if (PlayState.SONG.mania == 9)
+			{
+				swagWidth = 85 * 0.7;
+				noteScale = 0.5;
+				pixelnoteScale = 0.7;
+				mania = 9;
+			}
 		super();
 
 		if (prevNote == null)
@@ -152,7 +159,7 @@ class Note extends FlxSprite
 		isSustainNote = sustainNote;
 
 		x += 50;
-		if (PlayState.SONG.mania == 2)
+		if (PlayState.SONG.mania == 2 || PlayState.SONG.mania == 9)
 			{
 				x -= tooMuch;
 			}
@@ -166,7 +173,7 @@ class Note extends FlxSprite
 		if (this.strumTime < 0 )
 			this.strumTime = 0;
 
-		this.noteData = noteData % 9;
+		this.noteData = noteData % 10;
 		disguise = noteType == 1;
 		dad2 = noteType == 2;
 		dad1 = noteType == 3;
@@ -418,6 +425,8 @@ class Note extends FlxSprite
 				frameN = ['purple', 'red'];
 			case 8: 
 				frameN = ['purple', 'white', 'red'];
+			case 9:
+				frameN = ['purple', 'blue', 'green', 'red', 'orange', 'black', 'yellow', 'violet', 'darkred', 'dark'];
 
 		}
 
@@ -536,6 +545,13 @@ class Note extends FlxSprite
 				pixelnoteScale = 1;
 				mania = 8;
 			}
+		else if (newMania == 9)
+			{
+				swagWidth = 85 * 0.7;
+				noteScale = 0.5;
+				pixelnoteScale = 0.7;
+				mania = 9;
+			}
 
 			var frameN:Array<String> = ['purple', 'blue', 'green', 'red'];
 			switch (mania)
@@ -556,7 +572,8 @@ class Note extends FlxSprite
 					frameN = ['purple', 'red'];
 				case 8: 
 					frameN = ['purple', 'white', 'red'];
-	
+				case 2: 
+					frameN = ['purple', 'blue', 'green', 'red', 'orange', 'black', 'yellow', 'violet', 'black', 'dark'];
 			}
 	
 			//x += swagWidth * noteData;
