@@ -952,32 +952,17 @@ class PlayState extends MusicBeatState
 						bottomBoppers.scrollFactor.set(0.9, 0.9);
 						add(bottomBoppers);	
 				}
-			case 'stage':
+			case 'sax':
 				{
-						defaultCamZoom = 0.9;
-						curStage = 'stage';
-						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback'));
-						bg.antialiasing = FlxG.save.data.antialiasing;
-						bg.scrollFactor.set(0.9, 0.9);
-						bg.active = false;
-						add(bg);
-	
-						var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
-						stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-						stageFront.updateHitbox();
-						stageFront.antialiasing = FlxG.save.data.antialiasing;
-						stageFront.scrollFactor.set(0.9, 0.9);
-						stageFront.active = false;
-						add(stageFront);
-	
-						var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
-						stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-						stageCurtains.updateHitbox();
-						stageCurtains.antialiasing = FlxG.save.data.antialiasing;
-						stageCurtains.scrollFactor.set(1.3, 1.3);
-						stageCurtains.active = false;
-	
-						add(stageCurtains);
+					defaultCamZoom = 0.82;
+					curStage = 'sax';
+					var bg:FlxSprite = new FlxSprite(-400, -175).loadGraphic(Paths.image('fortress/bg/saxBG'));
+					bg.antialiasing = true;
+					bg.screenCenter();
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					bg.scale.set(1.4,1.4);
+					add(bg);
 				}
 			default:
 			{
@@ -1146,6 +1131,12 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+			case 'sax':
+				boyfriend.y += 500;
+				dad.y += 300;
+				gf.y += 500;
+				dad.x -= 200;
+				boyfriend.x += 150;
 		}
 
 
@@ -2203,14 +2194,14 @@ class PlayState extends MusicBeatState
 							ana.nearestNote = [coolNote.strumTime, coolNote.noteData, coolNote.sustainLength];
 						
 						}
-					else if (!FlxG.save.data.ghost && songStarted && !grace)
+					/*else if (!FlxG.save.data.ghost && songStarted && !grace)
 						{
 							noteMiss(data, null);
 							ana.hit = false;
 							ana.hitJudge = "shit";
 							ana.nearestNote = [];
 							//health -= 0.20;
-						}
+						}*/ //broke :(
 				}
 		
 	}
@@ -2649,8 +2640,13 @@ class PlayState extends MusicBeatState
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
 			
-			if (PlayStateChangeables.Optimize)
+			if (PlayStateChangeables.Optimize || SONG.song == 'Property Damage'){
 				babyArrow.x -= 275;
+				cpuStrums.forEach(function(spr:FlxSprite)
+					{					
+						spr.x -= 700; 
+					});
+			}
 			
 			cpuStrums.forEach(function(spr:FlxSprite)
 			{					
@@ -3909,6 +3905,8 @@ class PlayState extends MusicBeatState
 	
 					if (!daNote.mustPress && daNote.wasGoodHit)
 					{
+						if (SONG.player2 == 'saxton')
+							FlxG.camera.shake(0.04,0.04);
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
 	
@@ -4698,7 +4696,10 @@ class PlayState extends MusicBeatState
 			rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
 			rating.screenCenter();
 			rating.y -= 50;
-			rating.x = coolText.x - 125;
+			if (SONG.song == 'Property Damage')
+				rating.x = coolText.x - 525;
+			else
+				rating.x = coolText.x - 125;
 			
 			if (FlxG.save.data.changedHit)
 			{
@@ -6319,6 +6320,27 @@ class PlayState extends MusicBeatState
 					soldierShittingOnYou();
 				}
 		}
+
+		/*if (curSong == 'Property Damage')
+		{
+			var saxTrail:FlxTrail;
+			var bfTrail:FlxTrail;
+			saxTrail = new FlxTrail(dad, null, 2, 11, 0.8, 0.01);
+			bfTrail = new FlxTrail(boyfriend, null, 2, 11, 0.8, 0.01);
+
+			switch (curStep){
+				case 1792 | 3120 | 3328 | 3584:
+					add(saxTrail);
+				case 2175 | 3144 | 3393 | 3649:
+					remove(saxTrail);
+				case 3456 | 3712: 
+					add(bfTrail);
+				case 3521 | 3777:
+					remove(bfTrail);
+			}
+		
+
+		}*/
 
 		if (curSong == 'Ironcurtain')
 		{
