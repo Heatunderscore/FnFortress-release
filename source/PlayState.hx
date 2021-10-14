@@ -5506,8 +5506,8 @@ class PlayState extends MusicBeatState
 									spr.offset.x -= 13;
 									spr.offset.y -= 13;
 								case 9: 
-									spr.offset.x -= 24;
-									spr.offset.y -= 24;
+									spr.offset.x -= 22;
+									spr.offset.y -= 20;
 							}
 						}
 						else
