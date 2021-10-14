@@ -1456,7 +1456,7 @@ class Controls extends FlxActionSet
 		bindKeys(Control.T6, [U]);
 		bindKeys(Control.T7, [I]);
 		bindKeys(Control.T8, [O]);
-		bindKeys(Control.T8, [P]);
+		bindKeys(Control.T9, [P]);
 
 		inline bindKeys(Control.L1, [FlxKey.fromString(FlxG.save.data.L1Bind)]);
 		inline bindKeys(Control.U1, [FlxKey.fromString(FlxG.save.data.U1Bind)]);
