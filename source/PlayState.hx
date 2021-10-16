@@ -2639,20 +2639,6 @@ class PlayState extends MusicBeatState
 			babyArrow.animation.play('static');
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
-
-			if (SONG.song == 'Infiltrator')
-			{
-				if (curStep == 537){
-					playerStrums.forEach(function(spr:FlxSprite){spr.x -= 275;});
-					cpuStrums.forEach(function(spr:FlxSprite){spr.x -= 275;});
-				}
-
-				if (curStep == 930){
-					playerStrums.forEach(function(spr:FlxSprite){spr.x += 275;});
-					cpuStrums.forEach(function(spr:FlxSprite){spr.x += 275;});
-				}
-				
-			}
 			
 			if (PlayStateChangeables.Optimize || SONG.song == 'Property Damage'){
 				babyArrow.x -= 275;
