@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="FNF_PyroTF2 (1).png">
+<TextureAtlas imagePath="Pyro.png">
 	<!-- Created with Adobe Animate version 21.0.6.41649 -->
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="PyroP_Down0000" x="0" y="660" width="680" height="489" frameX="-14" frameY="-6" frameWidth="694" frameHeight="495"/>

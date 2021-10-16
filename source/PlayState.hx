@@ -103,7 +103,6 @@ class PlayState extends MusicBeatState
 	var cumBOT:FlxTrail;
 	var bonkBOT:FlxTrail;
 	var curTiming:Int = 0;
-	var swagSpeed:Float = 4.5;
 
 	var warning:FlxSprite;
 
@@ -267,6 +266,7 @@ class PlayState extends MusicBeatState
 	var scoreTxt:FlxText;
 	var replayTxt:FlxText;
 	var startedCountdown:Bool = false;
+	var ghostNotes:Bool = false;
 
 	var maniaChanged:Bool = false;
 
@@ -2639,6 +2639,20 @@ class PlayState extends MusicBeatState
 			babyArrow.animation.play('static');
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
+
+			if (SONG.song == 'Infiltrator')
+			{
+				if (curStep == 537){
+					playerStrums.forEach(function(spr:FlxSprite){spr.x -= 275;});
+					cpuStrums.forEach(function(spr:FlxSprite){spr.x -= 275;});
+				}
+
+				if (curStep == 930){
+					playerStrums.forEach(function(spr:FlxSprite){spr.x += 275;});
+					cpuStrums.forEach(function(spr:FlxSprite){spr.x += 275;});
+				}
+				
+			}
 			
 			if (PlayStateChangeables.Optimize || SONG.song == 'Property Damage'){
 				babyArrow.x -= 275;
@@ -3364,100 +3378,6 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-			if (curSong == 'Infiltrator') 
-			{
-				/*switch (curStep)
-				{
-					case 512:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 539:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 565:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 592:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 618:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 644:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 671:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 697:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 704:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 731:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 757:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 784:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 810:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 837:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 863:
-						//FlxG.sound.play(Paths.sound('cloak'), 1);
-						FlxTween.tween(camHUD, {alpha: 0},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-					case 890:
-						FlxTween.tween(camHUD, {alpha: 100},2, 
-							{
-								ease: FlxEase.cubeInOut,
-							});
-				}*/
-			}
 		if (curSong == 'Clinicaltrial')
 		{
 			switch (curStep)
@@ -3752,7 +3672,15 @@ class PlayState extends MusicBeatState
 						holdArray = [controls.T0, controls.T1, controls.T2, controls.T3, controls.T4, controls.T5, controls.T6, controls.T7, controls.T8, controls.T9];
 				}
 				notes.forEachAlive(function(daNote:Note)
-				{	
+				{
+					if (SONG.song == 'Infiltrator' && ghostNotes){	
+						if (daNote.noteType == 0 && daNote.isOnScreen() || daNote.noteType == 1 && daNote.isOnScreen()) // if the note is on screen, it will lose transparency every frame - heat
+						{
+							daNote.alpha -= 0.025;
+							//trace(daNote.alpha);
+						}
+					}
+					
 
 					// instead of doing stupid y > FlxG.height
 					// we be men and actually calculate the time :)
@@ -3766,6 +3694,8 @@ class PlayState extends MusicBeatState
 						daNote.visible = true;
 						daNote.active = true;
 					}
+
+
 					
 					if (!daNote.modifiedByLua)
 						{
@@ -4077,7 +4007,7 @@ class PlayState extends MusicBeatState
 								daNote.modAngle = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].angle;
 							if (daNote.sustainActive)
 							{
-								if (executeModchart)
+								if (executeModchart && SONG.song != 'Infiltrator') // need to override this so ghost notes work -heat
 									daNote.alpha = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].alpha;
 							}
 							daNote.modAngle = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].angle;
@@ -4090,7 +4020,7 @@ class PlayState extends MusicBeatState
 								daNote.modAngle = strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].angle;
 							if (daNote.sustainActive)
 							{
-								if (executeModchart)
+								if (executeModchart && SONG.song != 'Infiltrator')
 									daNote.alpha = playerStrums.members[Math.floor(Math.abs(daNote.noteData))].alpha;
 							}
 							daNote.modAngle = strumLineNotes.members[Math.floor(Math.abs(daNote.noteData))].angle;
@@ -6321,6 +6251,43 @@ class PlayState extends MusicBeatState
 				}
 		}
 
+		if (curSong == 'Infiltrator') 
+			{
+				switch (curStep)
+				{
+					case 509:
+						//FlxG.sound.play(Paths.sound('cloak'), 1);
+						FlxTween.tween(camHUD, {alpha: 0},2, 
+							{
+								ease: FlxEase.cubeInOut,
+							});
+					case 537:
+						ghostNotes = true; //Ghost notes + middle scroll
+						playerStrums.forEach(function(spr:FlxSprite){spr.x -= 250;});
+						cpuStrums.forEach(function(spr:FlxSprite){spr.x -= 575;});
+					case 539:
+						FlxTween.tween(camHUD, {alpha: 100},2, 
+							{
+								ease: FlxEase.cubeInOut,
+							});
+					case 895:
+						//FlxG.sound.play(Paths.sound('cloak'), 1);
+						FlxTween.tween(camHUD, {alpha: 0},2, 
+							{
+								ease: FlxEase.cubeInOut,
+							});
+					case 930:
+						ghostNotes = false; 
+						cpuStrums.forEach(function(spr:FlxSprite){spr.x += 575;});
+						playerStrums.forEach(function(spr:FlxSprite){spr.x += 250;});
+					case 933:
+						FlxTween.tween(camHUD, {alpha: 100},3, 
+							{
+								ease: FlxEase.cubeInOut,
+							});
+				}
+			}
+
 		/*if (curSong == 'Property Damage')
 		{
 			var saxTrail:FlxTrail;
@@ -6367,7 +6334,7 @@ class PlayState extends MusicBeatState
 				}		
 		}
 
-		if (curSong == 'Infiltrator')
+		/*if (curSong == 'Infiltrator')
 			{
 				if (clok.contains(curStep))
 					{
@@ -6388,7 +6355,7 @@ class PlayState extends MusicBeatState
 							cum = false;
 						}
 					}		
-			}
+			}*/
 
 
 		if (health > 2.3)

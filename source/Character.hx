@@ -220,7 +220,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 			case 'pyro':
-				tex = Paths.getSparrowAtlas('characters/pyro', 'shared');
+				tex = Paths.getSparrowAtlas('characters/Pyro', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'Pyro_Idle', 24, true);
 				animation.addByPrefix('singUP', 'Pyro_Up', 24, false);
@@ -228,11 +228,11 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'Pyro_Down', 24, false);
 				animation.addByPrefix('singLEFT', 'Pyro_Left', 24, false);
 
-				animation.addByPrefix('idle-alt', 'Pyro_Idle', 24, true);
-				animation.addByPrefix('singUP-alt', 'Pyro_Up', 24, false);
-				animation.addByPrefix('singRIGHT-alt', 'Pyro_Right', 24, false);
-				animation.addByPrefix('singDOWN-alt', 'Pyro_Down', 24, false);
-				animation.addByPrefix('singLEFT-alt', 'Pyro_Left', 24, false);
+				animation.addByPrefix('idle-alt', 'PyroP_Idle', 24, true);
+				animation.addByPrefix('singUP-alt', 'PyroP_Up', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'PyroP_Right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'PyroP_Down', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'PyroP_Left', 24, false);
 
 				addOffset('idle');
                 addOffset("singDOWN", 90, -154);
