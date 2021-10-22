@@ -45,20 +45,49 @@ class Contract extends MusicBeatState
 
     public var curLock:Int = 0;
 
+    var weekData:Array<String> = [];
     var curWeek:Int = 1;
     
     var contracter:FlxSprite;
     var weekThing:FlxSprite;
 
+    var curCon:String = "";
+
+    var funnyRoot:FlxSprite;
 	public static var kadeEngineVer:String = "FNF VS MANNCO (1.5.4 EK)" + nightly;
 	public static var gameVer:String = "0.2.7.1";
 
+    var arrows:FlxSprite;
 	var magenta:FlxSprite;
 	var camFollow:FlxObject;
 	public static var finishedFunnyMove:Bool = false;
+    public static var shitUnlocked:Array<Bool> = [true];
 
 	override function create()
 	{
+        FlxG.save.data.funnyLock = FlxG.save.data.unlockedWeek;
+
+        curLock = FlxG.save.data.funnyLock;
+        
+        switch (curLock)
+        {
+            case 0:
+                curCon = "normal";
+                shitUnlocked = [true, false, false, false, true];
+            case 1:
+                curCon = "bronze";
+                shitUnlocked = [true, true, false, false, true];
+            case 2:
+                curCon = "silver";
+                shitUnlocked = [true, true, true, false, true];
+            case 3 | 4:
+                curCon = "gold";
+                shitUnlocked = [true, true, true, true, true];
+        }
+        /*for (i in 0...curLock)
+        {
+            shitUnlocked.push(true);
+        }*/ //dont laugh
         var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuBG'));
 		bg.scrollFactor.x = 0;
 		bg.scrollFactor.y = 0.10;
@@ -68,7 +97,10 @@ class Contract extends MusicBeatState
 		bg.antialiasing = true;
 		add(bg);
 
-        contracter = new FlxSprite(0, 12).loadGraphic(Paths.image('fortress/contract/contracter', 'shared'));
+        contracter = new FlxSprite(0, 12);
+        contracter.frames = Paths.getSparrowAtlas('fortress/contract/contracter', 'shared');
+        contracter.animation.addByPrefix('idle', 'contract ' + curCon, 24, true);
+        contracter.animation.play('idle');
 		contracter.antialiasing = true;
 		add(contracter);
 
@@ -81,7 +113,13 @@ class Contract extends MusicBeatState
                 buttonThing.frames = Paths.getSparrowAtlas('fortress/contract/contracterButtons', 'shared');
                 buttonThing.animation.addByPrefix('idle', optionShit[i] + ' idle', 24, true);
                 buttonThing.animation.addByPrefix('hover', optionShit[i] + ' press', 24, true);
-                buttonThing.animation.play('idle');
+                if (!shitUnlocked[i]){
+                    buttonThing.animation.play('hover');
+                }
+                else if (shitUnlocked[i]){
+                    buttonThing.animation.play('idle');
+                }
+
                 buttonThing.antialiasing = true;
                 buttonThing.updateHitbox();
                 buttonThing.screenCenter(X);
@@ -112,7 +150,6 @@ class Contract extends MusicBeatState
                 textShit.animation.play('title');
                 textShit.antialiasing = true;
                 textShit.updateHitbox();
-                textShit.screenCenter(X);
                 textShit.scrollFactor.set();
                 switch(i) 
                 {
@@ -144,6 +181,27 @@ class Contract extends MusicBeatState
         add(weekThing);
 
         FlxG.mouse.visible = true;
+        
+        arrows = new FlxSprite(-154, -12);
+        arrows.frames = Paths.getSparrowAtlas('fortress/contract/arrows', 'shared');
+        arrows.animation.addByPrefix('idle', curLock + ' unlocked');
+        arrows.animation.play('idle');
+        arrows.antialiasing = true;
+        arrows.updateHitbox();
+        add(arrows);
+
+        funnyRoot = new FlxSprite(592, 128);
+        funnyRoot.frames = Paths.getSparrowAtlas('fortress/contract/funnyRoot', 'shared');
+        funnyRoot.animation.addByPrefix('idle','fnf text', 24, true);
+        funnyRoot.animation.addByPrefix('idle1','week1 text', 24, true);
+        funnyRoot.animation.addByPrefix('idle2','week2 text', 24, true);
+        funnyRoot.animation.addByPrefix('idle3','week3 text', 24, true);
+        funnyRoot.animation.addByPrefix('idle4','hale text', 24, true);
+        funnyRoot.animation.addByPrefix('idle5','freeplay text', 24, true);
+        funnyRoot.animation.play('idle');
+        funnyRoot.antialiasing = true;
+        add(funnyRoot);
+
 
         super.create();
     }
@@ -155,6 +213,7 @@ class Contract extends MusicBeatState
 
     override function update(elapsed:Float)
     {
+       
         if (FlxG.sound.music.volume < 0.8)
             {
                 FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
@@ -174,13 +233,20 @@ class Contract extends MusicBeatState
                     {
                         curSelected = spr.ID;
                         usingMouse = true;
-                        spr.animation.play('hover');
                         curWeek = Math.floor(spr.ID + 1);
 
                         remove(weekThing);
                         weekThing.antialiasing = true;
                         add(weekThing);
-                        weekThing.animation.play('idle' + curWeek);
+
+                        remove(funnyRoot);
+                        funnyRoot.antialiasing = true;
+                        add(funnyRoot);
+                        if (shitUnlocked[curSelected]){
+                            spr.animation.play('hover');
+                            funnyRoot.animation.play('idle' + curWeek);
+                            weekThing.animation.play('idle' + curWeek);
+                        }
                     }
                         
                     if(FlxG.mouse.pressed && canClick)
@@ -207,18 +273,21 @@ class Contract extends MusicBeatState
 
     function selectSomething()
         {
-            selectedSomethin = true;
-            FlxG.sound.play(Paths.sound('confirmMenu'));
-                
-            canClick = false;
-    
-            menuItems.forEach(function(spr:FlxSprite)
+            if (shitUnlocked[curSelected])
             {
-                new FlxTimer().start(1, function(tmr:FlxTimer)
-                    {
-                        goToState();
-                    });
-            });
+                selectedSomethin = true;
+                FlxG.sound.play(Paths.sound('confirmMenu'));
+                
+                canClick = false;
+    
+                menuItems.forEach(function(spr:FlxSprite)
+                {
+                    new FlxTimer().start(1, function(tmr:FlxTimer)
+                        {
+                            goToState();
+                        });
+                });
+            }
         }
     function goToState()
         {
@@ -227,13 +296,17 @@ class Contract extends MusicBeatState
             switch (daChoice)
             {
                 case 'one':
-                    FlxG.sound.play(Paths.sound('burp'));
+                    weekData = ['Atomicpunch', 'Maggots', 'Inferno'];
+                    startWeek();
                 case 'two':
-                    FlxG.sound.play(Paths.sound('burp'));
+                    weekData = ['Ironbomber', 'Ironcurtain', 'Frontierjustice'];
+                    startWeek();
                 case 'complete':
-                    FlxG.sound.play(Paths.sound('burp'));
+                    weekData = ['Clinicaltrial', 'Wanker', 'Infiltrator'];
+                    startWeek();
                 case 'hale':
-                    FlxG.sound.play(Paths.sound('burp'));
+                    weekData = ['Property Damage'];
+                    startWeek();
                 case 'freeplay':
                     FlxG.switchState(new FreeplayState());
             }		
@@ -251,7 +324,7 @@ class Contract extends MusicBeatState
             }
             menuItems.forEach(function(spr:FlxSprite)
             {
-                spr.animation.play('idle');
+                //spr.animation.play('idle');
     
                 if (spr.ID == curSelected && finishedFunnyMove)
                 {
@@ -260,5 +333,48 @@ class Contract extends MusicBeatState
     
                 spr.updateHitbox();
             });
+        }
+    function changeWeek(change:Int = 0):Void
+    {
+        curWeek += change;
+    
+        if (curWeek >= weekData.length)
+            curWeek = 0;
+        if (curWeek < 0)
+            curWeek = weekData.length - 1;
+    }
+    function startWeek():Void
+        {
+            if (shitUnlocked[curSelected])
+            {
+                PlayState.storyPlaylist = weekData;
+                PlayState.isStoryMode = true;
+        
+                PlayState.storyPlaylist = weekData;
+                PlayState.isStoryMode = true;
+        
+                PlayState.storyDifficulty = 2;
+        
+                // adjusting the song name to be compatible
+                var songFormat = StringTools.replace(PlayState.storyPlaylist[0], " ", "-");
+                switch (songFormat) {
+                    case 'Dad-Battle': songFormat = 'Dadbattle';
+                    case 'Philly-Nice': songFormat = 'Philly';
+                }
+        
+                var poop:String = Highscore.formatSong(songFormat, 2);
+                PlayState.sicks = 0;
+                PlayState.bads = 0;
+                PlayState.shits = 0;
+                PlayState.goods = 0;
+                PlayState.campaignMisses = 0;
+                PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
+                PlayState.storyWeek = curWeek;
+                PlayState.campaignScore = 0;
+                new FlxTimer().start(1, function(tmr:FlxTimer)
+                {
+                    LoadingState.loadAndSwitchState(new PlayState(), true);
+                });
+            }
         }
 }

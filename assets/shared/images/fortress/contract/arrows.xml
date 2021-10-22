@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="arrows.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="0 unlocked0000" x="0" y="0" width="1255" height="708"/>
+	<SubTexture name="0 unlocked0001" x="0" y="0" width="1255" height="708"/>
+	<SubTexture name="0 unlocked0002" x="0" y="0" width="1255" height="708"/>
+	<SubTexture name="1 unlocked0000" x="1255" y="0" width="1255" height="708"/>
+	<SubTexture name="1 unlocked0001" x="1255" y="0" width="1255" height="708"/>
+	<SubTexture name="1 unlocked0002" x="1255" y="0" width="1255" height="708"/>
+	<SubTexture name="2 unlocked0000" x="2510" y="0" width="1255" height="708"/>
+	<SubTexture name="2 unlocked0001" x="2510" y="0" width="1255" height="708"/>
+	<SubTexture name="2 unlocked0002" x="2510" y="0" width="1255" height="708"/>
+	<SubTexture name="3 unlocked0000" x="0" y="708" width="1255" height="708"/>
+	<SubTexture name="3 unlocked0001" x="0" y="708" width="1255" height="708"/>
+	<SubTexture name="3 unlocked0002" x="0" y="708" width="1255" height="708"/>
+</TextureAtlas>

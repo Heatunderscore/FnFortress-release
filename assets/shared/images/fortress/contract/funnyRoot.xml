@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="funnyRoot.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="fnf text0000" x="0" y="0" width="211" height="31"/>
+	<SubTexture name="fnf text0001" x="0" y="0" width="211" height="31"/>
+	<SubTexture name="fnf text0002" x="0" y="0" width="211" height="31"/>
+	<SubTexture name="freeplay text0000" x="0" y="31" width="167" height="19"/>
+	<SubTexture name="freeplay text0001" x="0" y="31" width="167" height="19"/>
+	<SubTexture name="freeplay text0002" x="0" y="31" width="167" height="19"/>
+	<SubTexture name="hale text0000" x="0" y="50" width="122" height="21"/>
+	<SubTexture name="hale text0001" x="0" y="50" width="122" height="21"/>
+	<SubTexture name="hale text0002" x="0" y="50" width="122" height="21"/>
+	<SubTexture name="week1 text0000" x="0" y="71" width="156" height="23"/>
+	<SubTexture name="week1 text0001" x="0" y="71" width="156" height="23"/>
+	<SubTexture name="week1 text0002" x="0" y="71" width="156" height="23"/>
+	<SubTexture name="week2 text0000" x="0" y="94" width="158" height="23"/>
+	<SubTexture name="week2 text0001" x="0" y="94" width="158" height="23"/>
+	<SubTexture name="week2 text0002" x="0" y="94" width="158" height="23"/>
+	<SubTexture name="week3 text0000" x="0" y="117" width="150" height="22"/>
+	<SubTexture name="week3 text0001" x="0" y="117" width="150" height="22"/>
+	<SubTexture name="week3 text0002" x="0" y="117" width="150" height="22"/>
+</TextureAtlas>

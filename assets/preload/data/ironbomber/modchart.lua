@@ -19,6 +19,8 @@ local currentBeat = (songPos / 1000)*(bpm/60)
 			setActorX(_G['defaultStrum'..i..'X'], i)
 			setActorY(_G['defaultStrum'..i..'Y'], i)
 		end
+		    camHudAngle = 0
+            cameraAngle = 0
 	end
 end
 

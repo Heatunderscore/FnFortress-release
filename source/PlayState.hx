@@ -104,6 +104,8 @@ class PlayState extends MusicBeatState
 	var bonkBOT:FlxTrail;
 	var curTiming:Int = 0;
 
+	var memedic:Bool = false;
+
 	var warning:FlxSprite;
 
 	var dodge:Bool = false;
@@ -138,6 +140,7 @@ class PlayState extends MusicBeatState
 	var warnings:Array<Int>;
 
 	var cum:Bool = false;
+	var saxShake:Bool = false;
 
 	var songLength:Float = 0;
 	var kadeEngineWatermark:FlxText;
@@ -158,6 +161,17 @@ class PlayState extends MusicBeatState
 	private var dad2:Character;
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
+
+	var scout:Character;
+	var soldier:Character;
+	var pyro:Character;
+	var demoman:Character;
+	var heavy:Character;
+	var engi:Character;
+	var medic:Character;
+	var sniper:Character;
+	var spy:Character;
+	var roboEngi:Character;
 
 	public var notes:FlxTypedGroup<Note>;
 	var noteSplashes:FlxTypedGroup<NoteSplash>;
@@ -314,6 +328,10 @@ class PlayState extends MusicBeatState
 	{
 		FlxG.mouse.visible = false;
 
+		if (isHeavy)
+			{
+				isHeavy = false;
+			}
 		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
 
 		clok = [512, 539, 565, 592, 618, 644, 671, 697, 704, 731, 757, 784, 810, 837, 863, 890];
@@ -448,21 +466,28 @@ class PlayState extends MusicBeatState
 		{
 			case 'atomicpunch':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('atomicpunch/pee'));
-				camHUD.alpha = 0;
 			case 'maggots':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('maggots/maggots'));
 				maggots = true;
-				camHUD.alpha = 0;
 			case 'inferno':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('inferno/furry'));
 				burnThing = true;
-				camHUD.alpha = 0;
 			case 'ironbomber':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ironbomber/poo'));
+			case 'ironcurtain':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('ironcurtain/iamheavyweaponsguy'));
 			case 'frontierjustice':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('frontierjustice/yeeehaw'));
 				roboDad = true;
 			case 'clinicaltrial':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('clinicaltrial/mehdick'));
 				heavyDad = true;
+			case 'wanker':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('wanker/hehehugheh'));
 			case 'infiltrator':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('infiltrator/furry'));
+			case 'may-somethingth':
+				memedic = true;
 		}
 
 		//defaults if no stage was found in chart
@@ -471,7 +496,6 @@ class PlayState extends MusicBeatState
 		if (SONG.stage == null) {
 			switch(storyWeek)
 			{
-				case 2: stageCheck = 'halloween';
 				case 3: stageCheck = 'philly';
 				case 4: stageCheck = 'limo';
 				case 5: if (songLowercase == 'winter-horrorland') {stageCheck = 'mallEvil';} else {stageCheck = 'mall';}
@@ -966,7 +990,7 @@ class PlayState extends MusicBeatState
 				}
 			default:
 			{
-					defaultCamZoom = 0.9;
+					defaultCamZoom = 0.5;
 					curStage = 'stage';
 					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback'));
 					bg.antialiasing = FlxG.save.data.antialiasing;
@@ -999,21 +1023,16 @@ class PlayState extends MusicBeatState
 		if (SONG.gfVersion == null) {
 			switch(storyWeek)
 			{
-				case 4: gfCheck = 'gf-car';
-				case 5: gfCheck = 'gf-christmas';
-				case 6: gfCheck = 'gf-pixel';
+				//case 4: gfCheck = 'gf-car';
+				//case 5: gfCheck = 'gf-christmas';
+				//case 6: gfCheck = 'gf-pixel';
+				default: gfCheck = 'gf';
 			}
 		} else {gfCheck = SONG.gfVersion;}
 
 		var curGf:String = '';
 		switch (gfCheck)
 		{
-			case 'gf-car':
-				curGf = 'gf-car';
-			case 'gf-christmas':
-				curGf = 'gf-christmas';
-			case 'gf-pixel':
-				curGf = 'gf-pixel';
 			default:
 				curGf = 'gf';
 		}
@@ -1022,6 +1041,17 @@ class PlayState extends MusicBeatState
 		gf.scrollFactor.set(0.95, 0.95);
 
 		dad = new Character(100, 100, SONG.player2);
+
+		scout = new Character(0, 0, 'scunt');
+		soldier = new Character(0, 0, 'soldier');
+		pyro = new Character(0, 0, 'pyro');
+		demoman = new Character(0, 0, 'demo');
+		heavy = new Character(0, 0, 'heavy');
+		engi = new Character(0, 0, 'engi');
+		medic = new Character(0, 0, 'medic');
+		sniper = new Character(0, 0, 'sniper');
+		spy = new Character(0, 0, 'spy');
+		roboEngi = new Character(0, 0, 'robo-engi');
 
 		if (heavyDad)
 		{
@@ -1126,11 +1156,15 @@ class PlayState extends MusicBeatState
 				gf.x += 180;
 				gf.y += 300;
 			case 'schoolEvil':
-
 				boyfriend.x += 200;
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
+			case 'snake-medic':
+				boyfriend.y += -50;
+				dad2.y += -50;
+				dad2.x += -700;
+				gf.y += -50;
 			case 'sax':
 				boyfriend.y += 500;
 				dad.y += 300;
@@ -1139,6 +1173,13 @@ class PlayState extends MusicBeatState
 				boyfriend.x += 150;
 		}
 
+		switch(SONG.player1)
+		{
+			case 'medic-bf':
+				boyfriend.y += -250;
+			default:
+				trace("default bf");
+		}
 
 		if (!PlayStateChangeables.Optimize)
 		{
@@ -1156,6 +1197,19 @@ class PlayState extends MusicBeatState
 			else if (roboDad)
 			{
 				add(dad2);
+			}
+			if (SONG.song == 'Meet The Team')
+			{
+				add(scout);
+				add(soldier);
+				add(pyro);
+				add(demoman);
+				add(heavy);
+				add(engi);
+				add(medic);
+				add(sniper);
+				add(spy);
+				add(roboEngi);
 			}
 			add(dad);
 			add(boyfriend);
@@ -1362,7 +1416,14 @@ class PlayState extends MusicBeatState
 				'health', 0, 2);
 			}
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
+		if (memedic)
+			{
+				healthBar.createFilledBar(0xFFFF0000, 0xFFFF0000);
+			}
+			else
+			{
+				healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
+			}
 		add(healthBar);
 
 		overhealthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 2), this,
@@ -1420,7 +1481,11 @@ class PlayState extends MusicBeatState
 		botPlayState.borderQuality = 2;
 		if(PlayStateChangeables.botPlay && !loadRep) add(botPlayState);
 
-		iconP1 = new HealthIcon(SONG.player1, true);
+		if (curSong == 'Inferno')
+		    iconP1 = new HealthIcon("bf-pyro", true);
+		else
+			iconP1 = new HealthIcon(SONG.player1, true);
+
 		iconP1.y = healthBar.y - (iconP1.height / 2);
 		add(iconP1);
 
@@ -1718,6 +1783,22 @@ class PlayState extends MusicBeatState
 				gf.dance();
 				boyfriend.playAnim('idle');
 			}
+			else if (curSong == 'Meet The Team')
+			{
+				dad.playAnim('idle');
+				gf.dance();
+				boyfriend.playAnim('idle');
+				scout.playAnim('idle');
+				soldier.playAnim('idle');
+				pyro.playAnim('idle');
+				demoman.playAnim('idle');
+				heavy.playAnim('idle');
+				engi.playAnim('idle');
+				medic.playAnim('idle');
+				sniper.playAnim('idle');
+				spy.playAnim('idle');
+				roboEngi.playAnim('idle');
+			}
 			else
 			{
 				dad.playAnim('idle');
@@ -1752,9 +1833,9 @@ class PlayState extends MusicBeatState
 			}
 
 			switch (swagCounter)
-
 			{
 				case 0:
+					camHUD.visible = false;
 					FlxG.sound.play(Paths.sound('intro3' + altSuffix), 0.6);
 				case 1:
 					var ready:FlxSprite = new FlxSprite().loadGraphic(Paths.image(introAlts[0]));
@@ -1810,6 +1891,24 @@ class PlayState extends MusicBeatState
 						}
 					});
 					FlxG.sound.play(Paths.sound('introGo' + altSuffix), 0.6);
+					switch (curSong)
+					{
+						case 'Frontierjustice':
+							camHUD.visible = true;
+						case 'Clinicaltrial':
+							camHUD.visible = true;
+						case 'May Somethingth':
+							camHUD.visible = true;
+						case 'Property Damage':
+							camHUD.visible = true;
+						case 'Meet The Team':
+							camHUD.visible = true;
+						case 'Five Minutes':
+							camHUD.visible = true;
+						default:
+							trace("ok funny intro activated");
+					}
+
 				case 4:
 			}
 
@@ -1941,8 +2040,8 @@ class PlayState extends MusicBeatState
 						data = 2;
 				}
 			case 9: 
-				binds = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9'];
-				switch(evt.keyCode) // eh ill add 10k controls later - heat
+				//binds = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9'];
+				switch(evt.keyCode) /// 10K funny controls
 				{
 					case 81:
 						data = 0;
@@ -2096,7 +2195,7 @@ class PlayState extends MusicBeatState
 						data = 2;
 				}
 			case 9: 
-				binds = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9'];
+				//binds = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8', 'T9'];
 				switch(evt.keyCode) // 10K funny controls
 				{
 					case 81:
@@ -2329,7 +2428,7 @@ class PlayState extends MusicBeatState
 		add(notes);
 
 		var noteData:Array<SwagSection>;
-
+		Note.hitCheck = 0;
 		// NEW SHIT
 		noteData = songData.notes;
 
@@ -2468,6 +2567,14 @@ class PlayState extends MusicBeatState
 			if (PlayStateChangeables.Optimize && player == 0)
 				continue;
 
+			if (PlayStateChangeables.Optimize || SONG.song == 'Property Damage')
+				{
+					babyArrow.x -= 275;
+					cpuStrums.forEach(function(spr:FlxSprite)
+						{					
+							spr.x -= 700; 
+						});
+				}
 			if (SONG.noteStyle == null) {
 				switch(storyWeek) {case 6: noteTypeCheck = 'pixel';}
 			} else {noteTypeCheck = SONG.noteStyle;}
@@ -2640,13 +2747,6 @@ class PlayState extends MusicBeatState
 			babyArrow.x += 50;
 			babyArrow.x += ((FlxG.width / 2) * player);
 			
-			if (PlayStateChangeables.Optimize || SONG.song == 'Property Damage'){
-				babyArrow.x -= 275;
-				cpuStrums.forEach(function(spr:FlxSprite)
-					{					
-						spr.x -= 700; 
-					});
-			}
 			
 			cpuStrums.forEach(function(spr:FlxSprite)
 			{					
@@ -3260,6 +3360,11 @@ class PlayState extends MusicBeatState
 						camFollow.y = boyfriend.getMidpoint().y - 150;
 						camFollow.x = boyfriend.getMidpoint().x - 200;
 				}
+				switch (SONG.player1)
+				{
+					case 'medic-bf':
+						camFollow.y = boyfriend.getMidpoint().y - -15;
+				}
 			}
 		}
 
@@ -3314,7 +3419,7 @@ class PlayState extends MusicBeatState
 				switch (curStep)
 				{
 					case 64:
-						camHUD.alpha = 100;
+						camHUD.visible = true;
 					case 448:
 						PlayStateChangeables.scrollSpeed = 3;
 						curScroll = PlayStateChangeables.scrollSpeed;
@@ -3353,7 +3458,7 @@ class PlayState extends MusicBeatState
 				switch (curStep)
 				{
 					case 320:
-						camHUD.alpha = 100;
+						camHUD.visible = true;
 					case 376, 408, 432, 504, 560, 664, 760, 792, 888, 952, 1072, 1144, 1168, 1176, 1200, 1304, 1328, 1400, 1432, 1528, 1560, 1624, 1632, 1648, 1712, 1904:
 						warning.visible = true;
 						new FlxTimer().start(0.4, function(deadTime:FlxTimer)
@@ -3374,10 +3479,11 @@ class PlayState extends MusicBeatState
 					stupidAHHHH = true;
 					remove(dad);
 					remove(dad2);
-					dad = new Character(-425, 100, "medic");
-					dad2 = new Character(275, 100, "heavy");
+					dad = new Character(-475, 100, "medic");
+					dad2 = new Character(-60, 60, "heavy");
 					add(dad);
 					add(dad2);
+					FlxG.camera.flash(FlxColor.WHITE, 1);
 					if (funkyIcon == null)
 						{
 							funkyIcon = new HealthIcon("heavy", false);
@@ -3396,18 +3502,35 @@ class PlayState extends MusicBeatState
 					stupid = false;
 					stupidAHHHH = false;
 				case 896:
+					remove(dad);
+					remove(dad2);
+					dad = new Character(100, 100, "medic");
+					dad2 = new Character(-400, 60, "heavy");
+					add(dad);
+					add(dad2);
+					FlxG.camera.flash(FlxColor.WHITE, 1);
 					iconP2.animation.play("medic", true);
 					isHeavy = false;
 
 			}
 		}
 
+		if (curSong == 'Wanker')
+		{
+			switch (curStep)
+			{
+				case 64:
+					camHUD.visible = true;
+			}
+		}
 		if (curSong == 'Ironcurtain')
 		{
 			switch (curStep)
 			{
 				case 110:
 					longSpin = true;
+				case 112:
+					camHUD.visible = true;
 				case 140:
 					longSpin = false;
 				case 512:
@@ -3435,6 +3558,101 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (curSong == 'Ironbomber')
+		{
+			switch (curStep)
+			{
+				case 124:
+					camHUD.visible = true;
+			}
+		}
+		if (curSong == 'Meet The Team')
+		{
+			switch (curStep)
+			{
+				case 256 | 6080:
+					camHUD.visible = true;
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("scunt", true);
+					curTiming = 1;
+					remove(scout);
+					scout = new Character(0, 0, 'scunt');			
+					add(scout);
+				case 832 | 6592:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("soldier", true);
+					curTiming = 2;
+					remove(soldier);
+					soldier = new Character(0, 0, 'soldier');
+					add(soldier);
+				case 1445 | 7231:
+					curTiming = 3;
+				case 1472 | 7232:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("pyro", true);
+					remove(pyro);
+					pyro = new Character(0, 0, 'pyro');
+					add(pyro);
+				case 1984 | 7744:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("demo", true);
+					curTiming = 4;
+					remove(demoman);
+					demoman = new Character(0, 0, 'demo');			
+					add(demoman);
+				case 2496 | 8256:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("heavy", true);
+					curTiming = 5;
+					remove(heavy);
+					heavy = new Character(0, 0, 'heavy');			
+					add(heavy);
+				case 2009 | 8767:
+					curTiming = 6;
+				case 3007 | 8768:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("engi", true);
+					remove(engi);
+					remove(roboEngi);
+					engi = new Character(0, 0, 'engi');
+					roboEngi = new Character(0, 0, 'robo-engi');			
+					add(engi);
+					add(roboEngi);					
+				case 3455 | 9279:
+					curTiming = 7;
+				case 3520 | 9280:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("medic", true);
+					remove(medic);
+					medic = new Character(0, 0, 'medic');
+					add(medic);
+				case 4012 | 9791:
+					curTiming = 8;
+				case 4032 | 9792:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("sniper", true);
+					remove(sniper);
+					sniper = new Character(0, 0, 'sniper');		
+					add(sniper);
+				case 4482 | 10303:
+					curTiming = 9;
+				case 4544 | 10304:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("spy", true);
+					remove(spy);
+					spy = new Character(0, 0, 'spy');			
+					add(spy);
+				case 11264:
+					curTiming = 0;
+				case 11392:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					iconP2.animation.play("saxton", true);
+					remove(dad);
+					dad = new Character(100, 100, SONG.player2);
+					add(dad);
+					saxShake = true;
+			}
+		}
 		// if anyone sees this just add it again because its cool
 		/*if (curSong == 'Frontierjustice')
 		{
@@ -3465,7 +3683,7 @@ class PlayState extends MusicBeatState
 			switch (curStep)
 			{
 				case 256:
-					camHUD.alpha = 100;
+					camHUD.visible = true;
 					stupidAHHHH = true;
 					burnShit = true;
 				case 384:
@@ -3473,9 +3691,11 @@ class PlayState extends MusicBeatState
 				case 511:
 					stupidAHHHH = false;
 					curTiming = 1;
+					camHUD.visible = false;
 				case 639:
 					stupidAHHHH = true;
 					burnShit = true;
+					camHUD.visible = true;
 				case 703:
 					burnShit = false;
 				case 895:
@@ -3552,6 +3772,7 @@ class PlayState extends MusicBeatState
 
 		if (health <= 0 && !cannotDie)
 		{
+			Note.hitCheck = 0;
 			boyfriend.stunned = true;
 
 			persistentUpdate = false;
@@ -3660,7 +3881,7 @@ class PlayState extends MusicBeatState
 				notes.forEachAlive(function(daNote:Note)
 				{
 					if (SONG.song == 'Infiltrator' && ghostNotes){	
-						if (daNote.noteType == 0 && daNote.isOnScreen() || daNote.noteType == 1 && daNote.isOnScreen()) // if the note is on screen, it will lose transparency every frame - heat
+						if (daNote.noteType == 0 && daNote.isOnScreen()) // if the note is on screen, it will lose transparency every frame - heat
 						{
 							daNote.alpha -= 0.025;
 							//trace(daNote.alpha);
@@ -3700,7 +3921,8 @@ class PlayState extends MusicBeatState
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 										+ 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 											2)) - daNote.noteYOff;
-									}	
+									}
+
 								}
 								else
 								{
@@ -3821,11 +4043,11 @@ class PlayState extends MusicBeatState
 	
 					if (!daNote.mustPress && daNote.wasGoodHit)
 					{
-						if (SONG.player2 == 'saxton')
+						if (SONG.player2 == 'saxton' && SONG.song == 'Property Damage' || saxShake)
 							FlxG.camera.shake(0.04,0.04);
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
-	
+						
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
 							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
@@ -3840,8 +4062,8 @@ class PlayState extends MusicBeatState
 						}	
 
 						if (roboDad)
-						{
-							if (mania == 5 || mania == 9)
+						{								// because ur mother -heat
+							if (mania == 5 || mania == 9) // why mania 9 heat??? -tob     
 								{
 									var targ:Character = dad;
 									if (daNote.noteType == 3)
@@ -3891,6 +4113,42 @@ class PlayState extends MusicBeatState
 											dad.playAnim('sing' + sDir[daNote.noteData] + '-alt', true);
 									}
 								}
+							else if (curSong == 'Wanker')
+							{
+								if (daNote.noteType == 3)
+								    dad.playAnim('singDOWN-alt', true);
+							    else
+									dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+							}
+							else if (curSong == 'Meet The Team')
+							{
+								switch (curTiming)
+								{
+									case 0:
+										dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 1: 
+										scout.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 2:
+										soldier.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 3:
+										pyro.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 4:
+										demoman.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 5:
+										heavy.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 6:
+										if (daNote.noteType == 0)
+											engi.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+										else 
+											roboEngi.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 7:
+										medic.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 8:
+										sniper.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+									case 9:
+										spy.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+								}
+							}
 							else
 							{
 								dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
@@ -4214,9 +4472,9 @@ class PlayState extends MusicBeatState
 														{
 															playerStrums.forEach(function(spr:FlxSprite)
 															{
-																if (Math.abs(daNote.noteData) == spr.ID)
+																if (Math.abs(daNote.noteData) == spr.ID && Note.hitCheck == 0)
 																{
-																	spr.animation.play('confirm', true);
+																	spr.animation.play('confirm', false);
 																}
 																if (spr.animation.curAnim.name == 'confirm' && SONG.noteStyle != 'pixel')
 																{
@@ -4408,9 +4666,53 @@ class PlayState extends MusicBeatState
 						luaModchart.die();
 						luaModchart = null;
 					}
-					#end
-
-					// if ()
+					#end			
+					if (curSong == 'Inferno')
+						{
+							if (FlxG.save.data.unlockedWeek <= 0)
+							{
+								FlxG.save.data.unlockedWeek = 1;
+								trace(FlxG.save.data.unlockedWeek);
+							}
+							else
+							{
+								trace("what how");
+							}
+						}
+						else if (curSong == 'Frontierjustice')
+						{
+							if (FlxG.save.data.unlockedWeek = 1)
+							{
+								FlxG.save.data.unlockedWeek += 1;
+								trace(FlxG.save.data.unlockedWeek);
+							}
+							else
+							{
+								trace("what how");
+							}
+						}
+						else if (curSong == 'Infiltrator')
+						{
+							if (FlxG.save.data.unlockedWeek = 2)
+							{
+								FlxG.save.data.unlockedWeek += 1;
+								trace(FlxG.save.data.unlockedWeek);
+							}
+							else
+							{
+								trace("what how");
+							}
+						}
+						else
+						{
+							if (curSong == 'Property Damage')
+							{
+								if (FlxG.save.data.unlockedWeek = 3)
+								{
+									trace(FlxG.save.data.unlockedWeek);
+								}
+							}
+						}
 					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
 
 					if (SONG.validScore)
@@ -5384,7 +5686,7 @@ class PlayState extends MusicBeatState
 				{
 					playerStrums.forEach(function(spr:FlxSprite)
 					{
-						if (keys[spr.ID] && spr.animation.curAnim.name != 'confirm' && spr.animation.curAnim.name != 'pressed')
+						if (keys[spr.ID] && spr.animation.curAnim.name != 'confirm' && spr.animation.curAnim.name != 'pressed' && Note.hitCheck == 0)
 							spr.animation.play('pressed', false);
 						if (!keys[spr.ID])
 							spr.animation.play('static', false);
@@ -5604,14 +5906,14 @@ class PlayState extends MusicBeatState
 		
 					if (daNote != null)
 					{
-						if (!loadRep)
+						if (!loadRep && SONG.song != 'IronBomber')
 						{
 							saveNotes.push([daNote.strumTime,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
 							saveJudge.push("miss");
 						}
 					}
 					else
-						if (!loadRep)
+						if (!loadRep && SONG.song != 'IronBomber')
 						{
 							saveNotes.push([Conductor.songPosition,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
 							saveJudge.push("miss");
@@ -5914,6 +6216,13 @@ class PlayState extends MusicBeatState
 					if (note.rocket) // rocket
 						{
 						    health += 0.1;
+						}
+					if (note.huntsman)
+						{
+							dad.playAnim('singRIGHT', true);
+							FlxG.sound.play(Paths.sound('smipr'));
+							Note.hitCheck++;
+							new FlxTimer().start(4, function(tmr:FlxTimer){Note.hitCheck--;});
 						}
 
 
@@ -6241,6 +6550,8 @@ class PlayState extends MusicBeatState
 			{
 				switch (curStep)
 				{
+					case 32:
+						camHUD.visible = true;
 					case 509:
 						//FlxG.sound.play(Paths.sound('cloak'), 1);
 						FlxTween.tween(camHUD, {alpha: 0},2, 
@@ -6249,7 +6560,7 @@ class PlayState extends MusicBeatState
 							});
 					case 537:
 						ghostNotes = true; //Ghost notes + middle scroll
-						playerStrums.forEach(function(spr:FlxSprite){spr.x -= 250;});
+						playerStrums.forEach(function(spr:FlxSprite){spr.x -= 250; trace('hi');});
 						cpuStrums.forEach(function(spr:FlxSprite){spr.x -= 575;});
 					case 539:
 						FlxTween.tween(camHUD, {alpha: 100},2, 
@@ -6313,7 +6624,7 @@ class PlayState extends MusicBeatState
 					{
 						strumLineNotes.forEach(function(tospin:FlxSprite)
 							{
-									FlxTween.angle(tospin, 0, 360, 1, {ease: FlxEase.quintOut});
+									FlxTween.angle(tospin, 0, 360, 1, {ease: FlxEase.quintOut});							
 							});
 					}
 
@@ -6344,7 +6655,7 @@ class PlayState extends MusicBeatState
 			}*/
 
 
-		if (health > 2.3)
+		if (health > 2.1)
 		{
 			health -= 0.025;
 		}
@@ -6355,7 +6666,7 @@ class PlayState extends MusicBeatState
 			switch (curSong)
 			{
 				case 'Clinicaltrial':
-					health += -0.01;
+					health += -0.0125;
 				case 'Inferno':
 					if (burnShit)						
 					    health += -0.01;
@@ -6521,6 +6832,18 @@ class PlayState extends MusicBeatState
 				        dad.dance();
 				        dad2.dance();
 			        }
+					else if (curSong == 'Meet The Team')
+					{
+						scout.dance();
+						soldier.dance();
+						pyro.dance();
+						demoman.dance();
+						heavy.dance();
+						engi.dance();
+						medic.dance();
+						sniper.dance();
+						spy.dance();
+					}
 			        else
 			        {
 						dad.playAnim('idle');

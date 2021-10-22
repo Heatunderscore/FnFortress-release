@@ -25,7 +25,7 @@ class StoryMenuState extends MusicBeatState
 	var scoreText:FlxText;
 
 	var weekData:Array<Dynamic> = [
-		['Atomicpunch', 'Inferno', 'Ironbomber', 'Ironcurtain', 'Clinicaltrial', 'Infiltrator']
+		['Atomicpunch', 'Maggots', 'Inferno', 'Ironbomber', 'Ironcurtain', 'Frontier Justice', 'Clinicaltrial', 'Wanker', 'Infiltrator']
 	];
 	var curDifficulty:Int = 2;
 

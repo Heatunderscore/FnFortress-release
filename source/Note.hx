@@ -49,6 +49,7 @@ class Note extends FlxSprite
 	public var drunk:Bool = false;//drunndnknknrknknkrn
 	public var snoiper:Bool = false;//snoiper shit
 	public var rocket:Bool = false; //for soldier
+	public var huntsman:Bool = false; //sniper
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -66,6 +67,7 @@ class Note extends FlxSprite
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
 	public static var tooMuch:Float = 30;
+	public static var hitCheck:Int = 0;
 	public var rating:String = "shit";
 	public var modAngle:Float = 0; // The angle set by modcharts
 	public var localAngle:Float = 0; // The angle to be edited inside Note.hx
@@ -182,6 +184,7 @@ class Note extends FlxSprite
 		fist = noteType == 6;
 		drunk = noteType == 7;
 		rocket = noteType == 8;
+		huntsman = noteType == 9;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -317,7 +320,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket)
+				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket || huntsman)
 					{
 						frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_types');
 						switch(noteType)
@@ -383,6 +386,14 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
+							case 9:
+								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
+								for (i in 0...11)
+									{
+										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}	
 							default:
 								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
 								for (i in 0...11)
@@ -598,7 +609,7 @@ class Note extends FlxSprite
 			if (isSustainNote)
 				{
 					if (strumTime - Conductor.songPosition <= ((166 * Conductor.timeScale) * 0.5)
-						&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale))
+						&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale) && hitCheck == 0)
 						canBeHit = true;
 					else
 						canBeHit = false;
@@ -606,7 +617,7 @@ class Note extends FlxSprite
 				else if (burning || death)
 				{
 					if (strumTime - Conductor.songPosition <= (100 * Conductor.timeScale)
-						&& strumTime - Conductor.songPosition >= (-50 * Conductor.timeScale))
+						&& strumTime - Conductor.songPosition >= (-50 * Conductor.timeScale) && hitCheck == 0)
 						canBeHit = true;
 					else
 						canBeHit = false;	
@@ -614,7 +625,7 @@ class Note extends FlxSprite
 				else
 				{
 					if (strumTime - Conductor.songPosition <= (166 * Conductor.timeScale)
-						&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale))
+						&& strumTime - Conductor.songPosition >= (-166 * Conductor.timeScale) && hitCheck == 0)
 						canBeHit = true;
 					else
 						canBeHit = false;
