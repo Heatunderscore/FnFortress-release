@@ -191,7 +191,7 @@ class PlayState extends MusicBeatState
 	var grace:Bool = false;
 
 	private var camZooming:Bool = false;
-	private var curSong:String = "";
+	public static var curSong:String = "";
 
 	private var gfSpeed:Int = 1;
 	public var health:Float = 1; //making public because sethealth doesnt work without it
@@ -248,8 +248,8 @@ class PlayState extends MusicBeatState
 
 	var notesHitArray:Array<Date> = [];
 	var currentFrames:Int = 0;
-	var idleToBeat:Bool = true; // change if bf and dad would idle to the beat of the song
-	var idleBeat:Int = 2; // how frequently bf and dad would play their idle animation(1 - every beat, 2 - every 2 beats and so on)
+	var idleToBeat:Bool = true; // this var doesnt do shit -tob
+	var idleBeat:Int = 2; // this var doesnt do shit either -tob
 
 	public var dialogue:Array<String> = ['dad:blah blah blah', 'bf:coolswag'];
 
@@ -4061,7 +4061,7 @@ class PlayState extends MusicBeatState
 								beamAnim = '-beam';
 						}	
 
-						if (roboDad)
+						if (roboDad)                   // :( -tob
 						{								// because ur mother -heat
 							if (mania == 5 || mania == 9) // why mania 9 heat??? -tob     
 								{

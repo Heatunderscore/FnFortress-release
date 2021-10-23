@@ -87,7 +87,12 @@ class Contract extends MusicBeatState
         /*for (i in 0...curLock)
         {
             shitUnlocked.push(true);
-        }*/ //dont laugh
+        }*/
+        
+        //dont laugh
+
+        //lmao heat
+
         var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuBG'));
 		bg.scrollFactor.x = 0;
 		bg.scrollFactor.y = 0.10;
