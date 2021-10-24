@@ -4749,6 +4749,60 @@ class PlayState extends MusicBeatState
 
 						FlxG.sound.play(Paths.sound('Lights_Shut_off'));
 					}
+					
+					switch (curSong)
+					{
+						case 'Atomicpunch':
+							if (FlxG.save.data.buttonUnlockingShit <= 0)
+							{
+								FlxG.save.data.buttonUnlockingShit = 1;
+							}
+						case 'Maggots':
+						    if (FlxG.save.data.buttonUnlockingShit = 1)
+							{
+								FlxG.save.data.buttonUnlockingShit = 2;
+							}
+						case 'Inferno':
+							if (FlxG.save.data.buttonUnlockingShit = 2)
+							{
+								FlxG.save.data.buttonUnlockingShit = 3;
+							}
+						case 'Ironbomber':
+							if (FlxG.save.data.buttonUnlockingShit = 3)
+							{
+								FlxG.save.data.buttonUnlockingShit = 4;
+							}
+						case 'Ironcurtain':
+							if (FlxG.save.data.buttonUnlockingShit = 4)
+							{
+								FlxG.save.data.buttonUnlockingShit = 5;
+							}
+						case 'Frontierjustice':
+							if (FlxG.save.data.buttonUnlockingShit = 5)
+							{
+								FlxG.save.data.buttonUnlockingShit = 6;
+							}
+						case 'Clinicaltrial':
+						    if (FlxG.save.data.buttonUnlockingShit = 6)
+							{
+								FlxG.save.data.buttonUnlockingShit = 7;
+							}
+						case 'Wanker':
+							if (FlxG.save.data.buttonUnlockingShit = 7)
+							{
+								FlxG.save.data.buttonUnlockingShit = 8;
+							}
+						case 'Infiltrator':
+							if (FlxG.save.data.buttonUnlockingShit = 8)
+							{
+								FlxG.save.data.buttonUnlockingShit = 9;
+							}
+						case 'Property Damage':
+						    if (FlxG.save.data.buttonUnlockingShit = 9)
+							{
+								FlxG.save.data.buttonUnlockingShit = 10;
+							}
+					}
 
 					FlxTransitionableState.skipNextTransIn = true;
 					FlxTransitionableState.skipNextTransOut = true;

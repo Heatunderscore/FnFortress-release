@@ -30,7 +30,7 @@ class Contract extends MusicBeatState
     var menuItemText:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['one', 'two', 'complete', 'hale', 'freeplay'];
+	var optionShit:Array<String> = ['week1', 'week2', 'week3', 'hale'];
 	#else
 	var optionShit:Array<String> = ['week1', 'week2', 'week3', 'freeplay'];
 	#end
@@ -47,9 +47,13 @@ class Contract extends MusicBeatState
 
     var weekData:Array<String> = [];
     var curWeek:Int = 1;
+
+    var funnyLock:Int = 0;
     
     var contracter:FlxSprite;
     var weekThing:FlxSprite;
+
+    var freeplayButton:FlxSprite;
 
     var curCon:String = "";
 
@@ -65,25 +69,40 @@ class Contract extends MusicBeatState
 
 	override function create()
 	{
+        trace(FlxG.save.data.buttonUnlockingShit);
+
+        if (FlxG.save.data.buttonUnlockingShit == null)
+        {
+            FlxG.save.data.buttonUnlockingShit = 0;
+            //basically creates the save file if you start for the first time -tob
+        }
+        trace(FlxG.save.data.buttonUnlockingShit);
+
         FlxG.save.data.funnyLock = FlxG.save.data.unlockedWeek;
 
         curLock = FlxG.save.data.funnyLock;
+
+        funnyLock = FlxG.save.data.buttonUnlockingShit;
+        trace(funnyLock);
         
         switch (curLock)
         {
             case 0:
                 curCon = "normal";
-                shitUnlocked = [true, false, false, false, true];
+                shitUnlocked = [true, false, false, false];
             case 1:
                 curCon = "bronze";
-                shitUnlocked = [true, true, false, false, true];
+                shitUnlocked = [true, true, false, false];
             case 2:
                 curCon = "silver";
-                shitUnlocked = [true, true, true, false, true];
+                shitUnlocked = [true, true, true, false];
             case 3 | 4:
                 curCon = "gold";
-                shitUnlocked = [true, true, true, true, true];
+                shitUnlocked = [true, true, true, true];
         }
+
+        trace(shitUnlocked);
+
         /*for (i in 0...curLock)
         {
             shitUnlocked.push(true);
@@ -113,15 +132,19 @@ class Contract extends MusicBeatState
 
         for(i in 0...optionShit.length) 
             {
+                // dont care if im missing something, im just too stupid for this -tob
                 var buttonThing:FlxSprite = new FlxSprite(0, 130);
                 buttonThing.ID = i;
                 buttonThing.frames = Paths.getSparrowAtlas('fortress/contract/contracterButtons', 'shared');
-                buttonThing.animation.addByPrefix('idle', optionShit[i] + ' idle', 24, true);
-                buttonThing.animation.addByPrefix('hover', optionShit[i] + ' press', 24, true);
-                if (!shitUnlocked[i]){
-                    buttonThing.animation.play('hover');
+                buttonThing.animation.addByPrefix('idle', optionShit[i] + ' button ' + funnyLock + ' idle', 24, true);
+                buttonThing.animation.addByPrefix('hover', optionShit[i] + ' button ' + funnyLock + ' press', 24, true);
+                buttonThing.animation.addByPrefix('locked', optionShit[i] + ' button lock', 24, true);
+                if (!shitUnlocked[i])
+                {
+                    buttonThing.animation.play('locked');
                 }
-                else if (shitUnlocked[i]){
+                else if (shitUnlocked[i])
+                {
                     buttonThing.animation.play('idle');
                 }
 
@@ -139,12 +162,18 @@ class Contract extends MusicBeatState
                         buttonThing.setPosition(790, 255);
                     case 3:
                         buttonThing.setPosition(597, 372);
-                    case 4:
-                        buttonThing.setPosition(231, 427);
                 }
                 menuItems.add(buttonThing);
             }
             add(menuItems);
+
+        freeplayButton = new FlxSprite(231, 427);
+        freeplayButton.frames = Paths.getSparrowAtlas('fortress/contract/freeplayB', 'shared');
+        freeplayButton.animation.addByPrefix('idle','freeplay idle', 24, true);
+        freeplayButton.animation.addByPrefix('hover','freeplay press', 24, true);
+        freeplayButton.animation.play('idle');
+        freeplayButton.antialiasing = true;
+        add(freeplayButton);
 
         for (i in 0...optionShit.length)
             {
@@ -165,15 +194,20 @@ class Contract extends MusicBeatState
                     case 2:
                         textShit.setPosition(790, 325);
                     case 3:
-                        textShit.setPosition(221, 491);
-                    case 4:
                         textShit.setPosition(607, 432);
+                    //case 4:
+                        //textShit.setPosition(607, 432);
                 }
                 add(textShit);
                 
 
             }
-
+        
+        var sx:FlxSprite = new FlxSprite(221, 491);
+        sx.frames = Paths.getSparrowAtlas('fortress/contract/freeplayT', 'shared');
+        sx.animation.addByPrefix('idle1','freeplay title', 24, true);
+        sx.animation.play('idle');
+        add(sx);
 
         weekThing = new FlxSprite(914, 288);
         weekThing.frames = Paths.getSparrowAtlas('fortress/contract/weekthings', 'shared');
@@ -259,9 +293,35 @@ class Contract extends MusicBeatState
                         selectSomething();
                     }
                 }
+
+                
         
                 spr.updateHitbox();
             });
+
+            if (FlxG.mouse.overlaps(freeplayButton))
+                {
+                    if(canClick)
+                    {
+                        usingMouse = true;
+
+                        remove(funnyRoot);
+                        funnyRoot.antialiasing = true;
+                        add(funnyRoot);
+
+                        freeplayButton.animation.play('hover');
+                        funnyRoot.animation.play('idle5');
+                    }
+                        
+                    if(FlxG.mouse.pressed && canClick)
+                    {
+                        FlxG.switchState(new FreeplayState());
+                    }
+                }
+            else if(!FlxG.mouse.overlaps(freeplayButton))
+                {
+                    freeplayButton.animation.play('idle');
+                }
     
             if (!selectedSomethin)
             {
@@ -300,13 +360,13 @@ class Contract extends MusicBeatState
     
             switch (daChoice)
             {
-                case 'one':
+                case 'week1':
                     weekData = ['Atomicpunch', 'Maggots', 'Inferno'];
                     startWeek();
-                case 'two':
+                case 'week2':
                     weekData = ['Ironbomber', 'Ironcurtain', 'Frontierjustice'];
                     startWeek();
-                case 'complete':
+                case 'week3':
                     weekData = ['Clinicaltrial', 'Wanker', 'Infiltrator'];
                     startWeek();
                 case 'hale':

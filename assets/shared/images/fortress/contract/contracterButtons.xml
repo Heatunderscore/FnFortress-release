@@ -2,34 +2,172 @@
 <TextureAtlas imagePath="contracterButtons.png">
 	<!-- Created with Adobe Animate version 21.0.6.41649 -->
 	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="complete idle0000" x="0" y="0" width="66" height="67"/>
-	<SubTexture name="complete idle0001" x="0" y="0" width="66" height="67"/>
-	<SubTexture name="complete idle0002" x="0" y="0" width="66" height="67"/>
-	<SubTexture name="complete press0000" x="66" y="0" width="65" height="65"/>
-	<SubTexture name="complete press0001" x="66" y="0" width="65" height="65"/>
-	<SubTexture name="complete press0002" x="66" y="0" width="65" height="65"/>
-	<SubTexture name="freeplay idle0000" x="131" y="0" width="66" height="68"/>
-	<SubTexture name="freeplay idle0001" x="131" y="0" width="66" height="68"/>
-	<SubTexture name="freeplay idle0002" x="131" y="0" width="66" height="68"/>
-	<SubTexture name="freeplay press0000" x="197" y="0" width="68" height="67"/>
-	<SubTexture name="freeplay press0001" x="197" y="0" width="68" height="67"/>
-	<SubTexture name="freeplay press0002" x="197" y="0" width="68" height="67"/>
-	<SubTexture name="hale idle0000" x="265" y="0" width="67" height="67"/>
-	<SubTexture name="hale idle0001" x="265" y="0" width="67" height="67"/>
-	<SubTexture name="hale idle0002" x="265" y="0" width="67" height="67"/>
-	<SubTexture name="hale press0000" x="332" y="0" width="68" height="68"/>
-	<SubTexture name="hale press0001" x="332" y="0" width="68" height="68"/>
-	<SubTexture name="hale press0002" x="332" y="0" width="68" height="68"/>
-	<SubTexture name="one idle0000" x="400" y="0" width="67" height="67"/>
-	<SubTexture name="one idle0001" x="400" y="0" width="67" height="67"/>
-	<SubTexture name="one idle0002" x="400" y="0" width="67" height="67"/>
-	<SubTexture name="one press0000" x="0" y="68" width="65" height="66"/>
-	<SubTexture name="one press0001" x="0" y="68" width="65" height="66"/>
-	<SubTexture name="one press0002" x="0" y="68" width="65" height="66"/>
-	<SubTexture name="two idle0000" x="65" y="68" width="64" height="66"/>
-	<SubTexture name="two idle0001" x="65" y="68" width="64" height="66"/>
-	<SubTexture name="two idle0002" x="65" y="68" width="64" height="66"/>
-	<SubTexture name="two press0000" x="129" y="68" width="66" height="66"/>
-	<SubTexture name="two press0001" x="129" y="68" width="66" height="66"/>
-	<SubTexture name="two press0002" x="129" y="68" width="66" height="66"/>
+	<SubTexture name="hale button 10 idle0000" x="0" y="0" width="67" height="67"/>
+	<SubTexture name="hale button 10 idle0001" x="0" y="0" width="67" height="67"/>
+	<SubTexture name="hale button 10 idle0002" x="0" y="0" width="67" height="67"/>
+	<SubTexture name="hale button 10 press0000" x="67" y="0" width="68" height="68"/>
+	<SubTexture name="hale button 10 press0001" x="67" y="0" width="68" height="68"/>
+	<SubTexture name="hale button 10 press0002" x="67" y="0" width="68" height="68"/>
+	<SubTexture name="hale button 9 idle0000" x="135" y="0" width="70" height="64"/>
+	<SubTexture name="hale button 9 idle0001" x="135" y="0" width="70" height="64"/>
+	<SubTexture name="hale button 9 idle0002" x="135" y="0" width="70" height="64"/>
+	<SubTexture name="hale button 9 press0000" x="205" y="0" width="69" height="73"/>
+	<SubTexture name="hale button 9 press0001" x="205" y="0" width="69" height="73"/>
+	<SubTexture name="hale button 9 press0002" x="205" y="0" width="69" height="73"/>
+	<SubTexture name="hale button lock0000" x="274" y="0" width="67" height="67"/>
+	<SubTexture name="hale button lock0001" x="274" y="0" width="67" height="67"/>
+	<SubTexture name="hale button lock0002" x="274" y="0" width="67" height="67"/>
+	<SubTexture name="week1 button 0 idle0000" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week1 button 0 idle0001" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week1 button 0 idle0002" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week1 button 0 press0000" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week1 button 0 press0001" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week1 button 0 press0002" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week1 button 1 idle0000" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week1 button 1 idle0001" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week1 button 1 idle0002" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week1 button 1 press0000" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week1 button 1 press0001" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week1 button 1 press0002" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week1 button 10 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 10 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 10 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 10 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 10 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 10 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 2 idle0000" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week1 button 2 idle0001" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week1 button 2 idle0002" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week1 button 2 press0000" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week1 button 2 press0001" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week1 button 2 press0002" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week1 button 3 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 3 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 3 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 3 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 3 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 3 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 4 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 4 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 4 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 4 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 4 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 4 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 5 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 5 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 5 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 5 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 5 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 5 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 6 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 6 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 6 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 6 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 6 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 6 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 7 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 7 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 7 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 7 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 7 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 7 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 8 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 8 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 8 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 8 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 8 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 8 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 9 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 9 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 9 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week1 button 9 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 9 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button 9 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week1 button lock0000" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week1 button lock0001" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week1 button lock0002" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week2 button 10 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 10 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 10 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 10 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 10 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 10 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 3 idle0000" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week2 button 3 idle0001" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week2 button 3 idle0002" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week2 button 3 press0000" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week2 button 3 press0001" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week2 button 3 press0002" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week2 button 4 idle0000" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week2 button 4 idle0001" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week2 button 4 idle0002" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week2 button 4 press0000" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week2 button 4 press0001" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week2 button 4 press0002" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week2 button 5 idle0000" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week2 button 5 idle0001" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week2 button 5 idle0002" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week2 button 5 press0000" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week2 button 5 press0001" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week2 button 5 press0002" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week2 button 6 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 6 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 6 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 6 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 6 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 6 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 7 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 7 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 7 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 7 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 7 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 7 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 8 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 8 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 8 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 8 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 8 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 8 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 9 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 9 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 9 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week2 button 9 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 9 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button 9 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week2 button lock0000" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week2 button lock0001" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week2 button lock0002" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week3 button 10 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week3 button 10 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week3 button 10 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week3 button 10 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week3 button 10 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week3 button 10 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week3 button 6 idle0000" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week3 button 6 idle0001" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week3 button 6 idle0002" x="341" y="0" width="69" height="69"/>
+	<SubTexture name="week3 button 6 press0000" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week3 button 6 press0001" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week3 button 6 press0002" x="410" y="0" width="67" height="68"/>
+	<SubTexture name="week3 button 7 idle0000" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week3 button 7 idle0001" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week3 button 7 idle0002" x="0" y="73" width="67" height="67"/>
+	<SubTexture name="week3 button 7 press0000" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week3 button 7 press0001" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week3 button 7 press0002" x="67" y="73" width="65" height="66"/>
+	<SubTexture name="week3 button 8 idle0000" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week3 button 8 idle0001" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week3 button 8 idle0002" x="132" y="73" width="64" height="66"/>
+	<SubTexture name="week3 button 8 press0000" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week3 button 8 press0001" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week3 button 8 press0002" x="327" y="73" width="66" height="66"/>
+	<SubTexture name="week3 button 9 idle0000" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week3 button 9 idle0001" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week3 button 9 idle0002" x="196" y="73" width="66" height="67"/>
+	<SubTexture name="week3 button 9 press0000" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week3 button 9 press0001" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week3 button 9 press0002" x="262" y="73" width="65" height="65"/>
+	<SubTexture name="week3 button lock0000" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week3 button lock0001" x="393" y="73" width="67" height="70"/>
+	<SubTexture name="week3 button lock0002" x="393" y="73" width="67" height="70"/>
 </TextureAtlas>
