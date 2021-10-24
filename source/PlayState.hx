@@ -978,7 +978,7 @@ class PlayState extends MusicBeatState
 				}
 			case 'sax':
 				{
-					defaultCamZoom = 0.82;
+					defaultCamZoom = 0.7;
 					curStage = 'sax';
 					var bg:FlxSprite = new FlxSprite(-400, -175).loadGraphic(Paths.image('fortress/bg/saxBG'));
 					bg.antialiasing = true;
@@ -4678,6 +4678,11 @@ class PlayState extends MusicBeatState
 							{
 								trace("what how");
 							}
+
+							if (FlxG.save.data.buttonUnlockingShit = 2)
+							{
+								FlxG.save.data.buttonUnlockingShit = 3;
+							}
 						}
 						else if (curSong == 'Frontierjustice')
 						{
@@ -4689,6 +4694,11 @@ class PlayState extends MusicBeatState
 							else
 							{
 								trace("what how");
+							}
+
+							if (FlxG.save.data.buttonUnlockingShit = 5)
+							{
+								FlxG.save.data.buttonUnlockingShit = 6;
 							}
 						}
 						else if (curSong == 'Infiltrator')
@@ -4702,6 +4712,12 @@ class PlayState extends MusicBeatState
 							{
 								trace("what how");
 							}
+
+
+							if (FlxG.save.data.buttonUnlockingShit = 8)
+							{
+								FlxG.save.data.buttonUnlockingShit = 9;
+							}
 						}
 						else
 						{
@@ -4711,6 +4727,12 @@ class PlayState extends MusicBeatState
 								{
 									trace(FlxG.save.data.unlockedWeek);
 								}
+
+								
+						        if (FlxG.save.data.buttonUnlockingShit = 9)
+							    {
+								    FlxG.save.data.buttonUnlockingShit = 10;
+							    }
 							}
 						}
 					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
@@ -4750,6 +4772,7 @@ class PlayState extends MusicBeatState
 						FlxG.sound.play(Paths.sound('Lights_Shut_off'));
 					}
 					
+					// bad code from me -tob
 					switch (curSong)
 					{
 						case 'Atomicpunch':
@@ -4762,11 +4785,6 @@ class PlayState extends MusicBeatState
 							{
 								FlxG.save.data.buttonUnlockingShit = 2;
 							}
-						case 'Inferno':
-							if (FlxG.save.data.buttonUnlockingShit = 2)
-							{
-								FlxG.save.data.buttonUnlockingShit = 3;
-							}
 						case 'Ironbomber':
 							if (FlxG.save.data.buttonUnlockingShit = 3)
 							{
@@ -4777,11 +4795,6 @@ class PlayState extends MusicBeatState
 							{
 								FlxG.save.data.buttonUnlockingShit = 5;
 							}
-						case 'Frontierjustice':
-							if (FlxG.save.data.buttonUnlockingShit = 5)
-							{
-								FlxG.save.data.buttonUnlockingShit = 6;
-							}
 						case 'Clinicaltrial':
 						    if (FlxG.save.data.buttonUnlockingShit = 6)
 							{
@@ -4791,16 +4804,6 @@ class PlayState extends MusicBeatState
 							if (FlxG.save.data.buttonUnlockingShit = 7)
 							{
 								FlxG.save.data.buttonUnlockingShit = 8;
-							}
-						case 'Infiltrator':
-							if (FlxG.save.data.buttonUnlockingShit = 8)
-							{
-								FlxG.save.data.buttonUnlockingShit = 9;
-							}
-						case 'Property Damage':
-						    if (FlxG.save.data.buttonUnlockingShit = 9)
-							{
-								FlxG.save.data.buttonUnlockingShit = 10;
 							}
 					}
 
