@@ -40,7 +40,7 @@ class HealthIcon extends FlxSprite
 		animation.add('robo-engi', [34, 35], 0, false, isPlayer);
 		animation.add('medic', [36, 37], 0, false, isPlayer);
 		animation.add('heavy-uber', [30, 31], 0, false, isPlayer);
-		animation.add('medic-uber', [36, 37], 0, false, isPlayer);
+		animation.add('medic-bf', [36, 37], 0, false, isPlayer);
 		animation.add('sniper', [38, 39], 0, false, isPlayer);
 		animation.add('snoiper', [42, 43], 0, false, isPlayer);
 		animation.add('spy', [28, 29], 0, false, isPlayer);

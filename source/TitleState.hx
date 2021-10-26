@@ -81,6 +81,7 @@ class TitleState extends MusicBeatState
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
 		trace('hello');
+		trace(FlxG.save.data.antiPiracy);
 
 		// DEBUG BULLSHIT
 
@@ -279,6 +280,12 @@ class TitleState extends MusicBeatState
 			FlxG.fullscreen = !FlxG.fullscreen;
 		}
 
+		if (FlxG.keys.justPressed.F7)
+		{
+			FlxG.save.data.antiPiracy = true;
+			trace(FlxG.save.data.antiPiracy);
+		}
+
 		var pressedEnter:Bool = controls.ACCEPT;
 
 		#if mobile
@@ -314,34 +321,11 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-				// Get current version of Kade Engine
-				
-				var http = new haxe.Http("https://raw.githubusercontent.com/KadeDev/Kade-Engine/master/version.downloadMe");
-				var returnedData:Array<String> = [];
-				
-				http.onData = function (data:String)
-				{
-					returnedData[0] = data.substring(0, data.indexOf(';'));
-					returnedData[1] = data.substring(data.indexOf('-'), data.length);
-				  	if (!MainMenuState.kadeEngineVer.contains(returnedData[0].trim()) && !OutdatedSubState.leftState && MainMenuState.nightly == "")
-					{
-						trace('outdated lmao! ' + returnedData[0] + ' != ' + MainMenuState.kadeEngineVer);
-						OutdatedSubState.needVer = returnedData[0];
-						OutdatedSubState.currChanges = returnedData[1];
-						FlxG.switchState(new SusState());
-					}
-					else
-					{
-						FlxG.switchState(new SusState());
-					}
-				}
-				
-				http.onError = function (error) {
-				  trace('error: $error');
-				  FlxG.switchState(new SusState()); // fail but we go anyway
-				}
-				
-				http.request();
+				if (FlxG.save.data.antiPiracy)
+					FlxG.switchState(new SusState());
+				else
+					FlxG.switchState(new Piracy());
+			
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}
@@ -454,8 +438,8 @@ class TitleState extends MusicBeatState
 				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
 
 			case 16:
-				FlxG.switchState(new SusState());
-				//skipIntro();
+				//FlxG.switchState(new SusState());
+				skipIntro();
 		}
 	}
 
@@ -463,14 +447,14 @@ class TitleState extends MusicBeatState
 
 	function skipIntro():Void
 	{
-		FlxG.switchState(new SusState());
-		/*if (!skippedIntro)
+		//FlxG.switchState(new Piracy());
+		if (!skippedIntro)
 		{
 			remove(ngSpr);
 
 			FlxG.camera.flash(FlxColor.WHITE, 4);
 			remove(credGroup);
 			skippedIntro = true;
-		}*/
+		}
 	}
 }

@@ -1905,6 +1905,8 @@ class PlayState extends MusicBeatState
 							camHUD.visible = true;
 						case 'Five Minutes':
 							camHUD.visible = true;
+						case 'Skill Issue':
+							camHUD.visible = true;
 						default:
 							trace("ok funny intro activated");
 					}
@@ -3535,6 +3537,13 @@ class PlayState extends MusicBeatState
 					longSpin = false;
 				case 512:
 					poopThing = true;
+				case 622:
+					FlxTween.tween(camHUD, {alpha: 0}, 1.2, 
+						{
+							ease: FlxEase.cubeInOut,
+						});
+				case 640:
+					camHUD.alpha = 100;
 				case 768:
 					poopThing = false;
 				case 832:

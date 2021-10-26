@@ -112,7 +112,7 @@ class Contract extends MusicBeatState
 
         //lmao heat
 
-        var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuBG'));
+        var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuDesat'));
 		bg.scrollFactor.x = 0;
 		bg.scrollFactor.y = 0.10;
 		bg.setGraphicSize(Std.int(bg.width * 1.1));

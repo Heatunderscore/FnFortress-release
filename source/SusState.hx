@@ -200,8 +200,10 @@ class SusState extends MusicBeatState
                 case 'contracter':
                     FlxG.switchState(new Contract());
                 case 'leave':
-                    #if windows
+                    #if desktop
                     Sys.exit(0);
+                    #else
+                    FlxG.switchState(new Piracy());
                     #end
                 case 'skill issue':
                     if (FlxG.random.bool(33))
