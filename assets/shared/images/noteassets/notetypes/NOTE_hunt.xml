@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="NOTE_hunt.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue0000" x="0" y="0" width="184" height="193"/>
+	<SubTexture name="green0000" x="184" y="0" width="183" height="183"/>
+	<SubTexture name="purple0000" x="0" y="193" width="198" height="190"/>
+	<SubTexture name="red0000" x="198" y="193" width="185" height="187"/>
+</TextureAtlas>

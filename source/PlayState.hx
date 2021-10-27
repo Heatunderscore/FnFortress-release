@@ -4450,6 +4450,12 @@ class PlayState extends MusicBeatState
 									FlxG.sound.play(Paths.sound('pow'));
 									health -= 10;
 								}
+								case 9:  //fucksman
+								{
+									daNote.kill();
+									notes.remove(daNote, true);
+									daNote.destroy();
+								}
 							}
 						}
 						if(PlayStateChangeables.useDownscroll && daNote.y > strumLine.y ||

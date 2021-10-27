@@ -41,15 +41,15 @@ class Note extends FlxSprite
 	public var bob:Bool = false; //bob arrow
 	public var glitch:Bool = false; //glitch
 
-	public var disguise:Bool = false;// disguise shit
-	public var dad2:Bool = false;// heavy shit
-	public var dad1:Bool = false;// medic shit
-	public var bonk:Bool = false;//bonk shit
-	public var fist:Bool = false;//fisting
-	public var drunk:Bool = false;//drunndnknknrknknkrn
-	public var snoiper:Bool = false;//snoiper shit
-	public var rocket:Bool = false; //for soldier
-	public var huntsman:Bool = false; //sniper
+	public var disguise:Bool = false; // disguise shit
+	public var dad2:Bool = false; // heavy shit
+	public var dad1:Bool = false; // medic shit
+	public var bonk:Bool = false; // bonk shit
+	public var fist:Bool = false; // fisting
+	public var drunk:Bool = false; // drunndnknknrknknkrn
+	public var snoiper:Bool = false; // snoiper shit
+	public var rocket:Bool = false; // for soldier
+	public var huntsman:Bool = false; // sniper
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -307,6 +307,19 @@ class Note extends FlxSprite
 								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
 							}
 					}
+				if (huntsman)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+
 
 				
 
@@ -387,7 +400,7 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
 							case 9:
-								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_hunt');
 								for (i in 0...11)
 									{
 										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="NOTE_conch.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue0000" x="0" y="0" width="135" height="195"/>
+	<SubTexture name="green0000" x="135" y="0" width="137" height="193"/>
+	<SubTexture name="purple0000" x="272" y="0" width="145" height="194"/>
+	<SubTexture name="red0000" x="0" y="195" width="131" height="196"/>
+</TextureAtlas>
