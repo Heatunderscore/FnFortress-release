@@ -318,6 +318,9 @@ class PlayState extends MusicBeatState
 	private var executeModchart = false;
 	public static var startTime = 0.0;
 
+	var saxTrail:FlxTrail;
+	var bfTrail:FlxTrail;
+
 	// API stuff
 	
 	public function addObject(object:FlxBasic) { add(object); }
@@ -332,13 +335,16 @@ class PlayState extends MusicBeatState
 			{
 				isHeavy = false;
 			}
+
 		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
 
+		//goes unused
 		clok = [512, 539, 565, 592, 618, 644, 671, 697, 704, 731, 757, 784, 810, 837, 863, 890];
 
-		soldierShits = [384, 416, 440, 512, 568, 672, 768, 800, 896, 960, 1080, 1152, 1176, 1184, 1208, 1312, 1336, 1408, 1440, 1536, 1568, 1632, 1640, 1656, 1720, 1912];
+		soldierShits = [396, 428, 524, 589, 620, 653, 716, 812, 909, 972, 1005, 1036, 1101, 1164, 1197, 1260, 1325, 1420, 1453, 1548, 1581, 1676, 1709, 1904];
 
-		warnings = [376, 408, 432, 504, 560, 664, 760, 792, 888, 952, 1072, 1144, 1168, 1176, 1200, 1304, 1328, 1400, 1432, 1528, 1560, 1624, 1632, 1648, 1712, 1904];
+		// goes unused
+		warnings = [384, 416, 512, 576, 608, 640, 704, 768, 800, 896, 960, 992, 1024, 1088, 1152, 1184, 1248, 1312, 1408, 1440, 1536, 1568, 1664, 1696, 1892];
 
 		instance = this;
 		
@@ -871,7 +877,7 @@ class PlayState extends MusicBeatState
 						warning.antialiasing = true;
 						warning.active = false;
 						warning.visible = false;
-						warning.screenCenter();
+						//warning.screenCenter();
 
 				}
 			case 'barnblitz-demo':
@@ -978,12 +984,14 @@ class PlayState extends MusicBeatState
 				}
 			case 'sax':
 				{
-					defaultCamZoom = 0.7;
+					defaultCamZoom = 0.64;
 					curStage = 'sax';
-					var bg:FlxSprite = new FlxSprite(-400, -175).loadGraphic(Paths.image('fortress/bg/saxBG'));
+					var bg:FlxSprite = new FlxSprite(-770, -750).loadGraphic(Paths.image('fortress/bg/saxBG'));
 					bg.antialiasing = true;
-					bg.screenCenter();
+					//bg.screenCenter();
 					bg.scrollFactor.set(0.9, 0.9);
+					bg.x += 200;
+					bg.y += 300;
 					bg.active = false;
 					bg.scale.set(1.4,1.4);
 					add(bg);
@@ -1230,6 +1238,13 @@ class PlayState extends MusicBeatState
 		bonkBOT = new FlxTrail(dad, null, 2, 11, 0.8, 0.01);
 		add(bonkBOT);
 		remove(bonkBOT);
+
+		saxTrail = new FlxTrail(dad, null, 2, 11, 0.8, 0.01);
+		bfTrail = new FlxTrail(boyfriend, null, 2, 11, 0.8, 0.01);
+		add(saxTrail);
+		add(bfTrail);
+		remove(saxTrail);
+		remove(bfTrail);
 
 
 
@@ -1801,7 +1816,8 @@ class PlayState extends MusicBeatState
 			}
 			else
 			{
-				dad.playAnim('idle');
+				if (!dad.animation.curAnim.name.startsWith('shit'))
+				    dad.playAnim('idle');
 				gf.dance();
 				boyfriend.playAnim('idle');
 			}
@@ -2231,12 +2247,12 @@ class PlayState extends MusicBeatState
 				}
 				if (data == -1)
 				{
-					trace("couldn't find a keybind with the code " + key);
+					//trace("couldn't find a keybind with the code " + key);
 					return;
 				}
 				if (keys[data])
 				{
-					trace("ur already holding " + key);
+					//trace("ur already holding " + key);
 					return;
 				}
 		
@@ -2279,7 +2295,7 @@ class PlayState extends MusicBeatState
 				
 									if (!note.isSustainNote && (note.strumTime - coolNote.strumTime) < 2)
 									{
-										trace('found a stacked/really close note ' + (note.strumTime - coolNote.strumTime));
+										//trace('found a stacked/really close note ' + (note.strumTime - coolNote.strumTime));
 										// just fuckin remove it since it's a stacked note and shouldn't be there
 										note.kill();
 										notes.remove(note, true);
@@ -3083,45 +3099,24 @@ class PlayState extends MusicBeatState
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
 
-		#if debug
-		if (FlxG.keys.justPressed.SIX)
-		{
-			if (useVideo)
+		if (FlxG.keys.justPressed.EIGHT)
+			{
+				//FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, keyDown);
+				//FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, keyUp);
+	
+				if(FlxG.keys.pressed.SHIFT)
 				{
-					GlobalVideo.get().stop();
-					remove(videoSprite);
-					FlxG.stage.window.onFocusOut.remove(focusOut);
-					FlxG.stage.window.onFocusIn.remove(focusIn);
-					removedVideo = true;
+					FlxG.switchState(new AnimationDebug(SONG.player1));
 				}
-
-			FlxG.switchState(new AnimationDebug(SONG.player2));
-			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
-			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
-			#if windows
-			if (luaModchart != null)
-			{
-				luaModchart.die();
-				luaModchart = null;
+				else if(FlxG.keys.pressed.CONTROL)
+				{
+					FlxG.switchState(new AnimationDebug(gf.curCharacter));
+				}
+				else
+				{
+					FlxG.switchState(new AnimationDebug(SONG.player2));
+				}
 			}
-			#end
-		}
-
-		if (FlxG.keys.justPressed.ZERO)
-		{
-			FlxG.switchState(new AnimationDebug(SONG.player1));
-			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
-			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
-			#if windows
-			if (luaModchart != null)
-			{
-				luaModchart.die();
-				luaModchart = null;
-			}
-			#end
-		}
-
-		#end
 
 		if (startingSong)
 		{
@@ -3361,10 +3356,14 @@ class PlayState extends MusicBeatState
 					case 'void':
 						camFollow.y = boyfriend.getMidpoint().y - 150;
 						camFollow.x = boyfriend.getMidpoint().x - 200;
+					case 'sax':
+						camFollow.y = boyfriend.getMidpoint().y - 150;
+						camFollow.x = boyfriend.getMidpoint().x - 200;
 				}
 				switch (SONG.player1)
 				{
 					case 'medic-bf':
+						camFollow.x = boyfriend.getMidpoint().x - 300;
 						camFollow.y = boyfriend.getMidpoint().y - -15;
 				}
 			}
@@ -3461,9 +3460,9 @@ class PlayState extends MusicBeatState
 				{
 					case 320:
 						camHUD.visible = true;
-					case 376, 408, 432, 504, 560, 664, 760, 792, 888, 952, 1072, 1144, 1168, 1176, 1200, 1304, 1328, 1400, 1432, 1528, 1560, 1624, 1632, 1648, 1712, 1904:
+					case 384, 416, 512, 576, 608, 640, 704, 768, 800, 896, 960, 992, 1024, 1088, 1152, 1184, 1248, 1312, 1408, 1440, 1536, 1568, 1664, 1696, 1892:
 						warning.visible = true;
-						new FlxTimer().start(0.4, function(deadTime:FlxTimer)
+						new FlxTimer().start(0.7, function(deadTime:FlxTimer)
 							{
 								warning.visible = false;
 							});
@@ -4400,7 +4399,7 @@ class PlayState extends MusicBeatState
 														{
 															i.alpha = 0.3;
 															i.sustainActive = false;
-															trace(i.alpha);
+															//trace(i.alpha);
 														}
 														if (daNote.parent.wasGoodHit)
 															misses++;
@@ -4464,7 +4463,7 @@ class PlayState extends MusicBeatState
 										{
 											//trace('ReplayNote ' + tmpRepNote.strumtime + ' | ' + tmpRepNote.direction);
 											var n = findByTime(daNote.strumTime);
-											trace(n);
+											//trace(n);
 											if(n != null)
 											{
 												goodNoteHit(daNote);
@@ -6389,25 +6388,41 @@ class PlayState extends MusicBeatState
 
 	function soldierShittingOnYou():Void
 		{
-			//again from the VS QT MOD
-			if (PlayStateChangeables.botPlay)
-			{
-				boyfriend.playAnim('dodge', false);
-				bfDodging = true;
-				new FlxTimer().start(0.21, function(tmr:FlxTimer)
-					{
-						bfDodging=false;
-					});
+			var antiShit:Bool = false;
 
+		    if (!antiShit)
+			{
+				antiShit = true;
+				//again from the VS QT MOD
+			    if (PlayStateChangeables.botPlay)
+				{
+					boyfriend.playAnim('dodge', false);
+					bfDodging = true;
+					new FlxTimer().start(0.21, function(tmr:FlxTimer)
+						{
+							bfDodging=false;
+						});
+	
+				}
+	
+				dad.playAnim('shit');
+	
+				//makes soldier switch back to idle instead of being stuck in the shooting anim -tob
+				new FlxTimer().start(1.5, function(tmr:FlxTimer)
+					{
+						dad.playAnim('idle');
+						antiShit = false;
+					});
+	
+				//FlxG.sound.play(Paths.sound('shotgun', 'shared'));
+				
+				if(!bfDodging && !PlayStateChangeables.botPlay)
+				{
+					health -= 0.80;
+					boyfriend.playAnim('hit', true);
+				} 
 			}
 
-			dad.playAnim('shit');
-			FlxG.sound.play(Paths.sound('shotgun', 'shared'));
-			
-			if(!bfDodging && !PlayStateChangeables.botPlay)
-			{
-				health -= 1;
-			} 
 		}
 
 	function badNoteHit():Void
@@ -6651,26 +6666,39 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-		/*if (curSong == 'Property Damage')
+		if (curSong == 'Property Damage')
 		{
-			var saxTrail:FlxTrail;
-			var bfTrail:FlxTrail;
-			saxTrail = new FlxTrail(dad, null, 2, 11, 0.8, 0.01);
-			bfTrail = new FlxTrail(boyfriend, null, 2, 11, 0.8, 0.01);
 
-			switch (curStep){
-				case 1792 | 3120 | 3328 | 3584:
+			switch (curStep)
+			{
+				case 1792:
 					add(saxTrail);
-				case 2175 | 3144 | 3393 | 3649:
+				case 2175:
 					remove(saxTrail);
-				case 3456 | 3712: 
+				case 3120:
+					add(saxTrail);
+				case 3144:
+					remove(saxTrail);
+				case 3328:
+					add(saxTrail);
+				case 3393:
+					remove(saxTrail);
+				case 3456: 
 					add(bfTrail);
-				case 3521 | 3777:
+				case 3521:
+					remove(bfTrail);
+				case 3584:
+					add(saxTrail);
+				case 3649:
+					remove(saxTrail);
+				case 3712:
+					add(bfTrail);
+				case 3777:
 					remove(bfTrail);
 			}
 		
 
-		}*/
+		}
 
 		if (curSong == 'Ironcurtain')
 		{
@@ -6721,9 +6749,9 @@ class PlayState extends MusicBeatState
 			}*/
 
 
-		if (health > 2.1)
+		if (health > 2)
 		{
-			health -= 0.025;
+			health = 2;
 		}
 
 		//9.6
@@ -6732,7 +6760,8 @@ class PlayState extends MusicBeatState
 			switch (curSong)
 			{
 				case 'Clinicaltrial':
-					health += -0.0125;
+					if (health >= 0.1)
+					    health += -0.02;
 				case 'Inferno':
 					if (burnShit)						
 					    health += -0.01;
@@ -6864,57 +6893,62 @@ class PlayState extends MusicBeatState
 			// else
 			// Conductor.changeBPM(SONG.bpm);
 
+			//SONG.notes[Math.floor(curStep / 16)].mustHitSection
 			// Dad doesnt interupt his own notes
-			if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && dad.curCharacter != 'gf')
-			{
-				    if (curSong == 'Inferno')
-					    {
-						    switch (curTiming)
-						    {
-							    case 0:
-								    dad.playAnim('idle');
-							    case 1:
-								    dad.playAnim('idle-alt');
-					    	}
-				     	}
-			        else if (heavyDad) 
-			        {
-				        switch (curTiming)
-				        {
-					        case 0:
-						        dad.playAnim('idle');
-						        dad2.playAnim('idle');
-				        	case 1:
-						        dad.playAnim('idle-beam');
-								dad2.playAnim('idle');
-		        			case 2:
-		        				dad.playAnim('idle-alt');
-		        				dad2.playAnim('idle-alt');
-		        		}
-		
-			        }
-			        else if (roboDad)
-			        {
-				        dad.dance();
-				        dad2.dance();
-			        }
-					else if (curSong == 'Meet The Team')
-					{
-						scout.dance();
-						soldier.dance();
-						pyro.dance();
-						demoman.dance();
-						heavy.dance();
-						engi.dance();
-						medic.dance();
-						sniper.dance();
-						spy.dance();
-					}
-			        else
-			        {
-						dad.playAnim('idle');
-			        }
-		    }
+			if (curBeat % 2 == 0)
+				{
+					if (!dad.animation.curAnim.name.startsWith('sing') && dad.curCharacter != 'gf')
+						{
+								if (curSong == 'Inferno')
+									{
+										switch (curTiming)
+										{
+											case 0:
+												dad.playAnim('idle');
+											case 1:
+												dad.playAnim('idle-alt');
+										}
+									 }
+								else if (heavyDad) 
+								{
+									switch (curTiming)
+									{
+										case 0:
+											dad.playAnim('idle');
+											dad2.playAnim('idle');
+										case 1:
+											dad.playAnim('idle-beam');
+											dad2.playAnim('idle');
+										case 2:
+											dad.playAnim('idle-alt');
+											dad2.playAnim('idle-alt');
+									}
+					
+								}
+								else if (roboDad)
+								{
+									dad.dance();
+									dad2.dance();
+								}
+								else if (curSong == 'Meet The Team')
+								{
+									scout.dance();
+									soldier.dance();
+									pyro.dance();
+									demoman.dance();
+									heavy.dance();
+									engi.dance();
+									medic.dance();
+									sniper.dance();
+									spy.dance();
+								}
+								else
+								{
+									if (!dad.animation.curAnim.name.startsWith('shit'))
+										dad.playAnim('idle');
+								}
+						}
+				}
 	    }
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);

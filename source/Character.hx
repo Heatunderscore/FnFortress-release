@@ -144,7 +144,7 @@ class Character extends FlxSprite
 				// new scunt
 				tex = Paths.getSparrowAtlas('characters/scunt', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Scout_Idle', 24, true);
+				animation.addByPrefix('idle', 'Scout_Idle', 24, false);
 				animation.addByPrefix('singUP', 'Scout_Up', 24, false);
 				animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
 				animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
@@ -162,7 +162,7 @@ class Character extends FlxSprite
 				// old scunt
 				tex = Paths.getSparrowAtlas('characters/scoutOLD', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Scout_Idle', 24, true);
+				animation.addByPrefix('idle', 'Scout_Idle', 24, false);
 				animation.addByPrefix('singUP', 'Scout_Up', 24, false);
 				animation.addByPrefix('singRIGHT', 'Scout_Right', 24, false);
 				animation.addByPrefix('singDOWN', 'Scout_Down', 24, false);
@@ -205,7 +205,7 @@ class Character extends FlxSprite
 				// bottom text
 				tex = Paths.getSparrowAtlas('characters/sodier', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'idle s', 24, true);
+				animation.addByPrefix('idle', 'idle s', 24, false);
 				animation.addByPrefix('singUP', 'up s', 24, false);
 				animation.addByPrefix('singRIGHT', 'right s', 24, false);
 				animation.addByPrefix('singDOWN', 'down s', 24, false);
@@ -222,7 +222,7 @@ class Character extends FlxSprite
 			case 'pyro':
 				tex = Paths.getSparrowAtlas('characters/Pyro', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Pyro_Idle', 24, true);
+				animation.addByPrefix('idle', 'Pyro_Idle', 24, false);
 				animation.addByPrefix('singUP', 'Pyro_Up', 24, false);
 				animation.addByPrefix('singRIGHT', 'Pyro_Right', 24, false);
 				animation.addByPrefix('singDOWN', 'Pyro_Down', 24, false);
@@ -251,7 +251,7 @@ class Character extends FlxSprite
 			case 'demo':
 				tex = Paths.getSparrowAtlas('characters/demo', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Demo Idle', 24, true);
+				animation.addByPrefix('idle', 'Demo Idle', 24, false);
 				animation.addByPrefix('singUP', 'Demo Up', 24, false);
 				animation.addByPrefix('singRIGHT', 'Demo Right', 24, false);
 				animation.addByPrefix('singDOWN', 'Demo Down', 24, false);
@@ -268,7 +268,7 @@ class Character extends FlxSprite
 			case 'heavy':
 				tex = Paths.getSparrowAtlas('characters/heavy', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Heavy_Idle', 24, true);
+				animation.addByPrefix('idle', 'Heavy_Idle', 24, false);
 				animation.addByPrefix('singUP', 'Heavy_Up', 24, false);
 				animation.addByPrefix('singRIGHT', 'Heavy_Right', 24, false);
 				animation.addByPrefix('singDOWN', 'Heavy_Down', 24, false);
@@ -297,7 +297,7 @@ class Character extends FlxSprite
 			case 'engi':
 				tex = Paths.getSparrowAtlas('characters/engi', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'engi idle', 24, true);
+				animation.addByPrefix('idle', 'engi idle', 24, false);
 				animation.addByPrefix('singUP', 'engi up', 24, false);
 				animation.addByPrefix('singRIGHT', 'engi right', 24, false);
 				animation.addByPrefix('singDOWN', 'engi down', 24, false);
@@ -314,7 +314,7 @@ class Character extends FlxSprite
 			case 'robo-engi':
 				tex = Paths.getSparrowAtlas('characters/roboengi', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'robo engi idle', 24, true);
+				animation.addByPrefix('idle', 'robo engi idle', 24, false);
 				animation.addByPrefix('singUP', 'robo engi up', 24, false);
 				animation.addByPrefix('singRIGHT', 'robo engi right', 24, false);
 				animation.addByPrefix('singDOWN', 'robo engi down', 24, false);
@@ -331,7 +331,7 @@ class Character extends FlxSprite
 			case 'medic':
 				tex = Paths.getSparrowAtlas('characters/medic', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'medic_idle', 24, true);
+				animation.addByPrefix('idle', 'medic_idle', 24, false);
 				animation.addByPrefix('singUP', 'medic_up', 24, false);
 				animation.addByPrefix('singRIGHT', 'medic_right', 24, false);
 				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
@@ -358,7 +358,7 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'medic-bf':
-				tex = Paths.getSparrowAtlas('characters/medic', 'shared');
+				tex = Paths.getSparrowAtlas('characters/medicBF', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'medic_idle', 24, false);
 				animation.addByPrefix('singUP', 'medic_up', 24, false);
@@ -366,17 +366,24 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
 				animation.addByPrefix('singLEFT', 'medic_left', 24, false);
 
+				animation.addByPrefix('firstDeath', "medic death", 24, false);
+				animation.addByPrefix('deathLoop', "medic balls beat", 24, true);
+				animation.addByPrefix('deathConfirm', "medic confirm", 24, false);
+
 				addOffset('idle');
 				addOffset("singDOWN", 52, -122);
 				addOffset("singRIGHT" , -38, 51);
 				addOffset("singUP" , -12, 20);
 				addOffset("singLEFT" , 188, 51);
+				addOffset('firstDeath', 0, 0);
+				addOffset('deathLoop', 0, 0);
+				addOffset('deathConfirm', 0, 0);
 	
 				playAnim('idle');
 			case 'sniper':
 				tex = Paths.getSparrowAtlas('characters/sniper');
 				frames = tex;
-				animation.addByPrefix('idle', "idle", 24, true);
+				animation.addByPrefix('idle', "idle", 24, false);
 				animation.addByPrefix('singUP', 'up', 24, false);
 				animation.addByPrefix('singDOWN', 'down', 24, false);
 				// animator is a dum dum and swapped left and right 
@@ -397,7 +404,7 @@ class Character extends FlxSprite
 			case 'snoiper':
 				tex = Paths.getSparrowAtlas('characters/snoiper gaming');
 				frames = tex;
-				animation.addByPrefix('idle', "Pico Idle Dance", 24, true);
+				animation.addByPrefix('idle', "Pico Idle Dance", 24, false);
 				animation.addByPrefix('singUP', 'pico Up note0', 24, false);
 				animation.addByPrefix('singDOWN', 'Pico Down Note0', 24, false);
 				animation.addByPrefix('singRIGHT', 'Pico Note Right0', 24, false);
@@ -416,7 +423,7 @@ class Character extends FlxSprite
 			case 'spy':
 				tex = Paths.getSparrowAtlas('characters/spy', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Spy Idle', 24, true);
+				animation.addByPrefix('idle', 'Spy Idle', 24, false);
 				animation.addByPrefix('singUP', 'Spy Up', 24, false);
 				animation.addByPrefix('singRIGHT', 'Spy Right', 24, false);
 				animation.addByPrefix('singDOWN', 'Spy Down', 24, false);
@@ -461,7 +468,7 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
 				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
 				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
+				animation.addByPrefix('hey', 'BF HEY!!', 24, false);
 				animation.addByPrefix('hit', 'BF hit', 24, false);
 				animation.addByPrefix('dodge', 'boyfriend dodge', 24, false);
 
@@ -686,7 +693,7 @@ class Character extends FlxSprite
 				dadVar = 6.1;
 			if (holdTimer >= Conductor.stepCrochet * dadVar * 0.001)
 			{
-				trace('dance');
+				//trace('dance');
 				dance();
 				holdTimer = 0;
 			}
