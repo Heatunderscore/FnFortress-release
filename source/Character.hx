@@ -489,8 +489,8 @@ class Character extends FlxSprite
 				addOffset("singLEFTmiss", 12, 24);
 				addOffset("singDOWNmiss", -11, -19);
 				addOffset("hey", 7, 4);
-				addOffset("hit", 7, 4);
-				addOffset("dodge", 7, 4);
+				addOffset("hit", 12, 20);
+				addOffset("dodge", -10, -16);
 				addOffset('firstDeath', 37, 11);
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
