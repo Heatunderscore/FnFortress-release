@@ -403,7 +403,10 @@ class Note extends FlxSprite
 								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_hunt');
 								for (i in 0...11)
 									{
-										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
+										animation.addByPrefix('greenScroll', 'green');
+										animation.addByPrefix('redScroll', 'red');
+										animation.addByPrefix('blueScroll', 'blue');
+										animation.addByPrefix('purpleScroll', 'purple');
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}	
