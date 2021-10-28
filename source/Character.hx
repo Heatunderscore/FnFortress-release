@@ -303,13 +303,14 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'engi down', 24, false);
 				animation.addByPrefix('singLEFT', 'engi left', 24, false);
 
+				// this was my idea heheeheehheheehhehehehehhehehhe -tob
 				if (isPlayer)
 				{
 					addOffset('idle');
-					addOffset("singDOWN", 0, -67);
-					addOffset("singLEFT" , -83, -3);
-					addOffset("singUP" , -28, 278);
-					addOffset("singRIGHT" , -32, -7);
+					addOffset("singDOWN", 180, -67);
+					addOffset("singRIGHT" , 128, -3);
+					addOffset("singUP" , 52, 278);
+					addOffset("singLEFT" , 90, -7);
 				}
 				else
 				{	
@@ -385,10 +386,10 @@ class Character extends FlxSprite
 				if (isPlayer)
 				{
 					addOffset('idle');
-					addOffset("singDOWN", 52, -122);
-					addOffset("singLEFT" , -38, 51);
-					addOffset("singUP" , -12, 20);
-					addOffset("singRIGHT" , 188, 51);
+					addOffset("singDOWN", -108, -122);
+					addOffset("singRIGHT" , -142, 51);
+					addOffset("singUP" , -132, 20);
+					addOffset("singLEFT" , 97, 51);
 				}
 				else
 				{
@@ -399,9 +400,9 @@ class Character extends FlxSprite
 					addOffset("singLEFT" , 188, 51);
 				}
 
-				addOffset('firstDeath', 0, 0);
-				addOffset('deathLoop', 0, 0);
-				addOffset('deathConfirm', 0, 0);
+				addOffset('firstDeath', 180, 100);
+				addOffset('deathLoop', 180, -256);
+				addOffset('deathConfirm', 230, 100);
 	
 				playAnim('idle');
 			case 'sniper':
@@ -704,7 +705,7 @@ class Character extends FlxSprite
 
 	override function update(elapsed:Float)
 	{
-		/*if (!curCharacter.startsWith('bf'))
+		if (!curCharacter.startsWith('bf') && !curCharacter.startsWith('medic-bf') && !curCharacter.startsWith('engi'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
 			{
@@ -721,7 +722,7 @@ class Character extends FlxSprite
 				dance();
 				holdTimer = 0;
 			}
-		}*/
+		}
 
 		switch (curCharacter)
 		{

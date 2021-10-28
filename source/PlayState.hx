@@ -1194,11 +1194,11 @@ class PlayState extends MusicBeatState
 
 		if (!PlayStateChangeables.Optimize)
 		{
-			switch (curSong)
+			switch(SONG.player1)
 			{
-				case 'May Somethingth':
+				case 'medic-bf':
 					trace("no");
-				case 'Dispenser':
+				case 'engi':
 					trace("NO");
 				default:
 					add(gf);
@@ -6734,11 +6734,13 @@ class PlayState extends MusicBeatState
 					dad = new Character(100, 100, "soldier");
 					add(dad);
 					iconP2.animation.play("soldier", true);
+					FlxG.camera.flash(FlxColor.WHITE, 1);
 				case 448:
 					remove(dad);
 					dad = new Character(100, 100, "scunt");
 					add(dad);
 					iconP2.animation.play("scunt", true);
+					FlxG.camera.flash(FlxColor.WHITE, 1);
 			}
 		}
 
@@ -6937,9 +6939,10 @@ class PlayState extends MusicBeatState
 
 			//SONG.notes[Math.floor(curStep / 16)].mustHitSection
 			// Dad doesnt interupt his own notes
+			// dad.animation.curAnim.finished && 
 			if (curBeat % 2 == 0)
 				{
-					if (dad.animation.curAnim.finished && dad.curCharacter != 'gf')
+					if (dad.curCharacter != 'gf')
 						{
 								if (curSong == 'Inferno')
 									{

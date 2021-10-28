@@ -181,7 +181,14 @@ class AnimationDebug extends FlxState
 			updateTexts();
 			genBoyOffsets(false);
 		}
-		
+
+		// damn it was a good idea to do this shit -tob
+		if (FlxG.keys.justPressed.F10)
+		{
+			dadBG.flipX = !dadBG.flipX;
+			dad.flipX = !dad.flipX;
+		}
+
 		if (FlxG.keys.justPressed.ESCAPE)
 		{
 			FlxG.switchState(new PlayState());
