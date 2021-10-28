@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="demomanportrait.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="demo talk0000" x="0" y="0" width="438" height="327"/>
+	<SubTexture name="demo talk0001" x="438" y="0" width="438" height="327"/>
+	<SubTexture name="demo talk0002" x="0" y="327" width="438" height="327"/>
+	<SubTexture name="demo talk0003" x="438" y="327" width="438" height="327"/>
+	<SubTexture name="demo talk0004" x="438" y="0" width="438" height="327"/>
+</TextureAtlas>

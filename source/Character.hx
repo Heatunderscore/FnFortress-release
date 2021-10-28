@@ -303,11 +303,23 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'engi down', 24, false);
 				animation.addByPrefix('singLEFT', 'engi left', 24, false);
 
-				addOffset('idle');
-                addOffset("singDOWN", 0, -67);
-                addOffset("singRIGHT" , -83, -3);
-                addOffset("singUP" , -28, 278);
-                addOffset("singLEFT" , -32, -7);
+				if (isPlayer)
+				{
+					addOffset('idle');
+					addOffset("singDOWN", 0, -67);
+					addOffset("singLEFT" , -83, -3);
+					addOffset("singUP" , -28, 278);
+					addOffset("singRIGHT" , -32, -7);
+				}
+				else
+				{	
+					addOffset('idle');
+                    addOffset("singDOWN", 0, -67);
+					addOffset("singRIGHT" , -83, -3);
+					addOffset("singUP" , -28, 278);
+					addOffset("singLEFT" , -32, -7);
+				}
+
 
 				playAnim('idle');
 
@@ -370,11 +382,23 @@ class Character extends FlxSprite
 				animation.addByPrefix('deathLoop', "medic balls beat", 24, true);
 				animation.addByPrefix('deathConfirm', "medic confirm", 24, false);
 
-				addOffset('idle');
-				addOffset("singDOWN", 52, -122);
-				addOffset("singRIGHT" , -38, 51);
-				addOffset("singUP" , -12, 20);
-				addOffset("singLEFT" , 188, 51);
+				if (isPlayer)
+				{
+					addOffset('idle');
+					addOffset("singDOWN", 52, -122);
+					addOffset("singLEFT" , -38, 51);
+					addOffset("singUP" , -12, 20);
+					addOffset("singRIGHT" , 188, 51);
+				}
+				else
+				{
+					addOffset('idle');
+					addOffset("singDOWN", 52, -122);
+					addOffset("singRIGHT" , -38, 51);
+					addOffset("singUP" , -12, 20);
+					addOffset("singLEFT" , 188, 51);
+				}
+
 				addOffset('firstDeath', 0, 0);
 				addOffset('deathLoop', 0, 0);
 				addOffset('deathConfirm', 0, 0);
@@ -680,7 +704,7 @@ class Character extends FlxSprite
 
 	override function update(elapsed:Float)
 	{
-		if (!curCharacter.startsWith('bf'))
+		/*if (!curCharacter.startsWith('bf'))
 		{
 			if (animation.curAnim.name.startsWith('sing'))
 			{
@@ -697,7 +721,7 @@ class Character extends FlxSprite
 				dance();
 				holdTimer = 0;
 			}
-		}
+		}*/
 
 		switch (curCharacter)
 		{

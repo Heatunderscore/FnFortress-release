@@ -1185,13 +1185,24 @@ class PlayState extends MusicBeatState
 		{
 			case 'medic-bf':
 				boyfriend.y += -250;
+			case 'engi':
+				boyfriend.y += -300;
+				boyfriend.x += 25;
 			default:
 				trace("default bf");
 		}
 
 		if (!PlayStateChangeables.Optimize)
 		{
-			add(gf);
+			switch (curSong)
+			{
+				case 'May Somethingth':
+					trace("no");
+				case 'Dispenser':
+					trace("NO");
+				default:
+					add(gf);
+			}
 
 			// Shitty layering but whatev it works LOL
 			if (curStage == 'limo')
@@ -1435,7 +1446,11 @@ class PlayState extends MusicBeatState
 			{
 				healthBar.createFilledBar(0xFFFF0000, 0xFFFF0000);
 			}
-			else
+		else if (curSong == 'Dispenser')
+			{
+				healthBar.createFilledBar(0xFFFF0000, 0xFFFF0000);
+			}
+		else
 			{
 				healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
 			}
@@ -1922,6 +1937,8 @@ class PlayState extends MusicBeatState
 						case 'Five Minutes':
 							camHUD.visible = true;
 						case 'Skill Issue':
+							camHUD.visible = true;
+						case 'Dispenser':
 							camHUD.visible = true;
 						default:
 							trace("ok funny intro activated");
@@ -3365,6 +3382,8 @@ class PlayState extends MusicBeatState
 					case 'medic-bf':
 						camFollow.x = boyfriend.getMidpoint().x - 300;
 						camFollow.y = boyfriend.getMidpoint().y - -15;
+					case 'engi':
+						camFollow.x = boyfriend.getMidpoint().x - 300;
 				}
 			}
 		}
@@ -6706,6 +6725,23 @@ class PlayState extends MusicBeatState
 
 		}
 
+		if (curSong == 'Dispenser')
+		{
+			switch (curStep)
+			{
+				case 256:
+					remove(dad);
+					dad = new Character(100, 100, "soldier");
+					add(dad);
+					iconP2.animation.play("soldier", true);
+				case 448:
+					remove(dad);
+					dad = new Character(100, 100, "scunt");
+					add(dad);
+					iconP2.animation.play("scunt", true);
+			}
+		}
+
 		if (curSong == 'Ironcurtain')
 		{
 			if (fidgetspinner.contains(curStep))
@@ -6903,7 +6939,7 @@ class PlayState extends MusicBeatState
 			// Dad doesnt interupt his own notes
 			if (curBeat % 2 == 0)
 				{
-					if (!dad.animation.curAnim.name.startsWith('sing') && dad.curCharacter != 'gf')
+					if (dad.animation.curAnim.finished && dad.curCharacter != 'gf')
 						{
 								if (curSong == 'Inferno')
 									{
