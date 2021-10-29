@@ -50,6 +50,7 @@ class Note extends FlxSprite
 	public var snoiper:Bool = false;//snoiper shit
 	public var rocket:Bool = false; //for soldier
 	public var huntsman:Bool = false; //sniper
+	public var katana:Bool = false; // katana
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -185,6 +186,7 @@ class Note extends FlxSprite
 		drunk = noteType == 7;
 		rocket = noteType == 8;
 		huntsman = noteType == 9;
+		katana = noteType == 10;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -320,7 +322,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket || huntsman)
+				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket || huntsman || katana)
 					{
 						frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_types');
 						switch(noteType)
@@ -387,13 +389,7 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
 							case 9:
-								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
-								for (i in 0...11)
-									{
-										animation.addByPrefix(noteColors[i] + 'Scroll', noteColors[i] + '0'); // Normal notes
-										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
-										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
-									}	
+							case 10:
 							default:
 								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
 								for (i in 0...11)

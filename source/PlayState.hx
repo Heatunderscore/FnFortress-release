@@ -486,6 +486,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('wanker/hehehugheh'));
 			case 'infiltrator':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('infiltrator/furry'));
+			case 'property damage':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('property-damage/sex'));
 			case 'may-somethingth':
 				memedic = true;
 		}
@@ -1199,7 +1201,7 @@ class PlayState extends MusicBeatState
 				add(dad2);
 			}
 			if (SONG.song == 'Meet The Team')
-			{
+			{ // this might lag-
 				add(scout);
 				add(soldier);
 				add(pyro);
@@ -1508,7 +1510,7 @@ class PlayState extends MusicBeatState
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
-		doof.cameras = [camHUD];
+		//doof.cameras = [camHUD];
 		if (FlxG.save.data.songPosition)
 		{
 			songPosBG.cameras = [camHUD];
@@ -1534,49 +1536,28 @@ class PlayState extends MusicBeatState
 		{
 			switch (StringTools.replace(curSong," ", "-").toLowerCase())
 			{
-				case "winter-horrorland":
-					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
-					add(blackScreen);
-					blackScreen.scrollFactor.set();
-					camHUD.visible = false;
-
-					new FlxTimer().start(0.1, function(tmr:FlxTimer)
-					{
-						remove(blackScreen);
-						FlxG.sound.play(Paths.sound('Lights_Turn_On'));
-						camFollow.y = -2050;
-						camFollow.x += 200;
-						FlxG.camera.focusOn(camFollow.getPosition());
-						FlxG.camera.zoom = 1.5;
-
-						new FlxTimer().start(0.8, function(tmr:FlxTimer)
-						{
-							camHUD.visible = true;
-							remove(blackScreen);
-							FlxTween.tween(FlxG.camera, {zoom: defaultCamZoom}, 2.5, {
-								ease: FlxEase.quadInOut,
-								onComplete: function(twn:FlxTween)
-								{
-									startCountdown();
-								}
-							});
-						});
-					});
-				case 'senpai':
-					schoolIntro(doof);
-				case 'roses':
-					FlxG.sound.play(Paths.sound('ANGRY'));
-					schoolIntro(doof);
-				case 'thorns':
-					schoolIntro(doof);
 				case 'atomicpunch':
+					schoolIntro(doof);
+				case 'maggots':
+					schoolIntro(doof);
+				case 'inferno':
 					schoolIntro(doof);
 				case 'ironbomber':
 					schoolIntro(doof);
+				case 'ironcurtain':
+					schoolIntro(doof);
+				case 'frontierjustice':
+					schoolIntro(doof);
+				case 'clinicaltrial':
+					schoolIntro(doof);
+				case 'wanker':
+					schoolIntro(doof);
 				case 'infiltrator':
 					schoolIntro(doof);
+				case 'property damage':
+					schoolIntro(doof);			
 				default:
-					startCountdown();
+					schoolIntro(doof);
 			}
 		}
 		else
@@ -4064,7 +4045,7 @@ class PlayState extends MusicBeatState
 						if (roboDad)                   // :( -tob
 						{								// because ur mother -heat
 							if (mania == 5 || mania == 9) // why mania 9 heat??? -tob     
-								{
+								{							// yo mama dead -heat
 									var targ:Character = dad;
 									if (daNote.noteType == 3)
 									{
@@ -4432,16 +4413,17 @@ class PlayState extends MusicBeatState
 								{
 									health += -8239689276348976;
 								}
-								case 5:  //bonk
-								{
-									// pass
-								}
 								case 6:  //fist
 								{
 									dad.playAnim('singRIGHT', true);
 									FlxG.sound.play(Paths.sound('pow'));
 									health -= 10;
 								}
+								case 10:
+								{
+									health -= 0.8;
+									boyfriend.playAnim('hit');
+								}	
 							}
 						}
 						if(PlayStateChangeables.useDownscroll && daNote.y > strumLine.y ||
@@ -5658,7 +5640,8 @@ class PlayState extends MusicBeatState
 						};
 						if (boyfriend.holdTimer > Conductor.stepCrochet * 4 * 0.001 && (!holdArray.contains(true) || PlayStateChangeables.botPlay))
 							{
-								if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss') && (boyfriend.animation.curAnim.curFrame >= 10 || boyfriend.animation.curAnim.finished) && !bfDodging)
+								if (boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss') && 
+									(boyfriend.animation.curAnim.curFrame >= 10 || boyfriend.animation.curAnim.finished) && !bfDodging)
 									boyfriend.playAnim('idle');
 							}
 						else if (!FlxG.save.data.ghost)
@@ -6172,7 +6155,7 @@ class PlayState extends MusicBeatState
 									stupid = true;
 									FlxG.sound.play(Paths.sound('drink'));
 
-									new FlxTimer().start(8, function(tmr:FlxTimer)
+									new FlxTimer().start(8, function(tmr:FlxTimer) // me when nested flx timers 
 										{
 											remove(bonkBOT);
 											stupid = false;
@@ -6221,9 +6204,11 @@ class PlayState extends MusicBeatState
 						{
 							dad.playAnim('singRIGHT', true);
 							FlxG.sound.play(Paths.sound('smipr'));
-							Note.hitCheck++;
+							Note.hitCheck++; // you should kill yourself right now!!!
 							new FlxTimer().start(4, function(tmr:FlxTimer){Note.hitCheck--;});
 						}
+					if (note.katana)
+						boyfriend.playAnim('dodge');
 
 
 					if(!loadRep && note.mustPress)
