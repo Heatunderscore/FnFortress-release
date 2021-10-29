@@ -109,6 +109,7 @@ class PlayState extends MusicBeatState
 	var warning:FlxSprite;
 
 	var pyroland:FlxSprite;
+	var pyrolay:FlxSprite;
 	var blakShit:FlxSprite;
 
 	var dodge:Bool = false;
@@ -1557,9 +1558,17 @@ class PlayState extends MusicBeatState
 		iconP2.y = healthBar.y - (iconP2.height / 2);
 		add(iconP2);
 
+		pyrolay = new FlxSprite(0, 0).loadGraphic(Paths.image('fortress/bg/pyrolay', 'shared'));
+		pyrolay.antialiasing = true;
+		pyrolay.visible = false;
+
 		if (maggots)
 		{
 			add(warning);
+		}
+		else if (burnThing)
+		{
+			add(pyrolay);
 		}
 
 
@@ -1583,6 +1592,8 @@ class PlayState extends MusicBeatState
 			replayTxt.cameras = [camHUD];
 		if (maggots)
 		    warning.cameras = [camHUD];
+		if (burnThing)
+			pyrolay.cameras = [camHUD];
 
 
 		// if (SONG.song == 'South')
@@ -3068,6 +3079,19 @@ class PlayState extends MusicBeatState
 				}
 				// phillyCityLights.members[curLight].alpha -= (Conductor.crochet / 1000) * FlxG.elapsed;
 		}
+
+		// playing around with an overlay, make it better and maybe add it again -tob (TO DO (heat can you do this))
+		/*if (burnThing)
+			{
+				if (pyroland.visible)
+					{
+						pyrolay.visible = true;
+					}
+				else if (!pyroland.visible)
+					{
+						pyrolay.visible = false;
+					}
+			}*/
 
 		super.update(elapsed);
 
@@ -7057,7 +7081,7 @@ class PlayState extends MusicBeatState
 								}
 							}
 				}
-			else if (curBeat % 2 == 0 && heavyDad && !roboDad && !burnThing)
+			else if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && heavyDad && !roboDad && !burnThing)
 				{
 						switch (curTiming)
 						{
@@ -7077,15 +7101,13 @@ class PlayState extends MusicBeatState
 					dad.dance();
 					dad2.dance();
 				}
-			else if (curBeat % 2 == 0 && !heavyDad && !roboDad && burnThing)
+			else if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && !heavyDad && !roboDad && burnThing)
 					{
 						switch (curTiming)
 						{
 							case 0:
-								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
 								    dad.playAnim('idle');
 							case 1:
-								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
 								    dad.playAnim('idle-alt');
 						}
 					}
