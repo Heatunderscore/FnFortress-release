@@ -108,6 +108,9 @@ class PlayState extends MusicBeatState
 
 	var warning:FlxSprite;
 
+	var pyroland:FlxSprite;
+	var blakShit:FlxSprite;
+
 	var dodge:Bool = false;
 
 
@@ -852,6 +855,18 @@ class PlayState extends MusicBeatState
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
 						add(bg);
+
+						pyroland = new FlxSprite(-300, -200).loadGraphic(Paths.image('fortress/bg/pyroland'));
+						pyroland.antialiasing = true;
+						pyroland.scrollFactor.set(0.9, 0.9);
+						pyroland.active = false;
+						pyroland.visible = false;
+						add(pyroland);
+
+						blakShit = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
+							-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
+						blakShit.scrollFactor.set();
+						blakShit.visible = false;
 				}
 		    case 'twofort':
 				{
@@ -916,6 +931,16 @@ class PlayState extends MusicBeatState
 						defaultCamZoom = 0.82;
 						curStage = 'snake-sniper';
 						var bg:FlxSprite = new FlxSprite(-400, -175).loadGraphic(Paths.image('fortress/bg/snakewater2'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.9, 0.9);
+						bg.active = false;
+						add(bg);
+				}
+			case 'snake-spy':
+				{
+						defaultCamZoom = 0.82;
+						curStage = 'snake-spy';
+						var bg:FlxSprite = new FlxSprite(-400, -175).loadGraphic(Paths.image('fortress/bg/snakewater3'));
 						bg.antialiasing = true;
 						bg.scrollFactor.set(0.9, 0.9);
 						bg.active = false;
@@ -1135,6 +1160,9 @@ class PlayState extends MusicBeatState
 			case 'sodier':
 				dad.y += 150;
 				dad.x += -150;
+			case 'sniper':
+				dad.y += 75;
+				dad.x += -100;
 		}
 
 
@@ -1230,8 +1258,14 @@ class PlayState extends MusicBeatState
 				add(spy);
 				add(roboEngi);
 			}
+
 			add(dad);
 			add(boyfriend);
+
+			if (curStage == 'intel')
+				{
+					add(blakShit);
+				}
 
 		}
 
@@ -3370,6 +3404,9 @@ class PlayState extends MusicBeatState
 					case 'snake-medic':
 						camFollow.y = boyfriend.getMidpoint().y - 150;
 						camFollow.x = boyfriend.getMidpoint().x - 200;
+					case 'snake-spy':
+						camFollow.y = boyfriend.getMidpoint().y - 150;
+						camFollow.x = boyfriend.getMidpoint().x - 200;
 					case 'void':
 						camFollow.y = boyfriend.getMidpoint().y - 150;
 						camFollow.x = boyfriend.getMidpoint().x - 200;
@@ -3716,9 +3753,15 @@ class PlayState extends MusicBeatState
 				case 384:
 					burnShit = false;
 				case 511:
+					blakShit.visible = true;
+					pyroland.visible = true;
 					stupidAHHHH = false;
 					curTiming = 1;
 					camHUD.visible = false;
+				case 575:
+					blakShit.visible = false;
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					remove(blakShit);
 				case 639:
 					stupidAHHHH = true;
 					burnShit = true;
@@ -3726,42 +3769,72 @@ class PlayState extends MusicBeatState
 				case 703:
 					burnShit = false;
 				case 895:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1151:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1279:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1311:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1343:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1375:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1407:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1423:
+					FlxG.camera.flash(FlxColor.WHITE, 0.3);
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1439:
+					FlxG.camera.flash(FlxColor.WHITE, 0.3);
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1455:
+					FlxG.camera.flash(FlxColor.WHITE, 0.3);
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1471:
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1476:
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1480:
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1484:
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1488:
+					pyroland.visible = false;
 					curTiming = 0;
 				case 1492:
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1496:
 					curTiming = 0;
+					pyroland.visible = false;
 				case 1500:
+					pyroland.visible = true;
 					curTiming = 1;
 				case 1504:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					pyroland.visible = false;
 					stupidAHHHH = false;
 					curTiming = 0;
 			}
@@ -6940,42 +7013,12 @@ class PlayState extends MusicBeatState
 			//SONG.notes[Math.floor(curStep / 16)].mustHitSection
 			// Dad doesnt interupt his own notes
 			// dad.animation.curAnim.finished && 
-			if (curBeat % 2 == 0)
+			// dad.animation.curAnim.curFrame >= 5
+			if (curBeat % 2 == 0 && !heavyDad && !roboDad && !burnThing)
 				{
-					if (dad.curCharacter != 'gf')
+					if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
 						{
-								if (curSong == 'Inferno')
-									{
-										switch (curTiming)
-										{
-											case 0:
-												dad.playAnim('idle');
-											case 1:
-												dad.playAnim('idle-alt');
-										}
-									 }
-								else if (heavyDad) 
-								{
-									switch (curTiming)
-									{
-										case 0:
-											dad.playAnim('idle');
-											dad2.playAnim('idle');
-										case 1:
-											dad.playAnim('idle-beam');
-											dad2.playAnim('idle');
-										case 2:
-											dad.playAnim('idle-alt');
-											dad2.playAnim('idle-alt');
-									}
-					
-								}
-								else if (roboDad)
-								{
-									dad.dance();
-									dad2.dance();
-								}
-								else if (curSong == 'Meet The Team')
+								if (curSong == 'Meet The Team')
 								{
 									scout.dance();
 									soldier.dance();
@@ -6993,7 +7036,59 @@ class PlayState extends MusicBeatState
 										dad.playAnim('idle');
 								}
 						}
+					else if (dad.animation.curAnim.name != null && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing"))
+						{
+							if (curSong == 'Meet The Team')
+								{
+									scout.dance();
+									soldier.dance();
+									pyro.dance();
+									demoman.dance();
+									heavy.dance();
+									engi.dance();
+									medic.dance();
+									sniper.dance();
+									spy.dance();
+								}
+							else
+								{
+									if (!dad.animation.curAnim.name.startsWith('shit'))
+										dad.playAnim('idle');
+								}
+							}
 				}
+			else if (curBeat % 2 == 0 && heavyDad && !roboDad && !burnThing)
+				{
+						switch (curTiming)
+						{
+							case 0:
+								dad.playAnim('idle');
+								dad2.playAnim('idle');
+							case 1:
+								dad.playAnim('idle-beam');
+								dad2.playAnim('idle');
+							case 2:
+								dad.playAnim('idle-alt');
+								dad2.playAnim('idle-alt');
+						}
+				}
+			else if (curBeat % 2 == 0 && !heavyDad && roboDad && !burnThing)
+				{
+					dad.dance();
+					dad2.dance();
+				}
+			else if (curBeat % 2 == 0 && !heavyDad && !roboDad && burnThing)
+					{
+						switch (curTiming)
+						{
+							case 0:
+								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
+								    dad.playAnim('idle');
+							case 1:
+								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
+								    dad.playAnim('idle-alt');
+						}
+					}
 	    }
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);

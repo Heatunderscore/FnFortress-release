@@ -462,7 +462,7 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 			case 'saxton':
-				tex = Paths.getSparrowAtlas('characters/saxton', 'shared');
+				tex = Paths.getSparrowAtlas('characters/saxtonhal', 'shared');
 				frames = tex;
 				animation.addByPrefix('idle', 'idle', 24);
 				animation.addByPrefix('singUP', 'up', 24);

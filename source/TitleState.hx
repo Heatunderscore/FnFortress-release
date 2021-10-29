@@ -174,7 +174,7 @@ class TitleState extends MusicBeatState
 
 		if(Main.watermarks) {
 			logoBl = new FlxSprite(-150, -100);
-			logoBl.frames = Paths.getSparrowAtlas('KadeEngineLogoBumpin');
+			logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 			logoBl.antialiasing = true;
 			logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
 			logoBl.animation.play('bump');
