@@ -75,6 +75,11 @@ class OptionsMenu extends MusicBeatState
 			new GraphicLoading("On startup, cache every character. Significantly decrease load times. (HIGH MEMORY)"),
 			new BotPlay("Showcase your charts and mods with autoplay."),
 		]),
+
+		new OptionCategory("Vs Mannco Stuff", [
+			new DeleteMannco("delete your vs mannco savefile. THIS IS IRREVERSIBLE!")
+		]),
+
 		new OptionCategory("Saves and Data", [
 			#if desktop
 			new ReplayOption("View saved song replays."),

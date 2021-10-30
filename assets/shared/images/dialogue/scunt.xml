@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="scoutportrait2.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="scunt talk0000" x="0" y="0" width="355" height="312"/>
+	<SubTexture name="scunt talk0001" x="0" y="0" width="355" height="312"/>
+	<SubTexture name="scunt talk0002" x="355" y="0" width="355" height="312"/>
+	<SubTexture name="scunt talk0003" x="0" y="312" width="355" height="312"/>
+	<SubTexture name="scunt talk0004" x="355" y="312" width="355" height="312"/>
+</TextureAtlas>

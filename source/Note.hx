@@ -309,6 +309,19 @@ class Note extends FlxSprite
 								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
 							}
 					}
+				if (huntsman)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+
 
 				
 
@@ -389,7 +402,16 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
 							case 9:
-							case 10:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_hunt');
+								for (i in 0...11)
+									{
+										animation.addByPrefix('greenScroll', 'green');
+										animation.addByPrefix('redScroll', 'red');
+										animation.addByPrefix('blueScroll', 'blue');
+										animation.addByPrefix('purpleScroll', 'purple');
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
 							default:
 								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
 								for (i in 0...11)

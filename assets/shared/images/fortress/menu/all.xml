@@ -10,6 +10,8 @@
 	<SubTexture name="leave press0000" x="0" y="76" width="74" height="55"/>
 	<SubTexture name="logo normal0000" x="74" y="76" width="188" height="116"/>
 	<SubTexture name="logo press0000" x="262" y="76" width="188" height="116"/>
-	<SubTexture name="skill issue normal0000" x="0" y="192" width="244" height="44"/>
-	<SubTexture name="skill issue press0000" x="244" y="192" width="244" height="44"/>
+	<SubTexture name="options normal0000" x="450" y="76" width="52" height="43"/>
+	<SubTexture name="options press0000" x="0" y="192" width="53" height="44"/>
+	<SubTexture name="skill issue normal0000" x="53" y="192" width="244" height="44"/>
+	<SubTexture name="skill issue press0000" x="0" y="236" width="244" height="44"/>
 </TextureAtlas>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="medicportrait.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="medic talk0000" x="0" y="0" width="390" height="299"/>
+	<SubTexture name="medic talk0001" x="390" y="0" width="390" height="299"/>
+	<SubTexture name="medic talk0002" x="0" y="299" width="390" height="299"/>
+	<SubTexture name="medic talk0003" x="390" y="299" width="390" height="299"/>
+	<SubTexture name="medic talk0004" x="390" y="0" width="390" height="299"/>
+</TextureAtlas>

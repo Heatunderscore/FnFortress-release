@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="sexportrait.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="saxton talk0000" x="0" y="0" width="478" height="352"/>
+	<SubTexture name="saxton talk0001" x="478" y="0" width="478" height="352"/>
+	<SubTexture name="saxton talk0002" x="0" y="352" width="478" height="352"/>
+	<SubTexture name="saxton talk0003" x="478" y="352" width="478" height="352"/>
+	<SubTexture name="saxton talk0004" x="478" y="0" width="478" height="352"/>
+</TextureAtlas>

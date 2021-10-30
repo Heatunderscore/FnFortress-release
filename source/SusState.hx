@@ -29,7 +29,7 @@ class SusState extends MusicBeatState
 	var menuItems:FlxTypedGroup<FlxSprite>;
 
 	#if !switch
-	var optionShit:Array<String> = ['contracter', 'credits', 'leave', 'logo', 'skill issue'];
+	var optionShit:Array<String> = ['contracter', 'credits', 'leave', 'logo', 'skill issue', 'options'];
 	#else
 	var optionShit:Array<String> = ['contracter', 'credits', 'leave'];
 	#end
@@ -51,6 +51,12 @@ class SusState extends MusicBeatState
 
 	override function create()
 	{
+
+        // heat how did you forget to port so much
+        if (FlxG.save.data.unlockedWeek == null)
+            {
+                FlxG.save.data.unlockedWeek = 0;
+            }
 
         curBg = FlxG.random.int(1, 4);
 
@@ -98,6 +104,8 @@ class SusState extends MusicBeatState
 					testButton.setPosition(27, 148);
                 case 4:
                     testButton.setPosition(976, 1);
+                case 5:
+                    testButton.setPosition(826, 0);
 			}
 			menuItems.add(testButton);
 		}		
@@ -187,11 +195,15 @@ class SusState extends MusicBeatState
     
             switch (daChoice)
             {
+                case 'options':
+                    FlxG.switchState(new OptionsMenu());
                 case 'contracter':
                     FlxG.switchState(new Contract());
                 case 'leave':
-                    #if windows
+                    #if desktop
                     Sys.exit(0);
+                    #else
+                    FlxG.switchState(new Piracy());
                     #end
                 case 'skill issue':
                     if (FlxG.random.bool(33))

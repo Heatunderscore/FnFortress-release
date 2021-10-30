@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="medicBF.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="medic balls beat0000" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0001" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0002" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0003" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0004" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0005" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0006" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0007" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0008" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0009" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0010" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0011" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0012" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0013" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0014" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0015" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0016" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0017" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0018" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0019" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0020" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0021" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0022" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0023" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0024" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0025" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0026" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0027" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0028" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0029" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0030" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0031" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0032" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0033" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0034" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0035" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0036" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0037" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0038" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0039" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0040" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0041" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0042" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0043" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0044" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0045" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0046" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0047" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0048" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0049" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0050" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0051" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0052" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0053" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0054" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0055" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0056" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0057" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0058" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0059" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0060" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0061" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0062" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0063" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0064" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0065" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0066" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0067" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0068" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0069" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0070" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0071" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0072" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0073" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0074" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0075" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0076" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0077" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0078" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0079" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0080" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0081" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0082" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0083" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0084" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0085" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0086" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0087" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0088" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0089" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0090" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0091" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0092" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0093" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0094" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0095" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0096" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0097" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0098" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0099" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0100" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0101" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0102" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0103" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0104" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0105" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0106" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0107" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0108" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0109" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0110" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0111" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0112" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0113" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0114" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0115" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0116" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0117" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0118" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0119" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0120" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0121" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0122" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0123" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0124" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0125" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0126" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0127" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0128" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0129" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0130" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0131" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0132" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0133" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0134" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0135" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0136" x="2019" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0137" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0138" x="3012" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0139" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0140" x="4005" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0141" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0142" x="4998" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0143" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0144" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic balls beat0145" x="5991" y="744" width="993" height="392"/>
+	<SubTexture name="medic confirm0000" x="6984" y="744" width="955" height="366" frameX="0" frameY="-410" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0001" x="6984" y="744" width="955" height="366" frameX="0" frameY="-410" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0002" x="6984" y="744" width="955" height="366" frameX="0" frameY="-410" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0003" x="6984" y="744" width="955" height="366" frameX="0" frameY="-410" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0004" x="0" y="1484" width="894" height="403" frameX="-31" frameY="-374" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0005" x="0" y="1484" width="894" height="403" frameX="-31" frameY="-374" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0006" x="0" y="1484" width="894" height="403" frameX="-31" frameY="-374" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0007" x="0" y="1484" width="894" height="403" frameX="-31" frameY="-374" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0008" x="894" y="1484" width="851" height="446" frameX="-53" frameY="-330" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0009" x="894" y="1484" width="851" height="446" frameX="-53" frameY="-330" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0010" x="894" y="1484" width="851" height="446" frameX="-53" frameY="-330" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0011" x="894" y="1484" width="851" height="446" frameX="-53" frameY="-330" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0012" x="1745" y="1484" width="765" height="502" frameX="-96" frameY="-275" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0013" x="1745" y="1484" width="765" height="502" frameX="-96" frameY="-275" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0014" x="1745" y="1484" width="765" height="502" frameX="-96" frameY="-275" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0015" x="1745" y="1484" width="765" height="502" frameX="-96" frameY="-275" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0016" x="2510" y="1484" width="673" height="532" frameX="-142" frameY="-244" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0017" x="2510" y="1484" width="673" height="532" frameX="-142" frameY="-244" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0018" x="2510" y="1484" width="673" height="532" frameX="-142" frameY="-244" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0019" x="2510" y="1484" width="673" height="532" frameX="-142" frameY="-244" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0020" x="3183" y="1484" width="642" height="593" frameX="-157" frameY="-183" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0021" x="3183" y="1484" width="642" height="593" frameX="-157" frameY="-183" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0022" x="3183" y="1484" width="642" height="593" frameX="-157" frameY="-183" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0023" x="3183" y="1484" width="642" height="593" frameX="-157" frameY="-183" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0024" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0025" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0026" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0027" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0028" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0029" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0030" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0031" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0032" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0033" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0034" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0035" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0036" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0037" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0038" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0039" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0040" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0041" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0042" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0043" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0044" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0045" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0046" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0047" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0048" x="3825" y="1484" width="569" height="673" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0049" x="4394" y="1484" width="724" height="797" frameX="-116" frameY="-42" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0050" x="4394" y="1484" width="724" height="797" frameX="-116" frameY="-42" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0051" x="5118" y="1484" width="852" height="878" frameX="-52" frameY="-1" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0052" x="5118" y="1484" width="852" height="878" frameX="-52" frameY="-1" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0053" x="5970" y="1484" width="874" height="843" frameX="-41" frameY="-19" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0054" x="5970" y="1484" width="874" height="843" frameX="-41" frameY="-19" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0055" x="6844" y="1484" width="700" height="602" frameX="-128" frameY="-139" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0056" x="6844" y="1484" width="700" height="602" frameX="-128" frameY="-139" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0057" x="0" y="2362" width="858" height="813" frameX="-49" frameY="-34" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0058" x="0" y="2362" width="858" height="813" frameX="-49" frameY="-34" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0059" x="858" y="2362" width="880" height="873" frameX="-38" frameY="-4" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0060" x="858" y="2362" width="880" height="873" frameX="-38" frameY="-4" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0061" x="1738" y="2362" width="858" height="879" frameX="-49" frameY="-1" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0062" x="1738" y="2362" width="858" height="879" frameX="-49" frameY="-1" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0063" x="2596" y="2362" width="775" height="834" frameX="-91" frameY="-23" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0064" x="2596" y="2362" width="775" height="834" frameX="-91" frameY="-23" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0065" x="3371" y="2362" width="710" height="787" frameX="-123" frameY="-47" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0066" x="3371" y="2362" width="710" height="787" frameX="-123" frameY="-47" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0067" x="4081" y="2362" width="587" height="688" frameX="-185" frameY="-96" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0068" x="4081" y="2362" width="587" height="688" frameX="-185" frameY="-96" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0069" x="4668" y="2362" width="737" height="808" frameX="-110" frameY="-36" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0070" x="4668" y="2362" width="737" height="808" frameX="-110" frameY="-36" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0071" x="5405" y="2362" width="837" height="871" frameX="-60" frameY="-5" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0072" x="5405" y="2362" width="837" height="871" frameX="-60" frameY="-5" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0073" x="6242" y="2362" width="880" height="876" frameX="-38" frameY="-2" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0074" x="6242" y="2362" width="880" height="876" frameX="-38" frameY="-2" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0075" x="7122" y="2362" width="830" height="768" frameX="-63" frameY="-56" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0076" x="7122" y="2362" width="830" height="768" frameX="-63" frameY="-56" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0077" x="0" y="3241" width="725" height="631" frameX="-116" frameY="-125" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0078" x="0" y="3241" width="725" height="631" frameX="-116" frameY="-125" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0079" x="725" y="3241" width="828" height="766" frameX="-64" frameY="-57" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0080" x="725" y="3241" width="828" height="766" frameX="-64" frameY="-57" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0081" x="1553" y="3241" width="878" height="852" frameX="-39" frameY="-14" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0082" x="1553" y="3241" width="878" height="852" frameX="-39" frameY="-14" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0083" x="2431" y="3241" width="868" height="881" frameX="-44" frameY="0" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0084" x="2431" y="3241" width="868" height="881" frameX="-44" frameY="0" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0085" x="3299" y="3241" width="756" height="820" frameX="-100" frameY="-30" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0086" x="3299" y="3241" width="756" height="820" frameX="-100" frameY="-30" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0087" x="4055" y="3241" width="668" height="755" frameX="-144" frameY="-63" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0088" x="4055" y="3241" width="668" height="755" frameX="-144" frameY="-63" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0089" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0090" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0091" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0092" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0093" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0094" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0095" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0096" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0097" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0098" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0099" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0100" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0101" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0102" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0103" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0104" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0105" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0106" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0107" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0108" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0109" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0110" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0111" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0112" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0113" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0114" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0115" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0116" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0117" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0118" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0119" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0120" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0121" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0122" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0123" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0124" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0125" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0126" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0127" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0128" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0129" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0130" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0131" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0132" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0133" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0134" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0135" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0136" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0137" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0138" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0139" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0140" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0141" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0142" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0143" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0144" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic confirm0145" x="4723" y="3241" width="569" height="674" frameX="-194" frameY="-104" frameWidth="955" frameHeight="881"/>
+	<SubTexture name="medic death0000" x="5292" y="3241" width="355" height="748" frameX="-320" frameY="0" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0001" x="5647" y="3241" width="384" height="748" frameX="-305" frameY="0" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0002" x="6031" y="3241" width="419" height="748" frameX="-288" frameY="0" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0003" x="6450" y="3241" width="472" height="748" frameX="-261" frameY="0" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0004" x="6922" y="3241" width="526" height="748" frameX="-234" frameY="0" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0005" x="7448" y="3241" width="575" height="693" frameX="-209" frameY="-55" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0006" x="0" y="4122" width="680" height="693" frameX="-157" frameY="-55" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0007" x="680" y="4122" width="747" height="644" frameX="-123" frameY="-104" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0008" x="1427" y="4122" width="784" height="589" frameX="-105" frameY="-159" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0009" x="2211" y="4122" width="851" height="534" frameX="-71" frameY="-215" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0010" x="3062" y="4122" width="901" height="509" frameX="-46" frameY="-239" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0011" x="3963" y="4122" width="962" height="460" frameX="-15" frameY="-288" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0012" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0013" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0014" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0015" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0016" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0017" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0018" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0019" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0020" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0021" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0022" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0023" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0024" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0025" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0026" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0027" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0028" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0029" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0030" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0031" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0032" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0033" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0034" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0035" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0036" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0037" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0038" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0039" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0040" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0041" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0042" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic death0043" x="4925" y="4122" width="993" height="392" frameX="0" frameY="-356" frameWidth="993" frameHeight="749"/>
+	<SubTexture name="medic_down0000" x="0" y="0" width="437" height="540" frameX="0" frameY="-25" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0001" x="0" y="0" width="437" height="540" frameX="0" frameY="-25" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0002" x="437" y="0" width="416" height="560" frameX="-7" frameY="-5" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0003" x="437" y="0" width="416" height="560" frameX="-7" frameY="-5" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0004" x="853" y="0" width="414" height="565" frameX="-8" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0005" x="853" y="0" width="414" height="565" frameX="-8" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0006" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0007" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0008" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0009" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0010" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0011" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0012" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0013" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_down0014" x="1267" y="0" width="414" height="565" frameX="-9" frameY="0" frameWidth="437" frameHeight="565"/>
+	<SubTexture name="medic_idle0000" x="1681" y="0" width="440" height="679" frameX="-29" frameY="-11" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0001" x="1681" y="0" width="440" height="679" frameX="-29" frameY="-11" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0002" x="2121" y="0" width="443" height="686" frameX="-12" frameY="-4" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0003" x="2121" y="0" width="443" height="686" frameX="-12" frameY="-4" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0004" x="2564" y="0" width="444" height="688" frameX="-4" frameY="-2" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0005" x="2564" y="0" width="444" height="688" frameX="-4" frameY="-2" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0006" x="3008" y="0" width="444" height="690" frameX="-1" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0007" x="3008" y="0" width="444" height="690" frameX="-1" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0008" x="3452" y="0" width="444" height="690" frameX="0" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0009" x="3452" y="0" width="444" height="690" frameX="0" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0010" x="3452" y="0" width="444" height="690" frameX="0" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0011" x="3452" y="0" width="444" height="690" frameX="0" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0012" x="3452" y="0" width="444" height="690" frameX="0" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_idle0013" x="3452" y="0" width="444" height="690" frameX="0" frameY="0" frameWidth="469" frameHeight="690"/>
+	<SubTexture name="medic_left0000" x="3896" y="0" width="518" height="744" frameX="-8" frameY="0" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0001" x="3896" y="0" width="518" height="744" frameX="-8" frameY="0" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0002" x="4414" y="0" width="532" height="714" frameX="-5" frameY="-30" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0003" x="4414" y="0" width="532" height="714" frameX="-5" frameY="-30" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0004" x="4946" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0005" x="4946" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0006" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0007" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0008" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0009" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0010" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0011" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0012" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_left0013" x="5488" y="0" width="542" height="706" frameX="0" frameY="-38" frameWidth="542" frameHeight="744"/>
+	<SubTexture name="medic_right0000" x="6030" y="0" width="525" height="726" frameX="0" frameY="-15" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0001" x="6030" y="0" width="525" height="726" frameX="0" frameY="-15" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0002" x="6555" y="0" width="439" height="739" frameX="-9" frameY="-2" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0003" x="6555" y="0" width="439" height="739" frameX="-9" frameY="-2" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0004" x="6994" y="0" width="418" height="741" frameX="-11" frameY="0" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0005" x="6994" y="0" width="418" height="741" frameX="-11" frameY="0" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0006" x="7412" y="0" width="425" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0007" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0008" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0009" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0010" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0011" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0012" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0013" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_right0014" x="0" y="744" width="428" height="740" frameX="-10" frameY="-1" frameWidth="525" frameHeight="741"/>
+	<SubTexture name="medic_up0000" x="428" y="744" width="295" height="709" frameX="-24" frameY="0" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0001" x="428" y="744" width="295" height="709" frameX="-24" frameY="0" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0002" x="723" y="744" width="317" height="694" frameX="-7" frameY="-15" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0003" x="723" y="744" width="317" height="694" frameX="-7" frameY="-15" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0004" x="1040" y="744" width="325" height="688" frameX="-1" frameY="-21" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0005" x="1040" y="744" width="325" height="688" frameX="-1" frameY="-21" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0006" x="1365" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0007" x="1365" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0008" x="1692" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0009" x="1692" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0010" x="1692" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0011" x="1692" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0012" x="1692" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0013" x="1692" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+	<SubTexture name="medic_up0014" x="1692" y="744" width="327" height="687" frameX="0" frameY="-22" frameWidth="327" frameHeight="709"/>
+</TextureAtlas>

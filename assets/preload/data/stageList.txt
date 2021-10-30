@@ -4,10 +4,8 @@ intel
 entry
 barnblitz-demo
 barnblitz-heavy
+barnblitz-engi
 snake-medic
 snake-sniper
-issue
-issue-two
-issue-three
-void
+snake-spy
 sax

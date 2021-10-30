@@ -45,6 +45,7 @@ class Caching extends MusicBeatState
         otext.setFormat(Paths.font("tf2build.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
         otext.size = 34;
         otext.alignment = FlxTextAlign.CENTER;
+        otext.alpha = 0;
 
         kadeLogo = new FlxSprite(FlxG.width / 2, FlxG.height / 2).loadGraphic(Paths.image('KadeEngineLogo'));
         kadeLogo.x -= kadeLogo.width / 2;
@@ -57,6 +58,7 @@ class Caching extends MusicBeatState
 
         add(kadeLogo);
         add(text);
+        add(otext);
 
         trace('starting caching..');
         
@@ -78,6 +80,7 @@ class Caching extends MusicBeatState
             var alpha = HelperFunctions.truncateFloat(done / toBeDone * 100,2) / 100;
             kadeLogo.alpha = alpha;
             text.alpha = alpha;
+            otext.alpha = alpha;
             text.text = "Loading Shit... (" + done + "/" + toBeDone + ")";
         }
 

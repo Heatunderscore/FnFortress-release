@@ -1057,3 +1057,39 @@ class GTHModeOption extends Option
 		return "Use Guitar Hero Input: " + (!FlxG.save.data.gthm ? "off" : "on");
 	}
 }
+
+class DeleteMannco extends Option
+{
+	var confirm:Bool = false;
+
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	public override function press():Bool
+	{
+		if(!confirm)
+		{
+			confirm = true;
+			display = updateDisplay();
+			return true;
+		}
+
+		FlxG.save.data.funnyLock = null;
+		FlxG.save.data.unlockedWeek = null;
+		FlxG.save.data.buttonUnlockingShit = null;
+
+
+		KadeEngineData.initSave();
+		confirm = false;
+		trace('All settings have been reset');
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return confirm ? "Confirm Vs Mannco Reset" : "Reset Vs Mannco";
+	}
+}
