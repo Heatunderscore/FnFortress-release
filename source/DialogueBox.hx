@@ -206,7 +206,7 @@ class DialogueBox extends FlxSpriteGroup
 			
 		}
 
-		/*if (swagDialogue._typing)
+		if (swagDialogue._typing)
 			{
 				portraitLeft.animation.play('enter');
 				portraitRight.animation.play('enter');
@@ -215,7 +215,7 @@ class DialogueBox extends FlxSpriteGroup
 			{
 				portraitLeft.animation.stop;
 				portraitRight.animation.stop;
-			}*/
+			}
 		
 		
 		super.update(elapsed);

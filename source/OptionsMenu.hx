@@ -77,7 +77,8 @@ class OptionsMenu extends MusicBeatState
 		]),
 
 		new OptionCategory("Vs Mannco Stuff", [
-			new DeleteMannco("delete your vs mannco savefile. THIS IS IRREVERSIBLE!")
+			new DeleteMannco("delete your vs mannco savefile. THIS IS IRREVERSIBLE!"),
+			new CameraStupid("enable or disable camera moving when a note is hit.")
 		]),
 
 		new OptionCategory("Saves and Data", [

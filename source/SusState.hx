@@ -54,9 +54,14 @@ class SusState extends MusicBeatState
 
         // heat how did you forget to port so much
         if (FlxG.save.data.unlockedWeek == null)
-            {
-                FlxG.save.data.unlockedWeek = 0;
-            }
+        {
+            FlxG.save.data.unlockedWeek = 0;
+        }
+        
+        if (FlxG.save.data.stupid == null)
+        {
+            FlxG.save.data.stupid = true;
+        }
 
         curBg = FlxG.random.int(1, 4);
 

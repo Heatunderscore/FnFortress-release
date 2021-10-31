@@ -3445,12 +3445,14 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (boyfriend.animation.curAnim.name.startsWith('idle')){
+		if (boyfriend.animation.curAnim.name.startsWith('idle'))
+		{
 			noteCamMovementBfY = 0;
 			noteCamMovementBfX = 0;
 		}
 
-		if (dad.animation.curAnim.name.startsWith('idle')){
+		if (dad.animation.curAnim.name.startsWith('idle'))
+		{
 			noteCamMovementDadY = 0;
 			noteCamMovementDadX = 0;
 		}
@@ -4190,7 +4192,8 @@ class PlayState extends MusicBeatState
 								beamAnim = '-beam';
 						}
 						
-						if (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection){
+						if (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid)
+						{
 							switch (Math.abs(daNote.noteData))
 							{
 								case 2:
@@ -4823,9 +4826,9 @@ class PlayState extends MusicBeatState
 					#end			
 					if (curSong == 'Inferno')
 						{
-							if (FlxG.save.data.unlockedWeek <= 0)
+							if (FlxG.save.data.unlockedWeek == 0)
 							{
-								FlxG.save.data.unlockedWeek = 1;
+								FlxG.save.data.unlockedWeek += 1;
 								trace(FlxG.save.data.unlockedWeek);
 							}
 							else
@@ -4833,7 +4836,7 @@ class PlayState extends MusicBeatState
 								trace("what how");
 							}
 
-							if (FlxG.save.data.buttonUnlockingShit = 2)
+							if (FlxG.save.data.buttonUnlockingShit == 2)
 							{
 								FlxG.save.data.buttonUnlockingShit = 3;
 							}
@@ -4850,14 +4853,14 @@ class PlayState extends MusicBeatState
 								trace("what how");
 							}
 
-							if (FlxG.save.data.buttonUnlockingShit = 5)
+							if (FlxG.save.data.buttonUnlockingShit == 5)
 							{
 								FlxG.save.data.buttonUnlockingShit = 6;
 							}
 						}
 						else if (curSong == 'Infiltrator')
 						{
-							if (FlxG.save.data.unlockedWeek = 2)
+							if (FlxG.save.data.unlockedWeek == 2)
 							{
 								FlxG.save.data.unlockedWeek += 1;
 								trace(FlxG.save.data.unlockedWeek);
@@ -4868,7 +4871,7 @@ class PlayState extends MusicBeatState
 							}
 
 
-							if (FlxG.save.data.buttonUnlockingShit = 8)
+							if (FlxG.save.data.buttonUnlockingShit == 8)
 							{
 								FlxG.save.data.buttonUnlockingShit = 9;
 							}
@@ -4877,13 +4880,13 @@ class PlayState extends MusicBeatState
 						{
 							if (curSong == 'Property Damage')
 							{
-								if (FlxG.save.data.unlockedWeek = 3)
+								if (FlxG.save.data.unlockedWeek == 3)
 								{
 									trace(FlxG.save.data.unlockedWeek);
 								}
 
 								
-						        if (FlxG.save.data.buttonUnlockingShit = 9)
+						        if (FlxG.save.data.buttonUnlockingShit == 9)
 							    {
 								    FlxG.save.data.buttonUnlockingShit = 10;
 							    }
@@ -6338,7 +6341,8 @@ class PlayState extends MusicBeatState
 					else
 						totalNotesHit += 1;
 					
-					if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection){
+					if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid)
+					{
 						switch (note.noteData)
 						{
 							case 2:

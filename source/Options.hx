@@ -1093,3 +1093,23 @@ class DeleteMannco extends Option
 		return confirm ? "Confirm Vs Mannco Reset" : "Reset Vs Mannco";
 	}
 }
+class CameraStupid extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.stupid = !FlxG.save.data.stupid;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Camera Movement On Note Hit " + (!FlxG.save.data.stupid ? "off" : "on");
+	}
+}
