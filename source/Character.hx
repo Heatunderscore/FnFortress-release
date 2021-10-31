@@ -197,6 +197,40 @@ class Character extends FlxSprite
 				addOffset("shit", 41, 33);
 
 				playAnim('idle');
+
+			case 'soldierai':
+					tex = Paths.getSparrowAtlas('characters/soldierai', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'soldierai idle', 24, false);
+					animation.addByPrefix('singUP', 'soldierai up', 24, false);
+					animation.addByPrefix('singRIGHT', 'soldierai right', 24, false);
+					animation.addByPrefix('singDOWN', 'soldierai down', 24, false);
+					animation.addByPrefix('singLEFT', 'soldierai left', 24, false);
+					animation.addByPrefix('slash', 'soldierai slash', 24, false);
+
+
+					animation.addByPrefix('idle-alt', 'soldierai idle alt', 24, false);
+					animation.addByPrefix('singUP-alt', 'soldierai up alt', 24, false);
+					animation.addByPrefix('singRIGHT-alt', 'soldierai right alt', 24, false);
+					animation.addByPrefix('singDOWN-alt', 'soldierai down alt', 24, false);
+					animation.addByPrefix('singLEFT-alt', 'soldierai left alt', 24, false);
+					animation.addByPrefix('slash-alt', 'soldierai slash alt', 24, false);
+	
+					addOffset('idle');
+					addOffset("singUP", 70, 100);
+					addOffset("singRIGHT", 20, -40);
+					addOffset("singLEFT", 370, -80);
+					addOffset("singDOWN", 70, -200);
+					addOffset("slash", 41, 33);
+
+					addOffset('idle-alt');
+					addOffset("singUP-alt", 70, 100);
+					addOffset("singRIGHT-alt", 20, -40);
+					addOffset("singLEFT-alt", 370, -80);
+					addOffset("singDOWN-alt", 70, -200);
+					addOffset("slash-alt", 41, 33);
+	
+					playAnim('idle');
 			case 'sodier':
 				// sod
 				//
@@ -219,6 +253,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -40, -40);
 
 				playAnim('idle');
+
 			case 'pyro':
 				tex = Paths.getSparrowAtlas('characters/Pyro', 'shared');
 				frames = tex;

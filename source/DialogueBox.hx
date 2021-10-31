@@ -139,7 +139,6 @@ class DialogueBox extends FlxSpriteGroup
 
 	override function update(elapsed:Float)
 	{
-		var _typing:Bool = false;
 		// HARD CODING CUZ IM STUPDI
 		if (PlayState.SONG.song.toLowerCase() == 'roses')
 			portraitLeft.visible = false;
@@ -207,7 +206,7 @@ class DialogueBox extends FlxSpriteGroup
 			
 		}
 
-		if (swagDialogue._typing)
+		/*if (swagDialogue._typing)
 			{
 				portraitLeft.animation.play('enter');
 				portraitRight.animation.play('enter');
@@ -215,7 +214,7 @@ class DialogueBox extends FlxSpriteGroup
 		else if (!swagDialogue._typing)
 			{
 				portraitRight.animation.stop;
-			}
+			}*/
 		
 		
 		super.update(elapsed);

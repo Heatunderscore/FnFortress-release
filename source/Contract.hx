@@ -107,10 +107,9 @@ class Contract extends MusicBeatState
         {
             shitUnlocked.push(true);
         }*/
-        
-        //dont laugh
 
         //lmao heat
+        // oiuo8ihfighgeuhfeiguehgiuhtq8ty28935y32
 
         var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuDesat'));
 		bg.scrollFactor.x = 0;
@@ -164,6 +163,27 @@ class Contract extends MusicBeatState
                         buttonThing.setPosition(597, 372);
                 }
                 menuItems.add(buttonThing);
+
+                var textShit:FlxSprite = new FlxSprite(0, 0);
+                textShit.ID = i;
+                textShit.frames = Paths.getSparrowAtlas('fortress/contract/contracterText', 'shared');
+                textShit.animation.addByPrefix('title', optionShit[i] + ' title', 24, true);
+                textShit.animation.play('title');
+                textShit.antialiasing = true;
+                textShit.updateHitbox();
+                textShit.scrollFactor.set();
+                switch(i) 
+                {
+                    case 0:
+                        textShit.setPosition(230, 302);
+                    case 1:
+                        textShit.setPosition(480, 243);
+                    case 2:
+                        textShit.setPosition(790, 325);
+                    case 3:
+                        textShit.setPosition(607, 432);
+                }
+                add(textShit);
             }
             add(menuItems);
 
@@ -175,7 +195,7 @@ class Contract extends MusicBeatState
         freeplayButton.antialiasing = true;
         add(freeplayButton);
 
-        for (i in 0...optionShit.length)
+        /*for (i in 0...optionShit.length)
             {
                 var textShit:FlxSprite = new FlxSprite(0, 0);
                 textShit.ID = i;
@@ -195,13 +215,11 @@ class Contract extends MusicBeatState
                         textShit.setPosition(790, 325);
                     case 3:
                         textShit.setPosition(607, 432);
-                    //case 4:
-                        //textShit.setPosition(607, 432);
                 }
                 add(textShit);
                 
 
-            }
+            }*/
         
         var sx:FlxSprite = new FlxSprite(221, 491);
         sx.frames = Paths.getSparrowAtlas('fortress/contract/freeplayT', 'shared');

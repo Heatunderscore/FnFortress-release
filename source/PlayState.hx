@@ -146,6 +146,13 @@ class PlayState extends MusicBeatState
 	var cum:Bool = false;
 	var saxShake:Bool = false;
 
+	public static var noteCamMovementDadX:Int = 0;
+	public static var noteCamMovementDadY:Int = 0;
+
+
+	public static var noteCamMovementBfX:Int = 0;
+	public static var noteCamMovementBfY:Int = 0;
+
 	var songLength:Float = 0;
 	var kadeEngineWatermark:FlxText;
 	
@@ -369,6 +376,13 @@ class PlayState extends MusicBeatState
 
 		repPresses = 0;
 		repReleases = 0;
+
+		noteCamMovementBfY = 0;
+		noteCamMovementBfX = 0;
+
+
+		noteCamMovementDadY = 0;
+		noteCamMovementDadX = 0;
 
 
 		PlayStateChangeables.useDownscroll = FlxG.save.data.downscroll;
@@ -1212,6 +1226,7 @@ class PlayState extends MusicBeatState
 				boyfriend.x += 150;
 		}
 
+		gf.y -= 200;
 		switch(SONG.player1)
 		{
 			case 'medic-bf':
@@ -3326,7 +3341,7 @@ class PlayState extends MusicBeatState
 				luaModchart.setVar("mustHit",PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection);
 			#end
 
-			if (camFollow.x != dad.getMidpoint().x + 150 && !PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
+			if (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
 			{
 				var offsetX = 0;
 				var offsetY = 0;
@@ -3338,9 +3353,9 @@ class PlayState extends MusicBeatState
 				}
 				#end
 				if (!isHeavy)
-				    camFollow.setPosition(dad.getMidpoint().x + 150 + offsetX, dad.getMidpoint().y - 100 + offsetY);
+				    camFollow.setPosition(dad.getMidpoint().x + 150 + noteCamMovementDadX, dad.getMidpoint().y - 100 + noteCamMovementDadY);
 				else
-					camFollow.setPosition(dad2.getMidpoint().x + 150 + offsetX, dad2.getMidpoint().y - 100 + offsetY);
+					camFollow.setPosition(dad2.getMidpoint().x + 150 + noteCamMovementDadX, dad2.getMidpoint().y - 100 + noteCamMovementDadY);
 				#if windows
 				if (luaModchart != null)
 					luaModchart.executeState('playerTwoTurn', []);
@@ -3363,7 +3378,7 @@ class PlayState extends MusicBeatState
 					vocals.volume = 1;
 			}
 
-			if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && camFollow.x != boyfriend.getMidpoint().x - 100)
+			if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
 			{
 				var offsetX = 0;
 				var offsetY = 0;
@@ -3374,7 +3389,7 @@ class PlayState extends MusicBeatState
 					offsetY = luaModchart.getVar("followYOffset", "float");
 				}
 				#end
-				camFollow.setPosition(boyfriend.getMidpoint().x - 100 + offsetX, boyfriend.getMidpoint().y - 100 + offsetY);
+				camFollow.setPosition(boyfriend.getMidpoint().x - 100 + noteCamMovementBfX, boyfriend.getMidpoint().y - 100 + noteCamMovementBfY);
 
 				#if windows
 				if (luaModchart != null)
@@ -3394,42 +3409,51 @@ class PlayState extends MusicBeatState
 						camFollow.x = boyfriend.getMidpoint().x - 200;
 						camFollow.y = boyfriend.getMidpoint().y - 200;
 					case 'intel':
-						camFollow.y = boyfriend.getMidpoint().y - 200;
+						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
 					case 'entry':
-						camFollow.y = boyfriend.getMidpoint().y - 200;
+						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
 					case 'barnblitz-demo':
-						camFollow.y = boyfriend.getMidpoint().y - 200;
-						camFollow.x = boyfriend.getMidpoint().x - 250;
+						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
+						camFollow.x = boyfriend.getMidpoint().x - 250 + noteCamMovementBfX;
 					case 'barnblitz-heavy':
-						camFollow.y = boyfriend.getMidpoint().y - 200;
-						camFollow.x = boyfriend.getMidpoint().x - 250;
+						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
+						camFollow.x = boyfriend.getMidpoint().x - 250 + noteCamMovementBfX;
 					case 'snake-sniper':
-						camFollow.y = boyfriend.getMidpoint().y - 150;
-						camFollow.x = boyfriend.getMidpoint().x - 200;
+						camFollow.y = boyfriend.getMidpoint().y - 150 + noteCamMovementBfY;
+						camFollow.x = boyfriend.getMidpoint().x - 200 + noteCamMovementBfX;
 					case 'snake-medic':
-						camFollow.y = boyfriend.getMidpoint().y - 150;
-						camFollow.x = boyfriend.getMidpoint().x - 200;
+						camFollow.y = boyfriend.getMidpoint().y - 150 + noteCamMovementBfY;
+						camFollow.x = boyfriend.getMidpoint().x - 200 + noteCamMovementBfX;
 					case 'snake-spy':
-						camFollow.y = boyfriend.getMidpoint().y - 150;
-						camFollow.x = boyfriend.getMidpoint().x - 200;
+						camFollow.y = boyfriend.getMidpoint().y - 150 + noteCamMovementBfY;
+						camFollow.x = boyfriend.getMidpoint().x - 200 + noteCamMovementBfX;
 					case 'void':
-						camFollow.y = boyfriend.getMidpoint().y - 150;
-						camFollow.x = boyfriend.getMidpoint().x - 200;
+						camFollow.y = boyfriend.getMidpoint().y - 150 + noteCamMovementBfY;
+						camFollow.x = boyfriend.getMidpoint().x - 200 + noteCamMovementBfX;
 					case 'sax':
-						camFollow.y = boyfriend.getMidpoint().y - 150;
-						camFollow.x = boyfriend.getMidpoint().x - 200;
+						camFollow.y = boyfriend.getMidpoint().y - 150 + noteCamMovementBfY;
+						camFollow.x = boyfriend.getMidpoint().x - 200 + noteCamMovementBfX;
 				}
 				switch (SONG.player1)
 				{
 					case 'medic-bf':
-						camFollow.x = boyfriend.getMidpoint().x - 300;
-						camFollow.y = boyfriend.getMidpoint().y - -15;
+						camFollow.x = boyfriend.getMidpoint().x - 300 + noteCamMovementBfX;
+						camFollow.y = boyfriend.getMidpoint().y - -15 + noteCamMovementBfY;
 					case 'engi':
-						camFollow.x = boyfriend.getMidpoint().x - 300;
+						camFollow.x = boyfriend.getMidpoint().x - 300 + noteCamMovementBfX;
 				}
 			}
 		}
 
+		if (boyfriend.animation.curAnim.name.startsWith('idle')){
+			noteCamMovementBfY = 0;
+			noteCamMovementBfX = 0;
+		}
+
+		if (dad.animation.curAnim.name.startsWith('idle')){
+			noteCamMovementDadY = 0;
+			noteCamMovementDadX = 0;
+		}
 		if (camZooming)
 		{
 			if (FlxG.save.data.zoom < 0.8)
@@ -4164,12 +4188,30 @@ class PlayState extends MusicBeatState
 						{
 							if (SONG.notes[Math.floor(curStep / 16)].beamAnim)
 								beamAnim = '-beam';
-						}	
+						}
+						
+						if (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection){
+							switch (Math.abs(daNote.noteData))
+							{
+								case 2:
+									noteCamMovementDadY = -45;
+									noteCamMovementDadX = 0;
+								case 3:
+									noteCamMovementDadX = 45;
+									noteCamMovementDadY = 0;
+								case 1:
+									noteCamMovementDadY = 45;
+									noteCamMovementDadX = 0;
+								case 0:
+									noteCamMovementDadX = -45;
+									noteCamMovementDadY = 0;
+							}
+						}
 
 						if (roboDad)                   // :( -tob
 						{								// because ur mother -heat
 							if (mania == 5 || mania == 9) // why mania 9 heat??? -tob     
-								{							// yo mama dead -heat
+								{							
 									var targ:Character = dad;
 									if (daNote.noteType == 3)
 									{
@@ -6295,7 +6337,24 @@ class PlayState extends MusicBeatState
 					}
 					else
 						totalNotesHit += 1;
-	
+					
+					if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection){
+						switch (note.noteData)
+						{
+							case 2:
+								noteCamMovementBfY = -45;
+								noteCamMovementBfX = 0;
+							case 3:
+								noteCamMovementBfX = 45;
+								noteCamMovementBfY = 0;
+							case 1:
+								noteCamMovementBfY = 45;
+								noteCamMovementBfX = 0;
+							case 0:
+								noteCamMovementBfX = -45;
+								noteCamMovementBfY = 0;
+						}
+					}
 
 					if (note.alt)
 						altAnim = '-alt';
@@ -7091,9 +7150,9 @@ class PlayState extends MusicBeatState
 						switch (curTiming)
 						{
 							case 0:
-								    dad.playAnim('idle');
+								dad.playAnim('idle');
 							case 1:
-								    dad.playAnim('idle-alt');
+								dad.playAnim('idle-alt');
 						}
 					}
 	    }
