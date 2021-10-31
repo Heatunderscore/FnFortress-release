@@ -6515,9 +6515,12 @@ class PlayState extends MusicBeatState
 				dad.playAnim('shit');
 	
 				//makes soldier switch back to idle instead of being stuck in the shooting anim -tob
-				new FlxTimer().start(1.5, function(tmr:FlxTimer)
+				new FlxTimer().start(1, function(tmr:FlxTimer)
 					{
 						dad.playAnim('idle');
+					});
+				new FlxTimer().start(0.4, function(tmr:FlxTimer)
+					{
 						antiShit = false;
 					});
 	

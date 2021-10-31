@@ -214,6 +214,7 @@ class DialogueBox extends FlxSpriteGroup
 			}
 		else if (!swagDialogue._typing)
 			{
+				portraitLeft.animation.stop;
 				portraitRight.animation.stop;
 			}
 		
@@ -236,16 +237,17 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (curCharacter)
 		{ // i dont like this huge switch block :/ 
+			// holy shit heat why didnt you just use the dialogue folder in shared it literally had everything in it -tob
 			case 'scunt':
 				box.flipX = true;
 				if (PlayState.dad.curCharacter == 'scunt')
 				{
 					portraitLeft.visible = false;
 					portraitRight.visible = false;
-					portraitLeft.frames = Paths.getSparrowAtlas('weeb/scunt');
-					portraitLeft.animation.addByPrefix('enter', 'scout talk', 24, false);
+					portraitLeft.frames = Paths.getSparrowAtlas('dialogue/scunt');
+					portraitLeft.animation.addByPrefix('enter', 'scunt talk', 24, false);
 					swagDialogue.color = 0xFF000000;
-					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('scout'), 0.6)];
+					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/scout'), 0.6)];
 					if (!portraitLeft.visible)
 					{
 						portraitLeft.visible = true;
@@ -256,10 +258,10 @@ class DialogueBox extends FlxSpriteGroup
 				{
 					portraitLeft.visible = false;
 					portraitRight.visible = false;
-					portraitLeft.frames = Paths.getSparrowAtlas('weeb/old');
-					portraitLeft.animation.addByPrefix('enter', 'scout talk', 24, false);
+					portraitLeft.frames = Paths.getSparrowAtlas('dialogue/old');
+					portraitLeft.animation.addByPrefix('enter', 'scout-old talk', 24, false);
 					swagDialogue.color = 0xFF000000;
-					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('scout'), 0.6)];
+					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/scout'), 0.6)];
 					if (!portraitLeft.visible)
 					{
 						portraitLeft.visible = true;
@@ -271,9 +273,9 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/scunt');
-				portraitLeft.animation.addByPrefix('enter', 'scunt talk', 24, false);
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/scout'), 0.6)];
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/soldier');
+				portraitLeft.animation.addByPrefix('enter', 'soldier talk', 24, false);
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/soldier'), 0.6)];
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -283,10 +285,10 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('weeb/pyroportrait');
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/pyro', 'shared');
 				portraitLeft.animation.addByPrefix('enter', 'pyro talk', 24, false);
 				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pyro'), 0.6)];
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/pyro'), 0.6)];
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -310,10 +312,10 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('weeb/heavyportrait');
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/heavy');
 				portraitLeft.animation.addByPrefix('enter', 'heavy talk', 24, false);
 				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('heavy'), 0.6)];	
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/heavy'), 0.6)];	
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -324,10 +326,10 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('weeb/engieportrait');
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/engi');
 				portraitLeft.animation.addByPrefix('enter', 'engi talk', 24, false);
 				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('engineer'), 0.6)];	
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/engineer'), 0.6)];	
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -338,10 +340,10 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('weeb/medicportrait');
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/medic');
 				portraitLeft.animation.addByPrefix('enter', 'medic talk', 24, false);
 				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('medic'), 0.6)];	
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/medic'), 0.6)];	
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -352,10 +354,10 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('weeb/sniperportrait');
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/sniper');
 				portraitLeft.animation.addByPrefix('enter', 'sniper talk', 24, false);
 				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('sniper'), 0.6)];	
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/sniper'), 0.6)];	
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -379,10 +381,10 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitLeft.visible = false;
 				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('weeb/sexportrait');
-				portraitLeft.animation.addByPrefix('enter', 'sex talk', 24, false);
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/saxton');
+				portraitLeft.animation.addByPrefix('enter', 'saxton talk', 24, false);
 				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('saxton_hale'), 0.6)];
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/saxton_hale'), 0.6)];
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -394,7 +396,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
 				portraitRight.frames = Paths.getSparrowAtlas('dialogue/bf');
-				portraitRight.animation.addByPrefix('enter', 'BFportrait', 24, false);
+				portraitRight.animation.addByPrefix('enter', 'bf talk', 24, false);
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/bf'), 0.6)];
 				if (!portraitRight.visible)
 				{
@@ -407,7 +409,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
 				portraitRight.frames = Paths.getSparrowAtlas('dialogue/gf');
-				portraitRight.animation.addByPrefix('enter', 'GFportrait', 24, false);
+				portraitRight.animation.addByPrefix('enter', 'gf talk', 24, false);
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/gf'), 0.6)];
 				if (!portraitRight.visible)
 				{
