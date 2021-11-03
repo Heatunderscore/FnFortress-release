@@ -66,7 +66,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case 'atomicpunch' | 'maggots' | 'inferno' | 'ironbomber' | 'ironcurtain' | 'frontierjustice' | 'clinicaltrial'
-			| 'wanker' | 'infiltrator' | 'property damage':
+			| 'wanker' | 'infiltrator' | 'property damage' | 'honorbound':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -206,6 +206,11 @@ class DialogueBox extends FlxSpriteGroup
 			
 		}
 
+		/*
+		this shit makes the portraits loop until no more dialogue is typed
+		this var is private by default, you can control + click on it to get to the file where its stored and
+		change it to a public var which will make it accessible for you -tob
+		*/
 		if (swagDialogue._typing)
 			{
 				portraitLeft.animation.play('enter');
@@ -217,7 +222,8 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.animation.stop;
 			}
 		
-		
+		//curDad = PlayState.SONG.player2;
+
 		super.update(elapsed);
 	}
 
@@ -237,6 +243,18 @@ class DialogueBox extends FlxSpriteGroup
 		switch (curCharacter)
 		{ // i dont like this huge switch block :/ 
 			// holy shit heat why didnt you just use the dialogue folder in shared it literally had everything in it -tob
+			/*case 'dad-one':
+				box.flipX = true;
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/$curDad');
+				portraitLeft.animation.addByPrefix('enter', '$curDad talk', 24, false);
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/$curDad'), 0.6)];
+				if (!portraitLeft.visible)
+				{
+					portraitLeft.visible = true;
+					portraitLeft.animation.play('enter');
+				}*/
 			case 'scunt':
 				box.flipX = true;
 				if (PlayState.dad.curCharacter == 'scunt')
@@ -274,6 +292,18 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/soldier');
 				portraitLeft.animation.addByPrefix('enter', 'soldier talk', 24, false);
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/soldier'), 0.6)];
+				if (!portraitLeft.visible)
+				{
+					portraitLeft.visible = true;
+					portraitLeft.animation.play('enter');
+				}
+			case 'soldierai':
+				box.flipX = true;
+				portraitLeft.visible = false;
+				portraitRight.visible = false;
+				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/soldierai');
+				portraitLeft.animation.addByPrefix('enter', 'soldierai talk', 24, false);
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/soldier'), 0.6)];
 				if (!portraitLeft.visible)
 				{

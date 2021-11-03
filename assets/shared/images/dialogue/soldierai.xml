@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="soldieraiportrait.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="soldierai talk 0000" x="10" y="10" width="402" height="391"/>
+	<SubTexture name="soldierai talk 0001" x="422" y="10" width="402" height="391"/>
+	<SubTexture name="soldierai talk 0002" x="10" y="411" width="402" height="391"/>
+	<SubTexture name="soldierai talk 0003" x="10" y="411" width="402" height="391"/>
+	<SubTexture name="soldierai talk 0004" x="422" y="10" width="402" height="391"/>
+</TextureAtlas>

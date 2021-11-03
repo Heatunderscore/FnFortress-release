@@ -208,7 +208,6 @@ class Character extends FlxSprite
 					animation.addByPrefix('singLEFT', 'soldierai left', 24, false);
 					animation.addByPrefix('slash', 'soldierai slash', 24, false);
 
-
 					animation.addByPrefix('idle-alt', 'soldierai idle alt', 24, false);
 					animation.addByPrefix('singUP-alt', 'soldierai up alt', 24, false);
 					animation.addByPrefix('singRIGHT-alt', 'soldierai right alt', 24, false);

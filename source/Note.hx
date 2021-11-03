@@ -412,6 +412,17 @@ class Note extends FlxSprite
 										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 									}
+							case 10:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_conch');
+								for (i in 0...11)
+									{
+										animation.addByPrefix('greenScroll', 'green');
+										animation.addByPrefix('redScroll', 'red');
+										animation.addByPrefix('blueScroll', 'blue');
+										animation.addByPrefix('purpleScroll', 'purple');
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
 							default:
 								frames = Paths.getSparrowAtlas('noteassets/NOTE_assets');
 								for (i in 0...11)

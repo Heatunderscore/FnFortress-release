@@ -251,6 +251,11 @@ class PlayState extends MusicBeatState
 
 	private var shakeCam:Bool = false;
 
+	// ayo heat I have no idea how to optimize code but
+	// imma do this shit hope this does it -tob
+
+	var swaggyOptim:Int = 0;
+
 	var burnThing:Bool = false;
 
 	private var funkyIcon:HealthIcon;
@@ -280,6 +285,7 @@ class PlayState extends MusicBeatState
 	var santa:FlxSprite;
 
 	var fc:Bool = true;
+	var uhm:Bool = false;
 	var maggots:Bool = false;
 
 	var bgGirls:BackgroundGirls;
@@ -496,6 +502,7 @@ class PlayState extends MusicBeatState
 			case 'inferno':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('inferno/furry'));
 				burnThing = true;
+				swaggyOptim = 3;
 			case 'ironbomber':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ironbomber/poo'));
 			case 'ironcurtain':
@@ -503,15 +510,23 @@ class PlayState extends MusicBeatState
 			case 'frontierjustice':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('frontierjustice/yeeehaw'));
 				roboDad = true;
+				swaggyOptim = 2;
 			case 'clinicaltrial':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('clinicaltrial/mehdick'));
 				heavyDad = true;
+				swaggyOptim = 1;
 			case 'wanker':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('wanker/hehehugheh'));
+				swaggyOptim = 4;
 			case 'infiltrator':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('infiltrator/furry'));
 			case 'property damage':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('property-damage/sex'));
+			case 'honorbound':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('honorbound/sus'));
+				uhm = true;
+				stupidAHHHH = true;
+				swaggyOptim = 3;
 			case 'may-somethingth':
 				memedic = true;
 		}
@@ -1654,6 +1669,8 @@ class PlayState extends MusicBeatState
 		{
 			switch (curSong.toLowerCase())
 			{
+				case 'honorbound':
+					schoolIntro(doof);
 				default:
 					startCountdown();
 			}
@@ -1980,6 +1997,8 @@ class PlayState extends MusicBeatState
 						case 'Skill Issue':
 							camHUD.visible = true;
 						case 'Dispenser':
+							camHUD.visible = true;
+						case 'Honorbound':
 							camHUD.visible = true;
 						default:
 							trace("ok funny intro activated");
@@ -4178,7 +4197,8 @@ class PlayState extends MusicBeatState
 							FlxG.camera.shake(0.04,0.04);
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
-						
+						if (curSong == 'Honorbound' && health >= 0.1)
+							health -= 0.02;
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
 						{
 							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
@@ -4213,7 +4233,7 @@ class PlayState extends MusicBeatState
 
 						if (roboDad)                   // :( -tob
 						{								// because ur mother -heat
-							if (mania == 5 || mania == 9) // why mania 9 heat??? -tob     
+							if (mania == 5 || mania == 9) // why mania 9 heat??? -tob    
 								{							
 									var targ:Character = dad;
 									if (daNote.noteType == 3)
@@ -4253,8 +4273,9 @@ class PlayState extends MusicBeatState
 						}
 						else
 						{
-							if (burnThing)
-								{
+							switch (swaggyOptim)
+							{
+								case 3:
 									switch (curTiming)
 									{
 										case 0:
@@ -4262,46 +4283,13 @@ class PlayState extends MusicBeatState
 										case 1:
 											dad.playAnim('sing' + sDir[daNote.noteData] + '-alt', true);
 									}
-								}
-							else if (curSong == 'Wanker')
-							{
-								if (daNote.noteType == 3)
-								    dad.playAnim('singDOWN-alt', true);
-							    else
-									dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-							}
-							else if (curSong == 'Meet The Team')
-							{
-								switch (curTiming)
-								{
-									case 0:
+								case 4:
+									if (daNote.noteType == 3)
+										dad.playAnim('singDOWN-alt', true);
+									else
 										dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 1: 
-										scout.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 2:
-										soldier.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 3:
-										pyro.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 4:
-										demoman.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 5:
-										heavy.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 6:
-										if (daNote.noteType == 0)
-											engi.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-										else 
-											roboEngi.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 7:
-										medic.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 8:
-										sniper.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-									case 9:
-										spy.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
-								}
-							}
-							else
-							{
-								dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+								default:
+									dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
 							}
 						}
 
@@ -4446,7 +4434,7 @@ class PlayState extends MusicBeatState
 							switch (daNote.noteType)
 							{
 						
-								case 0, 7, 8: //normal + drunk + rocket
+								case 0, 7, 8, 10: //normal + drunk + rocket + my big fat cock -tob
 								{
 									if (daNote.isSustainNote && daNote.wasGoodHit)
 										{
@@ -4593,11 +4581,6 @@ class PlayState extends MusicBeatState
 									daNote.kill();
 									notes.remove(daNote, true);
 									daNote.destroy();
-								}
-								case 10:
-								{
-									health -= 0.8;
-									boyfriend.playAnim('hit');
 								}	
 							}
 						}
@@ -6151,6 +6134,52 @@ class PlayState extends MusicBeatState
 		
 					updateAccuracy();
 			}
+			else if (daNote.noteType == 10)
+				{
+					health += -0.8;
+					if (combo > 5 && gf.animOffsets.exists('sad'))
+						{
+							gf.playAnim('sad');
+						}
+						combo = 0;
+						misses++;
+			
+						if (daNote != null)
+						{
+							if (!loadRep)
+							{
+								saveNotes.push([daNote.strumTime,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
+								saveJudge.push("miss");
+							}
+						}
+						else
+							if (!loadRep)
+							{
+								saveNotes.push([Conductor.songPosition,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
+								saveJudge.push("miss");
+							}	
+			
+						if (FlxG.save.data.accuracyMod == 1)
+							totalNotesHit -= 1;
+			
+						songScore -= 10;
+			
+						trace(songScore);
+	
+						boyfriend.playAnim('hit', true);
+						if (curTiming == 0)
+						    dad.playAnim('slash', true);
+						else if (curTiming == 1)
+							dad.playAnim('slash-alt', true);
+
+						#if windows
+						if (luaModchart != null)
+							luaModchart.executeState('playerOneMiss', [direction, Conductor.songPosition]);
+						#end
+			
+			
+						updateAccuracy();
+				}
 			else
 				{
 					health -= 0.04;
@@ -6339,7 +6368,10 @@ class PlayState extends MusicBeatState
 						combo += 1;
 					}
 					else
+					{
+						health += 0.02;
 						totalNotesHit += 1;
+					}
 					
 					if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid)
 					{
@@ -6453,12 +6485,20 @@ class PlayState extends MusicBeatState
 					if (note.huntsman)
 						{
 							dad.playAnim('singRIGHT', true);
-							FlxG.sound.play(Paths.sound('smipr'));
+							FlxG.sound.play(Paths.sound('smipr')); // :(
 							Note.hitCheck++; // you should kill yourself right now!!!
 							new FlxTimer().start(4, function(tmr:FlxTimer){Note.hitCheck--;});
 						}
 					if (note.katana)
+					{
+						if (curTiming == 0)
+						    dad.playAnim('slash', true);
+						else if (curTiming == 1)
+						    dad.playAnim('slash-alt', true);
+
+
 						boyfriend.playAnim('dodge');
+					}
 
 
 					if(!loadRep && note.mustPress)
@@ -6959,6 +6999,9 @@ class PlayState extends MusicBeatState
 					    health += -0.01;
 					else
 					    health += -0.02;
+				case 'Honorbound':
+					if (health >= 0.1)
+					    health += -0.01;
 				default:
 					trace("uhhh wrong song dummy");
 			}
@@ -7089,79 +7132,83 @@ class PlayState extends MusicBeatState
 			// Dad doesnt interupt his own notes
 			// dad.animation.curAnim.finished && 
 			// dad.animation.curAnim.curFrame >= 5
-			if (curBeat % 2 == 0 && !heavyDad && !roboDad && !burnThing)
+
+
+			if (curBeat % 2 == 0)
 				{
-					if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
-						{
-								if (curSong == 'Meet The Team')
-								{
-									scout.dance();
-									soldier.dance();
-									pyro.dance();
-									demoman.dance();
-									heavy.dance();
-									engi.dance();
-									medic.dance();
-									sniper.dance();
-									spy.dance();
-								}
-								else
-								{
-									if (!dad.animation.curAnim.name.startsWith('shit'))
-										dad.playAnim('idle');
-								}
-						}
-					else if (dad.animation.curAnim.name != null && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing"))
-						{
-							if (curSong == 'Meet The Team')
-								{
-									scout.dance();
-									soldier.dance();
-									pyro.dance();
-									demoman.dance();
-									heavy.dance();
-									engi.dance();
-									medic.dance();
-									sniper.dance();
-									spy.dance();
-								}
-							else
-								{
-									if (!dad.animation.curAnim.name.startsWith('shit'))
-										dad.playAnim('idle');
-								}
-							}
-				}
-			else if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && heavyDad && !roboDad && !burnThing)
-				{
-						switch (curTiming)
-						{
-							case 0:
-								dad.playAnim('idle');
-								dad2.playAnim('idle');
-							case 1:
-								dad.playAnim('idle-beam');
-								dad2.playAnim('idle');
-							case 2:
-								dad.playAnim('idle-alt');
-								dad2.playAnim('idle-alt');
-						}
-				}
-			else if (curBeat % 2 == 0 && !heavyDad && roboDad && !burnThing)
-				{
-					dad.dance();
-					dad2.dance();
-				}
-			else if (SONG.notes[Math.floor(curStep / 16)].mustHitSection && !heavyDad && !roboDad && burnThing)
+					switch (swaggyOptim)
 					{
-						switch (curTiming)
-						{
-							case 0:
-								dad.playAnim('idle');
-							case 1:
-								dad.playAnim('idle-alt');
-						}
+						case 1:
+							{
+								if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+									{
+											switch (curTiming)
+											{
+												case 0:
+													dad.playAnim('idle');
+													dad2.playAnim('idle');
+												case 1:
+													dad.playAnim('idle-beam');
+													dad2.playAnim('idle');
+												case 2:
+													dad.playAnim('idle-alt');
+													dad2.playAnim('idle-alt');
+											}
+									}
+							}
+						case 2:
+							{
+								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
+									{
+										if (!dad.animation.curAnim.name.startsWith('shit'))
+											dad.playAnim('idle');
+									}
+								else if (dad.animation.curAnim.name != null && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing"))
+									{
+										if (!dad.animation.curAnim.name.startsWith('shit'))
+											dad.playAnim('idle');
+									}
+
+								// uhhh -tob
+
+								if (dad2.animation.curAnim.name != null && !dad2.animation.curAnim.name.startsWith("sing"))
+									{
+										dad2.playAnim('idle');
+									}
+								else if (dad2.animation.curAnim.name != null && !dad2.curCharacter.startsWith('gf') && !dad2.animation.curAnim.name.startsWith("sing"))
+									{
+										dad2.playAnim('idle');
+									}
+							}
+						case 3:
+							{
+								if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+									{
+										switch (curTiming)
+										{
+											case 0:
+												dad.playAnim('idle');
+											case 1:
+												dad.playAnim('idle-alt');
+										}
+									}
+							}
+						default:
+							{
+								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
+									{
+										if (!dad.animation.curAnim.name.startsWith('shit'))
+											dad.playAnim('idle');
+									}
+								else if (dad.animation.curAnim.name != null && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing"))
+									{
+										if (!dad.animation.curAnim.name.startsWith('shit'))
+											dad.playAnim('idle');
+									}
+							}
+		
 					}
+				}
 	    }
 		// FlxG.log.add('change bpm' + SONG.notes[Std.int(curStep / 16)].changeBPM);
 		wiggleShit.update(Conductor.crochet);

@@ -234,7 +234,8 @@ class FreeplayState extends MusicBeatState
 		{
 			// adjusting the song name to be compatible
 			var songFormat = StringTools.replace(songs[curSelected].songName, " ", "-");
-			switch (songFormat) {
+			switch (songFormat) 
+			{
 				case 'Dad-Battle': songFormat = 'Dadbattle';
 				case 'Philly-Nice': songFormat = 'Philly';
 			}
@@ -246,7 +247,7 @@ class FreeplayState extends MusicBeatState
 			trace(poop);
 			
 			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName);
-			PlayState.isStoryMode = true;
+			PlayState.isStoryMode = false;
 			PlayState.storyDifficulty = curDifficulty;
 			PlayState.storyWeek = songs[curSelected].week;
 			trace('CUR WEEK' + PlayState.storyWeek);
