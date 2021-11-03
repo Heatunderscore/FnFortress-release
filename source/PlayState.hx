@@ -3133,8 +3133,13 @@ class PlayState extends MusicBeatState
 		}
 
 
-		if (FlxG.keys.justPressed.SEVEN && songStarted)
+		if (FlxG.keys.justPressed.SEVEN && songStarted && curSong != 'Atomicpunch')
 		{
+			PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
+		    PlayState.isStoryMode = false;
+		    PlayState.storyWeek = 0;
+		    trace('CUR WEEK' + PlayState.storyWeek);
+
 			if (useVideo)
 				{
 					GlobalVideo.get().stop();
@@ -3145,10 +3150,11 @@ class PlayState extends MusicBeatState
 				}
 			cannotDie = true;
 			#if windows
-			DiscordClient.changePresence("Chart Editor", null, null, true);
+			DiscordClient.changePresence("LMAO MASSIVE SKILL ISSUE", null, null, true);
 			#end
-			FlxG.switchState(new ChartingState());
-			Main.editor = true;
+			//FlxG.switchState(new ChartingState());
+			LoadingState.loadAndSwitchState(new PlayState());
+			//Main.editor = true;
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
 			#if windows
@@ -3159,6 +3165,32 @@ class PlayState extends MusicBeatState
 			}
 			#end
 		}
+		else if (FlxG.keys.justPressed.SEVEN && songStarted && curSong == 'Atomicpunch')
+			{
+				if (useVideo)
+					{
+						GlobalVideo.get().stop();
+						remove(videoSprite);
+						FlxG.stage.window.onFocusOut.remove(focusOut);
+						FlxG.stage.window.onFocusIn.remove(focusIn);
+						removedVideo = true;
+					}
+				cannotDie = true;
+				#if windows
+				DiscordClient.changePresence("Charting Atomic Punch", null, null, true);
+				#end
+				FlxG.switchState(new ChartingState());
+				Main.editor = true;
+				FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
+				FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
+				#if windows
+				if (luaModchart != null)
+				{
+					luaModchart.die();
+					luaModchart = null;
+				}
+				#end	
+			}
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
@@ -4575,7 +4607,7 @@ class PlayState extends MusicBeatState
 									dad.playAnim('singRIGHT', true);
 									FlxG.sound.play(Paths.sound('pow'));
 									health -= 10;
-								}	
+								}
 								case 9:  //fucksman
 								{
 									daNote.kill();

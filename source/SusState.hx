@@ -42,6 +42,8 @@ class SusState extends MusicBeatState
 
     public static var curBg:Int = 1;
 
+    var theFunny:Int = 0;
+
 	public static var kadeEngineVer:String = "FNF VS MANNCO (1.5.4 EK)" + nightly;
 	public static var gameVer:String = "0.2.7.1";
 
@@ -211,30 +213,22 @@ class SusState extends MusicBeatState
                     FlxG.switchState(new Piracy());
                     #end
                 case 'skill issue':
-                    if (FlxG.random.bool(33))
+                    theFunny = FlxG.random.int(1, 3);
+                    switch (theFunny)
                     {
-                        PlayState.SONG = Song.loadFromJson('skill-issue-easy', 'skill-issue');
-                        PlayState.isStoryMode = false;
-                        PlayState.storyWeek = 0;
-                        trace('CUR WEEK' + PlayState.storyWeek);
-                        LoadingState.loadAndSwitchState(new PlayState());
+                        case 1:
+                            PlayState.SONG = Song.loadFromJson('skill-issue-easy', 'skill-issue');
+                        case 2:
+                            PlayState.SONG = Song.loadFromJson('skill-issue-hard', 'skill-issue');
+                        case 3:
+                            PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
+                        default:
+                            PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
                     }
-                    else if (FlxG.random.bool(33))
-                    {
-                        PlayState.SONG = Song.loadFromJson('skill-issue-hard', 'skill-issue');
-                        PlayState.isStoryMode = false;
-                        PlayState.storyWeek = 2;
-                        trace('CUR WEEK' + PlayState.storyWeek);
-                        LoadingState.loadAndSwitchState(new PlayState());
-                    }
-                    else
-                    {
-                        PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
-                        PlayState.isStoryMode = false;
-                        PlayState.storyWeek = 2;
-                        trace('CUR WEEK' + PlayState.storyWeek);
-                        LoadingState.loadAndSwitchState(new PlayState());
-                    }
+                    PlayState.isStoryMode = false;
+                    PlayState.storyWeek = 0;
+                    trace('CUR WEEK' + PlayState.storyWeek);
+                    LoadingState.loadAndSwitchState(new PlayState());
             }		
         }
     
