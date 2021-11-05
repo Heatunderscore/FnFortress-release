@@ -9,3 +9,4 @@ snake-medic
 snake-sniper
 snake-spy
 sax
+exe

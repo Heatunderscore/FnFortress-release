@@ -176,6 +176,24 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'sexe':
+				// SCARY!!!11!1oneeone
+				tex = Paths.getSparrowAtlas('characters/scoutexe', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'exe idle', 24, true);
+				animation.addByPrefix('singUP', 'exe up', 24, false);
+				animation.addByPrefix('singRIGHT', 'exe right', 24, false);
+				animation.addByPrefix('singDOWN', 'exe down', 24, false);
+				animation.addByPrefix('singLEFT', 'exe left', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -10, 166);
+				addOffset("singRIGHT", 0, 38);
+				addOffset("singLEFT", 512, 45);
+				addOffset("singDOWN", 118, 49);
+
+				playAnim('idle');
+
 			case 'soldier':
 				// soldier shitting on you
 				tex = Paths.getSparrowAtlas('characters/soldier', 'shared');
