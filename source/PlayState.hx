@@ -281,7 +281,6 @@ class PlayState extends MusicBeatState
 	var uhm:Bool = false;
 	var maggots:Bool = false;
 
-	var bgGirls:BackgroundGirls;
 	var wiggleShit:WiggleEffect = new WiggleEffect();
 
 	var talking:Bool = true;
@@ -291,6 +290,10 @@ class PlayState extends MusicBeatState
 	var replayTxt:FlxText;
 	var startedCountdown:Bool = false;
 	var ghostNotes:Bool = false;
+
+	var bgGirls:BackgroundGirls;
+
+	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 
 	var maniaChanged:Bool = false;
 
