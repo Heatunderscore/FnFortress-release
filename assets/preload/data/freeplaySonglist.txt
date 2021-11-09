@@ -8,7 +8,6 @@ Clinicaltrial:medic:1
 Wanker:sniper:1
 Infiltrator:spy:1
 Property Damage:saxton:1
-Meet The Team:saxton:1
 Honorbound:soldier:1
 Dispenser:engi:1
 May Somethingth:medic:1

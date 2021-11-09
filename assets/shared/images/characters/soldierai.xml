@@ -17,21 +17,21 @@
 	<SubTexture name="soldierai down0012" x="3034" y="10" width="494" height="832"/>
 	<SubTexture name="soldierai down0013" x="3034" y="10" width="494" height="832"/>
 	<SubTexture name="soldierai down0014" x="3034" y="10" width="494" height="832"/>
-	<SubTexture name="soldierai down alt0000" x="3538" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0001" x="3538" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0002" x="4042" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0003" x="4042" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0004" x="4546" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0005" x="4546" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0006" x="5050" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0007" x="5554" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0008" x="6058" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0009" x="6562" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0010" x="6562" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0011" x="6562" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0012" x="6562" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0013" x="6562" y="10" width="494" height="618"/>
-	<SubTexture name="soldierai down alt0014" x="6562" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0000" x="3538" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0001" x="3538" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0002" x="4042" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0003" x="4042" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0004" x="4546" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0005" x="4546" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0006" x="5050" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0007" x="5554" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0008" x="6058" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0009" x="6562" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0010" x="6562" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0011" x="6562" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0012" x="6562" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0013" x="6562" y="10" width="494" height="618"/>
+	<SubTexture name="soldierai-downAlt0014" x="6562" y="10" width="494" height="618"/>
 	<SubTexture name="soldierai idle0000" x="7066" y="10" width="551" height="929"/>
 	<SubTexture name="soldierai idle0001" x="7066" y="10" width="551" height="929"/>
 	<SubTexture name="soldierai idle0002" x="7627" y="10" width="551" height="929"/>
@@ -46,20 +46,20 @@
 	<SubTexture name="soldierai idle0011" x="1132" y="949" width="551" height="929"/>
 	<SubTexture name="soldierai idle0012" x="1132" y="949" width="551" height="929"/>
 	<SubTexture name="soldierai idle0013" x="1132" y="949" width="551" height="929"/>
-	<SubTexture name="soldierai idle alt0000" x="1693" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0001" x="1693" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0002" x="2254" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0003" x="2254" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0004" x="2815" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0005" x="2815" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0006" x="3376" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0007" x="3937" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0008" x="3937" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0009" x="3937" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0010" x="3937" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0011" x="3937" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0012" x="3937" y="949" width="551" height="802"/>
-	<SubTexture name="soldierai idle alt0013" x="3937" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0000" x="1693" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0001" x="1693" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0002" x="2254" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0003" x="2254" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0004" x="2815" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0005" x="2815" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0006" x="3376" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0007" x="3937" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0008" x="3937" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0009" x="3937" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0010" x="3937" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0011" x="3937" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0012" x="3937" y="949" width="551" height="802"/>
+	<SubTexture name="soldierai-idleAlt0013" x="3937" y="949" width="551" height="802"/>
 	<SubTexture name="soldierai left0000" x="4498" y="949" width="714" height="874"/>
 	<SubTexture name="soldierai left0001" x="4498" y="949" width="714" height="874"/>
 	<SubTexture name="soldierai left0002" x="5222" y="949" width="714" height="874"/>
@@ -75,21 +75,21 @@
 	<SubTexture name="soldierai left0012" x="734" y="1888" width="714" height="874"/>
 	<SubTexture name="soldierai left0013" x="734" y="1888" width="714" height="874"/>
 	<SubTexture name="soldierai left0014" x="734" y="1888" width="714" height="874"/>
-	<SubTexture name="soldierai left alt0000" x="1458" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0001" x="1458" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0002" x="2182" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0003" x="2182" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0004" x="2906" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0005" x="2906" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0006" x="3630" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0007" x="4354" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0008" x="5078" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0009" x="5802" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0010" x="5802" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0011" x="5802" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0012" x="5802" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0013" x="5802" y="1888" width="714" height="722"/>
-	<SubTexture name="soldierai left alt0014" x="5802" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0000" x="1458" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0001" x="1458" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0002" x="2182" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0003" x="2182" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0004" x="2906" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0005" x="2906" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0006" x="3630" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0007" x="4354" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0008" x="5078" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0009" x="5802" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0010" x="5802" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0011" x="5802" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0012" x="5802" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0013" x="5802" y="1888" width="714" height="722"/>
+	<SubTexture name="soldierai-leftAlt0014" x="5802" y="1888" width="714" height="722"/>
 	<SubTexture name="soldierai right0000" x="6526" y="1888" width="693" height="900"/>
 	<SubTexture name="soldierai right0001" x="6526" y="1888" width="693" height="900"/>
 	<SubTexture name="soldierai right0002" x="7229" y="1888" width="693" height="900"/>
@@ -105,21 +105,21 @@
 	<SubTexture name="soldierai right0012" x="2119" y="2798" width="693" height="900"/>
 	<SubTexture name="soldierai right0013" x="2119" y="2798" width="693" height="900"/>
 	<SubTexture name="soldierai right0014" x="2119" y="2798" width="693" height="900"/>
-	<SubTexture name="soldierai right alt0000" x="2822" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0001" x="2822" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0002" x="3525" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0003" x="3525" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0004" x="4228" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0005" x="4228" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0006" x="4931" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0007" x="4931" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0008" x="5634" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0009" x="5634" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0010" x="6337" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0011" x="6337" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0012" x="6337" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0013" x="6337" y="2798" width="693" height="773"/>
-	<SubTexture name="soldierai right alt0014" x="6337" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0000" x="2822" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0001" x="2822" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0002" x="3525" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0003" x="3525" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0004" x="4228" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0005" x="4228" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0006" x="4931" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0007" x="4931" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0008" x="5634" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0009" x="5634" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0010" x="6337" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0011" x="6337" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0012" x="6337" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0013" x="6337" y="2798" width="693" height="773"/>
+	<SubTexture name="soldierai-rightAlt0014" x="6337" y="2798" width="693" height="773"/>
 	<SubTexture name="soldierai slash0000" x="7040" y="2798" width="1134" height="954"/>
 	<SubTexture name="soldierai slash0001" x="7040" y="2798" width="1134" height="954"/>
 	<SubTexture name="soldierai slash0002" x="10" y="3762" width="1134" height="954"/>
@@ -135,21 +135,21 @@
 	<SubTexture name="soldierai slash0012" x="5730" y="3762" width="1134" height="954"/>
 	<SubTexture name="soldierai slash0013" x="5730" y="3762" width="1134" height="954"/>
 	<SubTexture name="soldierai slash0014" x="5730" y="3762" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0000" x="6874" y="3762" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0001" x="6874" y="3762" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0002" x="10" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0003" x="1154" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0004" x="2298" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0005" x="3442" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0006" x="4586" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0007" x="5730" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0008" x="5730" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0009" x="5730" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0010" x="5730" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0011" x="5730" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0012" x="5730" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0013" x="5730" y="4726" width="1134" height="954"/>
-	<SubTexture name="soldierai slash alt0014" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0000" x="6874" y="3762" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0001" x="6874" y="3762" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0002" x="10" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0003" x="1154" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0004" x="2298" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0005" x="3442" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0006" x="4586" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0007" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0008" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0009" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0010" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0011" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0012" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0013" x="5730" y="4726" width="1134" height="954"/>
+	<SubTexture name="soldierai-slashAlt0014" x="5730" y="4726" width="1134" height="954"/>
 	<SubTexture name="soldierai up0000" x="6874" y="4726" width="461" height="1021"/>
 	<SubTexture name="soldierai up0001" x="6874" y="4726" width="461" height="1021"/>
 	<SubTexture name="soldierai up0002" x="7345" y="4726" width="461" height="1021"/>
@@ -165,19 +165,19 @@
 	<SubTexture name="soldierai up0012" x="1894" y="5757" width="461" height="1021"/>
 	<SubTexture name="soldierai up0013" x="1894" y="5757" width="461" height="1021"/>
 	<SubTexture name="soldierai up0014" x="1894" y="5757" width="461" height="1021"/>
-	<SubTexture name="soldierai up alt0000" x="2365" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0001" x="2365" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0002" x="2836" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0003" x="2836" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0004" x="3307" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0005" x="3307" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0006" x="3778" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0007" x="4249" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0008" x="4720" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0009" x="5191" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0010" x="5191" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0011" x="5191" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0012" x="5191" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0013" x="5191" y="5757" width="461" height="893"/>
-	<SubTexture name="soldierai up alt0014" x="5191" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0000" x="2365" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0001" x="2365" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0002" x="2836" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0003" x="2836" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0004" x="3307" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0005" x="3307" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0006" x="3778" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0007" x="4249" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0008" x="4720" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0009" x="5191" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0010" x="5191" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0011" x="5191" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0012" x="5191" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0013" x="5191" y="5757" width="461" height="893"/>
+	<SubTexture name="soldierai-upAlt0014" x="5191" y="5757" width="461" height="893"/>
 </TextureAtlas>
