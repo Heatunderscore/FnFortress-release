@@ -430,10 +430,10 @@ class Contract extends MusicBeatState
         {
             if (shitUnlocked[curSelected])
             {
-                PlayState.storyPlaylist = weekData;
-                PlayState.isStoryMode = true;
+                //PlayState.storyPlaylist = weekData;
+                //PlayState.isStoryMode = true;
         
-                PlayState.storyPlaylist = weekData;
+                PlayState.storyPlaylist = ['Your Mom'];
                 PlayState.isStoryMode = true;
         
                 PlayState.storyDifficulty = 2;

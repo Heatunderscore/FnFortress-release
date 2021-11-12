@@ -19,6 +19,9 @@ class HealthIcon extends FlxSprite
 		animation.add('bf', [0, 1], 0, false, isPlayer);
 		animation.add('bf-pyro', [46, 44, 45], 0, false, isPlayer);
 		animation.add('dad', [12, 13], 0, false, isPlayer);
+		animation.add('tob', [10, 11], 0, false, isPlayer);
+		animation.add('tobuh', [12, 13], 0, false, isPlayer);
+		animation.add('tobmad', [14, 15], 0, false, isPlayer);
 		animation.add('scunt', [24, 25], 0, false, isPlayer);
 		animation.add('scunt-old', [24, 25], 0, false, isPlayer);
 		animation.add('sexe', [50, 51], 0, false, isPlayer);

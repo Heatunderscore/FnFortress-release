@@ -66,7 +66,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case 'atomicpunch' | 'maggots' | 'inferno' | 'ironbomber' | 'ironcurtain' | 'frontierjustice' | 'clinicaltrial'
-			| 'wanker' | 'infiltrator' | 'property damage' | 'honorbound':
+			| 'wanker' | 'infiltrator' | 'property damage' | 'honorbound' | 'yourmom':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);

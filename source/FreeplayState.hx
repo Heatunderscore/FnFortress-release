@@ -40,7 +40,8 @@ class FreeplayState extends MusicBeatState
 
 	override function create()
 	{
-		var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+		//var initSonglist = CoolUtil.coolTextFile(Paths.txt('freeplaySonglist'));
+		var initSonglist = CoolUtil.coolTextFile(Paths.txt('data'));
 
 		for (i in 0...initSonglist.length)
 		{
@@ -227,7 +228,8 @@ class FreeplayState extends MusicBeatState
 
 		if (controls.BACK)
 		{
-			FlxG.switchState(new Contract());
+			FlxG.sound.play(Paths.sound('death/mtm', 'shared'));
+			//FlxG.switchState(new Contract());
 		}
 
 		if (accepted)
@@ -311,9 +313,9 @@ class FreeplayState extends MusicBeatState
 		// lerpScore = 0;
 		#end
 
-		#if PRELOAD_ALL
+		/*#if PRELOAD_ALL
 		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0);
-		#end
+		#end*/
 
 		var bullShit:Int = 0;
 

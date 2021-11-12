@@ -186,12 +186,18 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'exe down', 24, false);
 				animation.addByPrefix('singLEFT', 'exe left', 24, false);
 
-				addOffset('idle');
+				addOffset('idle', -220, -230);
+				addOffset("singUP", -240, -64);
+				addOffset("singRIGHT", -220, -192);
+				addOffset("singLEFT", 283, -185);
+				addOffset("singDOWN", -102, -181);
+
+				/*
 				addOffset("singUP", -10, 166);
 				addOffset("singRIGHT", 0, 38);
 				addOffset("singLEFT", 512, 45);
 				addOffset("singDOWN", 118, 49);
-
+				*/
 				playAnim('idle');
 
 			case 'soldier':
@@ -529,6 +535,58 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -80, -160);
 		
 				playAnim('idle');
+
+			case 'tob':
+				tex = Paths.getSparrowAtlas('characters/tob', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'tob idle', 24, false);
+				animation.addByPrefix('singUP', 'tob up', 24, false);
+				animation.addByPrefix('singRIGHT', 'tob right', 24, false);
+				animation.addByPrefix('singDOWN', 'tob down', 24, false);
+				animation.addByPrefix('singLEFT', 'tob left', 24, false);
+		
+				addOffset('idle');
+				addOffset("singUP", -9, 18);
+				addOffset("singRIGHT", -1, -21);
+				addOffset("singLEFT", 105, -7);
+				addOffset("singDOWN", 64, -13);
+		
+				playAnim('idle');
+
+			case 'tobmad':
+				tex = Paths.getSparrowAtlas('characters/tobmad', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'tob idle', 24, false);
+				animation.addByPrefix('singUP', 'tob up', 24, false);
+				animation.addByPrefix('singRIGHT', 'tob right', 24, false);
+				animation.addByPrefix('singDOWN', 'tob down', 24, false);
+				animation.addByPrefix('singLEFT', 'tob left', 24, false);
+		
+				addOffset('idle');
+				addOffset("singUP", -9, 18);
+				addOffset("singRIGHT", -1, -21);
+				addOffset("singLEFT", 105, -7);
+				addOffset("singDOWN", 64, -13);
+		
+				playAnim('idle');
+
+			case 'tobuh':
+				tex = Paths.getSparrowAtlas('characters/tobuhhh', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'tob idle', 24, false);
+				animation.addByPrefix('singUP', 'tob up', 24, false);
+				animation.addByPrefix('singRIGHT', 'tob right', 24, false);
+				animation.addByPrefix('singDOWN', 'tob down', 24, false);
+				animation.addByPrefix('singLEFT', 'tob left', 24, false);
+		
+				addOffset('idle');
+				addOffset("singUP", -9, 18);
+				addOffset("singRIGHT", -1, -21);
+				addOffset("singLEFT", 105, -7);
+				addOffset("singDOWN", 64, -13);
+		
+				playAnim('idle');
+
 
 			case 'bf':
 				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
