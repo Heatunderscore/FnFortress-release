@@ -61,4 +61,19 @@
 	<SubTexture name="right0012" x="1680" y="2019" width="825" height="904"/>
 	<SubTexture name="right0013" x="1680" y="2019" width="825" height="904"/>
 	<SubTexture name="right0014" x="1680" y="2019" width="825" height="904"/>
+	<SubTexture name="up0000" x="2515" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0001" x="2515" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0002" x="3191" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0003" x="3191" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0004" x="3867" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0005" x="3867" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0006" x="4543" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0007" x="4543" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0008" x="5219" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0009" x="5219" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0010" x="5219" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0011" x="5219" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0012" x="5219" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0013" x="5219" y="2019" width="666" height="1054"/>
+	<SubTexture name="up0014" x="5219" y="2019" width="666" height="1054"/>
 </TextureAtlas>

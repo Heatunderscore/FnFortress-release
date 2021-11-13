@@ -10,3 +10,5 @@ snake-sniper
 snake-spy
 sax
 exe
+honor
+degroot

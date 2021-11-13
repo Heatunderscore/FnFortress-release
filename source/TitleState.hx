@@ -321,16 +321,10 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-				/*if (FlxG.save.data.antiPiracy)
-					//FlxG.switchState(new SusState());
+				if (FlxG.save.data.antiPiracy)
+					FlxG.switchState(new SusState());
 				else
-					//FlxG.switchState(new Piracy());*/
-
-				PlayState.SONG = Song.loadFromJson('yourmom-hard', 'yourmom');
-			    PlayState.isStoryMode = false;
-			    PlayState.storyWeek = 2;
-			    trace('CUR WEEK' + PlayState.storyWeek);
-			    LoadingState.loadAndSwitchState(new PlayState());
+					FlxG.switchState(new Piracy());
 			
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);

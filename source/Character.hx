@@ -536,58 +536,6 @@ class Character extends FlxSprite
 		
 				playAnim('idle');
 
-			case 'tob':
-				tex = Paths.getSparrowAtlas('characters/tob', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'tob idle', 24, false);
-				animation.addByPrefix('singUP', 'tob up', 24, false);
-				animation.addByPrefix('singRIGHT', 'tob right', 24, false);
-				animation.addByPrefix('singDOWN', 'tob down', 24, false);
-				animation.addByPrefix('singLEFT', 'tob left', 24, false);
-		
-				addOffset('idle');
-				addOffset("singUP", -9, 18);
-				addOffset("singRIGHT", -1, -21);
-				addOffset("singLEFT", 105, -7);
-				addOffset("singDOWN", 64, -13);
-		
-				playAnim('idle');
-
-			case 'tobmad':
-				tex = Paths.getSparrowAtlas('characters/tobmad', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'tob idle', 24, false);
-				animation.addByPrefix('singUP', 'tob up', 24, false);
-				animation.addByPrefix('singRIGHT', 'tob right', 24, false);
-				animation.addByPrefix('singDOWN', 'tob down', 24, false);
-				animation.addByPrefix('singLEFT', 'tob left', 24, false);
-		
-				addOffset('idle');
-				addOffset("singUP", -9, 18);
-				addOffset("singRIGHT", -1, -21);
-				addOffset("singLEFT", 105, -7);
-				addOffset("singDOWN", 64, -13);
-		
-				playAnim('idle');
-
-			case 'tobuh':
-				tex = Paths.getSparrowAtlas('characters/tobuhhh', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'tob idle', 24, false);
-				animation.addByPrefix('singUP', 'tob up', 24, false);
-				animation.addByPrefix('singRIGHT', 'tob right', 24, false);
-				animation.addByPrefix('singDOWN', 'tob down', 24, false);
-				animation.addByPrefix('singLEFT', 'tob left', 24, false);
-		
-				addOffset('idle');
-				addOffset("singUP", -9, 18);
-				addOffset("singRIGHT", -1, -21);
-				addOffset("singLEFT", 105, -7);
-				addOffset("singDOWN", 64, -13);
-		
-				playAnim('idle');
-
-
 			case 'bf':
 				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
 				frames = tex;

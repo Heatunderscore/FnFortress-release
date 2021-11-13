@@ -50,11 +50,11 @@ class GameOverSubstate extends MusicBeatSubstate
 				{
 					case 'twofort':
 						FlxG.sound.play(Paths.soundRandom('death/scunt_', 1, 3),1);
-					case 'entry':
+					case 'entry' | 'honor':
 						FlxG.sound.play(Paths.soundRandom('death/soldier_', 1, 4),1);
 					case 'intel':
 						FlxG.sound.play(Paths.soundRandom('death/pyro_', 1, 3),1);
-					case 'barnblitz-demo':
+					case 'barnblitz-demo' | 'degroot':
 						FlxG.sound.play(Paths.soundRandom('death/demo_', 1, 3),1);
 					case 'barnblitz-heavy':
 						FlxG.sound.play(Paths.soundRandom('death/heavy_', 1, 4),1);

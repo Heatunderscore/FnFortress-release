@@ -6,7 +6,6 @@ scunt-old
 soldier
 sodier
 pyro
-pyroland
 demo
 heavy
 engi
@@ -18,6 +17,4 @@ spy
 saxton
 sexe
 soldierai
-tob
-tobmad
-tobuh
+demoknight

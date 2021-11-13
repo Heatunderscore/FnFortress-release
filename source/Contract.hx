@@ -347,7 +347,7 @@ class Contract extends MusicBeatState
     
                 if (controls.BACK)
                 {
-                    FlxG.switchState(new TitleState());
+                    FlxG.switchState(new SusState());
                 }
             }
     
@@ -430,10 +430,7 @@ class Contract extends MusicBeatState
         {
             if (shitUnlocked[curSelected])
             {
-                //PlayState.storyPlaylist = weekData;
-                //PlayState.isStoryMode = true;
-        
-                PlayState.storyPlaylist = ['Your Mom'];
+                PlayState.storyPlaylist = weekData;
                 PlayState.isStoryMode = true;
         
                 PlayState.storyDifficulty = 2;
