@@ -225,6 +225,9 @@ class PlayState extends MusicBeatState
 	private var totalPlayed:Int = 0;
 	private var ss:Bool = false;
 
+
+	var songIsWeird:Bool = false;
+
 	public var funnyX:Float = 0;
 	public var funnyY:Float = 0;
 	public var what:Bool = false;
@@ -351,8 +354,8 @@ class PlayState extends MusicBeatState
 				isHeavy = false;
 			}
 		
-		if (isRobo)
-			isRobo = false;
+		//if (isRobo)
+			//isRobo = false;
 
 		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
 
@@ -514,6 +517,9 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('frontierjustice/yeeehaw'));
 				roboDad = true;
 				swaggyOptim = 2;
+				songIsWeird = true;
+				camZooming = true;
+				isRobo = true;
 			case 'clinicaltrial':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('clinicaltrial/mehdick'));
 				heavyDad = true;
@@ -861,8 +867,8 @@ class PlayState extends MusicBeatState
 				dad.x += -100;
 			case 'engi':
 				dad.y += 50;
-				dad.x += -100;
-				dad2.x += -25;
+				dad.x += -250;
+				dad2.x += -175;
 				dad2.y += 225;
 			case 'sodier':
 				dad.y += 150;
@@ -3326,10 +3332,8 @@ class PlayState extends MusicBeatState
 					camHUD.alpha = 100;
 				case 768 | 960 | 1664 | 2048 | 2368:
 					poopThing = false;
-					camZooming = true;
 				case 512 | 832 | 1280 | 1920 | 2240:
 					poopThing = true;
-					camZooming = false;
 				case 1248:
 					health = 0.01;
 			}
@@ -3808,10 +3812,10 @@ class PlayState extends MusicBeatState
 					{
 						if (SONG.player2 == 'saxton' && SONG.song == 'Property Damage' || saxShake)
 							FlxG.camera.shake(0.04,0.04);
-						if (SONG.song != 'Tutorial')
+						if (SONG.song != 'Tutorial' && !songIsWeird)
 							camZooming = true;
 						if (soldierShake)
-							FlxG.camera.shake(0.015,0.015);
+							FlxG.camera.shake(0.015,0.04);
 						if (curSong == 'Honorbound' && health >= 0.1)
 							health -= 0.02;
 						if (SONG.notes[Math.floor(curStep / 16)] != null)
@@ -4194,7 +4198,7 @@ class PlayState extends MusicBeatState
 										}
 										else 
 											{
-											if (!daNote.disguise && !daNote.bonk)
+											if (!daNote.disguise && !daNote.bonk && !daNote.huntsman)
 												{
 													goodNoteHit(daNote);
 													boyfriend.holdTimer = daNote.sustainLength;
@@ -6128,6 +6132,10 @@ class PlayState extends MusicBeatState
 		{
 			health -= 100;
 		}
+	function funkyShake(power:Float, duration:Float):Void
+		{
+			FlxG.camera.shake(power, duration);
+		}
 
 	function soldierShittingOnYou():Void
 		{
@@ -6269,14 +6277,7 @@ class PlayState extends MusicBeatState
 
 		maniaChanged = true;
 
-		
-
-
 		//maniaSwitch(newMania);
-
-
-
-
 	}
 	
 	var startedMoving:Bool = false;
@@ -6389,14 +6390,35 @@ class PlayState extends MusicBeatState
 					add(dad);
 					iconP2.animation.play("soldier", true);
 					FlxG.camera.flash(FlxColor.WHITE, 1);
+				case 320:
+					funkyShake(0.015, 4);
 				case 448:
 					remove(dad);
 					dad = new Character(100, 100, "scunt");
 					add(dad);
 					iconP2.animation.play("scunt", true);
 					FlxG.camera.flash(FlxColor.WHITE, 1);
+				case 576:
+					poopThing = true;
 			}
 		}
+
+		if (curSong == 'Frontierjustice')
+			{
+				switch (curStep)
+				{
+					case 384, 896:
+						camZooming = false;
+						tweenCamIn(1.34, 0.96);
+					case 512, 1024:
+						camZooming = true;
+						tweenCamOut(defaultCamZoom, 0.96);
+					case 1152:
+						poopThing = true;
+					case 1408:
+						poopThing = false;
+				}
+			}
 
 		if (curSong == 'Ironcurtain')
 		{
@@ -6716,13 +6738,13 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.save.data.camzoom)
 		{
-			if (curSong.toLowerCase() == 'ironcurtain' && poopThing && FlxG.camera.zoom < 1.70)
+			if (poopThing)
 			{
 				FlxG.camera.zoom += 0.05;
 				camHUD.zoom += 0.065;
 			}
 	
-			if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0)
+			if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0 && !poopThing)
 			{
 				FlxG.camera.zoom += 0.015;
 				camHUD.zoom += 0.03;

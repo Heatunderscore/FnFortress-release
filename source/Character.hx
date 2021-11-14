@@ -225,19 +225,19 @@ class Character extends FlxSprite
 			case 'soldierai':
 					tex = Paths.getSparrowAtlas('characters/soldierai', 'shared');
 					frames = tex;
-					animation.addByPrefix('idle', 'soldierai idle', 24, false);
-					animation.addByPrefix('singUP', 'soldierai up', 24, false);
-					animation.addByPrefix('singRIGHT', 'soldierai right', 24, false);
-					animation.addByPrefix('singDOWN', 'soldierai down', 24, false);
-					animation.addByPrefix('singLEFT', 'soldierai left', 24, false);
-					animation.addByPrefix('slash', 'soldierai slash', 24, false);
+					animation.addByPrefix('idle-alt', 'soldierai idle', 24, false);
+					animation.addByPrefix('singUP-alt', 'soldierai up', 24, false);
+					animation.addByPrefix('singRIGHT-alt', 'soldierai right', 24, false);
+					animation.addByPrefix('singDOWN-alt', 'soldierai down', 24, false);
+					animation.addByPrefix('singLEFT-alt', 'soldierai left', 24, false);
+					animation.addByPrefix('slash-alt', 'soldierai slash', 24, false);
 
-					animation.addByPrefix('idle-alt', 'soldierai-idleAlt', 24, false);
-					animation.addByPrefix('singUP-alt', 'soldierai-upAlt', 24, false);
-					animation.addByPrefix('singRIGHT-alt', 'soldierai-rightAlt', 24, false);
-					animation.addByPrefix('singDOWN-alt', 'soldierai-downAlt', 24, false);
-					animation.addByPrefix('singLEFT-alt', 'soldierai-leftAlt', 24, false);
-					animation.addByPrefix('slash-alt', 'soldierai-slashAlt', 24, false);
+					animation.addByPrefix('idle', 'soldierai-idleAlt', 24, false);
+					animation.addByPrefix('singUP', 'soldierai-upAlt', 24, false);
+					animation.addByPrefix('singRIGHT', 'soldierai-rightAlt', 24, false);
+					animation.addByPrefix('singDOWN', 'soldierai-downAlt', 24, false);
+					animation.addByPrefix('singLEFT', 'soldierai-leftAlt', 24, false);
+					animation.addByPrefix('slash', 'soldierai-slashAlt', 24, false);
 	
 					addOffset('idle');
 					addOffset("singUP", 70, 100);
