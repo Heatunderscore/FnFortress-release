@@ -54,7 +54,12 @@ class SusState extends MusicBeatState
 	override function create()
 	{
 
-        // heat how did you forget to port so much
+        // creating save states for when you play for the first time -tob
+        if (FlxG.save.data.funniSounds == null)
+        {
+            FlxG.save.data.funniSounds = true;
+        }
+
         if (FlxG.save.data.unlockedWeek == null)
         {
             FlxG.save.data.unlockedWeek = 0;

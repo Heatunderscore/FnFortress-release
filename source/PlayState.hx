@@ -353,9 +353,12 @@ class PlayState extends MusicBeatState
 			{
 				isHeavy = false;
 			}
-		
-		//if (isRobo)
-			//isRobo = false;
+		if (isRobo)
+			{
+				isRobo = false;
+			}
+        //^^^^
+		//making sure that no weird camera glitch or crash happens -tob
 
 		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
 
@@ -853,7 +856,7 @@ class PlayState extends MusicBeatState
 				if (isStoryMode)
 				{
 					camPos.x += 600;
-					tweenCamIn(1.5, 1.5);
+					tweenCam(1.5, 1.5);
 				}
 			case 'scunt':
 				dad.y += 70;
@@ -2587,14 +2590,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	function tweenCamIn(zoom:Float, duration:Float):Void
-	{
-		FlxTween.tween(FlxG.camera, {zoom: zoom}, duration ,{ease: FlxEase.quadInOut});
-	}
-
-	// i know this isnt needed but fuck you!!!! -tob
-
-	function tweenCamOut(zoom:Float, duration:Float):Void
+	function tweenCam(zoom:Float, duration:Float):Void
 	{
 		FlxTween.tween(FlxG.camera, {zoom: zoom}, duration ,{ease: FlxEase.quadInOut});
 	}
@@ -3067,7 +3063,9 @@ class PlayState extends MusicBeatState
 				#end
 				if (!isHeavy && !isRobo)
 				    camFollow.setPosition(dad.getMidpoint().x + 150 + noteCamMovementDadX, dad.getMidpoint().y - 100 + noteCamMovementDadY);
-				else
+				else if (isHeavy)
+					camFollow.setPosition(dad2.getMidpoint().x + 150 + noteCamMovementDadX, dad2.getMidpoint().y - 100 + noteCamMovementDadY);
+				else if (isRobo)
 					camFollow.setPosition(dad2.getMidpoint().x + 150 + noteCamMovementDadX, dad2.getMidpoint().y - 100 + noteCamMovementDadY);
 				#if windows
 				if (luaModchart != null)
@@ -3186,6 +3184,7 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Atomicpunch')
 			{
+				// too lazy to do tweens for this, might make it a function later -tob
 				switch (curStep)
 				{
 					case 64:
@@ -3833,21 +3832,53 @@ class PlayState extends MusicBeatState
 						
 						if (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid && curSong != 'Monochrome' && curSong != 'Frontierjustice')
 						{
-							switch (Math.abs(daNote.noteData))
+							switch (curSong)
 							{
-								case 2:
-									noteCamMovementDadY = -45;
-									noteCamMovementDadX = 0;
-								case 3:
-									noteCamMovementDadX = 45;
-									noteCamMovementDadY = 0;
-								case 1:
-									noteCamMovementDadY = 45;
-									noteCamMovementDadX = 0;
-								case 0:
-									noteCamMovementDadX = -45;
-									noteCamMovementDadY = 0;
+								case 'Property Damage':
+								{
+									switch (Math.abs(daNote.noteData))
+									{
+										case 5:
+											noteCamMovementDadX = 45;
+											noteCamMovementDadY = 0;
+										case 4:
+											noteCamMovementDadX = 0;
+											noteCamMovementDadY = 45;
+										case 2:
+											noteCamMovementDadX = 45;
+											noteCamMovementDadY = 0;
+										case 3:
+											noteCamMovementDadX = -45;
+											noteCamMovementDadY = 0;
+										case 1:
+											noteCamMovementDadY = -45;
+											noteCamMovementDadX = 0;
+										case 0:
+											noteCamMovementDadX = -45;
+											noteCamMovementDadY = 0;
+									}
+								}
+								default:
+								{
+									switch (Math.abs(daNote.noteData))
+									{
+										case 2:
+											noteCamMovementDadY = -45;
+											noteCamMovementDadX = 0;
+										case 3:
+											noteCamMovementDadX = 45;
+											noteCamMovementDadY = 0;
+										case 1:
+											noteCamMovementDadY = 45;
+											noteCamMovementDadX = 0;
+										case 0:
+											noteCamMovementDadX = -45;
+											noteCamMovementDadY = 0;
+									}
+								}
+
 							}
+
 						}
 
 						if (roboDad)                   // :( -tob
@@ -5948,20 +5979,51 @@ class PlayState extends MusicBeatState
 					
 					if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid && curSong != 'Monochrome' && curSong != 'Frontierjustice')
 					{
-						switch (note.noteData)
+						switch (curSong)
 						{
-							case 2:
-								noteCamMovementBfY = -45;
-								noteCamMovementBfX = 0;
-							case 3:
-								noteCamMovementBfX = 45;
-								noteCamMovementBfY = 0;
-							case 1:
-								noteCamMovementBfY = 45;
-								noteCamMovementBfX = 0;
-							case 0:
-								noteCamMovementBfX = -45;
-								noteCamMovementBfY = 0;
+							case 'Property Damage':
+							{
+								switch (Math.abs(note.noteData))
+								{
+									case 5:
+										noteCamMovementBfX = 45;
+										noteCamMovementBfY = 0;
+									case 4:
+										noteCamMovementBfX = 0;
+										noteCamMovementBfY = 45;
+									case 2:
+										noteCamMovementBfX = 45;
+										noteCamMovementBfY = 0;
+									case 3:
+										noteCamMovementBfX = -45;
+										noteCamMovementBfY = 0;
+									case 1:
+										noteCamMovementBfY = -45;
+										noteCamMovementBfX = 0;
+									case 0:
+										noteCamMovementBfX = -45;
+										noteCamMovementBfY = 0;
+								}
+							}
+							default:
+							{
+								switch (Math.abs(note.noteData))
+								{
+									case 2:
+										noteCamMovementBfY = -45;
+										noteCamMovementBfX = 0;
+									case 3:
+										noteCamMovementBfX = 45;
+										noteCamMovementBfY = 0;
+									case 1:
+										noteCamMovementBfY = 45;
+										noteCamMovementBfX = 0;
+									case 0:
+										noteCamMovementBfX = -45;
+										noteCamMovementBfY = 0;
+								}
+							}
+
 						}
 					}
 
@@ -6030,13 +6092,17 @@ class PlayState extends MusicBeatState
 						{
 							dad.playAnim('singRIGHT', true);
 							boyfriend.playAnim('dodge', true);
-							FlxG.sound.play(Paths.sound('pow'));
+							if (FlxG.save.data.funniSounds)
+							    FlxG.sound.play(Paths.sound('pow'));
+
 							health += 0.1;
 						    //trace("pow! haha!");
 						}
 					if (note.drunk) // drunk
 						{
-							FlxG.sound.play(Paths.sound('burp'));
+							if (FlxG.save.data.funniSounds)
+							    FlxG.sound.play(Paths.sound('burp'));
+
 						    health += 0.3;
 						}
 					if (note.rocket) // rocket
@@ -6045,7 +6111,9 @@ class PlayState extends MusicBeatState
 					if (note.huntsman)
 						{
 							dad.playAnim('singRIGHT', true);
-							FlxG.sound.play(Paths.sound('smipr')); // :(
+							if (FlxG.save.data.funniSounds)
+							    FlxG.sound.play(Paths.sound('smipr')); // :(
+
 							Note.hitCheck++; // you should kill yourself right now!!!
 							new FlxTimer().start(4, function(tmr:FlxTimer){Note.hitCheck--;});
 						}
@@ -6409,10 +6477,10 @@ class PlayState extends MusicBeatState
 				{
 					case 384, 896:
 						camZooming = false;
-						tweenCamIn(1.34, 0.96);
+						tweenCam(1.34, 0.96);
 					case 512, 1024:
 						camZooming = true;
-						tweenCamOut(defaultCamZoom, 0.96);
+						tweenCam(defaultCamZoom, 0.96);
 					case 1152:
 						poopThing = true;
 					case 1408:
@@ -6468,12 +6536,12 @@ class PlayState extends MusicBeatState
 						soldierShake = true;
 						curTiming = 0;
 						camZooming = false;
-						tweenCamIn(1.3, 1);
+						tweenCam(1.3, 1);
 					case 1536:
 						soldierShake = false;
 						camZooming = true;
 						curTiming = 1;
-						tweenCamOut(0.9, 1);
+						tweenCam(0.9, 1);
 				}
 			}
 

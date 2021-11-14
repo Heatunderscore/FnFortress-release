@@ -246,12 +246,12 @@ class Character extends FlxSprite
 					addOffset("singDOWN", 70, -200);
 					addOffset("slash", 41, 33);
 
-					addOffset('idle-alt');
+					addOffset('idle-alt', 0, 127);
 					addOffset("singUP-alt", 70, 100);
-					addOffset("singRIGHT-alt", 20, -40);
-					addOffset("singLEFT-alt", 370, -80);
-					addOffset("singDOWN-alt", 70, -200);
-					addOffset("slash-alt", 41, 33);
+					addOffset("singRIGHT-alt", 0, 110);
+					addOffset("singLEFT-alt", 380, 80);
+					addOffset("singDOWN-alt", 50, 20);
+					addOffset("slash-alt", 231, 93);
 	
 					playAnim('idle');
 			case 'sodier':
