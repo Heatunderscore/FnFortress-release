@@ -1,0 +1,6 @@
+:pyro: !0.1! *crys* why...
+:gf: !0.04! You CAN talk.
+:pyro: !0.01! Hm?
+:gf: !0.02! What.
+:pyro: !0.04! Hudda huda huh!
+:gf: !0.08! Nevermind.

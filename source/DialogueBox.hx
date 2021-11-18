@@ -26,6 +26,8 @@ class DialogueBox extends FlxSpriteGroup
 
 	var dropText:FlxText;
 
+	var delay:Float = 0.04;
+
 	public var finishThing:Void->Void;
 
 	var portraitLeft:FlxSprite;
@@ -211,16 +213,16 @@ class DialogueBox extends FlxSpriteGroup
 		this var is private by default, you can control + click on it to get to the file where its stored and
 		change it to a public var which will make it accessible for you -tob
 		*/
-		/*if (swagDialogue._typing)
+		if (swagDialogue._typing && delay < 1)
 			{
 				portraitLeft.animation.play('enter');
 				portraitRight.animation.play('enter');
 			}
-		else if (!swagDialogue._typing)
+		else if (!swagDialogue._typing && delay >= 1)
 			{
 				portraitLeft.animation.stop;
 				portraitRight.animation.stop;
-			}*/
+			}
 		
 		//curDad = PlayState.SONG.player2;
 
@@ -232,29 +234,12 @@ class DialogueBox extends FlxSpriteGroup
 	function startDialogue():Void
 	{
 		cleanDialog();
-		// var theDialog:Alphabet = new Alphabet(0, 70, dialogueList[0], false, true);
-		// dialogue = theDialog;
-		// add(theDialog);
 
-		// swagDialogue.text = ;
 		swagDialogue.resetText(dialogueList[0]);
-		swagDialogue.start(0.04, true);
+		swagDialogue.start(delay, true);
 
 		switch (curCharacter)
-		{ // i dont like this huge switch block :/ 
-			// holy shit heat why didnt you just use the dialogue folder in shared it literally had everything in it -tob
-			/*case 'dad-one':
-				box.flipX = true;
-				portraitLeft.visible = false;
-				portraitRight.visible = false;
-				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/$curDad');
-				portraitLeft.animation.addByPrefix('enter', '$curDad talk', 24, false);
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/$curDad'), 0.6)];
-				if (!portraitLeft.visible)
-				{
-					portraitLeft.visible = true;
-					portraitLeft.animation.play('enter');
-				}*/
+		{
 			case 'scunt':
 				box.flipX = true;
 				if (PlayState.dad.curCharacter == 'scunt')
@@ -453,5 +438,15 @@ class DialogueBox extends FlxSpriteGroup
 		var splitName:Array<String> = dialogueList[0].split(":");
 		curCharacter = splitName[1];
 		dialogueList[0] = dialogueList[0].substr(splitName[1].length + 2).trim();
+
+		var splitDelay:Array<Dynamic> = dialogueList[0].split("!");
+		delay = splitDelay[1];
+		dialogueList[0] = dialogueList[0].substr(splitDelay[1].length + 2).trim();
+
+		// fuck off
+		if (delay == 0)
+		{
+			delay = 0.04;
+		}
 	}
 }
