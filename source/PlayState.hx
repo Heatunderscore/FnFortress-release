@@ -1412,6 +1412,7 @@ class PlayState extends MusicBeatState
 
     function epicEnd(?dialogueBox:DialogueBox):Void
 		{
+			//lmao this is sooooo bad -tob
 			if (curSong == 'Atomicpunch')
 				{
 					bonkBOT.visible = false;
@@ -4655,6 +4656,12 @@ class PlayState extends MusicBeatState
 					case 'maggots':
 						epicEnd(endingDoof);
 					case 'inferno':
+						epicEnd(endingDoof);
+					case 'ironbomber':
+						epicEnd(endingDoof);
+					case 'ironcurtain':
+						epicEnd(endingDoof);
+					case 'frontierjustice':
 						epicEnd(endingDoof);
 					default:
 						endSong();

@@ -430,6 +430,16 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.visible = true;
 					portraitRight.animation.play('enter');
 				}
+			case 'none':
+				box.flipX = true;
+				portraitRight.visible = false;
+				portraitLeft.visible = false;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+			case 'no':
+				box.flipX = true;
+				portraitRight.visible = false;
+				portraitLeft.visible = false;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/demo'), 0.6)];
 		}
 	}
 
@@ -439,6 +449,7 @@ class DialogueBox extends FlxSpriteGroup
 		curCharacter = splitName[1];
 		dialogueList[0] = dialogueList[0].substr(splitName[1].length + 2).trim();
 
+		// made it dynamic so i can use floats
 		var splitDelay:Array<Dynamic> = dialogueList[0].split("!");
 		delay = splitDelay[1];
 		dialogueList[0] = dialogueList[0].substr(splitDelay[1].length + 2).trim();
