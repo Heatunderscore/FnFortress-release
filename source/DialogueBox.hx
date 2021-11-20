@@ -195,7 +195,13 @@ class DialogueBox extends FlxSpriteGroup
 					});
 				}
 			}
-			else if (FlxG.keys.justPressed.SPACE && dialogueStarted == true)
+			else
+			{
+				dialogueList.remove(dialogueList[0]);
+				startDialogue();
+			}
+		}
+		else if (FlxG.keys.justPressed.SPACE && dialogueStarted == true)
 			{
 				if (!isEnding)
 					{
@@ -221,13 +227,6 @@ class DialogueBox extends FlxSpriteGroup
 						});
 					}
 			}
-			else
-			{
-				dialogueList.remove(dialogueList[0]);
-				startDialogue();
-			}
-			
-		}
 
 		/*
 		this shit makes the portraits loop until no more dialogue is typed
