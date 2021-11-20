@@ -107,8 +107,6 @@ class DialogueBox extends FlxSpriteGroup
 		portraitLeft.screenCenter(Y);
 
 		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
-		add(handSelect);
-
 
 		if (!talkingRight)
 		{
@@ -165,7 +163,7 @@ class DialogueBox extends FlxSpriteGroup
 			dialogueStarted = true;
 		}
 
-		if (PlayerSettings.player1.controls.ACCEPT && dialogueStarted == true)
+		if (FlxG.keys.justPressed.ENTER && dialogueStarted == true)
 		{
 			remove(dialogue);
 				
@@ -196,6 +194,32 @@ class DialogueBox extends FlxSpriteGroup
 						kill();
 					});
 				}
+			}
+			else if (FlxG.keys.justPressed.SPACE && dialogueStarted == true)
+			{
+				if (!isEnding)
+					{
+						isEnding = true;
+	
+						if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
+							FlxG.sound.music.fadeOut(2.2, 0);
+	
+						new FlxTimer().start(0.2, function(tmr:FlxTimer)
+						{
+							box.alpha -= 1 / 5;
+							bgFade.alpha -= 1 / 5 * 0.7;
+							portraitLeft.visible = false;
+							portraitRight.visible = false;
+							swagDialogue.alpha -= 1 / 5;
+							dropText.alpha = swagDialogue.alpha;
+						}, 5);
+	
+						new FlxTimer().start(1.2, function(tmr:FlxTimer)
+						{
+							finishThing();
+							kill();
+						});
+					}
 			}
 			else
 			{
@@ -382,6 +406,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/spy');
 				portraitLeft.animation.addByPrefix('enter', 'spy talk', 24, false);
+				swagDialogue.color = 0xFF000000;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/spy'), 0.6)];
 				if (!portraitLeft.visible)
 				{
