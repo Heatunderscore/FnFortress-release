@@ -22,7 +22,7 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to Contracter'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
@@ -156,7 +156,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to menu'];
+					menuItems = ['Restart Song', 'Exit to Contracter'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -181,7 +181,7 @@ class PauseSubState extends MusicBeatSubstate
 				{
 					grpMenuShit.clear();
 
-					menuItems = ['Restart Song', 'Exit to menu'];
+					menuItems = ['Restart Song', 'Exit to Contracter'];
 
 					for (i in 0...menuItems.length)
 					{
@@ -215,7 +215,7 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.instance.removedVideo = true;
 					}
 					FlxG.resetState();
-				case "Exit to menu":
+				case "Exit to Contracter":
 					if (PlayState.instance.useVideo)
 					{
 						GlobalVideo.get().stop();

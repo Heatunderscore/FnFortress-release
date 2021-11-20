@@ -6226,7 +6226,7 @@ class PlayState extends MusicBeatState
 						new FlxTimer().start(0.8, function(tmr:FlxTimer)
 							{
 								slashThingie = false;
-								dad.playAnim('idle', true);
+								//dad.playAnim('idle', true);
 							});
 
 						boyfriend.playAnim('dodge');
