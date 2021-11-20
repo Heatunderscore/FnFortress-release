@@ -253,6 +253,8 @@ class PlayState extends MusicBeatState
 	public var cannotDie = false;
 	private var camGame:FlxCamera;
 
+	var maxHealth:Float = 0;
+
 	var bfDodging:Bool = false;
 	var bfCanDodge:Bool = false;
 	var bfDodgeTiming:Float = 0.22625;
@@ -2466,9 +2468,18 @@ class PlayState extends MusicBeatState
 							spr.x -= 700; 
 						});
 				}
-			if (SONG.noteStyle == null) {
-				switch(storyWeek) {case 6: noteTypeCheck = 'pixel';}
-			} else {noteTypeCheck = SONG.noteStyle;}
+			if (SONG.noteStyle == null) 
+			{
+				switch(storyWeek) 
+				{
+					case 6: 
+						noteTypeCheck = 'pixel';
+				}
+			} 
+			else 
+				{
+					noteTypeCheck = SONG.noteStyle;
+				}
 
 			switch (noteTypeCheck)
 			{
@@ -3581,7 +3592,7 @@ class PlayState extends MusicBeatState
 		}
 
 
-		if (health <= 0 && !cannotDie)
+		if (health <= maxHealth  && !cannotDie)
 		{
 			Note.hitCheck = 0;
 			boyfriend.stunned = true;
@@ -3748,6 +3759,7 @@ class PlayState extends MusicBeatState
 										daNote.y = (playerStrums.members[Math.floor(Math.abs(daNote.noteData))].y
 										+ 0.45 * (Conductor.songPosition - daNote.strumTime) * FlxMath.roundDecimal(PlayStateChangeables.scrollSpeed == 1 ? SONG.speed : PlayStateChangeables.scrollSpeed,
 											2)) - daNote.noteYOff;
+
 									}
 								}	
 								if (daNote.isSustainNote)
@@ -4246,7 +4258,7 @@ class PlayState extends MusicBeatState
 										daNote.kill();
 										notes.remove(daNote, true);
 								}
-								case 1 | 2 | 3 | 4 | 6 | 9:  //disguise note + bonk + huntsman 
+								case 1 | 2 | 3 | 4 | 6 | 9 | 11:  // everything else
 								{
 									daNote.kill();
 									notes.remove(daNote, true);
@@ -4493,7 +4505,7 @@ class PlayState extends MusicBeatState
 
 							if (FlxG.save.data.buttonUnlockingShit == 2)
 							{
-								FlxG.save.data.buttonUnlockingShit = 3;
+								FlxG.save.data.buttonUnlockingShit += 1;
 							}
 						}
 					else if (curSong == 'Frontierjustice')
@@ -4510,7 +4522,7 @@ class PlayState extends MusicBeatState
 
 							if (FlxG.save.data.buttonUnlockingShit == 5)
 							{
-								FlxG.save.data.buttonUnlockingShit = 6;
+								FlxG.save.data.buttonUnlockingShit += 1;
 							}
 						}
 					else if (curSong == 'Infiltrator')
@@ -4528,7 +4540,7 @@ class PlayState extends MusicBeatState
 
 							if (FlxG.save.data.buttonUnlockingShit == 8)
 							{
-								FlxG.save.data.buttonUnlockingShit = 9;
+								FlxG.save.data.buttonUnlockingShit += 1;
 							}
 						}
 					else
@@ -4662,6 +4674,12 @@ class PlayState extends MusicBeatState
 					case 'ironcurtain':
 						epicEnd(endingDoof);
 					case 'frontierjustice':
+						epicEnd(endingDoof);
+					case 'clinicaltrial':
+						epicEnd(endingDoof);
+					case 'wanker':
+						epicEnd(endingDoof);
+					case 'infiltrator':
 						epicEnd(endingDoof);
 					default:
 						endSong();
@@ -6215,6 +6233,10 @@ class PlayState extends MusicBeatState
 
 						boyfriend.playAnim('dodge');
 					}
+					if (note.saw)
+					{
+						maxHealthCum(0.50);
+					}
 
 
 					if(!loadRep && note.mustPress)
@@ -6294,6 +6316,25 @@ class PlayState extends MusicBeatState
 			iconP2.animation.play(iconPl2, true);
 			iconP1.animation.play(iconPl1, true);
 			pyroland.visible = pyroLand;
+		}
+	function maxHealthCum(newHealth:Float)
+		{
+			if (maxHealth < 1.5)
+			    maxHealth += newHealth;
+
+			remove(healthBar);
+			healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8) - Std.int(healthBar.width * (maxHealth / 2)) , Std.int(healthBarBG.height - 8), this,
+				'health', maxHealth, 2);
+			healthBar.scrollFactor.set();
+			healthBar.visible = true;
+			healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
+			remove(iconP1);
+			remove(iconP2);
+			add(healthBar);
+			add(iconP1);
+			add(iconP2);
+			healthBar.cameras = [camHUD];
+
 		}
 	function funkyShake(power:Float, duration:Float):Void
 		{
@@ -6671,7 +6712,7 @@ class PlayState extends MusicBeatState
 		}
 
 		//9.6
-		if (stupidAHHHH)
+		if (stupidAHHHH && !inCutscene)
 		{
 			switch (curSong)
 			{
@@ -6679,9 +6720,9 @@ class PlayState extends MusicBeatState
 					if (health >= 0.1)
 					    health += -0.02;
 				case 'Inferno':
-					if (burnShit && !inCutscene)						
+					if (burnShit)						
 					    health += -0.01;
-					else if (!burnShit && !inCutscene)
+					else if (!burnShit)
 					    health += -0.02;
 				case 'Honorbound':
 					if (health >= 0.1)
@@ -6729,12 +6770,10 @@ class PlayState extends MusicBeatState
 				daNote.animation.play(frameN[daNote.noteData] + 'Scroll');
 				if (daNote.isSustainNote && daNote.prevNote != null)
 					{
-			
 						daNote.animation.play(frameN[daNote.noteData] + 'holdend');
 				
 						if (daNote.prevNote.isSustainNote)
 						{
-			
 							daNote.prevNote.animation.play(frameN[daNote.prevNote.noteData] + 'hold');
 							//prevNote.updateHitbox();
 						}
@@ -6838,7 +6877,6 @@ class PlayState extends MusicBeatState
 			// Dad doesnt interupt his own notes
 			// dad.animation.curAnim.finished && 
 			// dad.animation.curAnim.curFrame >= 5
-
 
 			if (curBeat % 2 == 0)
 				{
@@ -6945,8 +6983,6 @@ class PlayState extends MusicBeatState
 				if (burnThing)
 					healthBarBG.animation.play('idle', true);
 		}
-
 	}
-
 	var curLight:Int = 0;
 }

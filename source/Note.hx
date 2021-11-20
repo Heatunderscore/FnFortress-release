@@ -51,6 +51,7 @@ class Note extends FlxSprite
 	public var rocket:Bool = false; //for soldier
 	public var huntsman:Bool = false; //sniper
 	public var katana:Bool = false; // katana
+	public var saw:Bool = false; // mydickishard
 
 	public var noteScore:Float = 1;
 	public static var mania:Int = 0;
@@ -187,6 +188,7 @@ class Note extends FlxSprite
 		rocket = noteType == 8;
 		huntsman = noteType == 9;
 		katana = noteType == 10;
+		saw = noteType == 11;
 
 		if (FlxG.save.data.noteColor != 'darkred' && FlxG.save.data.noteColor != 'black' && FlxG.save.data.noteColor != 'orange')
 			FlxG.save.data.noteColor = 'darkred';
@@ -321,6 +323,30 @@ class Note extends FlxSprite
 								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
 							}
 					}
+				if (katana)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
+				if (saw)
+					{
+						loadGraphic(Paths.image('noteassets/pixel/glitch/arrows-pixels'), true, 17, 17);
+						if (isSustainNote && glitch)
+							loadGraphic(Paths.image('noteassets/pixel/glitch/arrowEnds'), true, 7, 6);
+						for (i in 0...9)
+							{
+								animation.add(pixelnoteColors[i] + 'Scroll', [i + 9]); // Normal notes
+								animation.add(pixelnoteColors[i] + 'hold', [i]); // Holds
+								animation.add(pixelnoteColors[i] + 'holdend', [i + 9]); // Tails
+							}
+					}
 
 
 				
@@ -335,7 +361,7 @@ class Note extends FlxSprite
 						animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
 						animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
 					}	
-				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket || huntsman || katana)
+				if (disguise || dad2 || dad1 || snoiper || bonk || fist || drunk || rocket || huntsman || katana || saw)
 					{
 						frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_types');
 						switch(noteType)
@@ -414,6 +440,17 @@ class Note extends FlxSprite
 									}
 							case 10:
 								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_conch');
+								for (i in 0...11)
+									{
+										animation.addByPrefix('greenScroll', 'green');
+										animation.addByPrefix('redScroll', 'red');
+										animation.addByPrefix('blueScroll', 'blue');
+										animation.addByPrefix('purpleScroll', 'purple');
+										animation.addByPrefix(noteColors[i] + 'hold', noteColors[i] + ' hold piece'); // Hold
+										animation.addByPrefix(noteColors[i] + 'holdend', noteColors[i] + ' hold end'); // Tails
+									}
+							case 11:
+								frames = Paths.getSparrowAtlas('noteassets/notetypes/NOTE_saw');
 								for (i in 0...11)
 									{
 										animation.addByPrefix('greenScroll', 'green');

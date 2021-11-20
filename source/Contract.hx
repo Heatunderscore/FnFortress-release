@@ -103,13 +103,20 @@ class Contract extends MusicBeatState
 
         trace(shitUnlocked);
 
+        if (FlxG.sound.music != null)
+			{
+				if (!FlxG.sound.music.playing)
+					FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			}
+
         /*for (i in 0...curLock)
         {
             shitUnlocked.push(true);
         }*/
 
-        //lmao heat
-        // oiuo8ihfighgeuhfeiguehgiuhtq8ty28935y32
+        //lmao heat -tob
+        // oiuo8ihfighgeuhfeiguehgiuhtq8ty28935y32 -heat
+        //lmao heat -tob
 
         var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('menuDesat'));
 		bg.scrollFactor.x = 0;

@@ -30,9 +30,7 @@ class Main extends Sprite
 
 	public static function main():Void
 	{
-
 		// quick checks 
-
 		Lib.current.addChild(new Main());
 	}
 
@@ -58,7 +56,6 @@ class Main extends Sprite
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 		}
-
 		setupGame();
 	}
 
