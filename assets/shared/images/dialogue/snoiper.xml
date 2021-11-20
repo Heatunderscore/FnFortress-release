@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="snoiper.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="bot talk0000" x="0" y="0" width="329" height="552" frameX="-121" frameY="-32" frameWidth="685" frameHeight="584"/>
+	<SubTexture name="bot talk0001" x="329" y="0" width="411" height="579" frameX="-121" frameY="-5" frameWidth="685" frameHeight="584"/>
+	<SubTexture name="bot talk0002" x="740" y="0" width="433" height="584" frameX="-121" frameY="0" frameWidth="685" frameHeight="584"/>
+	<SubTexture name="bot talk0003" x="1173" y="0" width="429" height="523" frameX="-121" frameY="-61" frameWidth="685" frameHeight="584"/>
+	<SubTexture name="bot talk0004" x="0" y="584" width="685" height="545" frameX="0" frameY="-39" frameWidth="685" frameHeight="584"/>
+</TextureAtlas>

@@ -93,6 +93,8 @@ class PlayState extends MusicBeatState
 	public static var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3, 10];
 	private var ctrTime:Float = 0;
 
+	public static var firstDeath:Bool = true;
+
 	var shitPoo:Bool = true;
 	var longSpin:Bool = false;
 	var burnShit:Bool = false;
@@ -3259,35 +3261,55 @@ class PlayState extends MusicBeatState
 					case 64:
 						camHUD.visible = true;
 					case 448:
+						if (!antiStack){
 						PlayStateChangeables.scrollSpeed = 3;
 						curScroll = PlayStateChangeables.scrollSpeed;
+						}
 					case 704:
+						if (!antiStack){
 						PlayStateChangeables.scrollSpeed = 2.5;
 						curScroll = PlayStateChangeables.scrollSpeed;
+						}
 					case 832:
+						if (!antiStack){
 						PlayStateChangeables.scrollSpeed = 3.1;
 						curScroll = PlayStateChangeables.scrollSpeed;
+						}
 					case 864:
+						if (!antiStack){
 						PlayStateChangeables.scrollSpeed = 2.6;
 						curScroll = PlayStateChangeables.scrollSpeed;
+						}
 					case 880:
+						if (!antiStack){
 						PlayStateChangeables.scrollSpeed = 3.2;
 						curScroll = PlayStateChangeables.scrollSpeed;
+						}
 					case 896:
-						PlayStateChangeables.scrollSpeed = 3.1;
-						curScroll = PlayStateChangeables.scrollSpeed;
+						if (!antiStack){						
+							PlayStateChangeables.scrollSpeed = 3.1;
+						    curScroll = PlayStateChangeables.scrollSpeed;
+					    }
 					case 928:
-						PlayStateChangeables.scrollSpeed = 2.6;
-						curScroll = PlayStateChangeables.scrollSpeed;
+						if (!antiStack){
+						    PlayStateChangeables.scrollSpeed = 2.6;
+						    curScroll = PlayStateChangeables.scrollSpeed;
+						}
 					case 944:
-						PlayStateChangeables.scrollSpeed = 3.2;
-						curScroll = PlayStateChangeables.scrollSpeed;
+						if (!antiStack){
+						    PlayStateChangeables.scrollSpeed = 3.2;
+						    curScroll = PlayStateChangeables.scrollSpeed;
+					    }
 					case 992:
-						PlayStateChangeables.scrollSpeed = 2.5;
-						curScroll = PlayStateChangeables.scrollSpeed;
+						if (!antiStack){
+						    PlayStateChangeables.scrollSpeed = 2.5;
+						    curScroll = PlayStateChangeables.scrollSpeed;
+						}
 					case 1072:
-						PlayStateChangeables.scrollSpeed = 3;
-						curScroll = PlayStateChangeables.scrollSpeed;
+						if (!antiStack){
+						    PlayStateChangeables.scrollSpeed = 3;
+						    curScroll = PlayStateChangeables.scrollSpeed;
+						}
 				}
 			}
 
@@ -3604,6 +3626,10 @@ class PlayState extends MusicBeatState
 			vocals.stop();
 			FlxG.sound.music.stop();
 
+			if (curSong != 'Frontierjustice' && firstDeath)
+			{
+				firstDeath = false;
+			}
 			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 
 			#if windows
@@ -4286,7 +4312,7 @@ class PlayState extends MusicBeatState
 										}
 										else 
 											{
-											if (!daNote.disguise && !daNote.bonk && !daNote.huntsman)
+											if (!daNote.disguise && !daNote.bonk && !daNote.huntsman && !daNote.saw)
 												{
 													goodNoteHit(daNote);
 													boyfriend.holdTimer = daNote.sustainLength;
@@ -6142,7 +6168,7 @@ class PlayState extends MusicBeatState
 					#end
 
 					if (note.disguise) //disguise
-						    health += -10;
+						    instaKill();
 
 					if (note.snoiper) //GOOD SHOT MATE!
 						{
@@ -6153,35 +6179,7 @@ class PlayState extends MusicBeatState
 						{
 							if (!antiStack)
 								{
-									add(bonkBOT);
-									antiStack = true;
-									stupid = true;
-									if (FlxG.save.data.funniSounds)
-									    FlxG.sound.play(Paths.sound('drink'));
-
-									new FlxTimer().start(8, function(tmr:FlxTimer) // me when nested flx timers 
-										{
-											remove(bonkBOT);
-											stupid = false;
-											PlayStateChangeables.scrollSpeed = 1.5;
-											if (FlxG.save.data.funniSounds)
-											    FlxG.sound.play(Paths.sound('stunScunt'));
-	
-											trace("ok done");
-	
-											new FlxTimer().start(6, function(tmr:FlxTimer)
-												{
-													trace("scroll speed shit");
-	
-													PlayStateChangeables.scrollSpeed = curScroll;
-	
-													new FlxTimer().start(1.5, function(tmr:FlxTimer)
-														{
-															antiStack = false;
-															trace("ah hell nah stacking");
-														});
-												});
-										});
+									boink();
 								}
 								else
 								{
@@ -6309,6 +6307,37 @@ class PlayState extends MusicBeatState
 	function instaKill():Void
 		{
 			health -= 100;
+		}
+	function boink():Void
+		{
+			add(bonkBOT);
+			antiStack = true;
+			stupid = true;
+			if (FlxG.save.data.funniSounds)
+				FlxG.sound.play(Paths.sound('drink'));     // shut up heat
+			new FlxTimer().start(8, function(tmr:FlxTimer) // me when nested flx timers 
+				{
+					remove(bonkBOT);
+					stupid = false;
+					PlayStateChangeables.scrollSpeed = 1.5;
+					if (FlxG.save.data.funniSounds)
+						FlxG.sound.play(Paths.sound('stunScunt'));
+
+					trace("ok done");
+
+					new FlxTimer().start(6, function(tmr:FlxTimer)
+						{
+							trace("scroll speed shit");
+
+							PlayStateChangeables.scrollSpeed = curScroll;
+
+							new FlxTimer().start(1.5, function(tmr:FlxTimer)
+								{
+									antiStack = false;
+									trace("ah hell nah stacking");
+								});
+						});
+				});
 		}
 	function infernoSwitch(timing:Int, iconPl1:String, iconPl2:String, pyroLand:Bool):Void
 		{
@@ -6804,9 +6833,6 @@ class PlayState extends MusicBeatState
 			funnyY = -5;
 			what = true;
 		}
-	
-		var jumpscareSizeInterval:Float = 1.625;
-
 	function jumpscare(duration:Float, jumpScareAlpha:Float) 
 		{
 			jumpScare.visible = true;

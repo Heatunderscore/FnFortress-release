@@ -1,0 +1,10 @@
+:sniper: !0.04! There. I played your game. Now git lost!
+:bf: !0.04! Bipp Bopp...
+:gf: !0.04! Heard ya chuckling during that, don't wanna admit that that was fun?
+:sniper: !0.04! Like hell I was bloody piker!
+:sniper: !0.04! Shoo! Git lost! Can't have kids 'round here interfering with my job!
+:gf: !0.04! Ok ok sheesh.
+:bf: !0.04! Braap.
+:none: !0.08! -BF and GF leave
+:sniper: !0.1! ...
+:sniper: !0.08! Heh...

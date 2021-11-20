@@ -1,7 +1,11 @@
 package;
 
+import flixel.text.FlxText;
 import flixel.FlxBasic;
 import flixel.FlxG;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.addons.text.FlxTypeText;
 import flixel.FlxObject;
 import flixel.FlxSubState;
 import flixel.math.FlxPoint;
@@ -15,6 +19,9 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	var stageSuffix:String = "";
 	var daBf:String = '';
+	var youFuckingSuck:FlxTypeText;
+	var yesNo:FlxText;
+	var firstTime:Bool = PlayState.firstDeath;
 
 	public function new(x:Float, y:Float)
 	{
@@ -59,7 +66,8 @@ class GameOverSubstate extends MusicBeatSubstate
 					case 'barnblitz-heavy':
 						FlxG.sound.play(Paths.soundRandom('death/heavy_', 1, 4),1);
 					case 'barnblitz-engi':
-						FlxG.sound.play(Paths.soundRandom('death/engi_', 1, 4),1);
+						if (!firstTime)
+						    FlxG.sound.play(Paths.soundRandom('death/engi_', 1, 4),1);
 					case 'snake-sniper':
 						FlxG.sound.play(Paths.soundRandom('death/sniper_', 1, 3),1);
 					case 'snake-medic':
@@ -94,23 +102,64 @@ class GameOverSubstate extends MusicBeatSubstate
 		FlxG.camera.target = null;
 
 		bf.playAnim('firstDeath');
+
+		if (PlayState.firstDeath && daStage == 'barnblitz-engi')
+		{
+			youFuckingSuck = new FlxTypeText(75, 20, 0, "Darn, might've gone a little too hard on ya. Still up for it?", 24);
+			youFuckingSuck.font = 'TF2 Build';
+			youFuckingSuck.color = 0xFFFFFFFF;
+			youFuckingSuck.sounds = [FlxG.sound.load(Paths.sound('death/engineer'), 1)];
+			youFuckingSuck.scrollFactor.set();
+			add(youFuckingSuck);
+
+			yesNo = new FlxText(0, 55, 0, "RESTART(7)         CONTINUE(8)", 24);
+			yesNo.font = 'TF2 Build';
+			yesNo.color = 0xFFFFFFFF;
+			yesNo.scrollFactor.set();
+			yesNo.screenCenter(X);
+			yesNo.alpha = 0;
+			add(yesNo);
+
+			youFuckingSuck.start(0.06, true);
+		}
 	}
 	var startVibin:Bool = false;
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 
-		if (controls.ACCEPT)
+		if (PlayState.firstDeath)
+		{
+		    if (!youFuckingSuck._typing)
+			{
+				FlxTween.tween(yesNo, {alpha: 100}, 1.3, {ease: FlxEase.linear});
+			}
+		}
+
+
+		if (controls.ACCEPT && !firstTime)
 		{
 			endBullshit();
 		}
 
-		if(FlxG.save.data.InstantRespawn)
+		if(FlxG.save.data.InstantRespawn && !firstTime)
 			{
 				LoadingState.loadAndSwitchState(new PlayState());
 			}
 
-		if (controls.BACK)
+		if (FlxG.keys.justPressed.EIGHT && firstTime)
+			{
+				FlxG.save.data.unlockedWeek = 2;
+				FlxG.save.data.buttonUnlockingShit = 6;
+				LoadingState.loadAndSwitchState(new Contract());
+			}
+
+		if (FlxG.keys.justPressed.SEVEN && firstTime)
+		{
+			endBullshit();
+		}
+
+		if (controls.BACK && !firstTime)
 		{
 			FlxG.sound.music.stop();
 
@@ -171,6 +220,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				FlxG.camera.fade(FlxColor.BLACK, 2, false, function()
 				{
+					PlayState.firstDeath = false;
 					LoadingState.loadAndSwitchState(new PlayState());
 				});
 			});

@@ -1,1 +1,17 @@
-:sniper: sas
+:sniper: !0.04! Steady...
+:sniper: !0.04! Steady...
+:bf: !0.04! Beep!
+:sniper: !0.02! Huh? Who's there?
+:bf: !0.04! Skibopp
+:sniper: !0.04! Who the bloody hell are you?
+:gf: !0.04! No introductions. Rap battle. Now
+:sniper: !0.02! What the-
+:sniper: !0.04! Look kids, I don't got all the time in the world and I have a job to finish.
+:sniper: !0.04! So why don't you scurry off back into the bush you two came from and find someone else?
+:gf: !0.04! Uhh we're not leaving until you accept.
+:sniper: !0.04! I'm not interested in playing your rubbish game city wankers.
+:bf: !0.04! Skobipp
+:sniper: !0.04! I'm warnin you again, it might not be wise to ask for an arrow in your spleen...
+:bf: !0.04! b e e p.
+:sniper: !0.04! ...
+:sniper: !0.08! (Kids... bloody hate them)

@@ -42,15 +42,12 @@ class DialogueBox extends FlxSpriteGroup
 
 		switch (PlayState.SONG.song.toLowerCase())
 		{
-			case 'senpai':
-				FlxG.sound.playMusic(Paths.music('Lunchbox'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'thorns':
-				FlxG.sound.playMusic(Paths.music('LunchboxScary'), 0);
+			default:
+				FlxG.sound.playMusic(Paths.music('breakfast', 'shared'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
-		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFFB3DFd8);
+		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 5), Std.int(FlxG.height * 5), 0xFFB3DFd8);
 		bgFade.scrollFactor.set();
 		bgFade.alpha = 0;
 		add(bgFade);
@@ -68,7 +65,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case 'atomicpunch' | 'maggots' | 'inferno' | 'ironbomber' | 'ironcurtain' | 'frontierjustice' | 'clinicaltrial'
-			| 'wanker' | 'infiltrator' | 'property damage' | 'honorbound' | 'yourmom':
+			| 'wanker' | 'infiltrator' | 'property damage' | 'honorbound':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -315,6 +312,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/demo');
 				portraitLeft.animation.addByPrefix('enter', 'demo talk', 24, false);
+				swagDialogue.color = 0xFF8B4513;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/demo'), 0.6)];
 				if (!portraitLeft.visible)
 				{
@@ -411,6 +409,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitLeft.visible = false;
 				portraitRight.frames = Paths.getSparrowAtlas('dialogue/bf');
 				portraitRight.animation.addByPrefix('enter', 'bf talk', 24, false);
+				swagDialogue.color = 0xFF00FFFF;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/bf'), 0.6)];
 				if (!portraitRight.visible)
 				{
@@ -424,6 +423,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitLeft.visible = false;
 				portraitRight.frames = Paths.getSparrowAtlas('dialogue/gf');
 				portraitRight.animation.addByPrefix('enter', 'gf talk', 24, false);
+				swagDialogue.color = 0xFFFF0000;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/gf'), 0.6)];
 				if (!portraitRight.visible)
 				{
@@ -434,12 +434,27 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
+				swagDialogue.color = 0xFF000000;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 			case 'no':
 				box.flipX = true;
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
+				swagDialogue.color = 0xFF8B4513;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/demo'), 0.6)];
+			case 'snoiper':
+				box.flipX = true;
+				portraitRight.visible = false;
+				portraitLeft.visible = false;
+				portraitRight.frames = Paths.getSparrowAtlas('dialogue/snoiper');
+				swagDialogue.color = 0xFF000000;
+				portraitRight.animation.addByPrefix('enter', 'bot talk', 24, false);
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/sniper'), 0.6)];
+				if (!portraitLeft.visible)
+				{
+					portraitLeft.visible = true;
+					portraitLeft.animation.play('enter');
+				}
 		}
 	}
 
