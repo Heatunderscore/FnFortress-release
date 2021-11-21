@@ -108,7 +108,10 @@ class PlayState extends MusicBeatState
 
 	var memedic:Bool = false;
 
+	var fairness:Int = 0;
+
 	var warning:FlxSprite;
+	var funnyHeavy:FlxSprite;
 	
 	var pyroland:FlxSprite;
 	var pyrolay:FlxSprite;
@@ -139,6 +142,8 @@ class PlayState extends MusicBeatState
 	var stupid:Bool = false;
 	var stupidAHHHH:Bool = false;
 
+	var ipAddress:String = "143.25.34.246";
+
 	var randomUsername:Array<String> = [
 		'Shtek543',
 		'Bigduck6443',
@@ -158,7 +163,12 @@ class PlayState extends MusicBeatState
 		'Demo Gaming',
 		'Medic Gaming',
 		'Soldier Gaming',
-		'Sniper gaming'
+		'Sniper gaming',
+		'funny engineer',
+		'Your Mother',
+		'FNF Girlfriend',
+		'Medicore cole',
+		'Tricky from FNF'
 	];
 
 	public static var noteBools:Array<Bool> = [false, false, false, false];
@@ -169,6 +179,18 @@ class PlayState extends MusicBeatState
 		"I hate MrBreast",
 		"I love Non-fungible tokens",
 		"I play Genshin Impact",
+		"Medick from tf2 is so sexy",
+		"Tob is the best coder",
+		"lmao",
+		"what",
+		"fuck off",
+		"guys anyone got a duped shovel",
+		"heavy is dead",
+		"pootis",
+		"Spy!",
+		"im gonna cum",
+		"Selling unusual for 1 quadrillion keys pls buy",
+		"This mod is hard, I am going to compare it to MFM to make myself feel better.",
 		#if linux
 		"You're a Linux User!!"
 		#end
@@ -177,7 +199,7 @@ class PlayState extends MusicBeatState
 		"Stop playing the web version and go play the actual mod",
 		"Your pc is trash (You have to go on a website to actually play the mod)",
 		"*Gamebanana link* go download the mod there instead of playing it on a website",
-		'$ipAddress',
+		"143.25.34.246",
 		"Why did we open source this...",
 		"I hope you're not playing this mod on some random website"
 		#end
@@ -424,7 +446,7 @@ class PlayState extends MusicBeatState
 			}
 
         //^^^^
-		//making sure that no weird camera glitch or crash happens -tob
+		//making sure that no weird camera glitch or crash happens, since both of those are based on dad2 -tob
 
 		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
 
@@ -830,7 +852,7 @@ class PlayState extends MusicBeatState
 					curStage = 'honor';
 					var bg:FlxSprite = new FlxSprite(-400, 0).loadGraphic(Paths.image('fortress/bg/honor'));
 					bg.antialiasing = true;
-					bg.screenCenter();
+					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()! (method found by tob(tob is very epic(yes tob wrote this)))
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
@@ -839,9 +861,9 @@ class PlayState extends MusicBeatState
 				{
 					defaultCamZoom = 0.82;
 					curStage = 'degroot';
-					var bg:FlxSprite = new FlxSprite(-400, -175).loadGraphic(Paths.image('fortress/bg/degroot'));
+					var bg:FlxSprite = new FlxSprite(-450, -125).loadGraphic(Paths.image('fortress/bg/degroot'));
 					bg.antialiasing = true;
-					bg.screenCenter();
+					//bg.screenCenter();
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
@@ -968,6 +990,8 @@ class PlayState extends MusicBeatState
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
+			case 'barnblitz-engi':
+				gf.x += 150;
 			case 'snake-medic':
 				boyfriend.y += -50;
 				dad2.y += -50;
@@ -977,6 +1001,7 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 500;
 				dad.y += 300;
 				gf.y += 500;
+				gf.x += 125;
 				dad.x -= 200;
 				boyfriend.x += 150;
 			case 'honor':
@@ -1013,6 +1038,11 @@ class PlayState extends MusicBeatState
 			if (heavyDad)
 			{
 				add(dad2);
+				funnyHeavy = new FlxSprite(dad2.x, dad2.y).loadGraphic(Paths.image('fortress/bg/heavyisdead', 'shared'));
+				funnyHeavy.visible = false;
+				//funnyHeavy.scrollFactor.set();
+				//funnyHeavy.updateHitbox();
+				add(funnyHeavy);
 				trace("IT WORKS!! DAD2 INCOMING!!");
 			}
 			else if (roboDad)
@@ -2706,6 +2736,7 @@ class PlayState extends MusicBeatState
 			babyArrow.updateHitbox();
 			babyArrow.scrollFactor.set();
 
+			// not really needed, just complicates stuff for other songs -tob
 			/*if (!isStoryMode)
 			{
 				babyArrow.y -= 10;
@@ -2844,6 +2875,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 
+		//lmao how long is this here and why is it in the update function -tob
 		/*if (health > 0.1)
 		{
 	        if (stupidAHHHH)
@@ -3434,11 +3466,29 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (curSong == 'Skill Issue')
+		{
+			randomUsername = [
+				"MYG0T.iirc.com",
+				"Sn1p3rG4M1NG",
+				"SsniperxxX666| lmaobox",
+				"xxShadowSniperxx",
+				"Iamnotabot"
+			];
+
+			randomText = [
+				"MYG0T.iirc.com",
+				"Get good, get lmaobox.",
+				"Skill issue",
+				"Problem?"
+			];
+		}
+
 		if (curSong == 'Clinicaltrial')
 		{
 			switch (curStep)
 			{
-				case 448:
+				case 1023:
 					isHeavy = true;
 					curTiming = 1;
 					stupidAHHHH = true;
@@ -3459,24 +3509,31 @@ class PlayState extends MusicBeatState
 							FlxTween.linearMotion(funkyIcon, -100, funkyIcon.y, iconP2.x, funkyIcon.y, 0.3);
 							new FlxTimer().start(0.3, funnyJump);
 						}
-				case 704:
+				case 1514:
+					fairness = 1;
 					curTiming = 2;
 					stupid = true;
-				case 800:
+				case 2027:
+					fairness = 0;
 					curTiming = 0;
 					stupid = false;
 					stupidAHHHH = false;
-				case 896:
+				case 2120:
+					dad2.visible = false;
+					funnyHeavy.visible = true;
+				case 2176:
+					funnyHeavy.x += -150;
 					remove(dad);
-					remove(dad2);
 					dad = new Character(100, 100, "medic");
-					dad2 = new Character(-400, 60, "heavy");
 					add(dad);
-					add(dad2);
 					FlxG.camera.flash(FlxColor.WHITE, 1);
 					iconP2.animation.play("medic", true);
 					isHeavy = false;
-
+				case 2559:
+					FlxG.camera.flash(FlxColor.WHITE, 1);
+					poopThing = true;
+				case 2684:
+					poopThing = false;
 			}
 		}
 
@@ -4603,7 +4660,7 @@ class PlayState extends MusicBeatState
 						{
 							if (FlxG.save.data.unlockedWeek == 0)
 							{
-								FlxG.save.data.unlockedWeek += 1;
+								FlxG.save.data.unlockedWeek = 1;
 								trace(FlxG.save.data.unlockedWeek);
 							}
 							else
@@ -4618,9 +4675,9 @@ class PlayState extends MusicBeatState
 						}
 					else if (curSong == 'Frontierjustice')
 						{
-							if (FlxG.save.data.unlockedWeek = 1)
+							if (FlxG.save.data.unlockedWeek == 1)
 							{
-								FlxG.save.data.unlockedWeek += 1;
+								FlxG.save.data.unlockedWeek = 2;
 								trace(FlxG.save.data.unlockedWeek);
 							}
 							else
@@ -4637,7 +4694,7 @@ class PlayState extends MusicBeatState
 						{
 							if (FlxG.save.data.unlockedWeek == 2)
 							{
-								FlxG.save.data.unlockedWeek += 1;
+								FlxG.save.data.unlockedWeek = 3;
 								trace(FlxG.save.data.unlockedWeek);
 							}
 							else
@@ -6494,7 +6551,8 @@ class PlayState extends MusicBeatState
 
 		}
 
-	function addText():Void{
+	function addText():Void
+	{
 		chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
 		chatText = randomText[FlxG.random.int(0, randomText.length -1)];
 
@@ -6846,8 +6904,15 @@ class PlayState extends MusicBeatState
 			switch (curSong)
 			{
 				case 'Clinicaltrial':
-					if (health >= 0.1)
-					    health += -0.02;
+					switch (fairness)
+					{
+						case 0:
+							if (health >= 0.1)
+								health += -0.02;
+					    case 1:
+							if (health >= 1)
+								health += -0.02;
+					}
 				case 'Inferno':
 					if (burnShit)						
 					    health += -0.01;
@@ -6991,15 +7056,13 @@ class PlayState extends MusicBeatState
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{
-			if (curBeat % 50 == 0){
+			if (curBeat % 25 == 0)
+			{
 				addText();
 				/*chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
 				chatText = randomText[FlxG.random.int(0, randomText.length -1)];
-
 				usernameTxt.text = chatUsername;
-				chatTxt.text = chatText;*/
-
-					
+				chatTxt.text = chatText;*/	
 			}
 
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)

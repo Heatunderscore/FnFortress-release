@@ -1,12 +1,14 @@
-:soldier: !0.04! DAMMIT!
-:soldier: !0.04! Words cannot express how much I hate you!!!
-:gf: !0.04! So you think I'm a commie just because I'm wearing red?
-:soldier: !0.04! Of course! Everyone knows that Commies wear red!
-:soldier: !0.04! And I. Hate. Commies!
-:gf: !0.04! If that's the case, why are you wearing red?
-:soldier: !0.04! What.
-:gf: !0.04! Look at yourself, you are on the RED team. Wearing red uniforms.
-:soldier: !0.04! Dear god....
-:soldier: !0.04! NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-:bf: !0.04! Bep bop boop?
-:gf: !0.04! Lets get out of here.
+:soldier: !0.04! ;0; DAMMIT!
+:soldier: !0.04! ;0; Words cannot express how much I hate you!!!
+:gf: !0.04! ;0; So you think I'm a commie just because I'm wearing red?
+:soldier: !0.04! ;0; Of course! Everyone knows that Commies wear red!
+:soldier: !0.08! ;0; And I.
+:soldier: !0.1! ;1; Hate.
+:soldier: !0.1! ;1; Commies!
+:gf: !0.04! ;0; If that's the case, why are you wearing red?
+:soldier: !0.04! ;0; What.
+:gf: !0.04! ;0; Look at yourself, you are on the RED team. Wearing red uniforms.
+:soldier: !0.04! ;0; Dear god....
+:soldier: !0.04! ;1; NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+:bf: !0.04! ;0; Bep bop boop?
+:gf: !0.04! ;0; Lets get out of here.

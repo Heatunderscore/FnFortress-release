@@ -1,17 +1,17 @@
-:scunt: !0.07! Wha-?
-:bf: !0.04! Bep
-:scunt: !0.04! Alright who the freak let this kid onto the battlegrounds? and why does he have such a hot lady with him?
-:bf: !0.04! Bepbep
-:scunt: !0.04! Move out of the way shorty, I got a job to finish here and I don't have ti-
-:bf: !0.04! Beeeeeeepop
-:scunt: !0.1! ...What?
-:bf: !0.04! Bopp bipp
-:scunt: !0.1! Uhhhh......
-:bf: !0.04! Ugh... I challenge you to a rap battle. Got it now?
-:scunt: !0.08! A rap battle?
-:scunt: !0.04! Look kid, I don't have time to play your dumb game-
-:gf: !0.04! What? Too scared you might lose to a shorty who's dick is twice as tall as you?
-:scunt: !1! ...
-:scunt: !0.04! Oh I'll show you whos the scared one after this session of embarrassment. 
-:scunt: !0.04! Prepare to wave goodbye to your social confidence, babyface!
-:bf: !0.04! Beep!
+:scunt: !0.07! ;1; Wha-?
+:bf: !0.04! ;0; Bep
+:scunt: !0.04! ;0; Alright who the freak let this kid onto the battlegrounds? and why does he have such a hot lady with him?
+:bf: !0.04! ;0; Bepbep
+:scunt: !0.04! ;1; Move out of the way shorty, I got a job to finish here and I don't have ti-
+:bf: !0.04! ;0; Beeeeeeepop
+:scunt: !0.1! ;0; ...What?
+:bf: !0.04! ;0; Bopp bipp
+:scunt: !0.1! ;0; Uhhhh......
+:bf: !0.04! ;0; Ugh... I challenge you to a rap battle. Got it now?
+:scunt: !0.08! ;0; A rap battle?
+:scunt: !0.04! ;1; Look kid, I don't have time to play your dumb game-
+:gf: !0.04! ;0; What? Too scared you might lose to a shorty who's dick is twice as tall as you?
+:scunt: !1! ;0; ...
+:scunt: !0.04! ;0; Oh I'll show you whos the scared one after this session of embarrassment. 
+:scunt: !0.04! ;0; Prepare to wave goodbye to your social confidence, babyface!
+:bf: !0.04! ;0; Beep!

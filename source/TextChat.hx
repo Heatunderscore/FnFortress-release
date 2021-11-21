@@ -27,8 +27,6 @@ class TextChat extends FlxText
         if (prevNote == null)
 			prevNote = this;
         this.prevMsg = prevMsg;
-
-
     }
 
     override function update(elapsed:Float)

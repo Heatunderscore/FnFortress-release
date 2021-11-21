@@ -5,5 +5,5 @@
 :bf: !0.04! Bepbop Bepo
 :pyro: !0.04! Hudah
 :bf: !0.04! Bebop Bopeebo
-:pyro: !0.04! Hunghunghud
+:pyro: !0.04! ;1; Hunghunghud
 :gf: !0.1! Okay.

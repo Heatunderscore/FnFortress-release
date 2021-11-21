@@ -1,12 +1,12 @@
-:scunt: !0.01! Wh-
-:scunt: !0.04! What?
-:scunt: !0.04! This did not just happen!
-:gf: !0.04! Oh but it did.
-:gf: !0.04! Did you really think you can beat my big thick stick dick boyfriend in a rap battle?
-:scunt: !0.04! Hnggh!
-:scunt: !0.04! You know what? You've pissed me off hard enough.
-:scunt: !0.04! So might as well finish the job here. Nobody EVER crosses me.
-:scunt: !0.04! *cocks gun* 
-:scunt: !0.04! Say goodbye to your kneecaps chucklehead!
-:gf: !0.04! Ok bye now!
-:bf: !0.04! bep!
+:scunt: !0.01! ;1; Wh-
+:scunt: !0.04! ;0; What?
+:scunt: !0.04! ;0; This did not just happen!
+:gf: !0.04! ;0; Oh but it did.
+:gf: !0.04! ;0; Did you really think you can beat my big thick stick dick boyfriend in a rap battle?
+:scunt: !0.04! ;0; Hnggh!
+:scunt: !0.04! ;0; You know what? You've pissed me off hard enough.
+:scunt: !0.04! ;0; So might as well finish the job here. Nobody EVER crosses me.
+:scunt: !0.04! ;0; *cocks gun* 
+:scunt: !0.04! ;0; Say goodbye to your kneecaps chucklehead!
+:gf: !0.04! ;0; Ok bye now!
+:bf: !0.04! ;0; bep!

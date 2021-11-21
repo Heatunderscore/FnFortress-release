@@ -27,6 +27,7 @@ class DialogueBox extends FlxSpriteGroup
 	var dropText:FlxText;
 
 	var delay:Float = 0.04;
+	var skip:Int = 0;
 
 	public var finishThing:Void->Void;
 
@@ -43,7 +44,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			default:
-				FlxG.sound.playMusic(Paths.music('breakfast', 'shared'), 0);
+				FlxG.sound.playMusic(Paths.music('looking_for_a_server', 'shared'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
@@ -233,17 +234,25 @@ class DialogueBox extends FlxSpriteGroup
 		this var is private by default, you can control + click on it to get to the file where its stored and
 		change it to a public var which will make it accessible for you -tob
 		*/
-		/*if (swagDialogue._typing && delay < 1)
+		if (swagDialogue._typing && delay < 1)
 			{
 				portraitLeft.animation.play('enter');
 				portraitRight.animation.play('enter');
 			}
-		else if (!swagDialogue.__typing && delay >= 1)
+		else if (!swagDialogue._typing && delay >= 1)
 			{
 				portraitLeft.animation.stop;
 				portraitRight.animation.stop;
-			}*/
+			}
 		
+		
+		if (!swagDialogue._typing && skip == 1)
+		{
+			remove(dialogue);
+			FlxG.sound.play(Paths.sound('clickText'), 0.8);
+			dialogueList.remove(dialogueList[0]);
+			startDialogue();
+		}
 		//curDad = PlayState.SONG.player2;
 
 		super.update(elapsed);
@@ -493,10 +502,20 @@ class DialogueBox extends FlxSpriteGroup
 		delay = splitDelay[1];
 		dialogueList[0] = dialogueList[0].substr(splitDelay[1].length + 2).trim();
 
+		// made it dynamic so i can use integer
+		var splitSkip:Array<Dynamic> = dialogueList[0].split(";");
+		skip = splitSkip[1];
+		dialogueList[0] = dialogueList[0].substr(splitSkip[1].length + 2).trim();
+
 		// fuck off
-		if (delay == 0)
+		if (splitDelay == null)
 		{
 			delay = 0.04;
+		}
+		// fuck off x2
+		if (splitSkip == null)
+		{
+			skip = 0;
 		}
 	}
 }
