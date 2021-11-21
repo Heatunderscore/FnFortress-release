@@ -130,10 +130,10 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (PlayState.firstDeath)
 		{
-		    if (!youFuckingSuck._typing)
+		    /*if (!youFuckingSuck._typing)
 			{
 				FlxTween.tween(yesNo, {alpha: 100}, 1.3, {ease: FlxEase.linear});
-			}
+			}*/
 		}
 
 

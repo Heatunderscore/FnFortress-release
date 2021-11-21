@@ -104,11 +104,12 @@ class PlayState extends MusicBeatState
 	var cumBOT:FlxTrail;
 	var bonkBOT:FlxTrail;
 	var curTiming:Int = 0;
+	
 
 	var memedic:Bool = false;
 
 	var warning:FlxSprite;
-
+	
 	var pyroland:FlxSprite;
 	var pyrolay:FlxSprite;
 	var blakShit:FlxSprite;
@@ -138,14 +139,58 @@ class PlayState extends MusicBeatState
 	var stupid:Bool = false;
 	var stupidAHHHH:Bool = false;
 
+	var randomUsername:Array<String> = [
+		'Shtek543',
+		'Bigduck6443',
+		'Feetlover5',
+		'Taylor',
+		'Jurgenchung',
+		'Sugmadickus',
+		'I-like-ass543',
+		'Maurice',
+		'heat',
+		'TobTheDev',
+		'Engineer Gaming',
+		'Scout Gaming',
+		'Spy Gaming',
+		'Heavy gaming',
+		'Pyro Gaming',
+		'Demo Gaming',
+		'Medic Gaming',
+		'Soldier Gaming',
+		'Sniper gaming'
+	];
+
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
+	var randomText:Array<String> = [
+		"I love Children So Much!!!",
+		"I hate gay people",
+		"I hate MrBreast",
+		"I love Non-fungible tokens",
+		"I play Genshin Impact",
+		#if linux
+		"You're a Linux User!!"
+		#end
+
+		#if html5
+		"Stop playing the web version and go play the actual mod",
+		"Your pc is trash (You have to go on a website to actually play the mod)",
+		"*Gamebanana link* go download the mod there instead of playing it on a website",
+		'$ipAddress',
+		"Why did we open source this...",
+		"I hope you're not playing this mod on some random website"
+		#end
+	];
 
 	var fidgetspinner:Array<Int>;
 	var clok:Array<Int>;
 	var soldierShits:Array<Int>;
 	var warnings:Array<Int>;
 	var jumpscares:Array<Int>;
+
+	var gay:String;
+	//gay = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + chatText[FlxG.random.int(0, chatText.length -1)];
 
 	var jumpVal:Int = 0;
 
@@ -347,6 +392,11 @@ class PlayState extends MusicBeatState
 	var saxTrail:FlxTrail;
 	var bfTrail:FlxTrail;
 
+	var chatUsername:String;
+	var chatText:String;
+
+	var usernameTxt:FlxText;
+	var chatTxt:FlxText;
 
 	// API stuff
 	
@@ -356,6 +406,12 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
+		chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
+		chatText = randomText[FlxG.random.int(0, randomText.length -1)];
+
+		/*gay = randomUsername[FlxG.random.int(0, randomUsername.length -1)] +
+		':' + chatText[FlxG.random.int(0, chatText.length -1)];*/
+
 		FlxG.mouse.visible = false;
 
 		if (isHeavy)
@@ -366,6 +422,7 @@ class PlayState extends MusicBeatState
 			{
 				isRobo = false;
 			}
+
         //^^^^
 		//making sure that no weird camera glitch or crash happens -tob
 
@@ -1185,6 +1242,16 @@ class PlayState extends MusicBeatState
 		    healthBarBG.scrollFactor.set();
 		}
 
+		usernameTxt = new FlxText(25,640, 0, chatUsername);
+		usernameTxt.scale.set(1.2, 1.2);
+		usernameTxt.setFormat(Paths.font("tf2build.ttf"), 16, FlxColor.RED, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		usernameTxt.scrollFactor.set();
+
+		chatTxt = new FlxText(usernameTxt.x + 150, usernameTxt.y, chatText);
+		chatTxt.scale.set(1.2, 1.2);
+		chatTxt.setFormat(Paths.font("tf2build.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+		chatTxt.scrollFactor.set();
+
 		add(healthBarBG);
 
 
@@ -1285,6 +1352,12 @@ class PlayState extends MusicBeatState
 		pyrolay.antialiasing = true;
 		pyrolay.visible = false;
 
+		usernameTxt.alpha = 0;
+		chatTxt.alpha = 0;
+		
+		add(usernameTxt);
+		add(chatTxt);
+
 		if (maggots)
 		{
 			add(warning);
@@ -1304,6 +1377,8 @@ class PlayState extends MusicBeatState
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
+		usernameTxt.cameras = [camHUD];
+		chatTxt.cameras = [camHUD];
 		//doof.cameras = [camHUD];
 		if (FlxG.save.data.songPosition)
 		{
@@ -2248,6 +2323,7 @@ class PlayState extends MusicBeatState
 		FlxG.sound.music.onComplete = songOutro;
 		vocals.play();
 
+
 		// Song duration in a float, useful for the time left feature
 		songLength = FlxG.sound.music.length;
 
@@ -2742,6 +2818,9 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+
+		chatTxt.x = usernameTxt.x + (chatUsername.length * 14);
+
 		elapsedtime += elapsed;
 		#if !debug
 		perfectMode = false;
@@ -3334,6 +3413,9 @@ class PlayState extends MusicBeatState
 		if (curSong == 'Monochrome')
 		{
 			notes.forEachAlive(function(note:Note){note.alpha = 0.7;});
+
+			randomUsername = ['Scout'];
+			randomText = ["I'm dead!"];
 
 			for (i in cpuStrums) 
 				{
@@ -6412,6 +6494,24 @@ class PlayState extends MusicBeatState
 
 		}
 
+	function addText():Void{
+		chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
+		chatText = randomText[FlxG.random.int(0, randomText.length -1)];
+
+		usernameTxt.text = chatUsername;
+		chatTxt.text = chatText;
+
+		usernameTxt.alpha = 1; 
+		chatTxt.alpha = 1;
+
+		new FlxTimer().start(3, function(tmr:FlxTimer)
+			{
+				trace('tweening');
+				FlxTween.tween(usernameTxt, {alpha:0}, 0.5);
+				FlxTween.tween(chatTxt, {alpha:0}, 0.5);
+			});
+	}
+
 	function badNoteHit():Void
 		{
 			boyfriend.playAnim('hit', true);
@@ -6891,6 +6991,17 @@ class PlayState extends MusicBeatState
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{
+			if (curBeat % 50 == 0){
+				addText();
+				/*chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
+				chatText = randomText[FlxG.random.int(0, randomText.length -1)];
+
+				usernameTxt.text = chatUsername;
+				chatTxt.text = chatText;*/
+
+					
+			}
+
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
 			{
 				Conductor.changeBPM(SONG.notes[Math.floor(curStep / 16)].bpm);
