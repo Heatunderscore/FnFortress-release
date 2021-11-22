@@ -144,7 +144,7 @@ class PlayState extends MusicBeatState
 
 	var ipAddress:String = "143.25.34.246";
 
-	var randomUsername:Array<String> = [
+	var randomUsername:Array<String> = [ //picks a random username to display in chat -heat
 		'Shtek543',
 		'Bigduck6443',
 		'Feetlover5',
@@ -173,7 +173,7 @@ class PlayState extends MusicBeatState
 
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
-	var randomText:Array<String> = [
+	var randomText:Array<String> = [ //picks a random message to display in the chat -heat.
 		"I love Children So Much!!!",
 		"I hate gay people",
 		"I hate MrBreast",
@@ -212,7 +212,6 @@ class PlayState extends MusicBeatState
 	var jumpscares:Array<Int>;
 
 	var gay:String;
-	//gay = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + chatText[FlxG.random.int(0, chatText.length -1)];
 
 	var jumpVal:Int = 0;
 
@@ -430,9 +429,6 @@ class PlayState extends MusicBeatState
 	{
 		chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
 		chatText = randomText[FlxG.random.int(0, randomText.length -1)];
-
-		/*gay = randomUsername[FlxG.random.int(0, randomUsername.length -1)] +
-		':' + chatText[FlxG.random.int(0, chatText.length -1)];*/
 
 		FlxG.mouse.visible = false;
 
@@ -1274,7 +1270,9 @@ class PlayState extends MusicBeatState
 
 		usernameTxt = new FlxText(25,640, 0, chatUsername);
 		usernameTxt.scale.set(1.2, 1.2);
-		usernameTxt.setFormat(Paths.font("tf2build.ttf"), 16, FlxColor.RED, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+
+		usernameTxt.setFormat(Paths.font("tf2build.ttf"), 16, FlxColor.RED, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+
 		usernameTxt.scrollFactor.set();
 
 		chatTxt = new FlxText(usernameTxt.x + 150, usernameTxt.y, chatText);
@@ -1469,7 +1467,7 @@ class PlayState extends MusicBeatState
 				case 'Honorbound':
 					schoolIntro(doof);
 				case 'Monochrome':
-					dead(2.5);
+					dead();
 				case 'Yourmom':
 					schoolIntro(doof);
 				default:
@@ -1639,10 +1637,10 @@ class PlayState extends MusicBeatState
 		});
 	}
 
-	function dead(time:Float):Void{
+	function dead():Void{
 		camHUD.visible = false;
 		FlxG.sound.play(Paths.sound('scout_dominationpyr'));
-		new FlxTimer().start(time, function(tmr:FlxTimer)
+		new FlxTimer().start(2.5, function(tmr:FlxTimer)
 			{
 				startCountdown();
 			});
@@ -6556,6 +6554,7 @@ class PlayState extends MusicBeatState
 		chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
 		chatText = randomText[FlxG.random.int(0, randomText.length -1)];
 
+		usernameTxt.color = FlxG.random.bool(50) ? 0x6495ED : FlxColor.RED; 
 		usernameTxt.text = chatUsername;
 		chatTxt.text = chatText;
 
@@ -6564,7 +6563,6 @@ class PlayState extends MusicBeatState
 
 		new FlxTimer().start(3, function(tmr:FlxTimer)
 			{
-				trace('tweening');
 				FlxTween.tween(usernameTxt, {alpha:0}, 0.5);
 				FlxTween.tween(chatTxt, {alpha:0}, 0.5);
 			});
@@ -7059,10 +7057,6 @@ class PlayState extends MusicBeatState
 			if (curBeat % 25 == 0)
 			{
 				addText();
-				/*chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
-				chatText = randomText[FlxG.random.int(0, randomText.length -1)];
-				usernameTxt.text = chatUsername;
-				chatTxt.text = chatText;*/	
 			}
 
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
