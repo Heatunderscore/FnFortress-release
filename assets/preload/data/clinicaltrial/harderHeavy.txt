@@ -1,17 +1,17 @@
-:medic: !0.04! Nein!!!
-:heavy: !0.04! oh noooooo......
-:bf: !0.04! Beepbeep!
-:none: !1! ....
-:gf: !0.04! You gonna take our souls or what?
-:medic: !0.04! Vhat? Vhy vould I? You von.
-:gf: !0.04! Well its just that sometimes, people would still try to kill us or something even though we won.
-:medic: !0.04! Oh, vell I actually don't need your souls!
-:bf: !0.04! Beep?
-:medic: !0.04! Ja, I already have eight vithin me! So really, itz not zat big of a deal.
-:heavy: !0.04! Ok tiny baby man, you win for real now.
-:bf: !0.04! Boooooop!
-:gf: !0.04! So does this mean we can leave now?
-:heavy: !0.04! Dа.
-:gf: !1! ...
-:gf: !0.04! Ok bye now.
-:bf: !0.04! Beep!
+:medic: !0.04! ;0; Nein!!!
+:heavy: !0.04! ;0; oh noooooo......
+:bf: !0.04! ;0; Beepbeep!
+:none: !1! ;0; ....
+:gf: !0.04! ;0; You gonna take our souls or what?
+:medic: !0.04! ;0; Vhat? Vhy vould I? You von.
+:gf: !0.04! ;0; Well its just that sometimes, people would still try to kill us or something even though we won.
+:medic: !0.04! ;0; Oh, vell I actually don't need your souls!
+:bf: !0.04! ;0; Beep?
+:medic: !0.04! ;0; Ja, I already have eight vithin me! So really, itz not zat big of a deal.
+:heavy: !0.04! ;0; Ok tiny baby man, you win for real now.
+:bf: !0.04! ;0; Boooooop!
+:gf: !0.04! ;0; So does this mean we can leave now?
+:heavy: !0.04! ;0; Dа.
+:gf: !1! ;0; ...
+:gf: !0.04! ;0; Ok bye now.
+:bf: !0.04! ;0; Beep!

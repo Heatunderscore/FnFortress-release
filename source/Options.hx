@@ -1110,7 +1110,7 @@ class CameraStupid extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Camera Movement On Note Hit " + (!FlxG.save.data.stupid ? "off" : "on");
+		return "Note Hit Camera" + (!FlxG.save.data.stupid ? "off" : "on");
 	}
 }
 class FunnySounds extends Option

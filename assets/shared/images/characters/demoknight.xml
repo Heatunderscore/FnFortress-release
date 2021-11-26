@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="demoknight.png">
+	<!-- Created with Adobe Animate version 20.5.0.29329 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Demo Down0000" x="10" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0001" x="10" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0002" x="677" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0003" x="677" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0004" x="1344" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0005" x="1344" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0006" x="2011" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0007" x="2011" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0008" x="2678" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0009" x="2678" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Down0010" x="3345" y="10" width="657" height="533"/>
+	<SubTexture name="Demo Idle0000" x="4012" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0001" x="4012" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0002" x="4460" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0003" x="4460" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0004" x="4908" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0005" x="4908" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0006" x="5356" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0007" x="5356" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0008" x="5804" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0009" x="5804" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0010" x="6252" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0011" x="6252" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0012" x="6700" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Idle0013" x="6700" y="10" width="438" height="965"/>
+	<SubTexture name="Demo Left0000" x="7148" y="10" width="704" height="727"/>
+	<SubTexture name="Demo Left0001" x="7148" y="10" width="704" height="727"/>
+	<SubTexture name="Demo Left0002" x="10" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0003" x="10" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0004" x="724" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0005" x="724" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0006" x="1438" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0007" x="1438" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0008" x="2152" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0009" x="2152" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Left0010" x="2152" y="985" width="704" height="727"/>
+	<SubTexture name="Demo Right0000" x="2866" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0001" x="2866" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0002" x="3436" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0003" x="3436" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0004" x="4006" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0005" x="4006" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0006" x="4576" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0007" x="4576" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0008" x="5146" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0009" x="5146" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0010" x="5716" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Right0011" x="5716" y="985" width="560" height="1088"/>
+	<SubTexture name="Demo Up0000" x="6286" y="985" width="544" height="1214"/>
+	<SubTexture name="Demo Up0001" x="6286" y="985" width="544" height="1214"/>
+	<SubTexture name="Demo Up0002" x="6840" y="985" width="544" height="1214"/>
+	<SubTexture name="Demo Up0003" x="6840" y="985" width="544" height="1214"/>
+	<SubTexture name="Demo Up0004" x="7394" y="985" width="544" height="1214"/>
+	<SubTexture name="Demo Up0005" x="7394" y="985" width="544" height="1214"/>
+	<SubTexture name="Demo Up0006" x="10" y="2209" width="544" height="1214"/>
+	<SubTexture name="Demo Up0007" x="10" y="2209" width="544" height="1214"/>
+	<SubTexture name="Demo Up0008" x="564" y="2209" width="544" height="1214"/>
+	<SubTexture name="Demo Up0009" x="564" y="2209" width="544" height="1214"/>
+	<SubTexture name="Demo Up0010" x="564" y="2209" width="544" height="1214"/>
+</TextureAtlas>

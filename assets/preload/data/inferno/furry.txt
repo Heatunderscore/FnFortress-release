@@ -1,9 +1,9 @@
-:bf: !0.04! Bip?
-:pyro: !0.04! Huh??
-:bf: !0.04! Beepop
-:pyro: !0.04! Hnghudahng
-:bf: !0.04! Bepbop Bepo
-:pyro: !0.04! Hudah
-:bf: !0.04! Bebop Bopeebo
+:bf: !0.04! ;0; Bip?
+:pyro: !0.04! ;0; Huh??
+:bf: !0.04! ;0; Beepop
+:pyro: !0.04! ;0; Hnghudahng
+:bf: !0.04! ;0; Bepbop Bepo
+:pyro: !0.04! ;0; Hudah
+:bf: !0.04! ;0; Bebop Bopeebo
 :pyro: !0.04! ;1; Hunghunghud
-:gf: !0.1! Okay.
+:gf: !0.1! ;0; Okay.

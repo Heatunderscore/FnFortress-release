@@ -16,6 +16,7 @@ class DialogueBox extends FlxSpriteGroup
 {
 	var box:FlxSprite;
 
+	var controlShit:Bool = false;
 	var curCharacter:String = '';
 
 	var dialogue:Alphabet;
@@ -66,7 +67,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case 'atomicpunch' | 'maggots' | 'inferno' | 'ironbomber' | 'ironcurtain' | 'frontierjustice' | 'clinicaltrial'
-			| 'wanker' | 'infiltrator' | 'property damage' | 'honorbound':
+			| 'wanker' | 'infiltrator' | 'property-damage' | 'skill-issue' |'honorbound':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -128,6 +129,10 @@ class DialogueBox extends FlxSpriteGroup
 		dialogue = new Alphabet(0, 80, "", false, true);
 		// dialogue.x = 90;
 		// add(dialogue);
+
+		var funnyHelp:FlxText = new FlxText(0, 0, 0, 'Press ESCAPE to skip the dialogue', 24);
+		funnyHelp.font = 'TF2 Build';
+		add(funnyHelp);
 	}
 
 	var dialogueOpened:Bool = false;
@@ -147,7 +152,9 @@ class DialogueBox extends FlxSpriteGroup
 			dropText.color = FlxColor.BLACK;
 		}
 
-		dropText.text = swagDialogue.text;
+		//fuck you haxe -tob
+		if (swagDialogue.text != null)
+		    dropText.text = swagDialogue.text;
 
 		if (box.animation.curAnim != null)
 		{
@@ -164,7 +171,7 @@ class DialogueBox extends FlxSpriteGroup
 			dialogueStarted = true;
 		}
 
-		if (FlxG.keys.justPressed.ENTER && dialogueStarted == true)
+		if (PlayerSettings.player1.controls.ACCEPT && dialogueStarted == true)
 		{
 			remove(dialogue);
 				
@@ -202,7 +209,7 @@ class DialogueBox extends FlxSpriteGroup
 				startDialogue();
 			}
 		}
-		else if (FlxG.keys.justPressed.SPACE && dialogueStarted == true)
+		else if (FlxG.keys.justPressed.ESCAPE && dialogueStarted == true)
 			{
 				if (!isEnding)
 					{
@@ -306,6 +313,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/soldier');
 				portraitLeft.animation.addByPrefix('enter', 'soldier talk', 24, false);
+				swagDialogue.color = 0xFF000000;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/soldier'), 0.6)];
 				if (!portraitLeft.visible)
 				{
@@ -318,6 +326,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/soldierai');
 				portraitLeft.animation.addByPrefix('enter', 'soldierai talk', 24, false);
+				swagDialogue.color = 0xFF000000;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/soldier'), 0.6)];
 				if (!portraitLeft.visible)
 				{

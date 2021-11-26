@@ -98,12 +98,14 @@ class PlayState extends MusicBeatState
 	var shitPoo:Bool = true;
 	var longSpin:Bool = false;
 	var burnShit:Bool = false;
-	var poopThing:Bool = false;
+	var poopThing:Bool = false; // epic camera bop thing -tob
 	var engiBOT:FlxTrail;
 	var bfBOT:FlxTrail;
 	var cumBOT:FlxTrail;
 	var bonkBOT:FlxTrail;
 	var curTiming:Int = 0;
+
+	var doinUrMom:String = 'doin your mom';
 	
 
 	var memedic:Bool = false;
@@ -190,9 +192,10 @@ class PlayState extends MusicBeatState
 		"Spy!",
 		"im gonna cum",
 		"Selling unusual for 1 quadrillion keys pls buy",
-		"This mod is hard, I am going to compare it to MFM to make myself feel better.",
+		"This mod is hard, Im going to compare it to MFM to make myself feel better.",
 		#if linux
 		"You're a Linux User!!"
+		"lmao youre using Linux"
 		#end
 
 		#if html5
@@ -444,6 +447,10 @@ class PlayState extends MusicBeatState
 			{
 				isRobo = false;
 			}
+		if (Character.isMedicThing)
+		{
+			Character.isMedicThing = false;
+		}
 
         //^^^^
 		//making sure that no weird camera glitch or crash happens, since both of those are based on dad2 -tob
@@ -631,6 +638,8 @@ class PlayState extends MusicBeatState
 				ending = CoolUtil.coolTextFile(Paths.txt('infiltrator/okiamafurry'));
 			case 'property-damage':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('property-damage/sex'));
+			case 'skill-issue':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('skill-issue/holyshit'));
 			case 'honorbound':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('honorbound/sus'));
 				uhm = true;
@@ -861,7 +870,7 @@ class PlayState extends MusicBeatState
 				{
 					defaultCamZoom = 0.82;
 					curStage = 'degroot';
-					var bg:FlxSprite = new FlxSprite(-450, -125).loadGraphic(Paths.image('fortress/bg/degroot'));
+					var bg:FlxSprite = new FlxSprite(-425, -155).loadGraphic(Paths.image('fortress/bg/degroot'));
 					bg.antialiasing = true;
 					//bg.screenCenter();
 					bg.scrollFactor.set(0.9, 0.9);
@@ -937,6 +946,7 @@ class PlayState extends MusicBeatState
 
 		if (heavyDad)
 		{
+			//Character.isMedicThing = true;
 			dad2 = new Character(280, 100, "heavy");
 		}
 		else if (roboDad)
@@ -961,6 +971,8 @@ class PlayState extends MusicBeatState
 			case 'demo':
 				dad.y += 45;
 				dad.x += -200;
+			case 'demoknight':
+				dad.y += 150;
 			case 'pyro':
 				dad.y += 75;
 			case 'snoiper':
@@ -1040,6 +1052,7 @@ class PlayState extends MusicBeatState
 				add(dad2);
 				funnyHeavy = new FlxSprite(dad2.x, dad2.y).loadGraphic(Paths.image('fortress/bg/heavyisdead', 'shared'));
 				funnyHeavy.visible = false;
+				funnyHeavy.y += 250; 
 				//funnyHeavy.scrollFactor.set();
 				//funnyHeavy.updateHitbox();
 				add(funnyHeavy);
@@ -1470,7 +1483,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'Monochrome':
 					dead(2.5);
-				case 'Yourmom':
+				case 'Skill Issue':
 					schoolIntro(doof);
 				default:
 					startCountdown();
@@ -2975,6 +2988,8 @@ class PlayState extends MusicBeatState
 		// reverse iterate to remove oldest notes first and not invalidate the iteration
 		// stop iteration as soon as a note is not removed
 		// all notes should be kept in the correct order and this is optimal, safe to do every frame/update
+
+		// me when balls and cock are bad
 		{
 			var balls = notesHitArray.length-1;
 			while (balls >= 0)
@@ -3522,7 +3537,7 @@ class PlayState extends MusicBeatState
 					dad2.visible = false;
 					funnyHeavy.visible = true;
 				case 2176:
-					funnyHeavy.x += -150;
+					funnyHeavy.x += -75;
 					remove(dad);
 					dad = new Character(100, 100, "medic");
 					add(dad);
@@ -3571,14 +3586,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (curSong == 'Ironbomber')
-		{
-			switch (curStep)
-			{
-				case 124:
-					camHUD.visible = true;
-			}
-		}
 		/*if (curSong == 'Meet The Team')
 		{
 			switch (curStep)
@@ -3766,6 +3773,11 @@ class PlayState extends MusicBeatState
 			FlxG.sound.music.stop();
 
 			if (curSong != 'Frontierjustice' && firstDeath)
+			{
+				firstDeath = false;
+			}
+
+			if (!isStoryMode)
 			{
 				firstDeath = false;
 			}
@@ -4052,7 +4064,7 @@ class PlayState extends MusicBeatState
 								beamAnim = '-beam';
 						}
 						
-						if (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid && curSong != 'Monochrome' && curSong != 'Frontierjustice')
+						if (!PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid && curSong != 'Monochrome' && curSong != 'Frontierjustice' && curSong != 'Eyelander')
 						{
 							switch (curSong)
 							{
@@ -6236,11 +6248,14 @@ class PlayState extends MusicBeatState
 					}
 					else
 					{
-						health += 0.02;
-						totalNotesHit += 1;
+						if (!stupid) // no illegal health gain -tob
+						{
+						    health += 0.02;
+						    totalNotesHit += 1;
+						}
 					}
 					
-					if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid && curSong != 'Monochrome' && curSong != 'Frontierjustice')
+					if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection && FlxG.save.data.stupid && curSong != 'Monochrome' && curSong != 'Frontierjustice' && curSong != 'Eyelander')
 					{
 						switch (curSong)
 						{
@@ -6350,7 +6365,6 @@ class PlayState extends MusicBeatState
 							dad.playAnim('singRIGHT', true);
 							if (FlxG.save.data.funniSounds)
 							    FlxG.sound.play(Paths.sound('smipr')); // :(
-
 							Note.hitCheck++; // you should kill yourself right now!!!
 							new FlxTimer().start(4, function(tmr:FlxTimer){Note.hitCheck--;});
 						}
@@ -6485,7 +6499,7 @@ class PlayState extends MusicBeatState
 			iconP1.animation.play(iconPl1, true);
 			pyroland.visible = pyroLand;
 		}
-	function maxHealthCum(newHealth:Float)
+	function maxHealthCum(newHealth:Float):Void // funny saw thing -tob
 		{
 			if (maxHealth < 1.5)
 			    maxHealth += newHealth;
@@ -6556,6 +6570,7 @@ class PlayState extends MusicBeatState
 		chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
 		chatText = randomText[FlxG.random.int(0, randomText.length -1)];
 
+		usernameTxt.color = FlxG.random.bool(50) ? 0x6495ED : FlxColor.RED; 
 		usernameTxt.text = chatUsername;
 		chatTxt.text = chatText;
 
@@ -6564,7 +6579,6 @@ class PlayState extends MusicBeatState
 
 		new FlxTimer().start(3, function(tmr:FlxTimer)
 			{
-				trace('tweening');
 				FlxTween.tween(usernameTxt, {alpha:0}, 0.5);
 				FlxTween.tween(chatTxt, {alpha:0}, 0.5);
 			});
@@ -6763,7 +6777,8 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Property Damage')
 		{
-			switch (curStep){
+			switch (curStep)
+			{
 				case 1792 | 3120 | 3328 | 3456 | 3584 | 3712:
 					add(saxTrail);
 				case 2175 | 3144 | 3393 | 3521 | 3649 | 3777:
@@ -6835,6 +6850,17 @@ class PlayState extends MusicBeatState
 				}		
 		}
 
+		if (curSong == 'Ironbomber')
+			{
+				switch (curStep)
+				{
+					case 124:
+						camHUD.visible = true;
+					case 1535:
+						FlxTween.tween(camHUD, {angle: 360}, 2);
+				}
+			}
+
 		if (curSong == 'Monochrome')
 			{
 				if (jumpscares.contains(curStep))
@@ -6856,11 +6882,11 @@ class PlayState extends MusicBeatState
 				switch (curStep)
 				{
 					case 1264:
+						camZooming = false;
 						tweenCam(1.3, 1);
 					case 1280:
 						soldierShake = true;
 						curTiming = 1;
-						camZooming = false;
 					case 1536:
 						soldierShake = false;
 						camZooming = true;
@@ -6898,7 +6924,7 @@ class PlayState extends MusicBeatState
 			health = 2;
 		}
 
-		//9.6
+		// the ending cutscenes are weird so we need this
 		if (stupidAHHHH && !inCutscene)
 		{
 			switch (curSong)
@@ -6907,10 +6933,10 @@ class PlayState extends MusicBeatState
 					switch (fairness)
 					{
 						case 0:
-							if (health >= 0.1)
+							if (health >= maxHealth + 0.1)
 								health += -0.02;
 					    case 1:
-							if (health >= 1)
+							if (health >= maxHealth + 1)
 								health += -0.02;
 					}
 				case 'Inferno':
@@ -6990,6 +7016,7 @@ class PlayState extends MusicBeatState
 	}
 
 
+	// thank you fnf vs dave and bambi!!!!!
 	function funnyJump(e:FlxTimer = null):Void
 		{
 			iconP2.animation.play("heavy", true);
@@ -7056,13 +7083,9 @@ class PlayState extends MusicBeatState
 
 		if (SONG.notes[Math.floor(curStep / 16)] != null)
 		{
-			if (curBeat % 25 == 0)
+			if (curBeat % 25 == 0 && !inCutscene)
 			{
 				addText();
-				/*chatUsername = randomUsername[FlxG.random.int(0, randomUsername.length -1)] + ":";
-				chatText = randomText[FlxG.random.int(0, randomText.length -1)];
-				usernameTxt.text = chatUsername;
-				chatTxt.text = chatText;*/	
 			}
 
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
@@ -7084,8 +7107,8 @@ class PlayState extends MusicBeatState
 					{
 						case 1:
 							{
-								if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
-									{
+								//if (SONG.notes[Math.floor(curStep / 16)].mustHitSection)
+									//{
 											switch (curTiming)
 											{
 												case 0:
@@ -7098,7 +7121,7 @@ class PlayState extends MusicBeatState
 													dad.playAnim('idle-alt');
 													dad2.playAnim('idle-alt');
 											}
-									}
+									//}
 							}
 						case 2:
 							{
@@ -7140,12 +7163,14 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.save.data.camzoom)
 		{
+			// mmmmmmmm poop
 			if (poopThing)
 			{
 				FlxG.camera.zoom += 0.05;
 				camHUD.zoom += 0.065;
 			}
 	
+			// makes this shit cum fuck crap go away when poopThing is active
 			if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0 && !poopThing)
 			{
 				FlxG.camera.zoom += 0.015;

@@ -1,15 +1,15 @@
-:heavy: !0.04! Ya da ya la da da
-:heavy: !0.04! It is good day to be not dea-
-:bf: !0.04! Bip.
-:heavy: !0.1! …
-:heavy: !0.04! Who sent little tiny baby man to Heavy?
-:bf: !0.04! Bap Bappba Bow.
-:heavy: !0.04! You speak very funny little man.
-:gf: !0.04! He wants to ra-
-:heavy: !0.04! Wait a minute...
-:heavy: !0.04! Heavy knows why you are here!
-:heavy: !0.04! You want Heavy to play your little game!
-:heavy: !0.04! Scout told Heavy about you two...
-:gf: !0.04! So you gonna accept or not?
-:heavy: !0.04! heavy sees no harm in playing little baby man's game.
-:bf: !0.04! Boppa.
+:heavy: !0.04! ;0; Ya da ya la da da
+:heavy: !0.04! ;1; It is good day to be not dea-
+:bf: !0.04! ;0; Bip.
+:heavy: !0.1! ;0; …
+:heavy: !0.04! ;0; Who sent little tiny baby man to Heavy?
+:bf: !0.04! ;0; Bap Bappba Bow.
+:heavy: !0.04! ;0; You speak very funny little man.
+:gf: !0.04! ;0; He wants to ra-
+:heavy: !0.04! ;0; Wait a minute...
+:heavy: !0.04! ;0; Heavy knows why you are here!
+:heavy: !0.04! ;0; You want Heavy to play your little game!
+:heavy: !0.04! ;0; Scout told Heavy about you two...
+:gf: !0.04! ;0; So you gonna accept or not?
+:heavy: !0.04! ;0; heavy sees no harm in playing little baby man's game.
+:bf: !0.04! ;0; Boppa.

@@ -13,6 +13,7 @@ class Character extends FlxSprite
 	public var debugMode:Bool = false;
 
 	public var isPlayer:Bool = false;
+	public static var isMedicThing:Bool = false;
 	public var curCharacter:String = 'bf';
 
 	public var holdTimer:Float = 0;
@@ -323,10 +324,27 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+		    case 'demoknight':
+				tex = Paths.getSparrowAtlas('characters/demoknight', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Demo Idle', 24, false);
+				animation.addByPrefix('singUP', 'Demo Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Demo Right', 24, false);
+				animation.addByPrefix('singDOWN', 'Demo Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Demo Left', 24, false);
+
+				addOffset('idle', 0, 320);
+				addOffset("singUP", 107, 538);
+				addOffset("singRIGHT", -3, 442);
+				addOffset("singLEFT", 119, 81);
+				addOffset("singDOWN", 82, -110);
+
+				playAnim('idle');	
+
 			case 'heavy':
 				tex = Paths.getSparrowAtlas('characters/heavy', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'Heavy_Idle', 24, false);
+				animation.addByPrefix('idle', 'Heavy_Idle', 24, isMedicThing);
 				animation.addByPrefix('singUP', 'Heavy_Up', 24, false);
 				animation.addByPrefix('singRIGHT', 'Heavy_Right', 24, false);
 				animation.addByPrefix('singDOWN', 'Heavy_Down', 24, false);
@@ -402,7 +420,7 @@ class Character extends FlxSprite
 			case 'medic':
 				tex = Paths.getSparrowAtlas('characters/medic', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'medic_idle', 24, false);
+				animation.addByPrefix('idle', 'medic_idle', 24, true);
 				animation.addByPrefix('singUP', 'medic_up', 24, false);
 				animation.addByPrefix('singRIGHT', 'medic_right', 24, false);
 				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
