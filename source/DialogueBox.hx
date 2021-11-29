@@ -242,7 +242,7 @@ class DialogueBox extends FlxSpriteGroup
 		this var is private by default, you can control + click on it to get to the file where its stored and
 		change it to a public var which will make it accessible for you -tob
 		*/
-		if (swagDialogue._typing && delay < 1)
+		/*if (swagDialogue._typing && delay < 1)
 			{
 				portraitLeft.animation.play('enter');
 				portraitRight.animation.play('enter');
@@ -251,10 +251,10 @@ class DialogueBox extends FlxSpriteGroup
 			{
 				portraitLeft.animation.stop;
 				portraitRight.animation.stop;
-			}
+			}*/
 		
 		
-		if (!swagDialogue._typing && skip == 1)
+		if (/*!swagDialogue._typing && */skip == 1)
 		{
 			remove(dialogue);
 			FlxG.sound.play(Paths.sound('clickText'), 0.8);
