@@ -95,6 +95,7 @@ class PlayState extends MusicBeatState
 
 	public static var firstDeath:Bool = true;
 
+	var developor:Bool = true;
 	var shitPoo:Bool = true;
 	var longSpin:Bool = false;
 	var burnShit:Bool = false;
@@ -104,6 +105,8 @@ class PlayState extends MusicBeatState
 	var cumBOT:FlxTrail;
 	var bonkBOT:FlxTrail;
 	var curTiming:Int = 0;
+	var seethe:Bool = false;
+	var cope:Bool = false;
 
 	var doinUrMom:String = 'doin your mom';
 	
@@ -306,6 +309,7 @@ class PlayState extends MusicBeatState
 	public var what:Bool = false;
 	var uh:Bool = false;
 	private var antiStack:Bool = false;
+	var hasGF:Bool = true;
 	private var curScroll:Float = 1;
 
 	private var healthBarBG:FlxSprite;
@@ -351,7 +355,7 @@ class PlayState extends MusicBeatState
 	var idleBeat:Int = 2; // this var doesnt do shit either -tob
 
 	public var dialogue:Array<String> = ['dad:blah blah blah', 'bf:coolswag'];
-	public var ending:Array<String> = [':scunt: !0.04! lmao hi', ':bf: !0.005! ejkfkuzrfeukrfgkeurfeuguiheirtgeurieölgieöorgleuiöisruga<zuewuoiföoaiurhfvulhserluiyhroöuigh-<urö-gvujhörgzö-zöauöfgujzörgöuarogiröfjörgiojöoirögiousöergoeu'];
+	public var ending:Array<String> = [':scunt: !0.04! ;0; lmao hi', ':bf: !0.005! ;0; ejkfkuzrfeukrfgkeurfeuguiheirtgeurieölgieöorgleuiöisruga<zuewuoiföoaiurhfvulhserluiyhroöuigh-<urö-gvujhörgzö-zöauöfgujzörgöuarogiröfjörgiojöoirögiousöergoeu'];
 
 	var songName:FlxText;
 	var upperBoppers:FlxSprite;
@@ -504,9 +508,12 @@ class PlayState extends MusicBeatState
 
 		// pre lowercasing the song name (create)
 		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
-		switch (songLowercase) {
-			case 'dad-battle': songLowercase = 'dadbattle';
-			case 'philly-nice': songLowercase = 'philly';
+		switch (songLowercase) 
+		{
+			case 'dad-battle': 
+				songLowercase = 'dadbattle';
+			case 'philly-nice': 
+				songLowercase = 'philly';
 		}
 		
 		removedVideo = false;
@@ -645,19 +652,24 @@ class PlayState extends MusicBeatState
 				uhm = true;
 				stupidAHHHH = true;
 				swaggyOptim = 3;
-			case 'may somethingth':
+			case 'may-somethingth':
 				memedic = true;
+				hasGF = false;
+			case 'dispenser', 'five-minutes', 'eyelander':
+				hasGF = false;
 		}
 
 		//defaults if no stage was found in chart
 		var stageCheck:String = 'stage';
 		
-		if (SONG.stage == null) {
-			switch(storyWeek)
-			{
-				//i should check if its stage (but this is when none is found in chart anyway)
-			}
-		} else {stageCheck = SONG.stage;}
+		if (SONG.stage == null) 
+		{
+			stageCheck = 'intel'; // intel room anti-crash
+		} 
+		else 
+		{
+			stageCheck = SONG.stage;
+		}
 
 		if (!PlayStateChangeables.Optimize)
 		{
@@ -851,7 +863,7 @@ class PlayState extends MusicBeatState
 				}
 			case 'exe':
 				{
-					defaultCamZoom = 0.8;
+					defaultCamZoom = 1;
 					curStage = 'exe';
 					//hi
 				}
@@ -861,7 +873,7 @@ class PlayState extends MusicBeatState
 					curStage = 'honor';
 					var bg:FlxSprite = new FlxSprite(-400, 0).loadGraphic(Paths.image('fortress/bg/honor'));
 					bg.antialiasing = true;
-					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()! (method found by tob(tob is very epic(yes tob wrote this)))
+					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()! (method found by tob(Method doesnt always work)(tob is very epic(yes tob wrote this)))
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
@@ -872,7 +884,7 @@ class PlayState extends MusicBeatState
 					curStage = 'degroot';
 					var bg:FlxSprite = new FlxSprite(-425, -155).loadGraphic(Paths.image('fortress/bg/degroot'));
 					bg.antialiasing = true;
-					//bg.screenCenter();
+					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()! (method found by tob(Method doesnt always work)(tob is very epic(yes tob wrote this)))
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
@@ -886,38 +898,20 @@ class PlayState extends MusicBeatState
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
-
-					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
-					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-					stageFront.updateHitbox();
-					stageFront.antialiasing = FlxG.save.data.antialiasing;
-					stageFront.scrollFactor.set(0.9, 0.9);
-					stageFront.active = false;
-					add(stageFront);
-
-					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
-					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-					stageCurtains.updateHitbox();
-					stageCurtains.antialiasing = FlxG.save.data.antialiasing;
-					stageCurtains.scrollFactor.set(1.3, 1.3);
-					stageCurtains.active = false;
-
-					add(stageCurtains);
 			}
 		}
 		}
 		//defaults if no gf was found in chart
 		var gfCheck:String = 'gf';
 		
-		if (SONG.gfVersion == null) {
-			switch(storyWeek)
-			{
-				//case 4: gfCheck = 'gf-car';
-				//case 5: gfCheck = 'gf-christmas';
-				//case 6: gfCheck = 'gf-pixel';
-				default: gfCheck = 'gf';
-			}
-		} else {gfCheck = SONG.gfVersion;}
+		if (SONG.gfVersion == null) 
+		{
+			gfCheck = 'gf';
+		} 
+		else 
+		{
+			gfCheck = SONG.gfVersion;
+		}
 
 		var curGf:String = '';
 		switch (gfCheck)
@@ -972,7 +966,7 @@ class PlayState extends MusicBeatState
 				dad.y += 45;
 				dad.x += -200;
 			case 'demoknight':
-				dad.y += 150;
+				dad.y += 120;
 			case 'pyro':
 				dad.y += 75;
 			case 'snoiper':
@@ -996,8 +990,10 @@ class PlayState extends MusicBeatState
 		}
 
 
-		
-		boyfriend = new Boyfriend(770, 450, SONG.player1);
+		if (FlxG.save.data.botplay)
+			boyfriend = new Boyfriend(770, 450, "bf-bot");
+		else
+		    boyfriend = new Boyfriend(770, 450, SONG.player1);
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -1037,12 +1033,13 @@ class PlayState extends MusicBeatState
 		{
 			switch(SONG.player1)
 			{
-				case 'medic-bf':
-					trace("no");
-				case 'engi':
-					trace("NO");
+				case 'bf-bot':
+					trace("HECK NO");
 				default:
-					add(gf);
+					if (hasGF)
+					{
+						add(gf);
+					}
 			}
 
 			// Shitty layering but whatev it works LOL
@@ -1086,7 +1083,6 @@ class PlayState extends MusicBeatState
 
 		}
 
-		//unused trails for frontier justice because jeremy (genji) didnt want them ingame :( /tob
 		if (roboDad)
 			{
 				bfBOT = new FlxTrail(boyfriend, null, 3, 6, 0.3, 0.002);
@@ -1381,6 +1377,8 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Inferno')
 		    iconP1 = new HealthIcon("bf-pyro", true);
+		else if (PlayStateChangeables.botPlay)
+			iconP1 = new HealthIcon("bf-bot", true);
 		else
 			iconP1 = new HealthIcon(SONG.player1, true);
 
@@ -1484,6 +1482,7 @@ class PlayState extends MusicBeatState
 				case 'Monochrome':
 					dead(2.5);
 				case 'Skill Issue':
+					//dialogue = CoolUtil.coolTextFile(Paths.txt('skill-issue/holyshit'));
 					schoolIntro(doof);
 				default:
 					startCountdown();
@@ -1565,7 +1564,7 @@ class PlayState extends MusicBeatState
 				{
 					endSong();
 				}
-				trace(inCutscene);
+				trace('in Cutscene = $inCutscene');
 		}
 
 	function schoolIntro(?dialogueBox:DialogueBox):Void
@@ -1652,7 +1651,8 @@ class PlayState extends MusicBeatState
 		});
 	}
 
-	function dead(time:Float):Void{
+	function dead(time:Float):Void
+	{
 		camHUD.visible = false;
 		FlxG.sound.play(Paths.sound('scout_dominationpyr'));
 		new FlxTimer().start(time, function(tmr:FlxTimer)
@@ -1729,7 +1729,7 @@ class PlayState extends MusicBeatState
 		
 		startTimer = new FlxTimer().start(Conductor.crochet / 1000, function(tmr:FlxTimer)
 		{
-
+			//keeping the if else block because i can lmao -tob
 			if (curSong == 'Inferno')
 			{
 				switch (curTiming)
@@ -1781,7 +1781,7 @@ class PlayState extends MusicBeatState
 			}*/
 			else
 			{
-				if (!dad.animation.curAnim.name.startsWith('shit'))
+				if (!dad.animation.curAnim.name.startsWith('shit')) // soldier isnt allowed to shit while idleing -tob
 				    dad.playAnim('idle');
 				gf.dance();
 				boyfriend.playAnim('idle');
@@ -3326,7 +3326,7 @@ class PlayState extends MusicBeatState
 						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
 						camFollow.x = boyfriend.getMidpoint().x - 250 + noteCamMovementBfX;
 					case 'degroot':
-						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
+						camFollow.y = boyfriend.getMidpoint().y - 225 + noteCamMovementBfY;
 						camFollow.x = boyfriend.getMidpoint().x - 250 + noteCamMovementBfX;
 				}
 				switch (SONG.player1)
@@ -3387,52 +3387,52 @@ class PlayState extends MusicBeatState
 					case 64:
 						camHUD.visible = true;
 					case 448:
-						if (!antiStack){
+						if (!cope){
 						PlayStateChangeables.scrollSpeed = 3;
 						curScroll = PlayStateChangeables.scrollSpeed;
 						}
 					case 704:
-						if (!antiStack){
+						if (!cope){
 						PlayStateChangeables.scrollSpeed = 2.5;
 						curScroll = PlayStateChangeables.scrollSpeed;
 						}
 					case 832:
-						if (!antiStack){
+						if (!cope){
 						PlayStateChangeables.scrollSpeed = 3.1;
 						curScroll = PlayStateChangeables.scrollSpeed;
 						}
 					case 864:
-						if (!antiStack){
+						if (!cope){
 						PlayStateChangeables.scrollSpeed = 2.6;
 						curScroll = PlayStateChangeables.scrollSpeed;
 						}
 					case 880:
-						if (!antiStack){
+						if (!cope){
 						PlayStateChangeables.scrollSpeed = 3.2;
 						curScroll = PlayStateChangeables.scrollSpeed;
 						}
 					case 896:
-						if (!antiStack){						
+						if (!cope){						
 							PlayStateChangeables.scrollSpeed = 3.1;
 						    curScroll = PlayStateChangeables.scrollSpeed;
 					    }
 					case 928:
-						if (!antiStack){
+						if (!cope){
 						    PlayStateChangeables.scrollSpeed = 2.6;
 						    curScroll = PlayStateChangeables.scrollSpeed;
 						}
 					case 944:
-						if (!antiStack){
+						if (!cope){
 						    PlayStateChangeables.scrollSpeed = 3.2;
 						    curScroll = PlayStateChangeables.scrollSpeed;
 					    }
 					case 992:
-						if (!antiStack){
+						if (!cope){
 						    PlayStateChangeables.scrollSpeed = 2.5;
 						    curScroll = PlayStateChangeables.scrollSpeed;
 						}
 					case 1072:
-						if (!antiStack){
+						if (!cope){
 						    PlayStateChangeables.scrollSpeed = 3;
 						    curScroll = PlayStateChangeables.scrollSpeed;
 						}
@@ -3759,6 +3759,26 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (FlxG.keys.justPressed.F12 && developor)
+		{
+			Note.hitCheck = 0;
+			boyfriend.stunned = true;
+
+			persistentUpdate = false;
+			persistentDraw = false;
+			paused = true;
+
+			vocals.stop();
+			FlxG.sound.music.stop();
+
+			firstDeath = false;
+			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+
+			#if windows
+			// Game Over doesn't get his own variable because it's only used here
+			DiscordClient.changePresence("GAME OVER -- " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy),"\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
+			#end
+		}
 
 		if (health <= maxHealth  && !cannotDie)
 		{
@@ -4345,7 +4365,7 @@ class PlayState extends MusicBeatState
 													if (daNote.isParent)
 													{
 														health -= 0.15; // give a health punishment for failing a LN
-														trace("hold fell over at the start");
+														//trace("hold fell over at the start");
 														for (i in daNote.children)
 														{
 															i.alpha = 0.3;
@@ -4360,7 +4380,7 @@ class PlayState extends MusicBeatState
 															&& daNote.spotInLine != daNote.parent.children.length)
 														{
 															health -= 0.2; // give a health punishment for failing a LN
-															trace("hold fell over at " + daNote.spotInLine);
+															//trace("hold fell over at " + daNote.spotInLine);
 															for (i in daNote.parent.children)
 															{
 																i.alpha = 0.3;
@@ -4400,7 +4420,7 @@ class PlayState extends MusicBeatState
 													{
 														i.alpha = 0.3;
 														i.sustainActive = false;
-														trace(i.alpha);
+														//trace(i.alpha);
 													}
 												}
 												else
@@ -6481,6 +6501,7 @@ class PlayState extends MusicBeatState
 					new FlxTimer().start(6, function(tmr:FlxTimer)
 						{
 							trace("scroll speed shit");
+							cope = true;
 
 							PlayStateChangeables.scrollSpeed = curScroll;
 
@@ -7170,7 +7191,7 @@ class PlayState extends MusicBeatState
 				camHUD.zoom += 0.065;
 			}
 	
-			// makes this shit cum fuck crap go away when poopThing is active
+			// makes this shit cum fuck crap shit cum fuck crap shit cum fuck crap shit cum fuck crap shit cum fuck crap go away when poopThing is active
 			if (camZooming && FlxG.camera.zoom < 1.35 && curBeat % 4 == 0 && !poopThing)
 			{
 				FlxG.camera.zoom += 0.015;

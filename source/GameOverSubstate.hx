@@ -39,6 +39,11 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'bf';
 		}
 
+		if (PlayStateChangeables.botPlay)
+		{
+			daBf = 'bf-bot';
+		}
+
 		super();
 
 		Conductor.songPosition = 0;

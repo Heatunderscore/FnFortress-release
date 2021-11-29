@@ -1,21 +1,21 @@
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
 :bf: !0.04! ;1; holy shi-
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
 :bf: !0.04! ;1; shut u-
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
-:snoiper: !0.4! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
+:snoiper: !0.04! ;1; get good, get lmaobox!
 :bf: !0.01! ;0;SHUTTHEFUCKUPICANTDOTHISANYMORE
 :none: !0.7! ;0; ...
 :snoiper: !0.04! ;1; get good, get lmaobo-

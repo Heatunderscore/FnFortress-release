@@ -67,7 +67,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case 'atomicpunch' | 'maggots' | 'inferno' | 'ironbomber' | 'ironcurtain' | 'frontierjustice' | 'clinicaltrial'
-			| 'wanker' | 'infiltrator' | 'property-damage' | 'skill-issue' |'honorbound':
+			| 'wanker' | 'infiltrator' | 'property damage' | 'skill issue' |'honorbound':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -78,7 +78,11 @@ class DialogueBox extends FlxSpriteGroup
 		this.dialogueList = dialogueList;
 		
 		if (!hasDialog)
+		{
+			FlxG.sound.music.fadeOut(0.2, 0);
 			return;
+		}
+			
 		
 		portraitLeft = new FlxSprite(-20, 40);
 		portraitLeft.frames = Paths.getSparrowAtlas('weeb/scunt');
@@ -153,8 +157,7 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		//fuck you haxe -tob
-		if (swagDialogue.text != null)
-		    dropText.text = swagDialogue.text;
+		dropText.text = swagDialogue.text;
 
 		if (box.animation.curAnim != null)
 		{
@@ -183,8 +186,7 @@ class DialogueBox extends FlxSpriteGroup
 				{
 					isEnding = true;
 
-					if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
-						FlxG.sound.music.fadeOut(2.2, 0);
+					FlxG.sound.music.fadeOut(1, 0);
 
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
 					{
@@ -215,8 +217,7 @@ class DialogueBox extends FlxSpriteGroup
 					{
 						isEnding = true;
 	
-						if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
-							FlxG.sound.music.fadeOut(2.2, 0);
+						FlxG.sound.music.fadeOut(2.2, 0);
 	
 						new FlxTimer().start(0.2, function(tmr:FlxTimer)
 						{
@@ -488,7 +489,7 @@ class DialogueBox extends FlxSpriteGroup
 				box.flipX = true;
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
-				portraitRight.frames = Paths.getSparrowAtlas('dialogue/snoiper');
+				portraitRight.frames = Paths.getSparrowAtlas('dialogue/snoiper', 'shared');
 				swagDialogue.color = 0xFF000000;
 				portraitRight.animation.addByPrefix('enter', 'bot talk', 24, false);
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/sniper'), 0.6)];

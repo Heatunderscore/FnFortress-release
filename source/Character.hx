@@ -601,48 +601,48 @@ class Character extends FlxSprite
 
 				flipX = true;
 
-			case 'bf-pyro':
-				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND', 'shared');
+			case 'bf-bot':
+				var tex = Paths.getSparrowAtlas('characters/bluBot', 'shared');
 				frames = tex;
 
 				trace(tex.frames.length);
 
-				animation.addByPrefix('idle', 'BF idle dance', 24, false);
-				animation.addByPrefix('singUP', 'BF NOTE UP0', 24, false);
-				animation.addByPrefix('singLEFT', 'BF NOTE LEFT0', 24, false);
-				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT0', 24, false);
-				animation.addByPrefix('singDOWN', 'BF NOTE DOWN0', 24, false);
-				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS', 24, false);
-				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS', 24, false);
-				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS', 24, false);
-				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS', 24, false);
-				animation.addByPrefix('hey', 'BF HEY', 24, false);
-				animation.addByPrefix('hit', 'BF hit', 24, false);
-				animation.addByPrefix('dodge', 'boyfriend dodge', 24, false);
+				animation.addByPrefix('idle', 'bot idle', 24, false);
+				animation.addByPrefix('singUP', 'bot up', 24, false);
+				animation.addByPrefix('singLEFT', 'bot left', 24, false);
+				animation.addByPrefix('singRIGHT', 'bot right', 24, false);
+				animation.addByPrefix('singDOWN', 'bot down', 24, false);
+				//animation.addByPrefix('singUPmiss', 'bot up miss', 24, false);
+				//animation.addByPrefix('singLEFTmiss', 'bot left miss', 24, false);
+				//animation.addByPrefix('singRIGHTmiss', 'bot right misss', 24, false);
+				//animation.addByPrefix('singDOWNmiss', 'bot down miss', 24, false);
+				animation.addByPrefix('hey', 'bot dodge', 24, false);
+				animation.addByPrefix('hit', 'bot dodge', 24, false);
+				animation.addByPrefix('dodge', 'bot dodge', 24, false);
 
 
-				animation.addByPrefix('firstDeath', "BF dies", 24, false);
-				animation.addByPrefix('deathLoop', "BF Dead Loop", 24, true);
-				animation.addByPrefix('deathConfirm', "BF Dead confirm", 24, false);
+				animation.addByPrefix('firstDeath', "bot die", 24, false);
+				animation.addByPrefix('deathLoop', "bot balls beat", 24, true);
+				animation.addByPrefix('deathConfirm', "bot revive", 24, false);
 
-				animation.addByPrefix('scared', 'BF idle shaking', 24);
+				//animation.addByPrefix('scared', 'bot down miss', 24);
 
-				addOffset('idle', -5);
-				addOffset("singUP", -29, 27);
-				addOffset("singRIGHT", -38, -7);
-				addOffset("singLEFT", 12, -6);
-				addOffset("singDOWN", -10, -50);
-				addOffset("singUPmiss", -29, 27);
-				addOffset("singRIGHTmiss", -30, 21);
-				addOffset("singLEFTmiss", 12, 24);
-				addOffset("singDOWNmiss", -11, -19);
-				addOffset("hey", 7, 4);
-				addOffset("hit", 7, 4);
-				addOffset("dodge", 7, 4);
-				addOffset('firstDeath', 37, 11);
-				addOffset('deathLoop', 37, 5);
-				addOffset('deathConfirm', 37, 69);
-				addOffset('scared', -4);
+				addOffset('idle', 0);
+				addOffset("singUP", -80, 101);
+				addOffset("singRIGHT", -80, 0);
+				addOffset("singLEFT", 46, 0);
+				addOffset("singDOWN", -78, -12);
+				//addOffset("singUPmiss", 0, 0);
+				//addOffset("singRIGHTmiss", 0, 0);
+				//addOffset("singLEFTmiss", 0, 0);
+				//addOffset("singDOWNmiss", 0, 0);
+				addOffset("hey", -62, 69);
+				addOffset("hit", -62, 69);
+				addOffset("dodge", -62, 69);
+				addOffset('firstDeath', -63, 0);
+				addOffset('deathLoop', -63, -120);
+				addOffset('deathConfirm', -60, 0);
+				//addOffset('scared', 0, 0);
 
 				playAnim('idle');
 

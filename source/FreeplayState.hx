@@ -22,6 +22,8 @@ class FreeplayState extends MusicBeatState
 {
 	var songs:Array<SongMetadata> = [];
 
+	// just something so I dont need to reenable or disable botplay in the options menu every single fucking time -tob
+	var developor:Bool = true;
 	var selector:FlxText;
 	var curSelected:Int = 0;
 	var curDifficulty:Int = 2;
@@ -219,6 +221,11 @@ class FreeplayState extends MusicBeatState
 		if (downP)
 		{
 			changeSelection(1);
+		}
+		if (FlxG.keys.justPressed.F11 && developor)
+		{
+			FlxG.save.data.botplay = !FlxG.save.data.botplay;
+			trace('Botplay switched lmao');
 		}
 
 		/*if (FlxG.keys.justPressed.LEFT)
