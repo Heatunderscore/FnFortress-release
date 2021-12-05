@@ -70,6 +70,11 @@ class SusState extends MusicBeatState
             FlxG.save.data.stupid = true;
         }
 
+        if (FlxG.save.data.unlockedBonus == null)
+        {
+            FlxG.save.data.unlockedBonus = false;
+        }
+
         curBg = FlxG.random.int(1, 4);
 
         trace(curBg);

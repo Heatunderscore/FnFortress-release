@@ -1,0 +1,10 @@
+Atomicpunch:scunt:1
+Maggots:sodier:1
+Inferno:pyro:1
+Ironbomber:demo:1
+Ironcurtain:heavy:1
+Frontierjustice:robo-engi:1
+Clinicaltrial:medic:1
+Wanker:sniper:1
+Infiltrator:spy:1
+Property Damage:saxton:1

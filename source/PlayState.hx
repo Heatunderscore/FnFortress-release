@@ -95,6 +95,8 @@ class PlayState extends MusicBeatState
 
 	public static var firstDeath:Bool = true;
 
+	var infiniteUberBf:Bool = false;
+
 	var developor:Bool = true;
 	var shitPoo:Bool = true;
 	var longSpin:Bool = false;
@@ -328,7 +330,9 @@ class PlayState extends MusicBeatState
 	public var cannotDie = false;
 	private var camGame:FlxCamera;
 
-	var maxHealth:Float = 0;
+	var maxHealth:Float = 0; // this one is from right to left (monochrome)
+
+	var maxHealthReal:Float = 2; // this one is from left to right (saw note)
 
 	var bfDodging:Bool = false;
 	var bfCanDodge:Bool = false;
@@ -1045,7 +1049,8 @@ class PlayState extends MusicBeatState
 				add(dad2);
 				funnyHeavy = new FlxSprite(dad2.x, dad2.y).loadGraphic(Paths.image('fortress/bg/heavyisdead', 'shared'));
 				funnyHeavy.visible = false;
-				funnyHeavy.y += 250; 
+				funnyHeavy.y += 275;
+				funnyHeavy.x += 20; 
 				//funnyHeavy.scrollFactor.set();
 				//funnyHeavy.updateHitbox();
 				add(funnyHeavy);
@@ -3497,7 +3502,7 @@ class PlayState extends MusicBeatState
 			];
 		}
 
-		if (curSong == 'Clinicaltrial')
+		if (curSong == 'Clinicaltrial') // lots of stuff
 		{
 			switch (curStep)
 			{
@@ -3550,7 +3555,7 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (curSong == 'Wanker')
+		if (curSong == 'Wanker') // only makes the hud visible
 		{
 			switch (curStep)
 			{
@@ -3558,7 +3563,7 @@ class PlayState extends MusicBeatState
 					camHUD.visible = true;
 			}
 		}
-		if (curSong == 'Ironcurtain')
+		if (curSong == 'Ironcurtain') // mostly has camera bop event bell thingie
 		{
 			switch (curStep)
 			{
@@ -3757,7 +3762,11 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		if (FlxG.keys.justPressed.F12 && developor)
+		if (FlxG.keys.justPressed.F4 && developor)
+		{
+			infiniteUberBf = !infiniteUberBf;
+		}
+		if (FlxG.keys.justPressed.F12 && developor && !infiniteUberBf)
 		{
 			Note.hitCheck = 0;
 			boyfriend.stunned = true;
@@ -3778,7 +3787,7 @@ class PlayState extends MusicBeatState
 			#end
 		}
 
-		if (health <= maxHealth  && !cannotDie)
+		if (health <= maxHealth  && !cannotDie && !infiniteUberBf)
 		{
 			Note.hitCheck = 0;
 			boyfriend.stunned = true;
@@ -3808,7 +3817,7 @@ class PlayState extends MusicBeatState
 
 			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
- 		if (!inCutscene && FlxG.save.data.resetButton)
+ 		if (!inCutscene && FlxG.save.data.resetButton && !infiniteUberBf)
 		{
 			if(FlxG.keys.justPressed.R && mania != 9)
 				{
@@ -4691,16 +4700,8 @@ class PlayState extends MusicBeatState
 							if (FlxG.save.data.unlockedWeek == 0)
 							{
 								FlxG.save.data.unlockedWeek = 1;
+								FlxG.save.data.buttonUnlockingShit = 3;
 								trace(FlxG.save.data.unlockedWeek);
-							}
-							else
-							{
-								trace("what how");
-							}
-
-							if (FlxG.save.data.buttonUnlockingShit == 2)
-							{
-								FlxG.save.data.buttonUnlockingShit += 1;
 							}
 						}
 					else if (curSong == 'Frontierjustice')
@@ -4708,16 +4709,8 @@ class PlayState extends MusicBeatState
 							if (FlxG.save.data.unlockedWeek == 1)
 							{
 								FlxG.save.data.unlockedWeek = 2;
+								FlxG.save.data.buttonUnlockingShit = 6;
 								trace(FlxG.save.data.unlockedWeek);
-							}
-							else
-							{
-								trace("what how");
-							}
-
-							if (FlxG.save.data.buttonUnlockingShit == 5)
-							{
-								FlxG.save.data.buttonUnlockingShit += 1;
 							}
 						}
 					else if (curSong == 'Infiltrator')
@@ -4725,17 +4718,9 @@ class PlayState extends MusicBeatState
 							if (FlxG.save.data.unlockedWeek == 2)
 							{
 								FlxG.save.data.unlockedWeek = 3;
+								FlxG.save.data.buttonUnlockingShit = 9;
+								FlxG.save.data.unlockedBonus = true;
 								trace(FlxG.save.data.unlockedWeek);
-							}
-							else
-							{
-								trace("what how");
-							}
-
-
-							if (FlxG.save.data.buttonUnlockingShit == 8)
-							{
-								FlxG.save.data.buttonUnlockingShit += 1;
 							}
 						}
 					else
@@ -4744,14 +4729,9 @@ class PlayState extends MusicBeatState
 							{
 								if (FlxG.save.data.unlockedWeek == 3)
 								{
+									FlxG.save.data.buttonUnlockingShit = 10;
 									trace(FlxG.save.data.unlockedWeek);
 								}
-
-								
-						        if (FlxG.save.data.buttonUnlockingShit == 9)
-							    {
-								    FlxG.save.data.buttonUnlockingShit = 10;
-							    }
 							}
 						}
 					StoryMenuState.weekUnlocked[Std.int(Math.min(storyWeek + 1, StoryMenuState.weekUnlocked.length - 1))] = true;
@@ -4784,32 +4764,32 @@ class PlayState extends MusicBeatState
 					switch (curSong)
 					{
 						case 'Atomicpunch':
-							if (FlxG.save.data.buttonUnlockingShit <= 0)
+							if (FlxG.save.data.unlockedWeek == 0)
 							{
 								FlxG.save.data.buttonUnlockingShit = 1;
 							}
 						case 'Maggots':
-						    if (FlxG.save.data.buttonUnlockingShit = 1)
+						    if (FlxG.save.data.unlockedWeek == 0)
 							{
 								FlxG.save.data.buttonUnlockingShit = 2;
 							}
 						case 'Ironbomber':
-							if (FlxG.save.data.buttonUnlockingShit = 3)
+							if (FlxG.save.data.unlockedWeek == 1)
 							{
 								FlxG.save.data.buttonUnlockingShit = 4;
 							}
 						case 'Ironcurtain':
-							if (FlxG.save.data.buttonUnlockingShit = 4)
+							if (FlxG.save.data.unlockedWeek == 1)
 							{
 								FlxG.save.data.buttonUnlockingShit = 5;
 							}
 						case 'Clinicaltrial':
-						    if (FlxG.save.data.buttonUnlockingShit = 6)
+						    if (FlxG.save.data.unlockedWeek == 2)
 							{
 								FlxG.save.data.buttonUnlockingShit = 7;
 							}
 						case 'Wanker':
-							if (FlxG.save.data.buttonUnlockingShit = 7)
+							if (FlxG.save.data.unlockedWeek == 2)
 							{
 								FlxG.save.data.buttonUnlockingShit = 8;
 							}
@@ -5934,17 +5914,35 @@ class PlayState extends MusicBeatState
 	{
 		if (!boyfriend.stunned)
 		{
-			if (daNote.noteType == 7)
+			switch (daNote.noteType)
 			{
-				shakeCam = true;
-				FlxG.sound.play(Paths.sound('A'));
-				health += -1;
-
-				new FlxTimer().start(2, function(tmr:FlxTimer)
-					{
-						shakeCam = false;
-					});
-				
+				case 7:
+				{
+					tweenCam(1.55, 1);
+					shakeCam = true;
+					FlxG.sound.play(Paths.sound('A'));
+					health += -1;
+					boyfriend.playAnim('hit', true);
+	
+					new FlxTimer().start(2, function(tmr:FlxTimer)
+						{
+							shakeCam = false;
+							tweenCam(defaultCamZoom, 0.8);
+						});
+				}
+				case 8:
+					health += -0.85;
+					boyfriend.playAnim('hit', true);
+				case 10:
+					health += -0.8;
+					boyfriend.playAnim('hit', true);
+				default:
+				{
+					health -=0.04;
+					if (!bfDodging)
+						boyfriend.playAnim('sing' + sDir[direction] + 'miss', true);
+				}
+			}
 					if (combo > 5 && gf.animOffsets.exists('sad'))
 						{
 							gf.playAnim('sad');
@@ -5972,7 +5970,6 @@ class PlayState extends MusicBeatState
 			
 						songScore -= 10;
 			
-						boyfriend.playAnim('hit', true);
 						
 						#if windows
 						if (luaModchart != null)
@@ -5980,153 +5977,13 @@ class PlayState extends MusicBeatState
 						#end
 			
 			
+						daNote.kill();
+						notes.remove(daNote, true);
+						daNote.destroy();
+
 						updateAccuracy();
-			}
-			else if (daNote.noteType == 8)
-			{
-				health += -0.85;
-				if (combo > 5 && gf.animOffsets.exists('sad'))
-					{
-						gf.playAnim('sad');
-					}
-					combo = 0;
-					misses++;
-		
-					if (daNote != null)
-					{
-						if (!loadRep && SONG.song != 'IronBomber')
-						{
-							saveNotes.push([daNote.strumTime,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
-							saveJudge.push("miss");
-						}
-					}
-					else
-						if (!loadRep && SONG.song != 'IronBomber')
-						{
-							saveNotes.push([Conductor.songPosition,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
-							saveJudge.push("miss");
-						}	
-		
-					if (FlxG.save.data.accuracyMod == 1)
-						totalNotesHit -= 1;
-		
-					songScore -= 10;
-		
-					trace(songScore);
-
-					boyfriend.playAnim('hit', true);
-					
-					#if windows
-					if (luaModchart != null)
-						luaModchart.executeState('playerOneMiss', [direction, Conductor.songPosition]);
-					#end
-		
-		
-					updateAccuracy();
-			}
-			else if (daNote.noteType == 10)
-				{
-					health += -0.8;
-					if (combo > 5 && gf.animOffsets.exists('sad'))
-						{
-							gf.playAnim('sad');
-						}
-						combo = 0;
-						misses++;
 			
-						if (daNote != null)
-						{
-							if (!loadRep)
-							{
-								saveNotes.push([daNote.strumTime,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
-								saveJudge.push("miss");
-							}
-						}
-						else
-							if (!loadRep)
-							{
-								saveNotes.push([Conductor.songPosition,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
-								saveJudge.push("miss");
-							}	
-			
-						if (FlxG.save.data.accuracyMod == 1)
-							totalNotesHit -= 1;
-			
-						songScore -= 10;
-			
-						trace(songScore);
-	
-						boyfriend.playAnim('hit', true);
-						slashThingie = true;
-						if (curTiming == 0)
-						    dad.playAnim('slash', true);
-						else if (curTiming == 1)
-							dad.playAnim('slash-alt', true);
-
-						new FlxTimer().start(0.8, function(tmr:FlxTimer)
-							{
-								slashThingie = false;
-								dad.playAnim('idle', true);
-							});
-
-						#if windows
-						if (luaModchart != null)
-							luaModchart.executeState('playerOneMiss', [direction, Conductor.songPosition]);
-						#end
-			
-			
-						updateAccuracy();
-				}
-			else
-				{
-					health -= 0.04;
-					if (combo > 5 && gf.animOffsets.exists('sad'))
-					{
-						gf.playAnim('sad');
-					}
-					combo = 0;
-					misses++;
-		
-					if (daNote != null)
-					{
-						if (!loadRep)
-						{
-							saveNotes.push([daNote.strumTime,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
-							saveJudge.push("miss");
-						}
-					}
-					else
-						if (!loadRep)
-						{
-							saveNotes.push([Conductor.songPosition,0,direction,166 * Math.floor((PlayState.rep.replay.sf / 60) * 1000) / 166]);
-							saveJudge.push("miss");
-						}
-		
-					//var noteDiff:Float = Math.abs(daNote.strumTime - Conductor.songPosition);
-					//var wife:Float = EtternaFunctions.wife3(noteDiff, FlxG.save.data.etternaMode ? 1 : 1.7);
-		
-					if (FlxG.save.data.accuracyMod == 1)
-						totalNotesHit -= 1;
-		
-					songScore -= 10;
-		
-					FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
-					// FlxG.sound.play(Paths.sound('missnote1'), 1, false);
-					// FlxG.log.add('played imss note');
-					if (!bfDodging)
-						boyfriend.playAnim('sing' + sDir[direction] + 'miss', true);
-					
-		
-					#if windows
-					if (luaModchart != null)
-						luaModchart.executeState('playerOneMiss', [direction, Conductor.songPosition]);
-					#end
-		
-		
-					updateAccuracy();
-				}
-
-		}
+		    }
 	}
 
 	/*function badNoteCheck()
@@ -6340,7 +6197,7 @@ class PlayState extends MusicBeatState
 					#end
 
 					if (note.disguise) //disguise
-						    instaKill();
+						    instaKill(true);
 
 					if (note.snoiper) //GOOD SHOT MATE!
 						{
@@ -6404,7 +6261,7 @@ class PlayState extends MusicBeatState
 					}
 					if (note.saw)
 					{
-						maxHealthCum(0.50);
+						maxHealthCum(0.25);
 					}
 
 
@@ -6475,9 +6332,10 @@ class PlayState extends MusicBeatState
 				health -= 0.005;
 			}, 300);
 		}
-	function instaKill():Void
+	function instaKill(instant:Bool = true):Void
 		{
-			health -= 100;
+			if (instant){health -= 100;}
+			else{new FlxTimer().start(0.5, function(tmr:FlxTimer){health -= 0.5;}, 10);}
 		}
 	function boink():Void
 		{
@@ -6520,7 +6378,7 @@ class PlayState extends MusicBeatState
 		}
 	function maxHealthCum(newHealth:Float):Void // funny saw thing -tob
 		{
-			if (maxHealth < 1.5)
+			if (maxHealth < 1.25)
 			    maxHealth += newHealth;
 
 			remove(healthBar);
@@ -6535,7 +6393,6 @@ class PlayState extends MusicBeatState
 			add(iconP1);
 			add(iconP2);
 			healthBar.cameras = [camHUD];
-
 		}
 	function funkyShake(power:Float, duration:Float):Void
 		{
@@ -6938,9 +6795,9 @@ class PlayState extends MusicBeatState
 			}*/
 
 
-		if (health > 2)
+		if (health > maxHealthReal)
 		{
-			health = 2;
+			health = maxHealthReal;
 		}
 
 		// the ending cutscenes are weird so we need this
@@ -6953,10 +6810,10 @@ class PlayState extends MusicBeatState
 					{
 						case 0:
 							if (health >= maxHealth + 0.1)
-								health += -0.02;
+								health += -0.01;
 					    case 1:
 							if (health >= maxHealth + 1)
-								health += -0.02;
+								health += -0.01;
 					}
 				case 'Inferno':
 					if (burnShit)						
@@ -6965,7 +6822,7 @@ class PlayState extends MusicBeatState
 					    health += -0.02;
 				case 'Honorbound':
 					if (health >= 0.1)
-					    health += -0.01;
+					    health += -0.005;
 				default:
 					trace("uhhh wrong song dummy");
 			}

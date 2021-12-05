@@ -79,7 +79,7 @@ class DialogueBox extends FlxSpriteGroup
 		
 		if (!hasDialog)
 		{
-			FlxG.sound.music.fadeOut(0.2, 0);
+			FlxG.sound.music.fadeOut(0.1, 0);
 			return;
 		}
 			
@@ -217,7 +217,7 @@ class DialogueBox extends FlxSpriteGroup
 					{
 						isEnding = true;
 	
-						FlxG.sound.music.fadeOut(2.2, 0);
+						FlxG.sound.music.fadeOut(1, 0);
 	
 						new FlxTimer().start(0.2, function(tmr:FlxTimer)
 						{
@@ -242,7 +242,7 @@ class DialogueBox extends FlxSpriteGroup
 		this var is private by default, you can control + click on it to get to the file where its stored and
 		change it to a public var which will make it accessible for you -tob
 		*/
-		/*if (swagDialogue._typing && delay < 1)
+		if (swagDialogue._typing && delay < 1)
 			{
 				portraitLeft.animation.play('enter');
 				portraitRight.animation.play('enter');
@@ -251,10 +251,10 @@ class DialogueBox extends FlxSpriteGroup
 			{
 				portraitLeft.animation.stop;
 				portraitRight.animation.stop;
-			}*/
+			}
 		
 		
-		if (/*!swagDialogue._typing && */skip == 1)
+		if (!swagDialogue._typing && skip == 1)
 		{
 			remove(dialogue);
 			FlxG.sound.play(Paths.sound('clickText'), 0.8);
@@ -473,18 +473,6 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.visible = true;
 					portraitRight.animation.play('enter');
 				}
-			case 'none':
-				box.flipX = true;
-				portraitRight.visible = false;
-				portraitLeft.visible = false;
-				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
-			case 'no':
-				box.flipX = true;
-				portraitRight.visible = false;
-				portraitLeft.visible = false;
-				swagDialogue.color = 0xFF8B4513;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/demo'), 0.6)];
 			case 'snoiper':
 				box.flipX = true;
 				portraitRight.visible = false;
@@ -498,6 +486,18 @@ class DialogueBox extends FlxSpriteGroup
 					portraitLeft.visible = true;
 					portraitLeft.animation.play('enter');
 				}
+			case 'none':
+				box.flipX = true;
+				portraitRight.visible = false;
+				portraitLeft.visible = false;
+				swagDialogue.color = 0xFF000000;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+			case 'no':
+				box.flipX = true;
+				portraitRight.visible = false;
+				portraitLeft.visible = false;
+				swagDialogue.color = 0xFF8B4513;
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/demo'), 0.6)];
 		}
 	}
 
