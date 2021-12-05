@@ -1,5 +1,5 @@
 Atomicpunch:scunt:1
-Maggots:sodier:1
+Maggots:soldier:1
 Inferno:pyro:1
 Ironbomber:demo:1
 Ironcurtain:heavy:1
@@ -12,6 +12,7 @@ Honorbound:soldierai:1
 Eyelander:demoknight:1
 Dispenser:engi:1
 May Somethingth:medic:1
+Trolling:sodier:1
 Skill Issue:snoiper:1
 Five Minutes:snoiper:1
 Monochrome:sexe:1

@@ -1916,6 +1916,8 @@ class PlayState extends MusicBeatState
 							camHUD.visible = true;
 						case 'Monochrome':
 							camHUD.visible = true;
+						case 'Trolling':
+							camHUD.visible = true;
 						default:
 							trace("ok funny intro activated");
 					}
@@ -6161,7 +6163,7 @@ class PlayState extends MusicBeatState
 
 					if (note.fist)
 						boyfriend.playAnim('dodge', true);
-					else if (!bfDodging)
+					else if (!boyfriend.animation.curAnim.name.startsWith('dodge') && boyfriend.animation.curAnim.name != null)
 						boyfriend.playAnim('sing' + sDir[note.noteData] + altAnim, true);
 
 					boyfriend.holdTimer = 0;
@@ -6386,7 +6388,8 @@ class PlayState extends MusicBeatState
 
 			new FlxTimer().start(1, function(tmr:FlxTimer)
 				{
-					dad.playAnim('idle');
+					if (!dad.animation.curAnim.name.startsWith('sing'))
+					    dad.playAnim('idle');
 				});
 				
 			if(!bfDodging && !PlayStateChangeables.botPlay)
