@@ -201,6 +201,26 @@ class Character extends FlxSprite
 				*/
 				playAnim('idle');
 
+			case 'scoutexe':
+				// SPOOPY!!!!!
+				tex = Paths.getSparrowAtlas('characters/scoutDotExe', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, true);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+				animation.addByPrefix('spawn', 'spawn', 24, false);
+
+				addOffset('idle', 0, 0);
+				addOffset("singUP", 20, 180);
+				addOffset("singRIGHT", -20, 80);
+				addOffset("singLEFT", 450, 120);
+				addOffset("singDOWN", -30, -370);
+				addOffset("spawn", 47, 16);
+
+				playAnim('idle');
+
 			case 'soldier':
 				// soldier shitting on you
 				tex = Paths.getSparrowAtlas('characters/soldier', 'shared');
@@ -370,6 +390,23 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 
+			case 'heavy-box':
+				tex = Paths.getSparrowAtlas('characters/heavy_box', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'H_idle', 24, false);
+				animation.addByPrefix('singUP', 'H_up', 24, false);
+				animation.addByPrefix('singRIGHT', 'H_right', 24, false);
+				animation.addByPrefix('singDOWN', 'H_down', 24, false);
+				animation.addByPrefix('singLEFT', 'H_left', 24, false);
+
+				addOffset('idle');
+                addOffset("singDOWN", -40, -50);
+                addOffset("singRIGHT" , -20, 10);
+                addOffset("singUP" , 20, 179);
+                addOffset("singLEFT" , 70, 0);
+
+				playAnim('idle');
+
 			case 'engi':
 				tex = Paths.getSparrowAtlas('characters/engi', 'shared');
 				frames = tex;
@@ -498,7 +535,7 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", 7, 14);
 				addOffset("singLEFT", 102, -15);
 				addOffset("singDOWN", -54, -4);
-				addOffset("singDOWN-alt", -54, -4);
+				addOffset("singDOWN-alt", -54, -4); // basically the laugh
 
 				playAnim('idle');
 
@@ -612,7 +649,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('singLEFT', 'bot left', 24, false);
 				animation.addByPrefix('singRIGHT', 'bot right', 24, false);
 				animation.addByPrefix('singDOWN', 'bot down', 24, false);
-				//animation.addByPrefix('singUPmiss', 'bot up miss', 24, false);
+				// scrapped miss because you wont be missing with a bot + the miss was bugged for some reason
+				//animation.addByPrefix('singUPmiss', 'bot up miss', 24, false); 
 				//animation.addByPrefix('singLEFTmiss', 'bot left miss', 24, false);
 				//animation.addByPrefix('singRIGHTmiss', 'bot right misss', 24, false);
 				//animation.addByPrefix('singDOWNmiss', 'bot down miss', 24, false);

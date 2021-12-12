@@ -92,8 +92,8 @@ class PlayState extends MusicBeatState
 	public static var mania:Int = 0;
 	public static var keyAmmo:Array<Int> = [4, 6, 9, 5, 7, 8, 1, 2, 3, 10];
 	private var ctrTime:Float = 0;
-
-	public static var firstDeath:Bool = true;
+	var sexing:Bool = false;
+	public static var firstDeath:Bool = false;
 
 	var infiniteUberBf:Bool = false;
 
@@ -110,6 +110,10 @@ class PlayState extends MusicBeatState
 	var seethe:Bool = false;
 	var cope:Bool = false;
 
+	
+	var isDead:Bool = false;
+	var isMonoDead:Bool = false;
+
 	var doinUrMom:String = 'doin your mom';
 	
 
@@ -125,6 +129,7 @@ class PlayState extends MusicBeatState
 	var blakShit:FlxSprite;
 
 	var jumpScare:FlxSprite;
+	var jumpScare2:FlxSprite;
 
 
 	public static var isHeavy:Bool = false;
@@ -1506,7 +1511,9 @@ class PlayState extends MusicBeatState
 				iconP1.alpha = 0;
 				iconP2.alpha = 0;
 				scoreTxt.alpha = 0;
-				dad.alpha = 0;
+				dad.visible = false;
+				dad.x = 0;
+				dad.y = 0;
 				for (i in playerStrums) 
 					{
 						FlxTween.tween(i, {alpha: 0}, 0.1, {ease: FlxEase.linear});
@@ -1518,13 +1525,21 @@ class PlayState extends MusicBeatState
 						i.x -= 4000;
 					}
 
-				jumpScare = new FlxSprite().loadGraphic(Paths.image('scary/scuntscare', 'shared'));
+				jumpScare = new FlxSprite().loadGraphic(Paths.image('scary/scuntscare1', 'shared'));
 				jumpScare.updateHitbox();
 				jumpScare.screenCenter();
 				add(jumpScare);
 
+				jumpScare2 = new FlxSprite().loadGraphic(Paths.image('scary/scuntscare2', 'shared'));
+				jumpScare2.updateHitbox();
+				jumpScare2.screenCenter();
+				add(jumpScare2);
+
 				jumpScare.visible = false;
 				jumpScare.cameras = [camHUD];
+
+				jumpScare2.visible = false;
+				jumpScare2.cameras = [camHUD];
 			default:
 				trace("hi");
 		}
@@ -2333,8 +2348,10 @@ class PlayState extends MusicBeatState
 			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 		}
 
-		if (curSong == 'Monochrome')
-		    FlxTween.tween(dad, {alpha: 1}, 3, {ease: FlxEase.linear});
+		if (curSong == 'Monochrome'){
+		    dad.playAnim('spawn', true);
+			dad.visible = true;
+		}
 
 		if (FlxG.save.data.noteSplash)
 			{
@@ -3033,6 +3050,10 @@ class PlayState extends MusicBeatState
 					}
 			}*/
 
+		if (FlxG.keys.justPressed.Z)
+		{
+			monochromeText(15, 'WANNA WORK ON MY FNF MOD?');
+		}
 		super.update(elapsed);
 
 		scoreTxt.text = Ratings.CalculateRanking(songScore,songScoreDef,nps,maxNPS,accuracy);
@@ -3057,8 +3078,9 @@ class PlayState extends MusicBeatState
 				openSubState(new PauseSubState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
 
+		doDeathCheck();
 
-		if (FlxG.keys.justPressed.SEVEN && songStarted && curSong != 'Atomicpunch' && curSong != 'Yourmom')
+		if (FlxG.keys.justPressed.SEVEN && songStarted && curSong != 'Atomicpunch')
 		{
 			/*PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
 		    PlayState.isStoryMode = false;
@@ -3116,32 +3138,7 @@ class PlayState extends MusicBeatState
 				}
 				#end	
 			}
-		else if (FlxG.keys.justPressed.SEVEN && songStarted && curSong == 'Yourmom')
-			{
-				if (useVideo)
-					{
-						GlobalVideo.get().stop();
-						remove(videoSprite);
-						FlxG.stage.window.onFocusOut.remove(focusOut);
-						FlxG.stage.window.onFocusIn.remove(focusIn);
-						removedVideo = true;
-					}
-				cannotDie = true;
-				#if windows
-				DiscordClient.changePresence("Charting", null, null, true);
-				#end
-				FlxG.switchState(new ChartingState());
-				Main.editor = true;
-				FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
-				FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, releaseInput);
-				#if windows
-				if (luaModchart != null)
-				{
-					luaModchart.die();
-					luaModchart = null;
-				}
-				#end	
-			}
+		
 
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
@@ -3271,6 +3268,14 @@ class PlayState extends MusicBeatState
 					luaModchart.executeState('playerTwoTurn', []);
 				#end
 				// camFollow.setPosition(lucky.getMidpoint().x - 120, lucky.getMidpoint().y + 210);
+
+				switch (dad.curCharacter)
+				{
+					case 'scoutexe':
+						camFollow.y = dad.getMidpoint().y - -75;
+						camFollow.x = dad.getMidpoint().x - 120;
+				}
+
 			}
 
 			if (PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
@@ -3778,36 +3783,6 @@ class PlayState extends MusicBeatState
 			#end
 		}
 
-		if (health <= maxHealth  && !cannotDie && !infiniteUberBf)
-		{
-			Note.hitCheck = 0;
-			boyfriend.stunned = true;
-
-			persistentUpdate = false;
-			persistentDraw = false;
-			paused = true;
-
-			vocals.stop();
-			FlxG.sound.music.stop();
-
-			if (curSong != 'Frontierjustice' && firstDeath)
-			{
-				firstDeath = false;
-			}
-
-			if (!isStoryMode)
-			{
-				firstDeath = false;
-			}
-			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
-
-			#if windows
-			// Game Over doesn't get his own variable because it's only used here
-			DiscordClient.changePresence("GAME OVER -- " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy),"\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
-			#end
-
-			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
-		}
  		if (!inCutscene && FlxG.save.data.resetButton && !infiniteUberBf)
 		{
 			if(FlxG.keys.justPressed.R && mania != 9)
@@ -6315,6 +6290,87 @@ class PlayState extends MusicBeatState
 			if (instant){health -= 100;}
 			else{new FlxTimer().start(0.5, function(tmr:FlxTimer){health -= 0.5;}, 10);}
 		}
+	function doDeathCheck():Void
+	{
+		if (health <= maxHealth  && !cannotDie && !infiniteUberBf)
+		{
+			die();
+		}
+	}
+	function monochromeText(timer:Int = 15, word:String = ''):Void
+		{
+			canPause = false;
+			sexing = true;
+			persistentUpdate = true;
+			persistentDraw = true;
+			var realTimer = timer;
+			var unownState = new MonochromeShit(realTimer, word);
+			unownState.win = wonMonochrome;
+			unownState.lose = die;
+			unownState.cameras = [camHUD];
+			FlxG.autoPause = false;
+			openSubState(unownState);
+		}
+	public function wonMonochrome():Void 
+	{
+		canPause = true;
+		sexing = false;
+	}
+
+
+	public function die():Void {
+		if (SONG.song.toLowerCase() == 'monochrome') {
+			boyfriend.stunned = true;
+			paused = true;
+
+			vocals.stop();
+			FlxG.sound.music.stop();
+
+			isDead = true;
+			isMonoDead = true;
+			dad.debugMode = true;
+			dad.playAnim('spawn', true, true);
+			dad.animation.finishCallback = function (name:String) {
+				remove(dad);
+			}
+
+			FlxTween.tween(healthBar, {alpha: 0}, 1, {ease: FlxEase.linear, onComplete: function (twn:FlxTween) {
+				healthBar.visible = false;
+				healthBarBG.visible = false;
+				scoreTxt.visible = false;
+				iconP1.visible = false;
+				iconP2.visible = false;
+			}});
+			FlxTween.tween(healthBarBG, {alpha: 0}, 1, {ease: FlxEase.linear});
+			FlxTween.tween(scoreTxt, {alpha: 0}, 1, {ease: FlxEase.linear});
+			FlxTween.tween(iconP1, {alpha: 0}, 1, {ease: FlxEase.linear});
+			FlxTween.tween(iconP2, {alpha: 0}, 1, {ease: FlxEase.linear});
+			for (i in playerStrums) {
+				FlxTween.tween(i, {alpha: 0}, 1, {ease: FlxEase.linear});
+			}
+		}
+		else
+		{
+			Note.hitCheck = 0;
+			boyfriend.stunned = true;
+
+			persistentUpdate = false;
+			persistentDraw = false;
+			paused = true;
+
+			vocals.stop();
+			FlxG.sound.music.stop();
+
+			openSubState(new GameOverSubstate(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+
+			#if windows
+			// Game Over doesn't get his own variable because it's only used here
+			DiscordClient.changePresence("GAME OVER -- " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy),"\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
+			#end
+
+			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+		}
+	}
 	function boink():Void
 		{
 			add(bonkBOT);
@@ -6729,19 +6785,31 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Monochrome')
 			{
-				if (jumpscares.contains(curStep))
-					{
-						switch(jumpVal)
-						{
-							case 0:
-								jumpscare(0.75, 5);
-							case 1:
-								jumpscare(0.37, 5);
-							case 2:
-								jumpscare(1.12, 5);
-						}
-					}
+				switch (curStep)
+				{
+					case 256:
+						monochromeText(15);
+					case 512:
+						monochromeText(12);
+					case 896, 928:
+						monochromeText(8);
+					case 1280:
+						monochromeText(10);
+					case 1408:
+						monochromeText(7);
+					case 504, 952:
+						jumpscare(0.75, true);
+					case 964, 972, 980:
+						jumpscare(0.38, true);
+					case 1116:
+						jumpscare(0.38, false);
+					case 1208:
+						jumpscare(0.75, false);
+					case 1536:
+						jumpscare(1.11, false);
+				}
 			}
+	
 
 		if (curSong == 'Honorbound')
 			{
@@ -6769,6 +6837,7 @@ class PlayState extends MusicBeatState
 						{
 							FlxTween.tween(camHUD, {alpha: 0},2, 
 								{
+								
 									ease: FlxEase.cubeInOut,
 								});
 							cum = true;
@@ -6816,6 +6885,11 @@ class PlayState extends MusicBeatState
 				default:
 					trace("uhhh wrong song dummy");
 			}
+		}
+
+		if (isMonoDead) 
+		{
+			LoadingState.loadAndSwitchState(new PlayState());
 		}
 
 		#if windows
@@ -6891,14 +6965,47 @@ class PlayState extends MusicBeatState
 			funnyY = -5;
 			what = true;
 		}
-	function jumpscare(duration:Float, jumpScareAlpha:Float) 
+	function jumpscare(duration:Float, chance:Bool = false) 
 		{
-			jumpScare.visible = true;
-			jumpScare.alpha = jumpScareAlpha;
-			camHUD.shake(0.05, duration, function()
+			if (chance)
 			{
-				jumpScare.alpha = 0;
-			});
+				if (FlxG.random.bool(50))
+					{
+						if (FlxG.random.bool(50))
+							{
+								jumpScare.visible = true;
+								jumpScare.alpha = 100;
+							}
+						else
+							{
+								jumpScare2.visible = true;
+								jumpScare2.alpha = 100;
+							}
+						camHUD.shake(0.05, duration, function()
+						{
+							jumpScare.alpha = 0;
+							jumpScare2.alpha = 0;
+						});
+					}
+			}
+			else
+			{
+				if (FlxG.random.bool(50))
+					{
+						jumpScare.visible = true;
+						jumpScare.alpha = 100;
+					}
+				else
+					{
+						jumpScare2.visible = true;
+						jumpScare2.alpha = 100;
+					}
+				camHUD.shake(0.05, duration, function()
+				{
+					jumpScare.alpha = 0;
+					jumpScare2.alpha = 0;
+				});
+			}
 		}
 	override function beatHit()
 	{
@@ -7011,12 +7118,12 @@ class PlayState extends MusicBeatState
 							{
 								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
 									{
-										if (!dad.animation.curAnim.name.startsWith('shit'))
+										if (!dad.animation.curAnim.name.startsWith('shit') && !dad.animation.curAnim.name.startsWith('spawn'))
 											dad.playAnim('idle');
 									}
 								else if (dad.animation.curAnim.name != null && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing"))
 									{
-										if (!dad.animation.curAnim.name.startsWith('shit'))
+										if (!dad.animation.curAnim.name.startsWith('shit') && !dad.animation.curAnim.name.startsWith('spawn'))
 											dad.playAnim('idle');
 									}
 							}

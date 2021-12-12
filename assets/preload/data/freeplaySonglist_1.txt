@@ -10,9 +10,10 @@ Infiltrator:spy:1
 Property Damage:saxton:1
 Honorbound:soldierai:1
 Eyelander:demoknight:1
+Strongmann:heavy-box:1
 Dispenser:engi:1
 May Somethingth:medic:1
 Trolling:sodier:1
 Skill Issue:snoiper:1
 Five Minutes:snoiper:1
-Monochrome:sexe:1
+Monochrome:scoutexe:1

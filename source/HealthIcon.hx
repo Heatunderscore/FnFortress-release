@@ -27,12 +27,14 @@ class HealthIcon extends FlxSprite
 		animation.add('scunt', [24, 25], 0, false, isPlayer);
 		animation.add('scunt-old', [24, 25], 0, false, isPlayer);
 		animation.add('sexe', [50, 51], 0, false, isPlayer);
+		animation.add('scoutexe', [49, 49], 0, false, isPlayer);
 		animation.add('soldier', [40, 41], 0, false, isPlayer);
 		animation.add('sodier', [12, 13], 0, false, isPlayer);
 		animation.add('pyro', [32, 33], 0, false, isPlayer);
 		animation.add('pyroland', [56, 57], 0, false, isPlayer);
 		animation.add('demo', [26, 27], 0, false, isPlayer);
 		animation.add('heavy', [30, 31], 0, false, isPlayer);
+		animation.add('heavy-box', [30, 31], 0, false, isPlayer);
 		animation.add('engi', [34, 35], 0, false, isPlayer);
 		animation.add('robo-engi', [34, 35], 0, false, isPlayer);
 		animation.add('medic', [36, 37], 0, false, isPlayer);
