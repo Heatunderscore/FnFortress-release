@@ -15,6 +15,7 @@ class Character extends FlxSprite
 	public var isPlayer:Bool = false;
 	public static var isMedicThing:Bool = false;
 	public var curCharacter:String = 'bf';
+	public var shitting:Bool = false;
 
 	public var holdTimer:Float = 0;
 

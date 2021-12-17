@@ -986,17 +986,16 @@ class PlayState extends MusicBeatState
 			case 'sniper':
 				dad.y += -75;
 				dad.x += -100;
-			case 'sexe':
-				camPos.set(dad.getGraphicMidpoint().x + 550, dad.getGraphicMidpoint().y);
 			case 'soldierai':
 				dad.y += -125;
 		}
 
-
 		if (FlxG.save.data.botplay)
-			boyfriend = new Boyfriend(770, 450, "bf-bot");
-		else
-		    boyfriend = new Boyfriend(770, 450, SONG.player1);
+		{
+			SONG.player1 = 'bf-bot';
+		}
+
+		boyfriend = new Boyfriend(770, 450, SONG.player1);
 
 		// REPOSITIONING PER STAGE
 		switch (curStage)
@@ -1052,8 +1051,8 @@ class PlayState extends MusicBeatState
 				add(dad2);
 				funnyHeavy = new FlxSprite(dad2.x, dad2.y).loadGraphic(Paths.image('fortress/bg/heavyisdead', 'shared'));
 				funnyHeavy.visible = false;
-				funnyHeavy.y += 275;
-				funnyHeavy.x += 20; 
+				funnyHeavy.y += 290;
+				funnyHeavy.x += 55; 
 				//funnyHeavy.scrollFactor.set();
 				//funnyHeavy.updateHitbox();
 				add(funnyHeavy);
@@ -1321,7 +1320,8 @@ class PlayState extends MusicBeatState
 			}
 		else
 			{
-				healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);
+				if (dad.curCharacter == 'saxton'){healthBar.createFilledBar(0xFF8B4513, 0xFF00FFFF);}
+				else {healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);}
 			}
 		add(healthBar);
 
@@ -1485,8 +1485,6 @@ class PlayState extends MusicBeatState
 			{
 				case 'Honorbound':
 					schoolIntro(doof);
-				case 'Monochrome':
-					dead(2.5);
 				case 'Skill Issue':
 					//dialogue = CoolUtil.coolTextFile(Paths.txt('skill-issue/holyshit'));
 					schoolIntro(doof);
@@ -1671,7 +1669,7 @@ class PlayState extends MusicBeatState
 	{
 		camHUD.visible = false;
 		FlxG.sound.play(Paths.sound('scout_dominationpyr'));
-		new FlxTimer().start(2.5, function(tmr:FlxTimer)
+		new FlxTimer().start(time, function(tmr:FlxTimer)
 			{
 				startCountdown();
 			});
@@ -1917,8 +1915,6 @@ class PlayState extends MusicBeatState
 							camHUD.visible = true;
 						case 'Meet The Team':
 							camHUD.visible = true;
-						case 'Yourmom':
-							camHUD.visible = true;
 						case 'Five Minutes':
 							camHUD.visible = true;
 						case 'Skill Issue':
@@ -1932,6 +1928,8 @@ class PlayState extends MusicBeatState
 						case 'Monochrome':
 							camHUD.visible = true;
 						case 'Trolling':
+							camHUD.visible = true;
+						case 'Strongmann':
 							camHUD.visible = true;
 						default:
 							trace("ok funny intro activated");
@@ -2342,6 +2340,8 @@ class PlayState extends MusicBeatState
 		previousFrameTime = FlxG.game.ticks;
 		lastReportedPlayheadPosition = 0;
 
+		if (curSong == 'Monochrome'){dad.debugMode = true;}
+
 
 		if (!paused)
 		{
@@ -2349,8 +2349,11 @@ class PlayState extends MusicBeatState
 		}
 
 		if (curSong == 'Monochrome'){
-		    dad.playAnim('spawn', true);
 			dad.visible = true;
+		    dad.playAnim('spawn', true);
+			dad.animation.finishCallback = function (name:String) {
+				dad.debugMode = false;
+			}
 		}
 
 		if (FlxG.save.data.noteSplash)
@@ -3054,6 +3057,7 @@ class PlayState extends MusicBeatState
 		{
 			monochromeText(15, 'WANNA WORK ON MY FNF MOD?');
 		}
+
 		super.update(elapsed);
 
 		scoreTxt.text = Ratings.CalculateRanking(songScore,songScoreDef,nps,maxNPS,accuracy);
@@ -3468,16 +3472,6 @@ class PlayState extends MusicBeatState
 					FlxTween.tween(i, {alpha: 0}, 0.1, {ease: FlxEase.linear});
 					i.x = -4000;
 				}
-
-			switch (curStep)
-			{
-				case 900:
-					jumpVal = 1;
-				case 1200:
-					jumpVal = 0;
-				case 1500:
-					jumpVal = 2;
-			}
 		}
 
 		if (curSong == 'Skill Issue')
@@ -4314,7 +4308,7 @@ class PlayState extends MusicBeatState
 							switch (daNote.noteType)
 							{
 						
-								case 0 | 7 | 8 | 10: //normal + drunk + rocket + my big fat cock -tob
+								case 0 | 6 | 7 | 8 | 10: //normal + drunk + rocket + my big fat cock -tob
 								{
 									if (daNote.isSustainNote && daNote.wasGoodHit)
 										{
@@ -4644,7 +4638,7 @@ class PlayState extends MusicBeatState
 
 					FlxG.sound.music.stop();
 					vocals.stop();
-					if (FlxG.save.data.scoreScreen)
+					if (FlxG.save.data.scoreScreen && curSong != 'Monochrome')
 					{
 						openSubState(new ResultsScreen());
 					}
@@ -5869,6 +5863,9 @@ class PlayState extends MusicBeatState
 		{
 			switch (daNote.noteType)
 			{
+				case 6:
+					health -= 500;
+					FlxG.sound.play(Paths.sound('pow'));
 				case 7:
 				{
 					tweenCam(1.55, 1);
@@ -6136,10 +6133,13 @@ class PlayState extends MusicBeatState
 					if (note.alt)
 						altAnim = '-alt';
 
-					if (note.fist)
+					if (note.fist || note.dad1)
 						boyfriend.playAnim('dodge', true);
+					else if (note.dad2)
+						boyfriend.playAnim('hey', true);
 					else if (!boyfriend.animation.curAnim.name.startsWith('dodge') && boyfriend.animation.curAnim.name != null)
 						boyfriend.playAnim('sing' + sDir[note.noteData] + altAnim, true);
+
 
 					boyfriend.holdTimer = 0;
 
@@ -6292,7 +6292,7 @@ class PlayState extends MusicBeatState
 		}
 	function doDeathCheck():Void
 	{
-		if (health <= maxHealth  && !cannotDie && !infiniteUberBf)
+		if (health <= maxHealth  && !cannotDie && !infiniteUberBf && !isDead)
 		{
 			die();
 		}
@@ -6323,15 +6323,15 @@ class PlayState extends MusicBeatState
 			boyfriend.stunned = true;
 			paused = true;
 
+			FlxG.sound.music.pause();
+			vocals.pause();
 			vocals.stop();
 			FlxG.sound.music.stop();
 
-			isDead = true;
-			isMonoDead = true;
 			dad.debugMode = true;
 			dad.playAnim('spawn', true, true);
 			dad.animation.finishCallback = function (name:String) {
-				remove(dad);
+				dad.visible = false;
 			}
 
 			FlxTween.tween(healthBar, {alpha: 0}, 1, {ease: FlxEase.linear, onComplete: function (twn:FlxTween) {
@@ -6348,12 +6348,15 @@ class PlayState extends MusicBeatState
 			for (i in playerStrums) {
 				FlxTween.tween(i, {alpha: 0}, 1, {ease: FlxEase.linear});
 			}
+
+			isMonoDead = true;
 		}
 		else
 		{
 			Note.hitCheck = 0;
 			boyfriend.stunned = true;
 
+			isDead = true;
 			persistentUpdate = false;
 			persistentDraw = false;
 			paused = true;
@@ -6791,12 +6794,12 @@ class PlayState extends MusicBeatState
 						monochromeText(15);
 					case 512:
 						monochromeText(12);
-					case 896, 928:
-						monochromeText(8);
+					case 896:
+						monochromeText(10);
 					case 1280:
 						monochromeText(10);
 					case 1408:
-						monochromeText(7);
+						monochromeText(8);
 					case 504, 952:
 						jumpscare(0.75, true);
 					case 964, 972, 980:
@@ -6889,7 +6892,7 @@ class PlayState extends MusicBeatState
 
 		if (isMonoDead) 
 		{
-			LoadingState.loadAndSwitchState(new PlayState());
+			FlxG.resetState();
 		}
 
 		#if windows
@@ -7040,7 +7043,11 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(i, {alpha: 0.7}, 3, {ease: FlxEase.linear});
 						}
 					case 392:
-						FlxTween.tween(dad, {alpha: 0}, 1, {ease: FlxEase.linear});
+						dad.debugMode = true;
+						dad.playAnim('spawn', true, true);
+						dad.animation.finishCallback = function (name:String) {
+							dad.visible = false;
+						}
 						FlxTween.tween(healthBar, {alpha: 0}, 1, {ease: FlxEase.linear});
 						FlxTween.tween(healthBarBG, {alpha: 0}, 1, {ease: FlxEase.linear});
 						FlxTween.tween(scoreTxt, {alpha: 0}, 1, {ease: FlxEase.linear});

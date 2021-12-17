@@ -74,7 +74,7 @@ class Main extends Sprite
 		}
 
 		#if cpp
-		initialState = Caching;
+		initialState = ValveGuyIntro;
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 		#else
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
