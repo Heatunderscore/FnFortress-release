@@ -102,6 +102,23 @@ class Main extends Sprite
 		fpsCounter.textColor = color;
 	}
 
+	
+	public static function dumpCache() // 3. point. 1. fucking. gigabytes. memory. usage.
+		{
+			@:privateAccess
+			for (key in FlxG.bitmap._cache.keys())
+			{
+				var obj = FlxG.bitmap._cache.get(key);
+				if (obj != null)
+				{
+					Assets.cache.removeBitmapData(key);
+					FlxG.bitmap._cache.remove(key);
+					obj.destroy();
+				}
+			}
+			Assets.cache.clear("songs");
+		}
+
 	public function setFPSCap(cap:Float)
 	{
 		openfl.Lib.current.stage.frameRate = cap;

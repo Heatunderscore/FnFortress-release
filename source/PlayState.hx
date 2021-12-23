@@ -109,10 +109,16 @@ class PlayState extends MusicBeatState
 	var curTiming:Int = 0;
 	var seethe:Bool = false;
 	var cope:Bool = false;
+	var mald:Bool = true;
 
+	var loaded:Bool = false;
+
+	var overlayRed:FlxSprite;
 	
 	var isDead:Bool = false;
 	var isMonoDead:Bool = false;
+
+	var sfmBG:FlxSprite;
 
 	var doinUrMom:String = 'doin your mom';
 	
@@ -202,8 +208,8 @@ class PlayState extends MusicBeatState
 		"Selling unusual for 1 quadrillion keys pls buy",
 		"This mod is hard, Im going to compare it to MFM to make myself feel better.",
 		#if linux
-		"You're a Linux User!!"
-		"lmao youre using Linux"
+		"You're a Linux User!!",
+		"lmao youre using Linux",
 		#end
 
 		#if html5
@@ -251,12 +257,17 @@ class PlayState extends MusicBeatState
 
 	private var vocals:FlxSound;
 
+	var heya:Bool = false;
+
 	public var originalX:Float;
 
 	public static var dad:Character;
-	private var dad2:Character;
+	public static var dad2:Character;
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
+
+	public static var sfmBF:Boyfriend;
+	public static var sfmDemo:Character;
 
 	var scout:Character;
 	var soldier:Character;
@@ -285,6 +296,8 @@ class PlayState extends MusicBeatState
 	public static var cpuStrums:FlxTypedGroup<FlxSprite> = null;
 
 	var grace:Bool = false;
+
+	private var cantRun:Bool = false;
 
 	private var camZooming:Bool = false;
 	public static var curSong:String = "";
@@ -459,14 +472,57 @@ class PlayState extends MusicBeatState
 			Character.isMedicThing = false;
 		}
 
-        //^^^^
-		//making sure that no weird camera glitch or crash happens, since both of those are based on dad2 -tob
+		if (SONG.song != 'Monochrome' || SONG.song != 'Clinicaltrial') // NEVER enable preload for clinicaltrial
+		{
+			Main.dumpCache();
+
+			switch (SONG.song)
+			{
+				case 'You Cant Run':
+					{
+						boyfriend = new Boyfriend(0, 0, "bf-sfm");
+						add(boyfriend);
+						remove(boyfriend);
+
+						boyfriend = new Boyfriend(0, 0, "bf-sfm-dead");
+						add(boyfriend);
+						remove(boyfriend);
+
+						trace("preloaded mf");
+						loaded = true;
+					}
+				case 'Dispenser':
+					{
+						dad = new Character(0, 0, "scunt");
+						add(dad);
+						remove(dad);
+
+						dad = new Character(0, 0, "soldier");
+						add(dad);
+						remove(dad);
+
+						dad = new Character(0, 0, "engi");
+						add(dad);
+						remove(dad);
+
+						trace("preloaded mf");
+						loaded = true;
+					}
+				default:
+					{
+						trace("no preload mf");
+						loaded = true;
+					}
+
+			}
+		}
 
 		fidgetspinner = [112, 186, 250, 378, 634, 762, 888, 1048, 1592, 2040, 2168];
 
 		//goes unused
 		clok = [512, 539, 565, 592, 618, 644, 671, 697, 704, 731, 757, 784, 810, 837, 863, 890];
 
+		// goes unused
 		//soldierShits = [396, 428, 524, 589, 620, 653, 716, 812, 909, 972, 1005, 1036, 1101, 1164, 1197, 1260, 1325, 1420, 1453, 1548, 1581, 1676, 1709, 1904];
 
 		// goes unused
@@ -660,6 +716,10 @@ class PlayState extends MusicBeatState
 				hasGF = false;
 			case 'dispenser', 'five-minutes', 'eyelander':
 				hasGF = false;
+			case 'you-cant-run':
+				hasGF = false;
+				cantRun = true;
+				swaggyOptim = 5;
 		}
 
 		//defaults if no stage was found in chart
@@ -726,7 +786,38 @@ class PlayState extends MusicBeatState
 						warning.active = false;
 						warning.visible = false;
 						//warning.screenCenter();
+				}
+			case 'sfm-entry':
+				{
+						defaultCamZoom = 0.9;
+						curStage = 'sfm-entry';
+						sfmBG = new FlxSprite(-300, -200).loadGraphic(Paths.image('fortress/bg/sfm-entrance'));
+						sfmBG.antialiasing = true;
+						sfmBG.scrollFactor.set(0.9, 0.9);
+						
 
+						var sky:FlxSprite = new FlxSprite(-300, -200).loadGraphic(Paths.image('fortress/bg/exeCover/sky'));
+						sky.antialiasing = true;
+						sky.scrollFactor.set( 0.2, 0.2);
+						add(sky);
+
+						var bTre:FlxSprite = new FlxSprite(-300, -200).loadGraphic(Paths.image('fortress/bg/exeCover/backtrees'));
+						bTre.antialiasing = true;
+						bTre.scrollFactor.set( 0.5, 0.5);
+						add(bTre);
+
+						var tre:FlxSprite = new FlxSprite(-300, -200).loadGraphic(Paths.image('fortress/bg/exeCover/trees'));
+						tre.antialiasing = true;
+						tre.scrollFactor.set( 0.8, 0.8);
+						add(tre);
+
+						var groun:FlxSprite = new FlxSprite(-300, -200).loadGraphic(Paths.image('fortress/bg/exeCover/ground'));
+						groun.antialiasing = true;
+						groun.scrollFactor.set( 1, 1);
+						add(groun);
+
+						add(sfmBG);
+						sfmBG.visible = false;
 				}
 			case 'barnblitz-demo':
 				{
@@ -950,6 +1041,10 @@ class PlayState extends MusicBeatState
 		{
 			dad2 = new Character(280, 100, "robo-engi");
 		}
+		else if (cantRun)
+		{
+			sfmDemo = new Character(-200, 270, "demo-sfm");
+		}
 
 		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y);
 
@@ -958,11 +1053,6 @@ class PlayState extends MusicBeatState
 			case 'gf':
 				dad.setPosition(gf.x, gf.y);
 				gf.visible = false;
-				if (isStoryMode)
-				{
-					camPos.x += 600;
-					tweenCam(1.5, 1.5);
-				}
 			case 'scunt':
 				dad.y += 70;
 			case 'demo':
@@ -1061,6 +1151,11 @@ class PlayState extends MusicBeatState
 			else if (roboDad)
 			{
 				add(dad2);
+			}
+			else if (cantRun)
+			{
+				add(sfmDemo);
+				sfmDemo.visible = false;
 			}
 			/*if (SONG.song == 'Meet The Team')
 			{ // this might lag-
@@ -1312,16 +1407,16 @@ class PlayState extends MusicBeatState
 		healthBar.scrollFactor.set();
 		if (memedic)
 			{
-				healthBar.createFilledBar(0xFFFF0000, 0xFFFF0000);
+				healthBar.createFilledBar(FlxColor.fromRGB(194, 16, 21), FlxColor.fromRGB(194, 16, 21));
 			}
 		else if (curSong == 'Dispenser')
 			{
-				healthBar.createFilledBar(0xFFFF0000, 0xFFFF0000);
+				healthBar.createFilledBar(FlxColor.fromRGB(194, 16, 21), FlxColor.fromRGB(194, 16, 21));
 			}
 		else
 			{
-				if (dad.curCharacter == 'saxton'){healthBar.createFilledBar(0xFF8B4513, 0xFF00FFFF);}
-				else {healthBar.createFilledBar(0xFFFF0000, 0xFF00FFFF);}
+				if (dad.curCharacter == 'saxton'){healthBar.createFilledBar(0xFF8B4513, FlxColor.fromRGB(49, 176, 209));}
+				else {healthBar.createFilledBar(FlxColor.fromRGB(194, 16, 21), FlxColor.fromRGB(49, 176, 209));}
 			}
 		add(healthBar);
 
@@ -1439,6 +1534,16 @@ class PlayState extends MusicBeatState
 		    warning.cameras = [camHUD];
 		if (burnThing)
 			pyrolay.cameras = [camHUD];
+
+		if (curSong == 'You Cant Run')
+		{
+			overlayRed = new FlxSprite(0, 0).loadGraphic(Paths.image('fortress/bg/exeCover/RedVG', 'shared'));
+			overlayRed.alpha = 0;
+			overlayRed.antialiasing = true;
+			add(overlayRed);
+
+			overlayRed.cameras = [camHUD];
+		}
 
 
 		// if (SONG.song == 'South')
@@ -1777,22 +1882,6 @@ class PlayState extends MusicBeatState
 				gf.dance();
 				boyfriend.playAnim('idle');
 			}
-			/*else if (curSong == 'Meet The Team')
-			{
-				dad.playAnim('idle');
-				gf.dance();
-				boyfriend.playAnim('idle');
-				scout.playAnim('idle');
-				soldier.playAnim('idle');
-				pyro.playAnim('idle');
-				demoman.playAnim('idle');
-				heavy.playAnim('idle');
-				engi.playAnim('idle');
-				medic.playAnim('idle');
-				sniper.playAnim('idle');
-				spy.playAnim('idle');
-				roboEngi.playAnim('idle');
-			}*/
 			else
 			{
 				if (!dad.animation.curAnim.name.startsWith('shit')) // soldier isnt allowed to shit while idleing -tob
@@ -1930,6 +2019,8 @@ class PlayState extends MusicBeatState
 						case 'Trolling':
 							camHUD.visible = true;
 						case 'Strongmann':
+							camHUD.visible = true;
+						case 'You Cant Run':
 							camHUD.visible = true;
 						default:
 							trace("ok funny intro activated");
@@ -2342,19 +2433,11 @@ class PlayState extends MusicBeatState
 
 		if (curSong == 'Monochrome'){dad.debugMode = true;}
 
-
 		if (!paused)
 		{
 			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 		}
 
-		if (curSong == 'Monochrome'){
-			dad.visible = true;
-		    dad.playAnim('spawn', true);
-			dad.animation.finishCallback = function (name:String) {
-				dad.debugMode = false;
-			}
-		}
 
 		if (FlxG.save.data.noteSplash)
 			{
@@ -3058,6 +3141,24 @@ class PlayState extends MusicBeatState
 			monochromeText(15, 'WANNA WORK ON MY FNF MOD?');
 		}
 
+		if (curSong == 'You Cant Run' && seethe)
+		{
+			if (mald)
+			{
+				if (overlayRed.alpha != 1)
+				    overlayRed.alpha += 0.01;
+				else
+					mald = false;
+			}
+			else
+			{
+				if (overlayRed.alpha != 0)
+				    overlayRed.alpha -= 0.01;
+				else
+					mald = true;
+			}
+		}
+
 		super.update(elapsed);
 
 		scoreTxt.text = Ratings.CalculateRanking(songScore,songScoreDef,nps,maxNPS,accuracy);
@@ -3086,7 +3187,8 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.SEVEN && songStarted && curSong != 'Atomicpunch')
 		{
-			/*PlayState.SONG = Song.loadFromJson('skill-issue-bot', 'skill-issue');
+			/*PlayState.SONG = Song.lo
+			adFromJson('skill-issue-bot', 'skill-issue');
 		    PlayState.isStoryMode = false;
 		    PlayState.storyWeek = 0;
 		    trace('CUR WEEK' + PlayState.storyWeek);*/
@@ -3261,12 +3363,14 @@ class PlayState extends MusicBeatState
 					offsetY = luaModchart.getVar("followYOffset", "float");
 				}
 				#end
-				if (!isHeavy && !isRobo)
+				if (!isHeavy && !isRobo && !heya)
 				    camFollow.setPosition(dad.getMidpoint().x + 150 + noteCamMovementDadX, dad.getMidpoint().y - 100 + noteCamMovementDadY);
 				else if (isHeavy)
 					camFollow.setPosition(dad2.getMidpoint().x + 150 + noteCamMovementDadX, dad2.getMidpoint().y - 100 + noteCamMovementDadY);
 				else if (isRobo)
 					camFollow.setPosition(dad2.getMidpoint().x + 150 + noteCamMovementDadX, dad2.getMidpoint().y - 100 + noteCamMovementDadY);
+				else if (cantRun && curTiming == 1)
+					camFollow.setPosition(sfmDemo.getMidpoint().x + 150 + noteCamMovementDadX, sfmDemo.getMidpoint().y - 100 + noteCamMovementDadY);
 				#if windows
 				if (luaModchart != null)
 					luaModchart.executeState('playerTwoTurn', []);
@@ -3304,7 +3408,7 @@ class PlayState extends MusicBeatState
 				{
 					case 'intel':
 						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
-					case 'entry':
+					case 'entry', 'sfm-entry':
 						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
 					case 'barnblitz-demo':
 						camFollow.y = boyfriend.getMidpoint().y - 200 + noteCamMovementBfY;
@@ -4161,6 +4265,14 @@ class PlayState extends MusicBeatState
 										dad.playAnim('singDOWN-alt', true);
 									else
 										dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
+								case 5:
+									switch (curTiming)
+									{
+										case 0:
+											    dad.playAnim('sing' + sDir[daNote.noteData] , true);
+										case 1:
+											    sfmDemo.playAnim('sing' + sDir[daNote.noteData] , true);
+									}
 								default:
 									dad.playAnim('sing' + sDir[daNote.noteData] + altAnim, true);
 							}
@@ -4233,13 +4345,13 @@ class PlayState extends MusicBeatState
 							#end
 	
 							dad.holdTimer = 0;
-							if (heavyDad)
+							if (heavyDad || roboDad)
 							{
 								dad2.holdTimer = 0;
 							}
-							else if (roboDad)
+							else if (cantRun)
 							{
-								dad2.holdTimer = 0;
+								sfmDemo.holdTimer = 0;
 							}
 	
 							if (SONG.needsVoices)
@@ -4638,7 +4750,7 @@ class PlayState extends MusicBeatState
 
 					FlxG.sound.music.stop();
 					vocals.stop();
-					if (FlxG.save.data.scoreScreen && curSong != 'Monochrome')
+					if (FlxG.save.data.scoreScreen)
 					{
 						openSubState(new ResultsScreen());
 					}
@@ -4776,7 +4888,7 @@ class PlayState extends MusicBeatState
 				FlxG.sound.music.stop();
 				vocals.stop();
 
-				if (FlxG.save.data.scoreScreen)
+				if (FlxG.save.data.scoreScreen && curSong != 'Monochrome')
 				{
 					openSubState(new ResultsScreen());
 				}
@@ -4942,6 +5054,8 @@ class PlayState extends MusicBeatState
 			rating.y -= 50;
 			if (SONG.song == 'Property Damage')
 				rating.x = coolText.x - 525;
+			else if (SONG.song == 'Monochrome')
+				rating.x = coolText.x - 1000;
 			else
 				rating.x = coolText.x - 125;
 			
@@ -5012,12 +5126,19 @@ class PlayState extends MusicBeatState
 			comboSpr.y = rating.y + 100;
 			comboSpr.acceleration.y = 600;
 			comboSpr.velocity.y -= 150;
+			if (SONG.song == 'Monochrome')
+			    comboSpr.visible = false;
 
 			currentTimingShown.screenCenter();
 			currentTimingShown.x = comboSpr.x + 100;
 			currentTimingShown.y = rating.y + 100;
 			currentTimingShown.acceleration.y = 600;
 			currentTimingShown.velocity.y -= 150;
+
+			if (SONG.song == 'Monochrome')
+			{
+				currentTimingShown.x = comboSpr.x - 1000;
+			}
 	
 			comboSpr.velocity.x += FlxG.random.int(1, 10);
 			currentTimingShown.velocity.x += comboSpr.velocity.x;
@@ -6149,8 +6270,12 @@ class PlayState extends MusicBeatState
 						luaModchart.executeState('playerOneSing', [note.noteData, Conductor.songPosition]);
 					#end
 
-					if (note.disguise) //disguise
-						    instaKill(true);
+					if (note.disguise) {//disguise
+						if (curSong == 'You Cant Run')
+						    instaKill(false);
+						else
+							instaKill(true);
+					}
 
 					if (note.snoiper) //GOOD SHOT MATE!
 						{
@@ -6276,6 +6401,17 @@ class PlayState extends MusicBeatState
 			noteSplashes.add(recycledNote);
 			
 		}
+	
+	function doFunnyTween():Void
+		{
+			new FlxTimer().start(0.001, function(tmr:FlxTimer)
+			{
+				FlxTween.tween(overlayRed, {alpha: 100}, 1, {ease: FlxEase.linear, onComplete: function (twn:FlxTween) 
+					{
+						FlxTween.tween(overlayRed, {alpha: 0}, 1, {ease: FlxEase.linear});
+					}});		
+			}, 999);
+		}
 
 	function HealthDrain():Void //code from vs bob
 		{
@@ -6288,7 +6424,7 @@ class PlayState extends MusicBeatState
 	function instaKill(instant:Bool = true):Void
 		{
 			if (instant){health -= 100;}
-			else{new FlxTimer().start(0.5, function(tmr:FlxTimer){health -= 0.5;}, 10);}
+			else{new FlxTimer().start(0.01, function(tmr:FlxTimer){health -= 0.01;}, 300);}
 		}
 	function doDeathCheck():Void
 	{
@@ -6323,10 +6459,10 @@ class PlayState extends MusicBeatState
 			boyfriend.stunned = true;
 			paused = true;
 
+			FlxG.sound.music.volume = 0;
+			vocals.volume = 0;
 			FlxG.sound.music.pause();
 			vocals.pause();
-			vocals.stop();
-			FlxG.sound.music.stop();
 
 			dad.debugMode = true;
 			dad.playAnim('spawn', true, true);
@@ -6401,6 +6537,7 @@ class PlayState extends MusicBeatState
 							new FlxTimer().start(1.5, function(tmr:FlxTimer)
 								{
 									antiStack = false;
+									cope = false;
 									trace("ah hell nah stacking");
 								});
 						});
@@ -6790,6 +6927,12 @@ class PlayState extends MusicBeatState
 			{
 				switch (curStep)
 				{
+					case 120:
+						dad.visible = true;
+						dad.playAnim('spawn', true);
+						dad.animation.finishCallback = function (name:String) {
+							dad.debugMode = false;
+						}
 					case 256:
 						monochromeText(15);
 					case 512:
@@ -6831,6 +6974,42 @@ class PlayState extends MusicBeatState
 						tweenCam(0.9, 1);
 				}
 			}
+
+		if (curSong == 'You Cant Run')
+		{
+			switch (curStep)
+		    {
+				case 80:
+					seethe = true;
+					mald = true;
+				case 127, 328, 1288:
+					FlxG.camera.flash(FlxColor.RED, 1);
+					funkyShake(0.06, 0.3);
+				case 527:
+					heya = true;
+					curTiming = 1;
+					seethe = false;
+					overlayRed.alpha = 0;
+					remove(boyfriend);
+					sfmBG.visible = true;
+					dad.visible = false;
+					sfmDemo.visible = true;
+					boyfriend = new Boyfriend(770, 450, "bf-sfm");
+					add(boyfriend);
+				case 784:
+					heya = false;
+					curTiming = 0;
+					seethe = true;
+					remove(boyfriend);
+					sfmBG.visible = false;
+					dad.visible = true;
+					sfmDemo.visible = false;
+					boyfriend = new Boyfriend(970, 450, SONG.player1);
+					add(boyfriend);
+				case 1160:
+					funkyShake(0.06, 0.7);
+			}
+		}
 
 		/*if (curSong == 'Infiltrator')
 			{
@@ -7121,6 +7300,16 @@ class PlayState extends MusicBeatState
 										}
 									}
 							}
+						case 4:
+							{
+								switch (curTiming)
+								{
+									case 0:
+										dad.playAnim('idle');
+									case 1:
+										sfmDemo.playAnim('idle');
+								}
+							}
 						default:
 							{
 								if (dad.animation.curAnim.name != null && !dad.animation.curAnim.name.startsWith("sing"))
@@ -7171,9 +7360,11 @@ class PlayState extends MusicBeatState
 		}
 
 		if (!boyfriend.animation.curAnim.name.startsWith("sing") && !bfDodging && !boyfriend.animation.curAnim.name.endsWith('hit'))
-		{
-			boyfriend.playAnim('idle');
-		}
+			{
+				boyfriend.playAnim('idle');
+			}
+		
+
 
 		switch (curStage)
 		{

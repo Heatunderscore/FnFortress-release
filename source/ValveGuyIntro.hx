@@ -74,29 +74,26 @@ import sys.FileSystem;
 
 using StringTools;
 
-class ValveGuyIntro extends MusicBeatState
+class ValveGuyIntro extends FlxState
 {
     var bg:FlxSprite;
     var valveGuy:FlxSprite;
     var blackOV:FlxSprite;
-    var dummyShit:FlxSprite;
 
-    var loading:Bool = true;
-    
+    private var loading:Bool = true;
     private var finished:Bool = false;
-    private var antiSpam:Bool = false;
     private var dun:FlxSound;
 
-    override function create():Void
+    override public function create()
         {
             FlxG.mouse.visible = false;
 
-            bg = new FlxSprite(0, 0).loadGraphic(Paths.image('fortress/loading/bg', 'shared'));
+            bg = new FlxSprite(0, 0).loadGraphic(Paths.image('loading/bg'));
             bg.antialiasing = true;
             
 
             valveGuy = new FlxSprite(311, 201);
-            valveGuy.frames = Paths.getSparrowAtlas('fortress/loading/valveGuy', 'shared');
+            valveGuy.frames = Paths.getSparrowAtlas('loading/valveGuy');
             valveGuy.animation.addByPrefix('look', 'valve idle', 10, false);
             valveGuy.antialiasing = true;
             valveGuy.visible = false;
@@ -106,14 +103,10 @@ class ValveGuyIntro extends MusicBeatState
             blackOV.scrollFactor.set();
             blackOV.alpha = 0;
 
-            dummyShit = new FlxSprite(0, 0).loadGraphic(Paths.image('fortress/loading/bg', 'shared'));
-            dummyShit.antialiasing = true;
-
             dun = new FlxSound().loadEmbedded(Paths.sound('intro', 'shared'));
 
             loading = FlxG.save.data.cacheImages;
 
-            add(dummyShit);
             add(bg);
             add(valveGuy);
             add(blackOV);
@@ -123,7 +116,7 @@ class ValveGuyIntro extends MusicBeatState
             super.create();
         }
 
-    override function update(elapsed:Float)
+    override public function update(elapsed:Float)
 	    {
             if (FlxG.keys.justPressed.ENTER){goToState(true);}
             super.update(elapsed);
@@ -131,11 +124,10 @@ class ValveGuyIntro extends MusicBeatState
 
     function startShit():Void
         {
-            antiSpam = true;
             dun.play();
 
             valveGuy.visible = true;
-            valveGuy.animation.play('look', true);
+            valveGuy.animation.play('look', true, false, 0);
 
             valveGuy.animation.finishCallback = function (name:String) {
                 FlxTween.tween(blackOV, {alpha: 1}, 1, {onComplete: function(tween:FlxTween)

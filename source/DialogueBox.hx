@@ -239,9 +239,9 @@ class DialogueBox extends FlxSpriteGroup
 
 		/*
 		this shit makes the portraits loop until no more dialogue is typed
-		this var is private by default, you can control + click on it to get to the file where its stored and
-		change it to a public var which will make it accessible for you -tob
+		private access LMAO -tob
 		*/
+		@:privateAccess
 		if (swagDialogue._typing && delay < 1)
 			{
 				portraitLeft.animation.play('enter');
@@ -253,7 +253,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.animation.stop;
 			}
 		
-		
+		@:privateAccess
 		if (!swagDialogue._typing && skip == 1)
 		{
 			remove(dialogue);

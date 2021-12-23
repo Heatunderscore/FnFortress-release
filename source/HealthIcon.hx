@@ -17,6 +17,7 @@ class HealthIcon extends FlxSprite
 
 		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
+		animation.add('bf-sfm', [0, 1], 0, false, isPlayer);
 		animation.add('bf-bot', [58, 59], 0, false, isPlayer);
 		animation.add('bf-pyro', [46, 44], 0, false, isPlayer);
 		animation.add('bf-pyroland', [45, 45], 0, false, isPlayer);
@@ -33,6 +34,7 @@ class HealthIcon extends FlxSprite
 		animation.add('pyro', [32, 33], 0, false, isPlayer);
 		animation.add('pyroland', [56, 57], 0, false, isPlayer);
 		animation.add('demo', [26, 27], 0, false, isPlayer);
+		animation.add('demo-sfm', [26, 27], 0, false, isPlayer);
 		animation.add('heavy', [30, 31], 0, false, isPlayer);
 		animation.add('heavy-box', [30, 31], 0, false, isPlayer);
 		animation.add('engi', [34, 35], 0, false, isPlayer);

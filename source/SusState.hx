@@ -31,7 +31,7 @@ class SusState extends MusicBeatState
 	#if !switch
 	var optionShit:Array<String> = ['contracter', 'credits', 'leave', 'logo', 'skill issue', 'options'];
 	#else
-	var optionShit:Array<String> = ['contracter', 'credits', 'leave'];
+	var optionShit:Array<String> = ['contracter', 'credits', 'leave', 'options'];
 	#end
 
 	var newGaming:FlxText;
@@ -239,6 +239,8 @@ class SusState extends MusicBeatState
                     PlayState.storyWeek = 0;
                     trace('CUR WEEK' + PlayState.storyWeek);
                     LoadingState.loadAndSwitchState(new PlayState());
+                case 'credits':
+                    FlxG.switchState(new Credits());
             }		
         }
     

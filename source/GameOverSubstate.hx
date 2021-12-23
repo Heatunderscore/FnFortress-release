@@ -44,6 +44,11 @@ class GameOverSubstate extends MusicBeatSubstate
 			daBf = 'bf-bot';
 		}
 
+		if (PlayState.boyfriend.curCharacter == 'bf-sfm')
+		{
+			daBf = 'bf-sfm-dead';
+		}
+
 		super();
 
 		Conductor.songPosition = 0;
@@ -66,7 +71,7 @@ class GameOverSubstate extends MusicBeatSubstate
 						FlxG.sound.play(Paths.soundRandom('death/soldier_', 1, 4),1);
 					case 'intel':
 						FlxG.sound.play(Paths.soundRandom('death/pyro_', 1, 3),1);
-					case 'barnblitz-demo' | 'degroot':
+					case 'barnblitz-demo' | 'degroot' | 'sfm-entry':
 						FlxG.sound.play(Paths.soundRandom('death/demo_', 1, 3),1);
 					case 'barnblitz-heavy':
 						FlxG.sound.play(Paths.soundRandom('death/heavy_', 1, 4),1);
@@ -108,7 +113,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		bf.playAnim('firstDeath');
 
-		if (PlayState.firstDeath && daStage == 'barnblitz-engi')
+		/*if (PlayState.firstDeath && daStage == 'barnblitz-engi')
 		{
 			youFuckingSuck = new FlxTypeText(75, 20, 0, "Darn, might've gone a little too hard on ya. Still up for it?", 24);
 			youFuckingSuck.font = 'TF2 Build';
@@ -126,37 +131,22 @@ class GameOverSubstate extends MusicBeatSubstate
 			add(yesNo);
 
 			youFuckingSuck.start(0.06, true);
-		}
+		}*/
 	}
 	var startVibin:Bool = false;
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
 
-		if (PlayState.firstDeath)
-		{
-		    /*if (!youFuckingSuck._typing)
-			{
-				FlxTween.tween(yesNo, {alpha: 100}, 1.3, {ease: FlxEase.linear});
-			}*/
-		}
 
-
-		if (controls.ACCEPT && !firstTime)
+		if (controls.ACCEPT)
 		{
 			endBullshit();
 		}
 
-		if(FlxG.save.data.InstantRespawn && !firstTime)
+		if(FlxG.save.data.InstantRespawn)
 			{
 				LoadingState.loadAndSwitchState(new PlayState());
-			}
-
-		if (FlxG.keys.justPressed.EIGHT && firstTime)
-			{
-				FlxG.save.data.unlockedWeek = 2;
-				FlxG.save.data.buttonUnlockingShit = 6;
-				LoadingState.loadAndSwitchState(new Contract());
 			}
 
 		if (FlxG.keys.justPressed.SEVEN && firstTime)
@@ -164,7 +154,7 @@ class GameOverSubstate extends MusicBeatSubstate
 			endBullshit();
 		}
 
-		if (controls.BACK && !firstTime)
+		if (controls.BACK)
 		{
 			FlxG.sound.music.stop();
 
