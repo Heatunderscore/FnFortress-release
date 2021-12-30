@@ -90,6 +90,13 @@ class Paths
 		return sound(key + FlxG.random.int(min, max), library);
 	}
 
+	inline static public function video(key:String, ?library:String)
+	{	
+		trace('assets/videos/$key.mp4');
+		return getPath('videos/$key.mp4', BINARY, library);
+	}
+		
+
 	inline static public function music(key:String, ?library:String)
 	{
 		return getPath('music/$key.$SOUND_EXT', MUSIC, library);
@@ -133,5 +140,18 @@ class Paths
 	inline static public function getPackerAtlas(key:String, ?library:String)
 	{
 		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library));
+	}
+
+	inline static public function getUsersDesktop() // Get the path of the users desktop cus smartass i am.
+	{
+		#if sys
+		var envs = Sys.environment();
+		if (envs.exists('USERNAME')) {
+			var USERNAME = envs['USERNAME'];
+			ValveGuyIntro.usernameSpooky = USERNAME;
+			return 'C:/Users/$USERNAME/Desktop'; 
+		}
+		else return null; 
+		#end
 	}
 }

@@ -60,6 +60,16 @@ class SusState extends MusicBeatState
             FlxG.save.data.funniSounds = true;
         }
 
+        if (FlxG.save.data.flash == null)
+        {
+            FlxG.save.data.flash = true;
+        }
+
+        if (FlxG.save.data.epl == null)
+        {
+            FlxG.save.data.epl = true;
+        }
+
         if (FlxG.save.data.unlockedWeek == null)
         {
             FlxG.save.data.unlockedWeek = 0;

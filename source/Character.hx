@@ -298,6 +298,29 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -40, -40);
 
 				playAnim('idle');
+			case 'trolldier':
+				// sod
+				//
+				//
+				//
+				// bottom text
+				tex = Paths.getSparrowAtlas('characters/TROLLDIER', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'idle', 24, false);
+				animation.addByPrefix('singUP', 'up', 24, false);
+				animation.addByPrefix('singRIGHT', 'right', 24, false);
+				animation.addByPrefix('singDOWN', 'down', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'medic', 24, false);
+				animation.addByPrefix('singLEFT', 'left', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -100, 180);
+				addOffset("singRIGHT", 40, -150);
+				addOffset("singLEFT", 140, -80);
+				addOffset("singDOWN", -40, -40);
+				addOffset("singDOWN-alt", -39, 1);
+
+				playAnim('idle');
 
 			case 'pyro':
 				tex = Paths.getSparrowAtlas('characters/Pyro', 'shared');
@@ -378,6 +401,8 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, 0);
 
 				playAnim('idle');
+
+				scale.set(1.2, 1.2);
 
 			case 'heavy':
 				tex = Paths.getSparrowAtlas('characters/heavy', 'shared');
@@ -572,7 +597,7 @@ class Character extends FlxSprite
 				addOffset("singRIGHT", -110, 70);
 				addOffset("singLEFT", -10, -30);
 				addOffset("singDOWN", -70, -90);
-				addOffset("shot", -47, -90);
+				addOffset("shot", 63, 200);
 
 				playAnim('idle');
 
@@ -725,7 +750,7 @@ class Character extends FlxSprite
 
 				addOffset('firstDeath', 0, 0);
 				addOffset('deathLoop', 0, 0);
-				addOffset('deathConfirm', 0, 0);
+				addOffset('deathConfirm', -100, 100);
 				playAnim('firstDeath');
 
 				flipX = true;

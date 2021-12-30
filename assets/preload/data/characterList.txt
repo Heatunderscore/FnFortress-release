@@ -1,5 +1,7 @@
 bf
 bf-bot
+bf-sfm
+bf-sfm-dead
 gf
 scunt
 scunt-old

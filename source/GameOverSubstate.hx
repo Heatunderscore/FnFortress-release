@@ -21,7 +21,6 @@ class GameOverSubstate extends MusicBeatSubstate
 	var daBf:String = '';
 	var youFuckingSuck:FlxTypeText;
 	var yesNo:FlxText;
-	var firstTime:Bool = PlayState.firstDeath;
 
 	public function new(x:Float, y:Float)
 	{
@@ -76,8 +75,7 @@ class GameOverSubstate extends MusicBeatSubstate
 					case 'barnblitz-heavy':
 						FlxG.sound.play(Paths.soundRandom('death/heavy_', 1, 4),1);
 					case 'barnblitz-engi':
-						if (!firstTime)
-						    FlxG.sound.play(Paths.soundRandom('death/engi_', 1, 4),1);
+						FlxG.sound.play(Paths.soundRandom('death/engi_', 1, 4),1);
 					case 'snake-sniper':
 						FlxG.sound.play(Paths.soundRandom('death/sniper_', 1, 3),1);
 					case 'snake-medic':
@@ -149,10 +147,6 @@ class GameOverSubstate extends MusicBeatSubstate
 				LoadingState.loadAndSwitchState(new PlayState());
 			}
 
-		if (FlxG.keys.justPressed.SEVEN && firstTime)
-		{
-			endBullshit();
-		}
 
 		if (controls.BACK)
 		{
@@ -165,7 +159,11 @@ class GameOverSubstate extends MusicBeatSubstate
 			PlayState.loadRep = false;
 		}
 
-		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)
+		if (daBf != 'bf-sfm-dead' && bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.curFrame == 12)
+		{
+			FlxG.camera.follow(camFollow, LOCKON, 0.01);
+		}
+		else if (daBf == 'bf-sfm-dead')
 		{
 			FlxG.camera.follow(camFollow, LOCKON, 0.01);
 		}
@@ -215,7 +213,6 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				FlxG.camera.fade(FlxColor.BLACK, 2, false, function()
 				{
-					PlayState.firstDeath = false;
 					LoadingState.loadAndSwitchState(new PlayState());
 				});
 			});

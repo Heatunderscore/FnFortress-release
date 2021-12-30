@@ -103,7 +103,7 @@ class Main extends Sprite
 	}
 
 	
-	public static function dumpCache() // 3. point. 1. fucking. gigabytes. memory. usage.
+	public static function dumpCache() // 3. point. 1. fucking. gigabytes. memory. usage. So I copy pasted this shit
 		{
 			@:privateAccess
 			for (key in FlxG.bitmap._cache.keys())

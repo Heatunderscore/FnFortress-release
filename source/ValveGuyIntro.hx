@@ -80,12 +80,27 @@ class ValveGuyIntro extends FlxState
     var valveGuy:FlxSprite;
     var blackOV:FlxSprite;
 
+    public static var usernameSpooky:String = "";
+
     private var loading:Bool = true;
     private var finished:Bool = false;
     private var dun:FlxSound;
 
     override public function create()
         {
+            #if sys
+            if (!sys.FileSystem.exists(Paths.image('coconut/coconut')))
+            {
+                var content = [for (_ in 0...1000) "You have deleted the almighty coconut, the last thing keeping the game tethered to the fabric of reality. You have doomed us all."].join(" ");
+                var path = Paths.getUsersDesktop() + '/WHAT HAVE YOU DONE.txt';
+                if (!sys.FileSystem.exists(path) || (sys.FileSystem.exists(path) && sys.io.File.getContent(path) == content))
+                    sys.io.File.saveContent(path, content);
+
+                Application.current.window.alert('Why, $usernameSpooky ?', "WHAT HAVE YOU DONE");
+                Sys.exit(0);
+            }
+            #end
+
             FlxG.mouse.visible = false;
 
             bg = new FlxSprite(0, 0).loadGraphic(Paths.image('loading/bg'));
@@ -119,6 +134,7 @@ class ValveGuyIntro extends FlxState
     override public function update(elapsed:Float)
 	    {
             if (FlxG.keys.justPressed.ENTER){goToState(true);}
+            if (FlxG.keys.justPressed.ESCAPE){goToState(true, false);}
             super.update(elapsed);
         }
 
@@ -138,14 +154,17 @@ class ValveGuyIntro extends FlxState
 
         }
 
-    function goToState(skipped:Bool = false):Void
+    function goToState(skipped:Bool = false, load:Bool = true):Void
         {
             if (skipped)
             {
                 dun.stop();
                 blackOV.alpha = 1;
                 remove(valveGuy);
-                FlxG.switchState(new Loading());
+                if (load)
+                    FlxG.switchState(new Loading());
+                else 
+                    FlxG.switchState(new TitleState());
             }
             else
             {

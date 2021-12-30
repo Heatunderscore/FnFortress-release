@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="NOTE_sex.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="blue0000" x="0" y="0" width="252" height="210"/>
+	<SubTexture name="dark0000" x="252" y="210" width="252" height="210"/>
+	<SubTexture name="green0000" x="252" y="0" width="252" height="210"/>
+	<SubTexture name="purple0000" x="0" y="210" width="252" height="210"/>
+	<SubTexture name="red0000" x="252" y="210" width="252" height="210"/>
+	<SubTexture name="yellow0000" x="0" y="210" width="252" height="210"/>
+</TextureAtlas>

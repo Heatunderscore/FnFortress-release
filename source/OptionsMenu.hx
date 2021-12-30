@@ -79,7 +79,9 @@ class OptionsMenu extends MusicBeatState
 		new OptionCategory("Vs Mannco Stuff", [
 			new CameraStupid("enable or disable camera moving when a note is hit."),
 			new FunnySounds("enable or disable special sounds for different gimmicks."),
-			new DeleteMannco("delete your vs mannco savefile. THIS IS IRREVERSIBLE!")
+			new DeleteMannco("delete your vs mannco savefile. THIS IS IRREVERSIBLE!"),
+			new ShakeShit("enable or disable the shaking in property damage."),
+			new Flashing("enable or disable flashing Lights.")
 		]),
 
 		new OptionCategory("Saves and Data", [

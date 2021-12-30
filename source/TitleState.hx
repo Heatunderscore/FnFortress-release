@@ -282,8 +282,7 @@ class TitleState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.F7)
 		{
-			FlxG.save.data.antiPiracy = true;
-			trace(FlxG.save.data.antiPiracy);
+			FlxG.save.data.seen = null;
 		}
 
 		var pressedEnter:Bool = controls.ACCEPT;
@@ -321,7 +320,10 @@ class TitleState extends MusicBeatState
 
 			new FlxTimer().start(2, function(tmr:FlxTimer)
 			{
-				FlxG.switchState(new SusState());
+				if (FlxG.save.data.seen == null)
+					FlxG.switchState(new OutdatedSubState());
+				else
+				    FlxG.switchState(new SusState());
 			});
 			// FlxG.sound.play(Paths.music('titleShoot'), 0.7);
 		}

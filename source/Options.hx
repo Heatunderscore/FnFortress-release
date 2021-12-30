@@ -1110,7 +1110,7 @@ class CameraStupid extends Option
 
 	private override function updateDisplay():String
 	{
-		return "Note Hit Camera" + (!FlxG.save.data.stupid ? "off" : "on");
+		return "Note Hit Camera " + (!FlxG.save.data.stupid ? "off" : "on");
 	}
 }
 class FunnySounds extends Option
@@ -1131,5 +1131,45 @@ class FunnySounds extends Option
 	private override function updateDisplay():String
 	{
 		return "Special Sound effects " + (!FlxG.save.data.funniSounds ? "off" : "on");
+	}
+}
+class ShakeShit extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.epl = !FlxG.save.data.epl;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Camera Shaking " + (!FlxG.save.data.epl ? "off" : "on");
+	}
+}
+class Flashing extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		FlxG.save.data.flash = !FlxG.save.data.flash;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Flashing Lights " + (!FlxG.save.data.flash ? "off" : "on");
 	}
 }

@@ -279,7 +279,7 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			case 'scunt':
 				box.flipX = true;
-				if (PlayState.dad.curCharacter == 'scunt')
+				if (PlayState.dad.curCharacter == 'scunt' || PlayState.dad.curCharacter == 'saxton')
 				{
 					portraitLeft.visible = false;
 					portraitRight.visible = false;
@@ -439,7 +439,7 @@ class DialogueBox extends FlxSpriteGroup
 				portraitLeft.frames = Paths.getSparrowAtlas('dialogue/saxton');
 				portraitLeft.animation.addByPrefix('enter', 'saxton talk', 24, false);
 				swagDialogue.color = 0xFF000000;
-				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/saxton_hale'), 0.6)];
+				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/saxton'), 0.6)];
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
@@ -478,8 +478,8 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.visible = false;
 				portraitLeft.visible = false;
 				portraitRight.frames = Paths.getSparrowAtlas('dialogue/snoiper', 'shared');
-				swagDialogue.color = 0xFF000000;
 				portraitRight.animation.addByPrefix('enter', 'bot talk', 24, false);
+				swagDialogue.color = 0xFF000000;
 				swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/sniper'), 0.6)];
 				if (!portraitLeft.visible)
 				{

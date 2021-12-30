@@ -28,9 +28,9 @@ class OutdatedSubState extends MusicBeatState
 	override function create()
 	{
 		super.create();
-		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('week54prototype', 'shared'));
-		bg.scale.x *= 1.55;
-		bg.scale.y *= 1.55;
+		FlxG.save.data.seen = true;
+		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('warning'));
+		bg.antialiasing = true;
 		bg.screenCenter();
 		add(bg);
 		
@@ -43,16 +43,12 @@ class OutdatedSubState extends MusicBeatState
 		add(kadeLogo);
 		
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
-			"Your Kade Engine is outdated!\nYou are on "
-			+ MainMenuState.kadeEngineVer
-			+ "\nwhile the most recent version is " + needVer + "."
-			+ "\n\nWhat's new:\n\n"
-			+ currChanges
-			+ "\n& more changes and bugfixes in the full changelog"
-			+ "\n\nPress Space to view the full changelog and update\nor ESCAPE to ignore this",
+			"Hey!\n This mod requires a good PC, \n Otherwise the mod will be laggy and have bugs.\n\n\n"
+			+ "also, this mod has flashing lights and camera shaking, you can disable them in the \nOptions Menu."
+			+ "\n\n Press ENTER to go to the Options menu (skips the intro and loading) or ESCAPE to ignore this.",
 			32);
 		
-		txt.setFormat("VCR OSD Mono", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
+		txt.setFormat("TF2 Build", 32, FlxColor.fromRGB(200, 200, 200), CENTER);
 		txt.borderColor = FlxColor.BLACK;
 		txt.borderSize = 3;
 		txt.borderStyle = FlxTextBorderStyle.OUTLINE;
@@ -86,12 +82,12 @@ class OutdatedSubState extends MusicBeatState
 	{
 		if (controls.ACCEPT)
 		{
-			fancyOpenURL("https://kadedev.github.io/Kade-Engine/changelogs/changelog-" + needVer);
+			FlxG.switchState(new OptionsMenu());
 		}
 		if (controls.BACK)
 		{
 			leftState = true;
-			FlxG.switchState(new MainMenuState());
+			FlxG.switchState(new SusState());
 		}
 		super.update(elapsed);
 	}
