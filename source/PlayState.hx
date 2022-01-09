@@ -98,7 +98,7 @@ class PlayState extends MusicBeatState
 
 	var infiniteUberBf:Bool = false;
 
-	var developor:Bool = true; // youre not a dev LMAO
+	var developor:Bool = false; // youre not a dev LMAO
 	var shitPoo:Bool = true; // activating uhhhhhhhhhhh enemy note glow
 	var longSpin:Bool = false; // this is stupid why am I commenting everything
 	var burnShit:Bool = false; // im lonely
