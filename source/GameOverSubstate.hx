@@ -34,6 +34,8 @@ class GameOverSubstate extends MusicBeatSubstate
 				daBf = 'bf-pixel-dead';
 			case 'medic-bf':
 				daBf = 'medic-bf';
+			case 'engi':
+				daBf = 'engi';
 			default:
 				daBf = 'bf';
 		}
@@ -100,6 +102,8 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 			    case 'medic-bf':
 				    FlxG.sound.play(Paths.sound('medicDeath'));
+				case 'engi':
+					FlxG.sound.play(Paths.sound('engi Death', 'shared'));
 			    default:
 		            FlxG.sound.play(Paths.sound('fnf_loss_sfx'),0.5);
 			}
@@ -206,6 +210,8 @@ class GameOverSubstate extends MusicBeatSubstate
 			{
 				case 'medic-bf':
 					FlxG.sound.play(Paths.sound('medicConfirm'));
+				case 'engi':
+					FlxG.sound.play(Paths.sound('engi live', 'shared'));
 				default:
 					FlxG.sound.play(Paths.music('gameOverEnd' + stageSuffix));
 			}

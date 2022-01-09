@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="heavyU.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Heavyu_Down0000" x="0" y="0" width="456" height="693" frameX="0" frameY="-17" frameWidth="464" frameHeight="710"/>
+	<SubTexture name="Heavyu_Down0001" x="0" y="0" width="456" height="693" frameX="0" frameY="-17" frameWidth="464" frameHeight="710"/>
+	<SubTexture name="Heavyu_Down0002" x="456" y="0" width="460" height="695" frameX="0" frameY="-15" frameWidth="464" frameHeight="710"/>
+	<SubTexture name="Heavyu_Down0003" x="456" y="0" width="460" height="695" frameX="0" frameY="-15" frameWidth="464" frameHeight="710"/>
+	<SubTexture name="Heavyu_Down0004" x="916" y="0" width="464" height="706" frameX="0" frameY="-4" frameWidth="464" frameHeight="710"/>
+	<SubTexture name="Heavyu_Down0005" x="1380" y="0" width="462" height="710" frameX="0" frameY="0" frameWidth="464" frameHeight="710"/>
+	<SubTexture name="Heavyu_Down0006" x="1380" y="0" width="462" height="710" frameX="0" frameY="0" frameWidth="464" frameHeight="710"/>
+	<SubTexture name="Heavyu_Idle0000" x="1842" y="0" width="465" height="752" frameX="-14" frameY="-15" frameWidth="480" frameHeight="767"/>
+	<SubTexture name="Heavyu_Idle0001" x="1842" y="0" width="465" height="752" frameX="-14" frameY="-15" frameWidth="480" frameHeight="767"/>
+	<SubTexture name="Heavyu_Idle0002" x="2307" y="0" width="463" height="754" frameX="-12" frameY="-13" frameWidth="480" frameHeight="767"/>
+	<SubTexture name="Heavyu_Idle0003" x="2307" y="0" width="463" height="754" frameX="-12" frameY="-13" frameWidth="480" frameHeight="767"/>
+	<SubTexture name="Heavyu_Idle0004" x="2770" y="0" width="472" height="763" frameX="-3" frameY="-4" frameWidth="480" frameHeight="767"/>
+	<SubTexture name="Heavyu_Idle0005" x="2770" y="0" width="472" height="763" frameX="-3" frameY="-4" frameWidth="480" frameHeight="767"/>
+	<SubTexture name="Heavyu_Idle0006" x="3242" y="0" width="480" height="767"/>
+	<SubTexture name="Heavyu_Idle0007" x="3242" y="0" width="480" height="767"/>
+	<SubTexture name="Heavyu_Idle0008" x="3242" y="0" width="480" height="767"/>
+	<SubTexture name="Heavyu_Idle0009" x="3242" y="0" width="480" height="767"/>
+	<SubTexture name="Heavyu_Left0000" x="0" y="767" width="511" height="768" frameX="-15" frameY="-4" frameWidth="536" frameHeight="772"/>
+	<SubTexture name="Heavyu_Left0001" x="0" y="767" width="511" height="768" frameX="-15" frameY="-4" frameWidth="536" frameHeight="772"/>
+	<SubTexture name="Heavyu_Left0002" x="511" y="767" width="513" height="770" frameX="-18" frameY="-2" frameWidth="536" frameHeight="772"/>
+	<SubTexture name="Heavyu_Left0003" x="511" y="767" width="513" height="770" frameX="-18" frameY="-2" frameWidth="536" frameHeight="772"/>
+	<SubTexture name="Heavyu_Left0004" x="1024" y="767" width="536" height="772"/>
+	<SubTexture name="Heavyu_Left0005" x="1024" y="767" width="536" height="772"/>
+	<SubTexture name="Heavyu_Left0006" x="1024" y="767" width="536" height="772"/>
+	<SubTexture name="Heavyu_Left0007" x="1024" y="767" width="536" height="772"/>
+	<SubTexture name="Heavyu_Left0008" x="1024" y="767" width="536" height="772"/>
+	<SubTexture name="Heavyu_Left0009" x="1024" y="767" width="536" height="772"/>
+	<SubTexture name="Heavyu_Right0000" x="1560" y="767" width="713" height="662" frameX="-6" frameY="-11" frameWidth="719" frameHeight="674"/>
+	<SubTexture name="Heavyu_Right0001" x="1560" y="767" width="713" height="662" frameX="-6" frameY="-11" frameWidth="719" frameHeight="674"/>
+	<SubTexture name="Heavyu_Right0002" x="2273" y="767" width="713" height="663" frameX="-5" frameY="-10" frameWidth="719" frameHeight="674"/>
+	<SubTexture name="Heavyu_Right0003" x="2273" y="767" width="713" height="663" frameX="-5" frameY="-10" frameWidth="719" frameHeight="674"/>
+	<SubTexture name="Heavyu_Right0004" x="2986" y="767" width="711" height="673" frameX="-2" frameY="-1" frameWidth="719" frameHeight="674"/>
+	<SubTexture name="Heavyu_Right0005" x="0" y="1539" width="711" height="674" frameX="0" frameY="0" frameWidth="719" frameHeight="674"/>
+	<SubTexture name="Heavyu_Right0006" x="0" y="1539" width="711" height="674" frameX="0" frameY="0" frameWidth="719" frameHeight="674"/>
+	<SubTexture name="Heavyu_Up0000" x="711" y="1539" width="398" height="912" frameX="-1" frameY="0" frameWidth="399" frameHeight="912"/>
+	<SubTexture name="Heavyu_Up0001" x="711" y="1539" width="398" height="912" frameX="-1" frameY="0" frameWidth="399" frameHeight="912"/>
+	<SubTexture name="Heavyu_Up0002" x="1109" y="1539" width="398" height="910" frameX="-1" frameY="-2" frameWidth="399" frameHeight="912"/>
+	<SubTexture name="Heavyu_Up0003" x="1109" y="1539" width="398" height="910" frameX="-1" frameY="-2" frameWidth="399" frameHeight="912"/>
+	<SubTexture name="Heavyu_Up0004" x="1507" y="1539" width="399" height="883" frameX="0" frameY="-28" frameWidth="399" frameHeight="912"/>
+	<SubTexture name="Heavyu_Up0005" x="1906" y="1539" width="399" height="883" frameX="0" frameY="-28" frameWidth="399" frameHeight="912"/>
+	<SubTexture name="Heavyu_Up0006" x="1906" y="1539" width="399" height="883" frameX="0" frameY="-28" frameWidth="399" frameHeight="912"/>
+</TextureAtlas>

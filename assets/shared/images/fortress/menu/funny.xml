@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="funny.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="arrow point0000" x="0" y="0" width="140" height="76" frameX="-40" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0001" x="0" y="0" width="140" height="76" frameX="-40" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0002" x="0" y="0" width="140" height="76" frameX="-40" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0003" x="0" y="0" width="140" height="76" frameX="-39" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0004" x="0" y="0" width="140" height="76" frameX="-39" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0005" x="0" y="0" width="140" height="76" frameX="-39" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0006" x="0" y="0" width="140" height="76" frameX="-38" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0007" x="0" y="0" width="140" height="76" frameX="-37" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0008" x="0" y="0" width="140" height="76" frameX="-34" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0009" x="0" y="0" width="140" height="76" frameX="-30" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0010" x="0" y="0" width="140" height="76" frameX="-23" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0011" x="0" y="0" width="140" height="76" frameX="-14" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0012" x="0" y="0" width="140" height="76" frameX="0" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0013" x="0" y="0" width="140" height="76" frameX="-1" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0014" x="0" y="0" width="140" height="76" frameX="-4" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0015" x="0" y="0" width="140" height="76" frameX="-9" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0016" x="0" y="0" width="140" height="76" frameX="-16" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0017" x="0" y="0" width="140" height="76" frameX="-26" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0018" x="0" y="0" width="140" height="76" frameX="-37" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0019" x="0" y="0" width="140" height="76" frameX="-35" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0020" x="0" y="0" width="140" height="76" frameX="-31" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0021" x="0" y="0" width="140" height="76" frameX="-30" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0022" x="0" y="0" width="140" height="76" frameX="-30" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0023" x="0" y="0" width="140" height="76" frameX="-33" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0024" x="0" y="0" width="140" height="76" frameX="-37" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0025" x="0" y="0" width="140" height="76" frameX="-38" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0026" x="0" y="0" width="140" height="76" frameX="-37" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0027" x="0" y="0" width="140" height="76" frameX="-38" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0028" x="0" y="0" width="140" height="76" frameX="-39" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point0029" x="0" y="0" width="140" height="76" frameX="-40" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0000" x="0" y="0" width="140" height="76" frameX="-40" frameY="-4" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0001" x="0" y="0" width="140" height="76" frameX="-40" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0002" x="0" y="0" width="140" height="76" frameX="-40" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0003" x="0" y="0" width="140" height="76" frameX="-39" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0004" x="0" y="0" width="140" height="76" frameX="-39" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0005" x="0" y="0" width="140" height="76" frameX="-39" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0006" x="0" y="0" width="140" height="76" frameX="-38" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0007" x="0" y="0" width="140" height="76" frameX="-37" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0008" x="0" y="0" width="140" height="76" frameX="-34" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0009" x="0" y="0" width="140" height="76" frameX="-30" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0010" x="0" y="0" width="140" height="76" frameX="-23" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0011" x="0" y="0" width="140" height="76" frameX="-14" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0012" x="0" y="0" width="140" height="76" frameX="0" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0013" x="0" y="0" width="140" height="76" frameX="-1" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0014" x="0" y="0" width="140" height="76" frameX="-4" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0015" x="0" y="0" width="140" height="76" frameX="-9" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0016" x="0" y="0" width="140" height="76" frameX="-16" frameY="-6" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0017" x="0" y="0" width="140" height="76" frameX="-26" frameY="-2" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0018" x="0" y="0" width="140" height="76" frameX="-37" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0019" x="0" y="0" width="140" height="76" frameX="-35" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0020" x="0" y="0" width="140" height="76" frameX="-31" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0021" x="0" y="0" width="140" height="76" frameX="-30" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0022" x="0" y="0" width="140" height="76" frameX="-30" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0023" x="0" y="0" width="140" height="76" frameX="-33" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0024" x="0" y="0" width="140" height="76" frameX="-37" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0025" x="0" y="0" width="140" height="76" frameX="-38" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0026" x="0" y="0" width="140" height="76" frameX="-37" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0027" x="0" y="0" width="140" height="76" frameX="-38" frameY="0" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0028" x="0" y="0" width="140" height="76" frameX="-39" frameY="-3" frameWidth="180" frameHeight="76"/>
+	<SubTexture name="arrow point aggressive0029" x="0" y="0" width="140" height="76" frameX="-40" frameY="0" frameWidth="180" frameHeight="76"/>
+</TextureAtlas>

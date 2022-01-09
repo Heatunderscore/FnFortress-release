@@ -60,6 +60,7 @@ class AnimationDebug extends FlxState
 		add(gridBG);
 
 		dad = new Character(0, 0, daAnim);
+		dad.isPlayer = true;
 		dad.screenCenter();
 		dad.debugMode = true;
 

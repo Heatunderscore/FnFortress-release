@@ -413,25 +413,28 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'Heavy_Down', 24, false);
 				animation.addByPrefix('singLEFT', 'Heavy_Left', 24, false);
 
-				animation.addByPrefix('idle-alt', 'Heavyu_Idle', 24, true);
-				animation.addByPrefix('singUP-alt', 'Heavyu_Up', 24, false);
-				animation.addByPrefix('singRIGHT-alt', 'Heavyu_Right', 24, false);
-				animation.addByPrefix('singDOWN-alt', 'Heavyu_Down', 24, false);
-				animation.addByPrefix('singLEFT-alt', 'Heavyu_Left', 24, false);
-
 				addOffset('idle');
                 addOffset("singDOWN", -101, -35);
                 addOffset("singRIGHT" , 144, -91);
                 addOffset("singUP" , -6, 151);
                 addOffset("singLEFT" , -8, 25);
 
-				addOffset('idle-alt');
+				playAnim('idle');
+
+			case 'heavy-uber':
+				tex = Paths.getSparrowAtlas('characters/heavyU', 'shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'Heavyu_Idle', 24, true);
+				animation.addByPrefix('singUP-alt', 'Heavyu_Up', 24, false);
+				animation.addByPrefix('singRIGHT-alt', 'Heavyu_Right', 24, false);
+				animation.addByPrefix('singDOWN-alt', 'Heavyu_Down', 24, false);
+				animation.addByPrefix('singLEFT-alt', 'Heavyu_Left', 24, false);
+
+				addOffset('idle');
                 addOffset("singDOWN-alt", -101, -35);
                 addOffset("singRIGHT-alt" , 144, -91);
                 addOffset("singUP-alt" , -6, 151);
                 addOffset("singLEFT-alt" , -8, 25);
-
-				playAnim('idle');
 
 			case 'heavy-box':
 				tex = Paths.getSparrowAtlas('characters/heavy_box', 'shared');
@@ -451,33 +454,57 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 			case 'engi':
-				tex = Paths.getSparrowAtlas('characters/engi', 'shared');
-				frames = tex;
-				animation.addByPrefix('idle', 'engi idle', 24, false);
-				animation.addByPrefix('singUP', 'engi up', 24, false);
-				animation.addByPrefix('singRIGHT', 'engi right', 24, false);
-				animation.addByPrefix('singDOWN', 'engi down', 24, false);
-				animation.addByPrefix('singLEFT', 'engi left', 24, false);
-
 				// this was my idea heheeheehheheehhehehehehhehehhe -tob
 				if (isPlayer)
 				{
+					tex = Paths.getSparrowAtlas('characters/engi-bf', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'engi idle', 24, false);
+					animation.addByPrefix('singUP', 'engi up', 24, false);
+					animation.addByPrefix('singRIGHT', 'engi right', 24, false);
+					animation.addByPrefix('singDOWN', 'engi down', 24, false);
+					animation.addByPrefix('singLEFT', 'engi left', 24, false);
+
+					animation.addByPrefix('singUPmiss', 'up miss', 24, false);
+					animation.addByPrefix('singRIGHTmiss', 'right miss', 24, false);
+					animation.addByPrefix('singDOWNmiss', 'down miss', 24, false);
+					animation.addByPrefix('singLEFTmiss', 'left miss', 24, false);
+
+					animation.addByPrefix('firstDeath', "engi die", 24, false);
+					animation.addByPrefix('deathLoop', "engi balls beat", 24, true);
+					animation.addByPrefix('deathConfirm', "engi live", 24, false);
+
 					addOffset('idle');
 					addOffset("singDOWN", 180, -67);
 					addOffset("singRIGHT" , 128, -3);
 					addOffset("singUP" , 52, 278);
 					addOffset("singLEFT" , 90, -7);
+
+					addOffset("singDOWNmiss", 130, -60);
+					addOffset("singRIGHTmiss" , 120, 30);
+					addOffset("singUPmiss" , 50, 340);
+					addOffset("singLEFTmiss" , 200, 60);
+
+					addOffset("firstDeath", 180, 170);
+					addOffset("deathLoop" , 190, -70);
+					addOffset("deathConfirm" , 0, -70);
 				}
 				else
-				{	
+				{
+					tex = Paths.getSparrowAtlas('characters/engi', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'engi idle', 24, false);
+					animation.addByPrefix('singUP', 'engi up', 24, false);
+					animation.addByPrefix('singRIGHT', 'engi right', 24, false);
+					animation.addByPrefix('singDOWN', 'engi down', 24, false);
+					animation.addByPrefix('singLEFT', 'engi left', 24, false);
+
 					addOffset('idle');
                     addOffset("singDOWN", 0, -67);
 					addOffset("singRIGHT" , -83, -3);
 					addOffset("singUP" , -28, 278);
 					addOffset("singLEFT" , -32, -7);
 				}
-
-
 				playAnim('idle');
 
 			case 'robo-engi':
@@ -500,7 +527,7 @@ class Character extends FlxSprite
 			case 'medic':
 				tex = Paths.getSparrowAtlas('characters/medic', 'shared');
 				frames = tex;
-				animation.addByPrefix('idle', 'medic_idle', 24, true);
+				animation.addByPrefix('idle', 'medic_idle', 24, false);
 				animation.addByPrefix('singUP', 'medic_up', 24, false);
 				animation.addByPrefix('singRIGHT', 'medic_right', 24, false);
 				animation.addByPrefix('singDOWN', 'medic_down', 24, false);

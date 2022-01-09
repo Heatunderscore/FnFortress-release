@@ -19,6 +19,8 @@ class DialogueBox extends FlxSpriteGroup
 	var controlShit:Bool = false;
 	var curCharacter:String = '';
 
+	var triggeredAlready:Bool = false;
+	
 	var dialogue:Alphabet;
 	public var dialogueList:Array<String> = [];
 
@@ -46,7 +48,6 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			default:
 				FlxG.sound.playMusic(Paths.music('looking_for_a_server', 'shared'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
 		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 5), Std.int(FlxG.height * 5), 0xFFB3DFd8);
@@ -67,7 +68,7 @@ class DialogueBox extends FlxSpriteGroup
 		switch (PlayState.SONG.song.toLowerCase())
 		{
 			case 'atomicpunch' | 'maggots' | 'inferno' | 'ironbomber' | 'ironcurtain' | 'frontierjustice' | 'clinicaltrial'
-			| 'wanker' | 'infiltrator' | 'property damage' | 'skill issue' |'honorbound':
+			| 'wanker' | 'infiltrator' | 'property damage' | 'skill issue':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/bubble');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -79,7 +80,7 @@ class DialogueBox extends FlxSpriteGroup
 		
 		if (!hasDialog)
 		{
-			FlxG.sound.music.fadeOut(0.1, 0);
+			//FlxG.sound.music.fadeOut(0.1, 0);
 			return;
 		}
 			
@@ -154,6 +155,14 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft.color = FlxColor.BLACK;
 			swagDialogue.color = FlxColor.WHITE;
 			dropText.color = FlxColor.BLACK;
+		}
+		
+		var triggered:Bool = false;
+		if (PlayState.cummies && !triggered)
+		{
+			PlayState.cummies = false;
+			triggered = true;
+			FlxG.sound.music.fadeIn(0.1, 1);
 		}
 
 		//fuck you haxe -tob
@@ -252,6 +261,19 @@ class DialogueBox extends FlxSpriteGroup
 				portraitLeft.animation.stop;
 				portraitRight.animation.stop;
 			}
+
+		if (!triggeredAlready && swagDialogue.text == 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png')
+		{
+			triggeredAlready = true;
+			CoolUtil.browserLoad('https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png');
+		}
+
+		switch (swagDialogue.text){
+			case '*decloak sound*', 'Maybe he finally knew his place and figured how much of a loser he is-':PlayState.dad.visible = true;
+			case 'Wha-':PlayState.dad.visible = false;
+			case '-BF and GF leave':PlayState.theFunny();
+			case 'Wh-':PlayState.dad.color = 0xffffff;
+		}
 		
 		@:privateAccess
 		if (!swagDialogue._typing && skip == 1)

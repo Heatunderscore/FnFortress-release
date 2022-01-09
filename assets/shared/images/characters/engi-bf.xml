@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="engi-bf.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="down miss0000" x="0" y="0" width="576" height="489" frameX="0" frameY="-120" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0001" x="0" y="0" width="576" height="489" frameX="0" frameY="-120" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0002" x="576" y="0" width="557" height="551" frameX="-10" frameY="-58" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0003" x="576" y="0" width="557" height="551" frameX="-10" frameY="-58" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0004" x="1133" y="0" width="527" height="609" frameX="-25" frameY="0" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0005" x="1133" y="0" width="527" height="609" frameX="-25" frameY="0" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0006" x="1133" y="0" width="527" height="609" frameX="-25" frameY="0" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0007" x="1133" y="0" width="527" height="609" frameX="-25" frameY="0" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0008" x="1133" y="0" width="527" height="609" frameX="-25" frameY="0" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="down miss0009" x="1133" y="0" width="527" height="609" frameX="-25" frameY="0" frameWidth="576" frameHeight="609"/>
+	<SubTexture name="engi balls beat0000" x="1660" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0001" x="2195" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0002" x="2195" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0003" x="2730" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0004" x="2730" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0005" x="3265" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0006" x="3265" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0007" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0008" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0009" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0010" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0011" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0012" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0013" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0014" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0015" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi balls beat0016" x="3800" y="0" width="535" height="614"/>
+	<SubTexture name="engi die0000" x="4335" y="0" width="368" height="905" frameX="-5" frameY="0" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0001" x="4703" y="0" width="368" height="893" frameX="-5" frameY="-12" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0002" x="5071" y="0" width="368" height="879" frameX="-5" frameY="-25" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0003" x="5439" y="0" width="368" height="865" frameX="-5" frameY="-38" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0004" x="5807" y="0" width="368" height="852" frameX="-4" frameY="-50" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0005" x="6175" y="0" width="368" height="839" frameX="-4" frameY="-63" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0006" x="6543" y="0" width="368" height="825" frameX="-4" frameY="-76" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0007" x="6911" y="0" width="368" height="811" frameX="-4" frameY="-89" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0008" x="7279" y="0" width="368" height="799" frameX="-4" frameY="-101" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0009" x="7647" y="0" width="367" height="785" frameX="-4" frameY="-114" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0010" x="0" y="905" width="368" height="771" frameX="-3" frameY="-127" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0011" x="368" y="905" width="368" height="759" frameX="-3" frameY="-139" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0012" x="736" y="905" width="368" height="745" frameX="-3" frameY="-152" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0013" x="1104" y="905" width="368" height="731" frameX="-3" frameY="-165" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0014" x="1472" y="905" width="368" height="718" frameX="-3" frameY="-178" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0015" x="1840" y="905" width="367" height="705" frameX="-3" frameY="-190" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0016" x="2207" y="905" width="368" height="691" frameX="-2" frameY="-203" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0017" x="2575" y="905" width="368" height="677" frameX="-2" frameY="-216" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0018" x="2943" y="905" width="368" height="665" frameX="-2" frameY="-228" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0019" x="3311" y="905" width="368" height="651" frameX="-2" frameY="-241" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0020" x="3679" y="905" width="368" height="637" frameX="-2" frameY="-254" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0021" x="4047" y="905" width="367" height="624" frameX="-2" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0022" x="4414" y="905" width="368" height="611" frameX="-1" frameY="-279" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0023" x="4782" y="905" width="368" height="597" frameX="-1" frameY="-292" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0024" x="5150" y="905" width="368" height="584" frameX="-1" frameY="-305" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0025" x="5518" y="905" width="368" height="571" frameX="-1" frameY="-317" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0026" x="5886" y="905" width="368" height="557" frameX="-1" frameY="-330" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0027" x="6254" y="905" width="367" height="543" frameX="-1" frameY="-343" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0028" x="6621" y="905" width="367" height="530" frameX="-1" frameY="-356" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0029" x="6988" y="905" width="368" height="517" frameX="0" frameY="-368" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0030" x="7356" y="905" width="368" height="503" frameX="0" frameY="-381" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0031" x="7724" y="905" width="368" height="490" frameX="0" frameY="-394" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0032" x="0" y="1676" width="368" height="477" frameX="0" frameY="-406" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0033" x="368" y="1676" width="367" height="463" frameX="0" frameY="-419" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0034" x="735" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0035" x="1270" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0036" x="1805" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0037" x="2340" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0038" x="2875" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0039" x="3410" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0040" x="3945" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0041" x="4480" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0042" x="5015" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0043" x="5550" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0044" x="6085" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0045" x="6620" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0046" x="7155" y="1676" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0047" x="0" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0048" x="535" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0049" x="1070" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0050" x="1605" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0051" x="2140" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0052" x="2675" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0053" x="3210" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi die0054" x="3745" y="2291" width="535" height="615" frameX="0" frameY="-267" frameWidth="535" frameHeight="905"/>
+	<SubTexture name="engi down0000" x="4280" y="2291" width="565" height="594" frameX="0" frameY="-26" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0001" x="4280" y="2291" width="565" height="594" frameX="0" frameY="-26" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0002" x="4845" y="2291" width="520" height="612" frameX="-9" frameY="-7" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0003" x="4845" y="2291" width="520" height="612" frameX="-9" frameY="-7" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0004" x="5365" y="2291" width="513" height="618" frameX="-12" frameY="-1" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0005" x="5365" y="2291" width="513" height="618" frameX="-12" frameY="-1" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0006" x="5878" y="2291" width="512" height="619" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0007" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0008" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0009" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0010" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0011" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0012" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0013" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi down0014" x="6390" y="2291" width="512" height="620" frameX="-13" frameY="0" frameWidth="565" frameHeight="620"/>
+	<SubTexture name="engi idle0000" x="6902" y="2291" width="378" height="670" frameX="-4" frameY="-20" frameWidth="383" frameHeight="690"/>
+	<SubTexture name="engi idle0001" x="6902" y="2291" width="378" height="670" frameX="-4" frameY="-20" frameWidth="383" frameHeight="690"/>
+	<SubTexture name="engi idle0002" x="7280" y="2291" width="381" height="687" frameX="-1" frameY="-3" frameWidth="383" frameHeight="690"/>
+	<SubTexture name="engi idle0003" x="7280" y="2291" width="381" height="687" frameX="-1" frameY="-3" frameWidth="383" frameHeight="690"/>
+	<SubTexture name="engi idle0004" x="7661" y="2291" width="383" height="690"/>
+	<SubTexture name="engi idle0005" x="7661" y="2291" width="383" height="690"/>
+	<SubTexture name="engi idle0006" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi idle0007" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi idle0008" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi idle0009" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi idle0010" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi idle0011" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi idle0012" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi idle0013" x="0" y="2981" width="383" height="690"/>
+	<SubTexture name="engi left0000" x="383" y="2981" width="479" height="672" frameX="0" frameY="-10" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0001" x="383" y="2981" width="479" height="672" frameX="0" frameY="-10" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0002" x="862" y="2981" width="442" height="680" frameX="-27" frameY="-2" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0003" x="862" y="2981" width="442" height="680" frameX="-27" frameY="-2" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0004" x="1304" y="2981" width="431" height="682" frameX="-35" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0005" x="1304" y="2981" width="431" height="682" frameX="-35" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0006" x="1735" y="2981" width="430" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0007" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0008" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0009" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0010" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0011" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0012" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0013" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi left0014" x="2165" y="2981" width="431" height="682" frameX="-36" frameY="0" frameWidth="479" frameHeight="682"/>
+	<SubTexture name="engi live0000" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-530" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0001" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-525" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0002" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-520" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0003" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-515" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0004" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-510" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0005" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-505" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0006" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-500" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0007" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-495" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0008" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-490" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0009" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-486" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0010" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-481" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0011" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-476" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0012" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-471" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0013" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-466" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0014" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-461" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0015" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-456" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0016" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-451" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0017" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-446" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0018" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-442" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0019" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-437" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0020" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-432" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0021" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-427" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0022" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-422" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0023" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-417" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0024" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-412" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0025" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-407" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0026" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-402" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0027" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-398" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0028" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-393" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0029" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-388" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0030" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-383" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0031" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-378" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0032" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-373" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0033" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-368" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0034" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-363" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0035" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-358" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0036" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-354" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0037" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-349" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0038" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-344" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0039" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-339" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0040" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-334" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0041" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-329" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0042" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-324" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0043" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-319" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0044" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-314" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0045" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-310" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0046" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-305" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0047" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-300" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0048" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-295" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0049" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-290" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0050" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-285" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0051" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-280" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0052" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-275" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0053" x="2596" y="2981" width="414" height="86" frameX="0" frameY="-271" frameWidth="414" frameHeight="618"/>
+	<SubTexture name="engi live0054" x="3010" y="2981" width="414" height="618"/>
+	<SubTexture name="engi right0000" x="3424" y="2981" width="395" height="682" frameX="0" frameY="-5" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0001" x="3424" y="2981" width="395" height="682" frameX="0" frameY="-5" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0002" x="3819" y="2981" width="380" height="686" frameX="-3" frameY="-1" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0003" x="3819" y="2981" width="380" height="686" frameX="-3" frameY="-1" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0004" x="4199" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0005" x="4199" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0006" x="4574" y="2981" width="374" height="687" frameX="-5" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0007" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0008" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0009" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0010" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0011" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0012" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0013" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi right0014" x="4948" y="2981" width="375" height="687" frameX="-4" frameY="0" frameWidth="395" frameHeight="687"/>
+	<SubTexture name="engi up0000" x="5323" y="2981" width="399" height="972" frameX="-11" frameY="0" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0001" x="5323" y="2981" width="399" height="972" frameX="-11" frameY="0" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0002" x="5722" y="2981" width="415" height="945" frameX="-3" frameY="-26" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0003" x="5722" y="2981" width="415" height="945" frameX="-3" frameY="-26" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0004" x="6137" y="2981" width="420" height="937" frameX="-1" frameY="-34" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0005" x="6137" y="2981" width="420" height="937" frameX="-1" frameY="-34" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0006" x="6557" y="2981" width="420" height="936" frameX="-1" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0007" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0008" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0009" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0010" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0011" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0012" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0013" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="engi up0014" x="6977" y="2981" width="421" height="937" frameX="0" frameY="-35" frameWidth="421" frameHeight="972"/>
+	<SubTexture name="left miss0000" x="0" y="3953" width="811" height="727"/>
+	<SubTexture name="left miss0001" x="0" y="3953" width="811" height="727"/>
+	<SubTexture name="left miss0002" x="811" y="3953" width="802" height="727" frameX="-9" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="left miss0003" x="811" y="3953" width="802" height="727" frameX="-9" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="left miss0004" x="1613" y="3953" width="793" height="727" frameX="-17" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="left miss0005" x="1613" y="3953" width="793" height="727" frameX="-17" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="left miss0006" x="1613" y="3953" width="793" height="727" frameX="-17" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="left miss0007" x="1613" y="3953" width="793" height="727" frameX="-17" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="left miss0008" x="1613" y="3953" width="793" height="727" frameX="-17" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="left miss0009" x="1613" y="3953" width="793" height="727" frameX="-17" frameY="0" frameWidth="811" frameHeight="727"/>
+	<SubTexture name="right miss0000" x="2406" y="3953" width="365" height="701"/>
+	<SubTexture name="right miss0001" x="2406" y="3953" width="365" height="701"/>
+	<SubTexture name="right miss0002" x="2771" y="3953" width="349" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="right miss0003" x="2771" y="3953" width="349" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="right miss0004" x="3120" y="3953" width="331" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="right miss0005" x="3120" y="3953" width="331" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="right miss0006" x="3120" y="3953" width="331" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="right miss0007" x="3120" y="3953" width="331" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="right miss0008" x="3120" y="3953" width="331" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="right miss0009" x="3120" y="3953" width="331" height="701" frameX="0" frameY="0" frameWidth="365" frameHeight="701"/>
+	<SubTexture name="up miss0000" x="3451" y="3953" width="454" height="1006"/>
+	<SubTexture name="up miss0001" x="3451" y="3953" width="454" height="1006"/>
+	<SubTexture name="up miss0002" x="3905" y="3953" width="454" height="975" frameX="0" frameY="-31" frameWidth="454" frameHeight="1006"/>
+	<SubTexture name="up miss0003" x="3905" y="3953" width="454" height="975" frameX="0" frameY="-31" frameWidth="454" frameHeight="1006"/>
+	<SubTexture name="up miss0004" x="4359" y="3953" width="454" height="919" frameX="0" frameY="-86" frameWidth="454" frameHeight="1006"/>
+	<SubTexture name="up miss0005" x="4359" y="3953" width="454" height="919" frameX="0" frameY="-86" frameWidth="454" frameHeight="1006"/>
+	<SubTexture name="up miss0006" x="4359" y="3953" width="454" height="919" frameX="0" frameY="-86" frameWidth="454" frameHeight="1006"/>
+	<SubTexture name="up miss0007" x="4359" y="3953" width="454" height="919" frameX="0" frameY="-86" frameWidth="454" frameHeight="1006"/>
+	<SubTexture name="up miss0008" x="4359" y="3953" width="454" height="919" frameX="0" frameY="-86" frameWidth="454" frameHeight="1006"/>
+	<SubTexture name="up miss0009" x="4359" y="3953" width="454" height="919" frameX="0" frameY="-86" frameWidth="454" frameHeight="1006"/>
+</TextureAtlas>

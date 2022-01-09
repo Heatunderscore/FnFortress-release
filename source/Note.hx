@@ -22,6 +22,8 @@ class Note extends FlxSprite
 
 	public var rStrumTime:Float = 0;
 
+	public var alreadyTweened:Bool = false;
+
 	public var mustPress:Bool = false;
 	public var noteData:Int = 0;
 	public var canBeHit:Bool = false;
@@ -707,7 +709,7 @@ class Note extends FlxSprite
 					else
 						canBeHit = false;
 				}
-				else if (burning || death)
+			else if (disguise || bonk || huntsman || saw) // giving non-musthit arrows a fair hitcheck
 				{
 					if (strumTime - Conductor.songPosition <= (100 * Conductor.timeScale)
 						&& strumTime - Conductor.songPosition >= (-50 * Conductor.timeScale) && hitCheck == 0)

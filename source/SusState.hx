@@ -42,6 +42,12 @@ class SusState extends MusicBeatState
 
     public static var curBg:Int = 1;
 
+    var sinep:Float = 0;
+
+    var counter:Int = 0;
+
+    var funnyArrow:FlxSprite;
+
     var theFunny:Int = 0;
 
 	public static var kadeEngineVer:String = "FNF VS MANNCO (1.5.4 EK)" + nightly;
@@ -94,8 +100,6 @@ class SusState extends MusicBeatState
 		behinBg.antialiasing = true;
 		add(behinBg);
 
-
-
         var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('fortress/menu/menuBG', 'shared'));
 		bg.screenCenter();
 		bg.antialiasing = true;
@@ -139,6 +143,17 @@ class SusState extends MusicBeatState
 
         add(menuItems);
 
+        if (FlxG.save.data.tutorial == null)
+        {
+            funnyArrow = new FlxSprite(820, 48);
+            funnyArrow.frames = Paths.getSparrowAtlas('fortress/menu/funny', 'shared');
+            funnyArrow.animation.addByPrefix('1', 'arrow point', 24, true);
+            funnyArrow.animation.addByPrefix('2', 'arrow point aggressive', 24, true);
+            funnyArrow.animation.play('1');
+            funnyArrow.antialiasing = true;
+            add(funnyArrow);
+        }
+
         super.create();
 
     }
@@ -159,9 +174,18 @@ class SusState extends MusicBeatState
             {
                 if(usingMouse)
                 {
-                    if(!FlxG.mouse.overlaps(spr))
+                    if(!FlxG.mouse.overlaps(spr) && spr.ID != 4)
                         spr.animation.play('idle');
                 }
+
+                if (!FlxG.save.data.unlockedBonus && spr.ID == 4)
+                    {
+                        spr.animation.play('hover');
+                    }
+                else if (!FlxG.mouse.overlaps(spr) && spr.ID == 4)
+                    {
+                        spr.animation.play('idle');
+                    }
         
                 if (FlxG.mouse.overlaps(spr))
                 {
@@ -171,6 +195,12 @@ class SusState extends MusicBeatState
                         usingMouse = true;
                         spr.animation.play('hover');
                     }
+
+                    if (!FlxG.save.data.unlockedBonus && spr.ID == 4)
+                        {
+                            counter += 1;
+                        }
+
                         
                     if(FlxG.mouse.pressed && canClick)
                     {
@@ -191,6 +221,16 @@ class SusState extends MusicBeatState
                 }
             }
     
+        if (FlxG.save.data.tutorial == null)
+        {
+            sinep += 180 * elapsed;
+			funnyArrow.alpha = 1 - Math.sin((Math.PI * sinep) / 180);
+
+            if (counter == 3)
+            {
+                funnyArrow.animation.play('2');
+            }
+        }
             super.update(elapsed);
     }
     function selectSomething()
@@ -225,6 +265,7 @@ class SusState extends MusicBeatState
                 case 'options':
                     FlxG.switchState(new OptionsMenu());
                 case 'contracter':
+                    if (FlxG.save.data.tutorial == null){FlxG.save.data.tutorial = false;}
                     FlxG.switchState(new Contract());
                 case 'leave':
                     #if desktop
@@ -233,6 +274,7 @@ class SusState extends MusicBeatState
                     FlxG.switchState(new Piracy());
                     #end
                 case 'skill issue':
+                    if (FlxG.save.data.unlockedBonus){
                     theFunny = FlxG.random.int(1, 3);
                     switch (theFunny)
                     {
@@ -249,6 +291,7 @@ class SusState extends MusicBeatState
                     PlayState.storyWeek = 0;
                     trace('CUR WEEK' + PlayState.storyWeek);
                     LoadingState.loadAndSwitchState(new PlayState());
+                }
                 case 'credits':
                     FlxG.switchState(new Credits());
             }		
