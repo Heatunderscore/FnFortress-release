@@ -1,2 +1,2 @@
-:none: !0.08! ;0; https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png
+:none: !0.001! ;0; https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png
 :bf: !0.01! ;0; ok thats it ill fucking kill you

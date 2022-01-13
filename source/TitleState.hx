@@ -283,6 +283,7 @@ class TitleState extends MusicBeatState
 		if (FlxG.keys.justPressed.F7)
 		{
 			FlxG.save.data.seen = null;
+			FlxG.save.data.tutorial = null;
 		}
 
 		var pressedEnter:Bool = controls.ACCEPT;

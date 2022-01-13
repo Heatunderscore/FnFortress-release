@@ -45,7 +45,7 @@ class OutdatedSubState extends MusicBeatState
 		var txt:FlxText = new FlxText(0, 0, FlxG.width,
 			"Hey!\n This mod requires a good PC, \n Otherwise the mod will be laggy and have bugs.\n\n\n"
 			+ "also, this mod has flashing lights and camera shaking, you can disable them in the \nOptions Menu."
-			+ "\n\n Press ENTER to go to the Options menu (skips the intro and loading) or ESCAPE to ignore this.",
+			+ "\n\n Press ENTER to go to the Options menu or ESCAPE to ignore this.",
 			32);
 		
 		txt.setFormat("TF2 Build", 32, FlxColor.fromRGB(200, 200, 200), CENTER);

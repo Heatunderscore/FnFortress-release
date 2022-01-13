@@ -262,17 +262,15 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.animation.stop;
 			}
 
-		if (!triggeredAlready && swagDialogue.text == 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png')
+		if (!triggeredAlready && swagDialogue.text == 'https://img.itch.zone/aW1nLzY2NTcwNzUuanBlZw==/original/lFa2Vt.jpeg')
 		{
 			triggeredAlready = true;
-			CoolUtil.browserLoad('https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png');
+			CoolUtil.browserLoad('https://img.itch.zone/aW1nLzY2NTcwNzUuanBlZw==/original/lFa2Vt.jpeg');
 		}
 
 		switch (swagDialogue.text){
-			case '*decloak sound*', 'Maybe he finally knew his place and figured how much of a loser he is-':PlayState.dad.visible = true;
 			case 'Wha-':PlayState.dad.visible = false;
 			case '-BF and GF leave':PlayState.theFunny();
-			case 'Wh-':PlayState.dad.color = 0xffffff;
 		}
 		
 		@:privateAccess

@@ -533,9 +533,9 @@ class Character extends FlxSprite
 				animation.addByPrefix('singDOWN', 'medic_down', 24, false);
 				animation.addByPrefix('singLEFT', 'medic_left', 24, false);
 
-				animation.addByPrefix('idle-beam', 'medich_idle', 24, true);
+				animation.addByPrefix('idle-beam', 'medich_idle', 24, false);
 
-				animation.addByPrefix('idle-alt', 'medicu_idle', 24, true);
+				animation.addByPrefix('idle-alt', 'medicu_idle', 24, false);
 				animation.addByPrefix('singRIGHT-alt', 'medicu_right', 24, false);
 				animation.addByPrefix('singLEFT-alt', 'medicu_left', 24, false);
 

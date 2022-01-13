@@ -23,7 +23,7 @@ class FreeplayState extends MusicBeatState
 	var songs:Array<SongMetadata> = [];
 
 	// just something so I dont need to reenable or disable botplay in the options menu every single fucking time -tob
-	var developor:Bool = true;
+	var developor:Bool = false;
 	var selector:FlxText;
 	var curSelected:Int = 0;
 	var curDifficulty:Int = 2;
