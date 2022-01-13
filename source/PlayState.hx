@@ -996,7 +996,7 @@ class PlayState extends MusicBeatState
 					curStage = 'honor';
 					var bg:FlxSprite = new FlxSprite(-400, 0).loadGraphic(Paths.image('fortress/bg/honor'));
 					bg.antialiasing = true;
-					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()! (method found by tob(Method doesnt always work)(tob is very epic(yes tob wrote this)))
+					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()!
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
@@ -1007,7 +1007,7 @@ class PlayState extends MusicBeatState
 					curStage = 'degroot';
 					var bg:FlxSprite = new FlxSprite(-425, -155).loadGraphic(Paths.image('fortress/bg/degroot'));
 					bg.antialiasing = true;
-					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()! (method found by tob(Method doesnt always work)(tob is very epic(yes tob wrote this)))
+					bg.screenCenter(); // dont know how to position your bg? simple! just use Bg.screenCenter()!
 					bg.scrollFactor.set(0.9, 0.9);
 					bg.active = false;
 					add(bg);
@@ -1254,7 +1254,7 @@ class PlayState extends MusicBeatState
 		// doof.x += 70;
 		// doof.y = FlxG.height * 0.5;
 		doof.scrollFactor.set();
-		doof.finishThing = startCountdown;
+		doof.finishThing = titleCheck;
 
 		endingDoof = new DialogueBox(false, ending);
 		endingDoof.scrollFactor.set();
@@ -1620,7 +1620,7 @@ class PlayState extends MusicBeatState
 				case 'frontierjustice':
 					titleIntro(doof);
 				case 'clinicaltrial':
-					titleIntro(doof);
+					schoolIntro(doof);
 				case 'wanker':
 					titleIntro(doof);
 				case 'infiltrator':
@@ -1739,6 +1739,33 @@ class PlayState extends MusicBeatState
 				trace('in Cutscene = $inCutscene');
 		}
 
+	function titleCheck() {
+		if (curSong == 'Clinicaltrial')
+		{
+			var titleCard:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cards/$curSong', 'shared')); // using curSong
+			titleCard.antialiasing = true;
+			titleCard.screenCenter();
+			titleCard.setGraphicSize(FlxG.width, FlxG.height);
+			titleCard.cameras = [camHUD];
+			add(titleCard);
+			titleCard.alpha = 0;
+	
+			FlxTween.tween(titleCard, {alpha:1}, 1.068, {ease: FlxEase.quadInOut});
+			// WHY IS THIS TIMING SO GOOD
+			FlxG.sound.play(Paths.sound('title/$curSong'), 1, false, null, true, function()
+				{
+					remove(titleCard);
+					FlxG.cameras.fade(FlxColor.BLACK, 0.1, true, function()
+					{
+						startCountdown();
+					}, true);
+				});
+		}
+		else
+		{
+			startCountdown();
+		}
+	}
 	function titleIntro(?dialogueBox:DialogueBox):Void // titlecard intro -tob
 	{
 		cummies = true;
@@ -6101,6 +6128,16 @@ class PlayState extends MusicBeatState
 							health -=0.08;
 							if (!bfDodging)
 								boyfriend.playAnim('sing' + sDir[direction] + 'miss', true);
+						}
+					else if (!boyfriend.animOffsets.exists('singUPmiss') || !boyfriend.animOffsets.exists('singLEFTmiss') || !boyfriend.animOffsets.exists('singDOWNmiss') || !boyfriend.animOffsets.exists('singRIGHTmiss'))
+						{
+							health -=0.04;
+							boyfriend.visible = false;
+							boyfriend.playAnim('singUP', true);
+							boyfriend.animation.finishCallback = function (name:String){
+								boyfriend.visible = true;
+							}
+
 						}
 					else
 						{
