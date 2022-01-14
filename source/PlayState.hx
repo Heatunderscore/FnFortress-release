@@ -6134,9 +6134,11 @@ class PlayState extends MusicBeatState
 							health -=0.04;
 							boyfriend.visible = false;
 							boyfriend.playAnim('singUP', true);
-							boyfriend.animation.finishCallback = function (name:String){
-								boyfriend.visible = true;
-							}
+
+							new FlxTimer().start(1, function(tmr:FlxTimer)
+								{
+									boyfriend.visible = true;
+								});
 
 						}
 					else
