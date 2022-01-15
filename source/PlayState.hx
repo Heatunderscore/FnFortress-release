@@ -694,7 +694,6 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('maggots/maggots'));
 				ending = CoolUtil.coolTextFile(Paths.txt('maggots/commie'));
 				maggots = true;
-				dad.visible = false;
 			case 'inferno':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('inferno/furry'));
 				ending = CoolUtil.coolTextFile(Paths.txt('inferno/pyroInflation'));

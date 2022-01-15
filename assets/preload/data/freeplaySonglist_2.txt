@@ -1,5 +1,5 @@
 Atomicpunch:scunt:1
-Maggots:sodier:1
+Maggots:soldier:1
 Inferno:pyro:1
 Ironbomber:demo:1
 Ironcurtain:heavy:1

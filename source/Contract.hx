@@ -54,6 +54,7 @@ class Contract extends MusicBeatState
     var weekThing:FlxSprite;
 
     var freeplayButton:FlxSprite;
+    var mttButton:FlxSprite;
 
     var curCon:String = "";
 
@@ -202,6 +203,15 @@ class Contract extends MusicBeatState
         freeplayButton.antialiasing = true;
         add(freeplayButton);
 
+        mttButton = new FlxSprite(431, 327);
+        mttButton.frames = Paths.getSparrowAtlas('fortress/contract/freeplayB', 'shared');
+        mttButton.animation.addByPrefix('idle','freeplay idle', 24, true);
+        mttButton.animation.addByPrefix('hover','freeplay press', 24, true);
+        mttButton.animation.play('idle');
+        mttButton.antialiasing = true;
+        if (curLock <= 3)
+            add(mttButton);
+
         /*for (i in 0...optionShit.length)
             {
                 var textShit:FlxSprite = new FlxSprite(0, 0);
@@ -233,6 +243,10 @@ class Contract extends MusicBeatState
         sx.animation.addByPrefix('idle1','freeplay title', 24, true);
         sx.animation.play('idle');
         add(sx);
+
+        var mttT:FlxSprite = new FlxSprite(355, 360).loadGraphic(Paths.image('fortress/contract/final_stand', 'shared'));
+        if (curLock <= 3)
+            add(mttT);
 
         weekThing = new FlxSprite(914, 288);
         weekThing.frames = Paths.getSparrowAtlas('fortress/contract/weekthings', 'shared');
@@ -266,6 +280,12 @@ class Contract extends MusicBeatState
         funnyRoot.antialiasing = true;
         add(funnyRoot);
 
+        var discTxt = new FlxText(150, 10, 0, "Press Space To Join Our Discord Server!!!!!!!!");
+        discTxt.color = FlxColor.RED;
+        discTxt.scale.set(2, 2);
+        if (curLock <= 3)
+            add(discTxt);
+
 
         super.create();
     }
@@ -277,7 +297,9 @@ class Contract extends MusicBeatState
 
     override function update(elapsed:Float)
     {
-       
+        if (FlxG.keys.justPressed.SPACE)
+            FlxG.openURL("https://discord.gg/MeWmRvaFEK");
+
         if (FlxG.sound.music.volume < 0.8)
             {
                 FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
@@ -324,7 +346,7 @@ class Contract extends MusicBeatState
                 spr.updateHitbox();
             });
 
-            if (FlxG.mouse.overlaps(freeplayButton))
+            if (FlxG.mouse.overlaps(freeplayButton) || FlxG.mouse.overlaps(mttButton))
                 {
                     if(canClick)
                     {
@@ -333,20 +355,34 @@ class Contract extends MusicBeatState
                         remove(funnyRoot);
                         funnyRoot.antialiasing = true;
                         add(funnyRoot);
-
-                        freeplayButton.animation.play('hover');
-                        funnyRoot.animation.play('idle5');
+                     
+                        if (FlxG.mouse.overlaps(freeplayButton)) {
+                            funnyRoot.animation.play('idle5');
+                            freeplayButton.animation.play('hover');
+                        }
+                        if (FlxG.mouse.overlaps(mttButton))
+                            mttButton.animation.play('hover');
                     }
                         
                     if(FlxG.mouse.pressed && canClick)
                     {
-                        FlxG.switchState(new FreeplayState());
+                        if (FlxG.mouse.overlaps(freeplayButton)) {
+                            FlxG.switchState(new FreeplayState());
+                        }
+                        if (FlxG.mouse.overlaps(mttButton) && curLock <= 3)
+                            FlxG.openURL("https://gamebanana.com/wips/64192");
                     }
                 }
-            else if(!FlxG.mouse.overlaps(freeplayButton))
+            else if(!FlxG.mouse.overlaps(freeplayButton) || !FlxG.mouse.overlaps(mttButton))
                 {
-                    freeplayButton.animation.play('idle');
+                    if (!FlxG.mouse.overlaps(freeplayButton))
+                        freeplayButton.animation.play('idle');
+                    if (!FlxG.mouse.overlaps(mttButton))
+                        mttButton.animation.play('idle');
                 }
+
+            
+
     
             if (!selectedSomethin)
             {
